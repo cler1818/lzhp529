@@ -1,0 +1,2172 @@
+# ========================================
+# Clash 配置文件 - 终极简化版
+# ========================================
+# 
+# 更新时间（东八区北京时间）: 2026-01-17 21:46:57
+# 仓库名称: lzhp529
+# 输入源文件: lzhp529
+# 订阅链接获取情况: 4/6
+# 
+# 分组统计:
+#   维云云: 57 个节点
+#   一元机场: 34 个节点
+#   风萧萧: 64 个节点
+#   宝可梦: 43 个节点
+# 
+# 失败的链接:
+# https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f - HTTP错误: 403
+# https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e - HTTP错误: 403
+# 
+# 输入源文件内容:
+# # FSCloud 到期：28.12.4
+# https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f
+#
+#
+# # 维云云 到期：28.2.12
+# https://vyy.cqsvhb.cn/s/c59454c04c7395f58b5d8165a598ad64
+#
+#
+# # 一元机场 到期26.11.13
+# https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=6d43847f2612748359fd8a8b9932efeb
+#
+#
+# # 便宜机场 月免 
+# https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e
+#
+#
+# # 风萧萧 LD论坛公益 长期流量
+# https://hermes.xiaoyao-88.com/s/8bfd6799e01c61ada760e88d56f91eb9
+#
+#
+# # 宝可梦 LD论坛公益 月免
+# https://subpoke.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=366bcf5298dc6fd97ebb70a182a6ea1f
+# 
+# ========================================
+# 配置说明:
+# 1. 统一代理端口: 7890 (HTTP/SOCKS混合)
+# 2. 节点选择: 仅包含负载均衡、自动选择、DIRECT
+# 3. 负载均衡: 默认策略，自动分配流量
+# 4. 自动选择: 选择最低延迟节点
+# 5. 分组策略: 按订阅源分组，方便切换
+# ========================================
+# 配置开始
+# ========================================
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  ipv6: false
+  listen: 127.0.0.1:53
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+proxies:
+- name: 维云云-剩余流量：87.37 GB
+  type: hysteria2
+  server: hkzl1.vyunyunnode.top
+  port: 49000
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-距离下次重置剩余：26 天
+  type: hysteria2
+  server: hkzl1.vyunyunnode.top
+  port: 49000
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-套餐到期：2028-02-12
+  type: hysteria2
+  server: hkzl1.vyunyunnode.top
+  port: 49000
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-香港1直连
+  type: hysteria2
+  server: hkzl1.vyunyunnode.top
+  port: 49000
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-香港2直连
+  type: hysteria2
+  server: hkzl2.vyunyunnode.top
+  port: 50000
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl2.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-香港3直连
+  type: hysteria2
+  server: hkzl3.vyunyunnode.top
+  port: 44001
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: hkzl3.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-台湾家宽直连
+  type: hysteria2
+  server: twzl.vyunyunnode.top
+  port: 47887
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: twzl.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-美国🇺🇸直连
+  type: hysteria2
+  server: uszl2.vyunyunnode.top
+  port: 44006
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: uszl2.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-新加坡🇸🇬直连
+  type: hysteria2
+  server: sgzl1.vyunyunnode.top
+  port: 44008
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: sgzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-韩国直连
+  type: hysteria2
+  server: hgzl.vyunyunnode.top
+  port: 44098
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+- name: 维云云-美国🇺🇸直连02
+  type: hysteria2
+  server: zzlmg2.hhwyy.xyz
+  port: 44088
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: uszl3.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-日本🇯🇵直连
+  type: hysteria2
+  server: jpzl1.vyunyunnode.top
+  port: 44011
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  sni: jpzl1.vyunyunnode.top
+  skip-cert-verify: true
+- name: 维云云-🇭🇰香港01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19002
+  cipher: 2022-blake3-aes-128-gcm
+  password: MzRlY2YwNDQzMzY0OTI3OQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港02解锁流媒体
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 19006
+  cipher: 2022-blake3-aes-128-gcm
+  password: ZDJmMGExNTdiYTNmOTdmNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港03
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19008
+  cipher: 2022-blake3-aes-128-gcm
+  password: MzRlY2YwNDQzMzY0OTI3OQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港04解锁流媒体
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19009
+  cipher: 2022-blake3-aes-128-gcm
+  password: ZDJmMGExNTdiYTNmOTdmNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港05
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 19023
+  cipher: 2022-blake3-aes-128-gcm
+  password: MzRlY2YwNDQzMzY0OTI3OQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港06
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 19025
+  cipher: 2022-blake3-aes-128-gcm
+  password: MzRlY2YwNDQzMzY0OTI3OQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港07
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19026
+  cipher: 2022-blake3-aes-128-gcm
+  password: OWI3MTM5NjUyOTM2N2RhNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港08
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 19027
+  cipher: 2022-blake3-aes-128-gcm
+  password: OWI3MTM5NjUyOTM2N2RhNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇭🇰香港09
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 19750
+  cipher: 2022-blake3-aes-128-gcm
+  password: OWI3MTM5NjUyOTM2N2RhNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇸🇬新加坡01🔒解锁流媒体
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 45689
+  cipher: 2022-blake3-aes-128-gcm
+  password: ZTc2Y2VmOWMzOWI2ZDYyNg==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇸🇬新加坡02🔒解锁流媒体
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 19003
+  cipher: 2022-blake3-aes-128-gcm
+  password: ZTc2Y2VmOWMzOWI2ZDYyNg==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇸🇬新加坡03🔒解锁流媒体
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19013
+  cipher: 2022-blake3-aes-128-gcm
+  password: ODcwYjhjNTJmZWM4ZDhkMQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇸🇬新加坡04🔒解锁流媒体
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19017
+  cipher: 2022-blake3-aes-128-gcm
+  password: ODcwYjhjNTJmZWM4ZDhkMQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19001
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzE1MThkYTQwYWMwYWJmMA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本02
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 19010
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzE1MThkYTQwYWMwYWJmMA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本03
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19018
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzE1MThkYTQwYWMwYWJmMA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本04
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 34501
+  cipher: 2022-blake3-aes-128-gcm
+  password: MWJlNTY1ZWQ1ZWNiOGMwNQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本05
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 55002
+  cipher: 2022-blake3-aes-128-gcm
+  password: MWJlNTY1ZWQ1ZWNiOGMwNQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇯🇵日本06
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 55003
+  cipher: 2022-blake3-aes-128-gcm
+  password: MWJlNTY1ZWQ1ZWNiOGMwNQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-泰国🇹🇭01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 35615
+  cipher: 2022-blake3-aes-128-gcm
+  password: Nzk3ZGM0NTlkNzI3MTJiNA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇩🇪德国01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 25802
+  cipher: 2022-blake3-aes-128-gcm
+  password: MTEzYzRmODM2MDMyNTNkOA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇩🇪德国02
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 25803
+  cipher: 2022-blake3-aes-128-gcm
+  password: MTEzYzRmODM2MDMyNTNkOA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇲🇾马来西亚
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 45800
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇨🇦加拿大01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 32223
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇮🇸冰岛
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 12004
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇲🇽墨西哥01
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 23406
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇵🇱波兰01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 46502
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇨🇭瑞士01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 32222
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇰🇷韩国01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 44113
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇫🇷法国01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 56614
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇧🇪比利时01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 20254
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-越南🇻🇳01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 34333
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzNmZjJlMGFkOGMxZTY4ZA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-越南🇻🇳02
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 34335
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzNmZjJlMGFkOGMxZTY4ZA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇨🇳台湾01
+  type: ss
+  server: wyy3.oeooe.cn
+  port: 19004
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇨🇳台湾02
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 21003
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇨🇳台湾03
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19019
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇨🇳台湾04家宽
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 30099
+  cipher: 2022-blake3-aes-128-gcm
+  password: NTJiOTNlOTBiNzBlZjcyOA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇨🇳台湾家宽05
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 37888
+  cipher: 2022-blake3-aes-128-gcm
+  password: NTJiOTNlOTBiNzBlZjcyOA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇺🇸美国01纽约GPT
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 45590
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTk2YjE5OWQ0MjJkMjU1NA==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇺🇸美国02纽约GPT
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 19005
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇺🇸美国03纽约GPT
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 34569
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇺🇸美国04纽约GPT
+  type: ss
+  server: wyy2.oeooe.cn
+  port: 19020
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇺🇸美国05维加斯GPT
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19791
+  cipher: 2022-blake3-aes-128-gcm
+  password: OWUxNzNkZmNhZGFlODlkMQ==:ZTk3YmU4ODgtZjcyOC00ZQ==
+  udp: true
+- name: 维云云-🇬🇧英国01
+  type: ss
+  server: wyy1.oeooe.cn
+  port: 19021
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 维云云-🇬🇧英国02
+  type: ss
+  server: wyy5.oeooe.cn
+  port: 19022
+  cipher: chacha20-ietf-poly1305
+  password: e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
+- name: 一元机场-一元机场.asia
+  type: trojan
+  server: 0.0.0.0
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: 0.0.0.0
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-请立即到官网下载新客户端！
+  type: trojan
+  server: 0.0.0.0
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: 0.0.0.0
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-您正在使用的是最新客户端
+  type: vless
+  server: 0.0.0.0
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 01 | 高级专线
+  type: vless
+  server: hk1.5d51af20-b66a-7922-0249-cf8779ae28f9.000d4ee1.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 02 | 高级专线
+  type: vless
+  server: hk2.5d51af20-b66a-7922-0249-cf8779ae28f9.71a30608.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 03 | 高级专线
+  type: vless
+  server: hk3.5d51af20-b66a-7922-0249-cf8779ae28f9.fc5d5972.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 04 | 高级专线
+  type: vless
+  server: hk4.5d51af20-b66a-7922-0249-cf8779ae28f9.e69b99d9.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 05 | 高级专线
+  type: vless
+  server: hk5.5d51af20-b66a-7922-0249-cf8779ae28f9.7b6e516a.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 06 | 高级专线
+  type: vless
+  server: hk6.5d51af20-b66a-7922-0249-cf8779ae28f9.c0900bc3.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 | 25倍计费
+  type: vless
+  server: zx1.5d51af20-b66a-7922-0249-cf8779ae28f9.f6468651.the-best-airport.com
+  port: 10000
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: baidu.com
+- name: 一元机场-🇯🇵日本 01 | 高级专线
+  type: vless
+  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.272a1519.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 02 | 高级专线
+  type: vless
+  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.a9b0b718.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 03 | 高级专线
+  type: vless
+  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.ue86f537.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 04 | 高级专线
+  type: vless
+  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.4ce9c3b4.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 05 | 高级专线
+  type: vless
+  server: jp5.5d51af20-b66a-7922-0249-cf8779ae28f9.fabe993b.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 06 | 高级专线
+  type: vless
+  server: jp6.5d51af20-b66a-7922-0249-cf8779ae28f9.bfd39278.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 07 | 高级专线
+  type: vless
+  server: jp7.5d51af20-b66a-7922-0249-cf8779ae28f9.5132e51f.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 08 | 高级专线
+  type: vless
+  server: jp8.5d51af20-b66a-7922-0249-cf8779ae28f9.d9241b31.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 01 | 专线
+  type: trojan
+  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.7adf211e.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 02 | 专线
+  type: trojan
+  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.02444020.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 03 | 专线
+  type: trojan
+  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.5584fc1f.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 04 | 专线
+  type: trojan
+  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.69408ae5.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 01 | 专线
+  type: trojan
+  server: sg1.5d51af20-b66a-7922-0249-cf8779ae28f9.2dde7df3.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 02 | 专线
+  type: trojan
+  server: sg2.5d51af20-b66a-7922-0249-cf8779ae28f9.2c4b5066.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 03 | 专线
+  type: trojan
+  server: sg3.5d51af20-b66a-7922-0249-cf8779ae28f9.d4f84ebb.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 04 | 专线
+  type: trojan
+  server: sg4.5d51af20-b66a-7922-0249-cf8779ae28f9.2ce203e5.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 05 | 专线
+  type: trojan
+  server: sg5.5d51af20-b66a-7922-0249-cf8779ae28f9.dede0d54.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 06 | 专线
+  type: trojan
+  server: sg6.5d51af20-b66a-7922-0249-cf8779ae28f9.0aca10d1.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 07 | 专线
+  type: trojan
+  server: sg7.5d51af20-b66a-7922-0249-cf8779ae28f9.57aaa8ec.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 08 | 专线
+  type: trojan
+  server: sg8.5d51af20-b66a-7922-0249-cf8779ae28f9.c586e7c2.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 01 | 专线
+  type: trojan
+  server: us1.5d51af20-b66a-7922-0249-cf8779ae28f9.36a8c922.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 02 | 专线
+  type: trojan
+  server: us2.5d51af20-b66a-7922-0249-cf8779ae28f9.2f6cd430.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 03 | 专线
+  type: trojan
+  server: us3.5d51af20-b66a-7922-0249-cf8779ae28f9.47253001.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 04 | 专线
+  type: trojan
+  server: us4.5d51af20-b66a-7922-0249-cf8779ae28f9.30d6a0d0.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 风萧萧-剩余流量：98.65 GB
+  type: ss
+  server: 120.77.38.81
+  port: 11235
+  cipher: aes-256-gcm
+  password: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+- name: 风萧萧-套餐到期：长期有效
+  type: ss
+  server: 120.77.38.81
+  port: 11235
+  cipher: aes-256-gcm
+  password: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+- name: 风萧萧-🇺🇸US@Bosa佬赞助
+  type: ss
+  server: 120.77.38.81
+  port: 11235
+  cipher: aes-256-gcm
+  password: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+- name: 风萧萧-🇭🇰HK@wuan佬赞助
+  type: vless
+  server: 69.165.68.74
+  port: 41729
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@Eliot.H佬赞助
+  type: vless
+  server: 156.226.172.48
+  port: 37529
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@CBH佬赞助
+  type: vless
+  server: 143.20.156.89
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@Bosa佬赞助
+  type: vless
+  server: 172.81.111.123
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@xingcxx佬赞助
+  type: vless
+  server: 84.54.2.244
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@linxi_2650佬赞助
+  type: vless
+  server: 151.242.11.181
+  port: 47939
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇭🇰HK@linlee佬赞助
+  type: vless
+  server: 91.229.132.22
+  port: 1314
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP-1@Yoga佬赞助
+  type: vless
+  server: 141.147.170.17
+  port: 55794
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP-2@Yoga佬赞助
+  type: vless
+  server: 47.79.89.28
+  port: 63994
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP@Binbim佬赞助
+  type: vless
+  server: 156.246.92.242
+  port: 52111
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP@Cyclops佬赞助
+  type: vless
+  server: 45.196.233.52
+  port: 33053
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP@dingz佬赞助
+  type: vless
+  server: 47.79.91.66
+  port: 53654
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇯🇵JP@wjzhu佬赞助
+  type: vless
+  server: 140.245.90.74
+  port: 50931
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@shiyang佬赞助
+  type: vless
+  server: 178.128.104.215
+  port: 40972
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@cai6佬赞助
+  type: vless
+  server: 159.65.136.161
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@xcdeveloper佬赞助
+  type: vless
+  server: 161.118.212.29
+  port: 30917
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@zea佬赞助
+  type: vless
+  server: 47.79.119.154
+  port: 46122
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@wwang佬赞助
+  type: vless
+  server: 140.245.62.49
+  port: 43936
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG@yuemanly佬赞助
+  type: vless
+  server: 185.151.146.123
+  port: 32509
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇸🇬SG-yltf佬赞助
+  type: vless
+  server: sg1.yltb.tech
+  port: 2053
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: cdn.jsdelivr.net
+- name: 风萧萧-🇺🇸US-1@LRWF佬赞助
+  type: vless
+  server: 138.197.214.79
+  port: 32236
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US-2@LRWF佬赞助
+  type: vless
+  server: 159.89.153.29
+  port: 60685
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US-3@LRWF佬赞助
+  type: vless
+  server: 157.245.228.156
+  port: 46994
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@Tokinx佬赞助
+  type: vless
+  server: 206.189.172.168
+  port: 33035
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US-2@qingfenghao佬赞助
+  type: vless
+  server: 161.129.65.119
+  port: 58151
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@yzfh佬赞助
+  type: vless
+  server: 173.214.169.120
+  port: 64035
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@csgwu佬赞助
+  type: vless
+  server: 204.152.192.136
+  port: 58141
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@hx3251佬赞助
+  type: vless
+  server: 192.210.179.29
+  port: 36644
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@goldenhawk佬赞助
+  type: vless
+  server: 107.172.51.200
+  port: 61475
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@Yoga佬赞助
+  type: vless
+  server: 107.148.225.67
+  port: 61360
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@houzai佬赞助
+  type: vless
+  server: 107.174.82.100
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@3rd佬赞助
+  type: vless
+  server: 209.141.42.234
+  port: 63749
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@Handsomedog佬赞助
+  type: vless
+  server: 198.12.77.130
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@Ling_Anthony佬赞助
+  type: vless
+  server: 107.174.181.18
+  port: 34395
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@kikii佬赞助
+  type: vless
+  server: 107.172.87.191
+  port: 19383
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: apple.com
+- name: 风萧萧-🇺🇸US@lyrnox佬赞助
+  type: vless
+  server: 107.174.52.110
+  port: 30638
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@TAOZHANG佬赞助
+  type: vless
+  server: 154.23.172.31
+  port: 56147
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@zwz211123佬赞助
+  type: vless
+  server: 38.34.14.69
+  port: 32268
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@wise_bird佬赞助
+  type: vless
+  server: 23.166.168.101
+  port: 65445
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@laoqiao佬赞助
+  type: vless
+  server: 5.175.184.72
+  port: 41295
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@hl128k佬赞助
+  type: vless
+  server: 23.94.212.40
+  port: 52801
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@Iguang9881佬赞助
+  type: vless
+  server: 23.226.134.134
+  port: 35874
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@123nhh佬赞助
+  type: vless
+  server: 66.92.50.235
+  port: 59211
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US@dong佬赞助
+  type: vless
+  server: 167.99.53.187
+  port: 38062
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇨🇦CA@Tokinx佬赞助
+  type: vless
+  server: 159.203.3.63
+  port: 57433
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇨🇦CA@aaa3055佬赞助
+  type: vless
+  server: 207.174.40.215
+  port: 30547
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇮🇳IN@dingz佬赞助
+  type: vless
+  server: 80.225.206.101
+  port: 62384
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇳🇱NL@cai6佬赞助
+  type: vless
+  server: 68.183.8.190
+  port: 3344
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇹🇷TR@Rainbear佬赞助
+  type: vless
+  server: 185.219.132.112
+  port: 34874
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇬🇧GB@Ksoyoung佬赞助
+  type: vless
+  server: 185.85.242.140
+  port: 52868
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇩🇪DE@laoqiao佬赞助
+  type: vless
+  server: 109.71.253.17
+  port: 48745
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇩🇪DE@hl128k佬赞助
+  type: vless
+  server: 31.57.241.27
+  port: 38432
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇦🇺AU@FF_Crazy佬赞助
+  type: vless
+  server: 170.64.233.74
+  port: 31874
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇲🇩MD@terence佬赞助
+  type: vless
+  server: 217.156.67.93
+  port: 47949
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸US-r佬赞助
+  type: vless
+  server: 154.26.184.2
+  port: 29667
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: learn.cpplang.ggff.net
+- name: 风萧萧-🇺🇸US-se佬赞助
+  type: vless
+  server: 38.207.162.5
+  port: 42697
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: learn.cpplang.ggff.net
+- name: 风萧萧-🇷🇺RU-slw佬赞助
+  type: vless
+  server: cf-ip-new.root.sx
+  port: 8443
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: www.speedtest.net
+- name: 风萧萧-🇺🇸US5x家宽-bai佬赞助
+  type: vless
+  server: 154.26.176.67
+  port: 10734
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: learn.cpplang.ggff.net
+- name: 风萧萧-🇺🇸US5x家宽-wz佬赞助
+  type: vless
+  server: 38.207.163.72
+  port: 56328
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: learn.cpplang.ggff.net
+- name: 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
+  type: vless
+  server: 174.136.204.191
+  port: 55784
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+  type: vless
+  server: 38.165.45.91
+  port: 57262
+  uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
+  udp: true
+  servername: tesla.com
+- name: 宝可梦-剩余流量：53.17 GB
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-距离下次重置剩余：26 天
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-套餐到期：2026-02-12
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-建议：感到卡顿请切换到专线节点
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-放丢失官网:https://love.p6m6.com
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54257
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54257
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  type: trojan
+  server: v601.xsaym.com
+  port: 54357
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  type: trojan
+  server: v602.xsaym.com
+  port: 54357
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55015
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55015
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  type: ss
+  server: v602.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 55017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 55017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54225
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54225
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54032
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54032
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 54029
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 54029
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54259
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 59110
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 59099
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54265
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56115
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56115
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54263
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54263
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54273
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54273
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 56019
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 56019
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 负载均衡
+  - 自动选择
+  - DIRECT
+- name: 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  strategy: consistent-hashing
+  proxies:
+  - 维云云-剩余流量：87.37 GB
+  - 维云云-距离下次重置剩余：26 天
+  - 维云云-套餐到期：2028-02-12
+  - 维云云-香港1直连
+  - 维云云-香港2直连
+  - 维云云-香港3直连
+  - 维云云-台湾家宽直连
+  - 维云云-美国🇺🇸直连
+  - 维云云-新加坡🇸🇬直连
+  - 维云云-韩国直连
+  - 维云云-美国🇺🇸直连02
+  - 维云云-日本🇯🇵直连
+  - 维云云-🇭🇰香港01
+  - 维云云-🇭🇰香港02解锁流媒体
+  - 维云云-🇭🇰香港03
+  - 维云云-🇭🇰香港04解锁流媒体
+  - 维云云-🇭🇰香港05
+  - 维云云-🇭🇰香港06
+  - 维云云-🇭🇰香港07
+  - 维云云-🇭🇰香港08
+  - 维云云-🇭🇰香港09
+  - 维云云-🇸🇬新加坡01🔒解锁流媒体
+  - 维云云-🇸🇬新加坡02🔒解锁流媒体
+  - 维云云-🇸🇬新加坡03🔒解锁流媒体
+  - 维云云-🇸🇬新加坡04🔒解锁流媒体
+  - 维云云-🇯🇵日本01
+  - 维云云-🇯🇵日本02
+  - 维云云-🇯🇵日本03
+  - 维云云-🇯🇵日本04
+  - 维云云-🇯🇵日本05
+  - 维云云-🇯🇵日本06
+  - 维云云-泰国🇹🇭01
+  - 维云云-🇩🇪德国01
+  - 维云云-🇩🇪德国02
+  - 维云云-🇲🇾马来西亚
+  - 维云云-🇨🇦加拿大01
+  - 维云云-🇮🇸冰岛
+  - 维云云-🇲🇽墨西哥01
+  - 维云云-🇵🇱波兰01
+  - 维云云-🇨🇭瑞士01
+  - 维云云-🇰🇷韩国01
+  - 维云云-🇫🇷法国01
+  - 维云云-🇧🇪比利时01
+  - 维云云-越南🇻🇳01
+  - 维云云-越南🇻🇳02
+  - 维云云-🇨🇳台湾01
+  - 维云云-🇨🇳台湾02
+  - 维云云-🇨🇳台湾03
+  - 维云云-🇨🇳台湾04家宽
+  - 维云云-🇨🇳台湾家宽05
+  - 维云云-🇺🇸美国01纽约GPT
+  - 维云云-🇺🇸美国02纽约GPT
+  - 维云云-🇺🇸美国03纽约GPT
+  - 维云云-🇺🇸美国04纽约GPT
+  - 维云云-🇺🇸美国05维加斯GPT
+  - 维云云-🇬🇧英国01
+  - 维云云-🇬🇧英国02
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
+  - 风萧萧-剩余流量：98.65 GB
+  - 风萧萧-套餐到期：长期有效
+  - 风萧萧-🇺🇸US@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@wuan佬赞助
+  - 风萧萧-🇭🇰HK@Eliot.H佬赞助
+  - 风萧萧-🇭🇰HK@CBH佬赞助
+  - 风萧萧-🇭🇰HK@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@xingcxx佬赞助
+  - 风萧萧-🇭🇰HK@linxi_2650佬赞助
+  - 风萧萧-🇭🇰HK@linlee佬赞助
+  - 风萧萧-🇯🇵JP-1@Yoga佬赞助
+  - 风萧萧-🇯🇵JP-2@Yoga佬赞助
+  - 风萧萧-🇯🇵JP@Binbim佬赞助
+  - 风萧萧-🇯🇵JP@Cyclops佬赞助
+  - 风萧萧-🇯🇵JP@dingz佬赞助
+  - 风萧萧-🇯🇵JP@wjzhu佬赞助
+  - 风萧萧-🇸🇬SG@shiyang佬赞助
+  - 风萧萧-🇸🇬SG@cai6佬赞助
+  - 风萧萧-🇸🇬SG@xcdeveloper佬赞助
+  - 风萧萧-🇸🇬SG@zea佬赞助
+  - 风萧萧-🇸🇬SG@wwang佬赞助
+  - 风萧萧-🇸🇬SG@yuemanly佬赞助
+  - 风萧萧-🇸🇬SG-yltf佬赞助
+  - 风萧萧-🇺🇸US-1@LRWF佬赞助
+  - 风萧萧-🇺🇸US-2@LRWF佬赞助
+  - 风萧萧-🇺🇸US-3@LRWF佬赞助
+  - 风萧萧-🇺🇸US@Tokinx佬赞助
+  - 风萧萧-🇺🇸US-2@qingfenghao佬赞助
+  - 风萧萧-🇺🇸US@yzfh佬赞助
+  - 风萧萧-🇺🇸US@csgwu佬赞助
+  - 风萧萧-🇺🇸US@hx3251佬赞助
+  - 风萧萧-🇺🇸US@goldenhawk佬赞助
+  - 风萧萧-🇺🇸US@Yoga佬赞助
+  - 风萧萧-🇺🇸US@houzai佬赞助
+  - 风萧萧-🇺🇸US@3rd佬赞助
+  - 风萧萧-🇺🇸US@Handsomedog佬赞助
+  - 风萧萧-🇺🇸US@Ling_Anthony佬赞助
+  - 风萧萧-🇺🇸US@kikii佬赞助
+  - 风萧萧-🇺🇸US@lyrnox佬赞助
+  - 风萧萧-🇺🇸US@TAOZHANG佬赞助
+  - 风萧萧-🇺🇸US@zwz211123佬赞助
+  - 风萧萧-🇺🇸US@wise_bird佬赞助
+  - 风萧萧-🇺🇸US@laoqiao佬赞助
+  - 风萧萧-🇺🇸US@hl128k佬赞助
+  - 风萧萧-🇺🇸US@Iguang9881佬赞助
+  - 风萧萧-🇺🇸US@123nhh佬赞助
+  - 风萧萧-🇺🇸US@dong佬赞助
+  - 风萧萧-🇨🇦CA@Tokinx佬赞助
+  - 风萧萧-🇨🇦CA@aaa3055佬赞助
+  - 风萧萧-🇮🇳IN@dingz佬赞助
+  - 风萧萧-🇳🇱NL@cai6佬赞助
+  - 风萧萧-🇹🇷TR@Rainbear佬赞助
+  - 风萧萧-🇬🇧GB@Ksoyoung佬赞助
+  - 风萧萧-🇩🇪DE@laoqiao佬赞助
+  - 风萧萧-🇩🇪DE@hl128k佬赞助
+  - 风萧萧-🇦🇺AU@FF_Crazy佬赞助
+  - 风萧萧-🇲🇩MD@terence佬赞助
+  - 风萧萧-🇺🇸US-r佬赞助
+  - 风萧萧-🇺🇸US-se佬赞助
+  - 风萧萧-🇷🇺RU-slw佬赞助
+  - 风萧萧-🇺🇸US5x家宽-bai佬赞助
+  - 风萧萧-🇺🇸US5x家宽-wz佬赞助
+  - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
+  - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+  - 宝可梦-剩余流量：53.17 GB
+  - 宝可梦-距离下次重置剩余：26 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 维云云-剩余流量：87.37 GB
+  - 维云云-距离下次重置剩余：26 天
+  - 维云云-套餐到期：2028-02-12
+  - 维云云-香港1直连
+  - 维云云-香港2直连
+  - 维云云-香港3直连
+  - 维云云-台湾家宽直连
+  - 维云云-美国🇺🇸直连
+  - 维云云-新加坡🇸🇬直连
+  - 维云云-韩国直连
+  - 维云云-美国🇺🇸直连02
+  - 维云云-日本🇯🇵直连
+  - 维云云-🇭🇰香港01
+  - 维云云-🇭🇰香港02解锁流媒体
+  - 维云云-🇭🇰香港03
+  - 维云云-🇭🇰香港04解锁流媒体
+  - 维云云-🇭🇰香港05
+  - 维云云-🇭🇰香港06
+  - 维云云-🇭🇰香港07
+  - 维云云-🇭🇰香港08
+  - 维云云-🇭🇰香港09
+  - 维云云-🇸🇬新加坡01🔒解锁流媒体
+  - 维云云-🇸🇬新加坡02🔒解锁流媒体
+  - 维云云-🇸🇬新加坡03🔒解锁流媒体
+  - 维云云-🇸🇬新加坡04🔒解锁流媒体
+  - 维云云-🇯🇵日本01
+  - 维云云-🇯🇵日本02
+  - 维云云-🇯🇵日本03
+  - 维云云-🇯🇵日本04
+  - 维云云-🇯🇵日本05
+  - 维云云-🇯🇵日本06
+  - 维云云-泰国🇹🇭01
+  - 维云云-🇩🇪德国01
+  - 维云云-🇩🇪德国02
+  - 维云云-🇲🇾马来西亚
+  - 维云云-🇨🇦加拿大01
+  - 维云云-🇮🇸冰岛
+  - 维云云-🇲🇽墨西哥01
+  - 维云云-🇵🇱波兰01
+  - 维云云-🇨🇭瑞士01
+  - 维云云-🇰🇷韩国01
+  - 维云云-🇫🇷法国01
+  - 维云云-🇧🇪比利时01
+  - 维云云-越南🇻🇳01
+  - 维云云-越南🇻🇳02
+  - 维云云-🇨🇳台湾01
+  - 维云云-🇨🇳台湾02
+  - 维云云-🇨🇳台湾03
+  - 维云云-🇨🇳台湾04家宽
+  - 维云云-🇨🇳台湾家宽05
+  - 维云云-🇺🇸美国01纽约GPT
+  - 维云云-🇺🇸美国02纽约GPT
+  - 维云云-🇺🇸美国03纽约GPT
+  - 维云云-🇺🇸美国04纽约GPT
+  - 维云云-🇺🇸美国05维加斯GPT
+  - 维云云-🇬🇧英国01
+  - 维云云-🇬🇧英国02
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
+  - 风萧萧-剩余流量：98.65 GB
+  - 风萧萧-套餐到期：长期有效
+  - 风萧萧-🇺🇸US@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@wuan佬赞助
+  - 风萧萧-🇭🇰HK@Eliot.H佬赞助
+  - 风萧萧-🇭🇰HK@CBH佬赞助
+  - 风萧萧-🇭🇰HK@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@xingcxx佬赞助
+  - 风萧萧-🇭🇰HK@linxi_2650佬赞助
+  - 风萧萧-🇭🇰HK@linlee佬赞助
+  - 风萧萧-🇯🇵JP-1@Yoga佬赞助
+  - 风萧萧-🇯🇵JP-2@Yoga佬赞助
+  - 风萧萧-🇯🇵JP@Binbim佬赞助
+  - 风萧萧-🇯🇵JP@Cyclops佬赞助
+  - 风萧萧-🇯🇵JP@dingz佬赞助
+  - 风萧萧-🇯🇵JP@wjzhu佬赞助
+  - 风萧萧-🇸🇬SG@shiyang佬赞助
+  - 风萧萧-🇸🇬SG@cai6佬赞助
+  - 风萧萧-🇸🇬SG@xcdeveloper佬赞助
+  - 风萧萧-🇸🇬SG@zea佬赞助
+  - 风萧萧-🇸🇬SG@wwang佬赞助
+  - 风萧萧-🇸🇬SG@yuemanly佬赞助
+  - 风萧萧-🇸🇬SG-yltf佬赞助
+  - 风萧萧-🇺🇸US-1@LRWF佬赞助
+  - 风萧萧-🇺🇸US-2@LRWF佬赞助
+  - 风萧萧-🇺🇸US-3@LRWF佬赞助
+  - 风萧萧-🇺🇸US@Tokinx佬赞助
+  - 风萧萧-🇺🇸US-2@qingfenghao佬赞助
+  - 风萧萧-🇺🇸US@yzfh佬赞助
+  - 风萧萧-🇺🇸US@csgwu佬赞助
+  - 风萧萧-🇺🇸US@hx3251佬赞助
+  - 风萧萧-🇺🇸US@goldenhawk佬赞助
+  - 风萧萧-🇺🇸US@Yoga佬赞助
+  - 风萧萧-🇺🇸US@houzai佬赞助
+  - 风萧萧-🇺🇸US@3rd佬赞助
+  - 风萧萧-🇺🇸US@Handsomedog佬赞助
+  - 风萧萧-🇺🇸US@Ling_Anthony佬赞助
+  - 风萧萧-🇺🇸US@kikii佬赞助
+  - 风萧萧-🇺🇸US@lyrnox佬赞助
+  - 风萧萧-🇺🇸US@TAOZHANG佬赞助
+  - 风萧萧-🇺🇸US@zwz211123佬赞助
+  - 风萧萧-🇺🇸US@wise_bird佬赞助
+  - 风萧萧-🇺🇸US@laoqiao佬赞助
+  - 风萧萧-🇺🇸US@hl128k佬赞助
+  - 风萧萧-🇺🇸US@Iguang9881佬赞助
+  - 风萧萧-🇺🇸US@123nhh佬赞助
+  - 风萧萧-🇺🇸US@dong佬赞助
+  - 风萧萧-🇨🇦CA@Tokinx佬赞助
+  - 风萧萧-🇨🇦CA@aaa3055佬赞助
+  - 风萧萧-🇮🇳IN@dingz佬赞助
+  - 风萧萧-🇳🇱NL@cai6佬赞助
+  - 风萧萧-🇹🇷TR@Rainbear佬赞助
+  - 风萧萧-🇬🇧GB@Ksoyoung佬赞助
+  - 风萧萧-🇩🇪DE@laoqiao佬赞助
+  - 风萧萧-🇩🇪DE@hl128k佬赞助
+  - 风萧萧-🇦🇺AU@FF_Crazy佬赞助
+  - 风萧萧-🇲🇩MD@terence佬赞助
+  - 风萧萧-🇺🇸US-r佬赞助
+  - 风萧萧-🇺🇸US-se佬赞助
+  - 风萧萧-🇷🇺RU-slw佬赞助
+  - 风萧萧-🇺🇸US5x家宽-bai佬赞助
+  - 风萧萧-🇺🇸US5x家宽-wz佬赞助
+  - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
+  - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+  - 宝可梦-剩余流量：53.17 GB
+  - 宝可梦-距离下次重置剩余：26 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+- name: 维云云
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 维云云-剩余流量：87.37 GB
+  - 维云云-距离下次重置剩余：26 天
+  - 维云云-套餐到期：2028-02-12
+  - 维云云-香港1直连
+  - 维云云-香港2直连
+  - 维云云-香港3直连
+  - 维云云-台湾家宽直连
+  - 维云云-美国🇺🇸直连
+  - 维云云-新加坡🇸🇬直连
+  - 维云云-韩国直连
+  - 维云云-美国🇺🇸直连02
+  - 维云云-日本🇯🇵直连
+  - 维云云-🇭🇰香港01
+  - 维云云-🇭🇰香港02解锁流媒体
+  - 维云云-🇭🇰香港03
+  - 维云云-🇭🇰香港04解锁流媒体
+  - 维云云-🇭🇰香港05
+  - 维云云-🇭🇰香港06
+  - 维云云-🇭🇰香港07
+  - 维云云-🇭🇰香港08
+  - 维云云-🇭🇰香港09
+  - 维云云-🇸🇬新加坡01🔒解锁流媒体
+  - 维云云-🇸🇬新加坡02🔒解锁流媒体
+  - 维云云-🇸🇬新加坡03🔒解锁流媒体
+  - 维云云-🇸🇬新加坡04🔒解锁流媒体
+  - 维云云-🇯🇵日本01
+  - 维云云-🇯🇵日本02
+  - 维云云-🇯🇵日本03
+  - 维云云-🇯🇵日本04
+  - 维云云-🇯🇵日本05
+  - 维云云-🇯🇵日本06
+  - 维云云-泰国🇹🇭01
+  - 维云云-🇩🇪德国01
+  - 维云云-🇩🇪德国02
+  - 维云云-🇲🇾马来西亚
+  - 维云云-🇨🇦加拿大01
+  - 维云云-🇮🇸冰岛
+  - 维云云-🇲🇽墨西哥01
+  - 维云云-🇵🇱波兰01
+  - 维云云-🇨🇭瑞士01
+  - 维云云-🇰🇷韩国01
+  - 维云云-🇫🇷法国01
+  - 维云云-🇧🇪比利时01
+  - 维云云-越南🇻🇳01
+  - 维云云-越南🇻🇳02
+  - 维云云-🇨🇳台湾01
+  - 维云云-🇨🇳台湾02
+  - 维云云-🇨🇳台湾03
+  - 维云云-🇨🇳台湾04家宽
+  - 维云云-🇨🇳台湾家宽05
+- name: 一元机场
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
+- name: 风萧萧
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 风萧萧-剩余流量：98.65 GB
+  - 风萧萧-套餐到期：长期有效
+  - 风萧萧-🇺🇸US@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@wuan佬赞助
+  - 风萧萧-🇭🇰HK@Eliot.H佬赞助
+  - 风萧萧-🇭🇰HK@CBH佬赞助
+  - 风萧萧-🇭🇰HK@Bosa佬赞助
+  - 风萧萧-🇭🇰HK@xingcxx佬赞助
+  - 风萧萧-🇭🇰HK@linxi_2650佬赞助
+  - 风萧萧-🇭🇰HK@linlee佬赞助
+  - 风萧萧-🇯🇵JP-1@Yoga佬赞助
+  - 风萧萧-🇯🇵JP-2@Yoga佬赞助
+  - 风萧萧-🇯🇵JP@Binbim佬赞助
+  - 风萧萧-🇯🇵JP@Cyclops佬赞助
+  - 风萧萧-🇯🇵JP@dingz佬赞助
+  - 风萧萧-🇯🇵JP@wjzhu佬赞助
+  - 风萧萧-🇸🇬SG@shiyang佬赞助
+  - 风萧萧-🇸🇬SG@cai6佬赞助
+  - 风萧萧-🇸🇬SG@xcdeveloper佬赞助
+  - 风萧萧-🇸🇬SG@zea佬赞助
+  - 风萧萧-🇸🇬SG@wwang佬赞助
+  - 风萧萧-🇸🇬SG@yuemanly佬赞助
+  - 风萧萧-🇸🇬SG-yltf佬赞助
+  - 风萧萧-🇺🇸US-1@LRWF佬赞助
+  - 风萧萧-🇺🇸US-2@LRWF佬赞助
+  - 风萧萧-🇺🇸US-3@LRWF佬赞助
+  - 风萧萧-🇺🇸US@Tokinx佬赞助
+  - 风萧萧-🇺🇸US-2@qingfenghao佬赞助
+  - 风萧萧-🇺🇸US@yzfh佬赞助
+  - 风萧萧-🇺🇸US@csgwu佬赞助
+  - 风萧萧-🇺🇸US@hx3251佬赞助
+  - 风萧萧-🇺🇸US@goldenhawk佬赞助
+  - 风萧萧-🇺🇸US@Yoga佬赞助
+  - 风萧萧-🇺🇸US@houzai佬赞助
+  - 风萧萧-🇺🇸US@3rd佬赞助
+  - 风萧萧-🇺🇸US@Handsomedog佬赞助
+  - 风萧萧-🇺🇸US@Ling_Anthony佬赞助
+  - 风萧萧-🇺🇸US@kikii佬赞助
+  - 风萧萧-🇺🇸US@lyrnox佬赞助
+  - 风萧萧-🇺🇸US@TAOZHANG佬赞助
+  - 风萧萧-🇺🇸US@zwz211123佬赞助
+  - 风萧萧-🇺🇸US@wise_bird佬赞助
+  - 风萧萧-🇺🇸US@laoqiao佬赞助
+  - 风萧萧-🇺🇸US@hl128k佬赞助
+  - 风萧萧-🇺🇸US@Iguang9881佬赞助
+  - 风萧萧-🇺🇸US@123nhh佬赞助
+  - 风萧萧-🇺🇸US@dong佬赞助
+  - 风萧萧-🇨🇦CA@Tokinx佬赞助
+  - 风萧萧-🇨🇦CA@aaa3055佬赞助
+  - 风萧萧-🇮🇳IN@dingz佬赞助
+- name: 宝可梦
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 宝可梦-剩余流量：53.17 GB
+  - 宝可梦-距离下次重置剩余：26 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+rules:
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-SUFFIX,baidu.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,sina.com,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,alibaba.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
