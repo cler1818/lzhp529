@@ -38,7 +38,6 @@ def extract_remark_from_comment(comment_line):
         return None
     
     # 找到第一个标点符号、空格或特殊字符作为断点
-    # 支持的断点字符：空格、逗号、句号、分号、冒号、感叹号、问号、中文标点
     break_pattern = r'[\s,.;:!?。，；：！？、\u3000]'
     
     match = re.search(break_pattern, comment_line)
@@ -503,8 +502,27 @@ def fetch_subscription(url, timeout=30):
 def process_subscription_content(content, remark=None):
     """处理订阅内容"""
     if not content:
-        return []
+        return [], 0
     
+    # ① 先尝试当 Clash YAML 格式
+    try:
+        data = yaml.safe_load(content)
+        if isinstance(data, dict) and 'proxies' in data:
+            proxies = data['proxies']
+            node_count = len(proxies)
+            
+            # 添加备注
+            if remark:
+                for p in proxies:
+                    p['name'] = f"{remark}-{p.get('name','node')}"
+            
+            print(f"    检测到Clash YAML格式，找到 {node_count} 个节点")
+            # 返回所有代理节点和节点数量
+            return proxies, node_count
+    except Exception as e:
+        print(f"    解析 YAML 失败，尝试URI格式: {e}")
+    
+    # ② 如果不是 Clash 配置，再回到原来的 URI 解析逻辑
     proxies = []
     lines = content.split('\n')
     
@@ -517,7 +535,8 @@ def process_subscription_content(content, remark=None):
         if proxy:
             proxies.append(proxy)
     
-    return proxies
+    node_count = len(proxies)
+    return proxies, node_count
 
 def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_content, 
                                      success_count, total_count, failed_urls, remark_stats):
@@ -717,17 +736,62 @@ def clear_output_directory():
         os.makedirs(output_dir, exist_ok=True)
         print("创建输出目录")
 
-def read_source_file_content(filepath):
-    """读取源文件内容并添加#注释"""
+def read_source_file_content(filepath, url_results=None):
+    """读取源文件内容并添加#注释，同时添加节点数量和失败原因信息"""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             lines = f.readlines()
         
         commented_lines = []
+        current_remark = None
+        url_index = 0
+        
         for line in lines:
             line = line.rstrip('\n')
             if line.strip():
-                commented_lines.append(f"# {line}")
+                # 检查是否是注释行
+                if line.startswith('#'):
+                    # 提取备注
+                    remark = extract_remark_from_comment(line)
+                    if remark:
+                        current_remark = remark
+                    commented_lines.append(f"# {line}")
+                else:
+                    # 这是URL行
+                    url_info = None
+                    if url_results and url_index < len(url_results):
+                        url_info = url_results[url_index]
+                        url_index += 1
+                    
+                    # 添加原始URL
+                    commented_lines.append(f"# {line}")
+                    
+                    # 添加节点数量和失败原因信息
+                    if url_info:
+                        success = url_info.get('success', False)
+                        node_count = url_info.get('node_count', 0)
+                        error_msg = url_info.get('error_msg', '')
+                        
+                        if success:
+                            if node_count > 0:
+                                commented_lines.append(f"# 节点数量：{node_count} 个")
+                            else:
+                                commented_lines.append(f"# 节点数量：0 个")
+                                if error_msg:
+                                    commented_lines.append(f"# 失败原因：{error_msg}")
+                        else:
+                            commented_lines.append(f"# 节点数量：获取失败")
+                            if error_msg:
+                                commented_lines.append(f"# 失败原因：{error_msg}")
+                            else:
+                                commented_lines.append(f"# 失败原因：未知错误")
+                    else:
+                        # 如果没有结果信息，显示未知状态
+                        commented_lines.append(f"# 节点数量：未知")
+                        commented_lines.append(f"# 失败原因：未处理")
+                    
+                    # 如果下一个行不是URL，重置当前备注
+                    current_remark = None
             else:
                 commented_lines.append("#")
         
@@ -737,16 +801,53 @@ def read_source_file_content(filepath):
         print(f"读取源文件失败: {e}")
         return "# 无法读取源文件内容"
 
-def generate_remark_stats(remark_stats):
-    """生成分组统计信息"""
-    if not remark_stats:
+def generate_remark_stats(remark_stats, failed_urls_list, url_entries):
+    """生成分组统计信息，统一显示成功和失败的订阅源"""
+    if not remark_stats and not failed_urls_list:
         return "#   无分组信息"
     
-    stats_lines = []
-    for remark, count in remark_stats.items():
-        stats_lines.append(f"#   {remark}: {count} 个节点")
+    stats_lines = ["#   分组统计:"]
+    
+    # 按原始顺序显示所有订阅源
+    for entry in url_entries:
+        remark = entry['remark']
+        
+        # 检查是否成功
+        if remark in remark_stats:
+            # 成功订阅
+            count = remark_stats[remark]
+            stats_lines.append(f"#   {remark}: {count} 个节点")
+        else:
+            # 查找失败原因
+            error_msg = "未知错误"
+            for failed_info in failed_urls_list:
+                if failed_info.get('remark') == remark:
+                    error_msg = failed_info.get('error_msg', '未知错误')
+                    break
+            
+            # 失败订阅
+            stats_lines.append(f"#   {remark}：获取失败  -  {error_msg}")
     
     return "\n".join(stats_lines)
+
+def generate_failed_urls_comments(failed_urls_list):
+    """生成失败链接的注释"""
+    if not failed_urls_list:
+        return "# 无失败链接"
+    
+    failed_comments = []
+    for failed_info in failed_urls_list:
+        remark = failed_info.get('remark', '无备注')
+        url = failed_info.get('url', '')
+        error_msg = failed_info.get('error_msg', '未知错误')
+        
+        # 每个失败链接单独显示，包含备注名称和失败原因
+        failed_comments.append(f"# 【{remark}】")
+        failed_comments.append(f"# {url}")
+        failed_comments.append(f"# 失败原因：{error_msg}")
+        failed_comments.append(f"#")
+    
+    return "\n".join(failed_comments)
 
 def main():
     """主函数"""
@@ -790,9 +891,6 @@ https://example.com/free.txt
         
         filepath = os.path.join(input_dir, filename)
         
-        # 读取源文件内容（用于备注）
-        source_content = read_source_file_content(filepath)
-        
         # 解析源文件，提取带备注的链接
         url_entries = parse_source_file(filepath)
         
@@ -805,10 +903,11 @@ https://example.com/free.txt
         
         # 统计信息
         all_proxies = []
-        failed_urls = []
+        failed_urls_list = []  # 存储失败链接的详细信息
         success_count = 0
         remark_nodes_map = {}  # 按备注分组的节点
         remark_stats = {}      # 分组统计
+        url_results = []       # 存储每个URL的处理结果
         
         # 处理每个链接
         for i, entry in enumerate(url_entries):
@@ -823,8 +922,19 @@ https://example.com/free.txt
             result = fetch_subscription(url, timeout=15)
             content, success, error_msg = result
             
+            # 存储处理结果
+            url_result = {
+                'url': url,
+                'remark': remark,
+                'success': success,
+                'error_msg': error_msg if not success else '',
+                'node_count': 0
+            }
+            
             if success and content:
-                proxies = process_subscription_content(content, remark)
+                proxies, node_count = process_subscription_content(content, remark)
+                url_result['node_count'] = node_count
+                
                 if proxies:
                     all_proxies.extend(proxies)
                     success_count += 1
@@ -841,18 +951,28 @@ https://example.com/free.txt
                     print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
                 else:
                     print(f"    ⚠️ 获取成功但未找到有效节点")
-                    failed_urls.append(f"# {url} - 无有效节点")
+                    url_result['error_msg'] = '无有效节点'
+                    failed_urls_list.append(url_result)
             else:
                 error_info = error_msg if error_msg else "未知错误"
                 print(f"    ❌ 失败: {error_info}")
-                failed_urls.append(f"# {url} - {error_info}")
+                url_result['error_msg'] = error_info
+                failed_urls_list.append(url_result)
+            
+            url_results.append(url_result)
             
             # 避免请求过快
             if i < total_count - 1:
                 time.sleep(1)
         
-        # 生成失败链接备注
-        failed_comments = "\n".join(failed_urls) if failed_urls else "# 无失败链接"
+        # 读取源文件内容，包含节点数量和失败原因信息
+        source_content = read_source_file_content(filepath, url_results)
+        
+        # 生成分组统计和失败链接信息
+        remark_stats_comments = generate_remark_stats(remark_stats, failed_urls_list, url_entries)
+        
+        # 生成失败链接注释
+        failed_comments = generate_failed_urls_comments(failed_urls_list)
         
         # 去重
         unique_proxies = []
@@ -894,7 +1014,6 @@ https://example.com/free.txt
                 print(f"      {proxy_type}: {count} 个")
         
         # 构建策略组
-        remark_stats_comments = generate_remark_stats(remark_stats)
         proxy_groups = build_proxy_groups(unique_proxies, remark_nodes_map)
         
         # 生成配置
