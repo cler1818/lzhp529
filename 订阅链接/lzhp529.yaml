@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 04:21:25
+# 更新时间（东八区北京时间）: 2026-01-19 05:17:48
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 4/6
@@ -86,7 +86,7 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
-- name: 维云云-剩余流量：87.13 GB
+- name: 维云云-剩余流量：87.12 GB
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
@@ -1568,7 +1568,7 @@ proxy-groups:
   interval: 300
   strategy: consistent-hashing
   proxies:
-  - 维云云-剩余流量：87.13 GB
+  - 维云云-剩余流量：87.12 GB
   - 维云云-距离下次重置剩余：25 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1772,7 +1772,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：87.13 GB
+  - 维云云-剩余流量：87.12 GB
   - 维云云-距离下次重置剩余：25 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1976,7 +1976,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：87.13 GB
+  - 维云云-剩余流量：87.12 GB
   - 维云云-距离下次重置剩余：25 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
