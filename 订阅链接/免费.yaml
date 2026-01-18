@@ -2,40 +2,65 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 01:16:29
+# 更新时间（东八区北京时间）: 2026-01-19 02:12:09
 # 仓库名称: lzhp529
 # 输入源文件: 免费
-# 订阅链接获取情况: 0/5
+# 订阅链接获取情况: 3/5
 # 
 # 分组统计:
-#   无分组信息
+#   分组统计:
+#   None：获取失败  -  HTTP错误: 403
+#   None：获取失败  -  HTTP错误: 403
+#   None：获取失败  -  HTTP错误: 403
+#   None：获取失败  -  HTTP错误: 403
+#   None：获取失败  -  HTTP错误: 403
 # 
 # 失败的链接:
-# https://rss.zyfx6.xyz/clash/ - 无有效节点
-# https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=gkmr8wpbygo2zp0ru7iwv9lixa5mgqlg&target=clash - 无有效节点
-# https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml - 无有效节点
-# https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml - HTTP错误: 403
-# https://mxlsub.qzz.io/free - 无有效节点
+# 【None】
+# https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml
+# 失败原因：HTTP错误: 403
+#
+# 【None】
+# https://mxlsub.qzz.io/free
+# 失败原因：无有效节点
+#
 # 
 # 输入源文件内容:
 # 免费1
+# 节点数量：1090 个
 # https://rss.zyfx6.xyz/clash/
+# 节点数量：1 个
 #
 #
 # 免费2 官方token链接
+# 节点数量：18 个
 # https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=gkmr8wpbygo2zp0ru7iwv9lixa5mgqlg&target=clash
+# 节点数量：获取失败
+# 失败原因：HTTP错误: 403
 #
 #
 # 免费3
+# 节点数量：0 个
+# 失败原因：无有效节点
 # https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml
+# 节点数量：未知
+# 失败原因：未处理
 #
 #
 # LD论坛公益1
+# 节点数量：未知
+# 失败原因：未处理
 # https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml
+# 节点数量：未知
+# 失败原因：未处理
 #
 #
 # LD论坛公益2
+# 节点数量：未知
+# 失败原因：未处理
 # https://mxlsub.qzz.io/free
+# 节点数量：未知
+# 失败原因：未处理
 # 
 # ========================================
 # 配置说明:
@@ -65,13 +90,2440 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
-- name: 测试节点
-  type: ss
-  server: example.com
+- type: ss
+  skip-cert-verify: false
+  udp: false
+  server: www.360.com
+  port: 88
+  cipher: aes-256-gcm
+  password: txwl666
+  name: '🏴‍☠️ Group: https://t.me/txwl233'
+- type: ss
+  skip-cert-verify: false
+  udp: false
+  server: qq.com
+  port: 80
+  cipher: aes-256-gcm
+  password: txwl666
+  name: '🏴‍☠️ Channel: https://t.me/txwl666'
+- name: 🇺🇸 US²_2|3.8MB/s|29%|GPT⁺|TK|NF|X|[广播|机房]
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  cipher: auto
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  tls: false
+  client-fingerprint: chrome
+  network: tcp
+- type: vless
+  name: 🇫🇮 FI²_9|2.5MB/s|41%|GPT⁺|YT-RU|D+|X|History|[广播|商宽]
+  server: 78.153.139.68
+  port: 8443
+  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: false
+  reality-opts:
+    public-key: pekfYPV5U8EjfQ4_zS5c6I2NnOZ2jUlyMGAWa4FWPF4
+    short-id: 58c512b4422e2517
+  network: tcp
+  encryption: none
+  servername: images.apple.com
+- type: vless
+  name: 🇩🇪 DE_20 | ⬇️ 1.2MB/s
+  server: 185.143.233.235
+  port: 80
+  uuid: 087d8602-503b-4091-9f05-44c20792083c
+  tls: false
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: oon.visaups.ir
+    path: /
+  encryption: none
+- type: vless
+  name: 🇩🇪 DE_6 | ⬇️ 4.4MB/s
+  server: api.dark-coffe.com
+  port: 443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: GfV5t2331T.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: GfV5t2331T.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇳🇱 NL²_5|7.0MB/s|GPT⁺|TK|NF|X|History|[广播|机房]
+  server: 172.66.0.102
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 32143
+  encryption: none
+  client-fingerprint: chrome
+- type: vless
+  name: 🇩🇪 DE_8 | ⬇️ 4.0MB/s
+  server: api.dark-coffe.com
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.InFo
+- type: vless
+  name: 🇩🇪 DE²_5|5.4MB/s|YT-US|X|[原生|商宽]
+  server: 5.10.214.5
+  port: 8443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_4 | ⬇️ 2.7MB/s
+  server: api.dark-coffe.com
+  port: 8443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_3 | ⬇️ 4.2MB/s
+  server: 5.10.214.0
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇩🇪 DE²_8|6.6MB/s|100%|GPT|X|History
+  server: 5.10.214.5
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- name: 🇩🇪 DE²_3|5.5MB/s|GPT⁺|X|Succeed
+  type: socks5
+  server: 161.35.31.237
+  port: 1080
+- type: vless
+  name: 🇩🇪 DE²_10|6.9MB/s|9%|GPT⁺|YT-US|X|Succeed|[原生|机房]
+  server: 185.143.233.235
+  port: 80
+  uuid: 087d8602-503b-4091-9f05-44c20792083c
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: oon.visaups.ir
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  servername: oon.visaups.ir
+- type: vless
+  name: 🇩🇪 DE_12 | ⬇️ 3.8MB/s
+  server: 5.10.214.5
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE²_4|6.3MB/s|100%|GPT|X|Succeed|[原生|商宽]
+  server: api.dark-coffe.com
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_2 | ⬇️ 4.0MB/s
+  server: api.dark-coffe.com
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_17 | ⬇️ 3.4MB/s
+  server: 5.10.214.5
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.InFo
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.InFo
+- type: vless
+  name: 🏴‍☠️ ❓Other_1 | ⬇️ 5.9MB/s
+  server: store.ubi.com
+  port: 443
+  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: kb.as129394.me
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: kb.as129394.me
+- name: 🇳🇱 NL²_2|5.7MB/s|GPT⁺|X|Succeed
+  type: socks5
+  server: 104.248.203.234
+  port: 1080
+- type: ss
+  skip-cert-verify: false
+  udp: false
+  server: 38.244.209.215
   port: 443
   cipher: aes-256-gcm
-  password: password
-  udp: true
+  password: 17295b92-4e50-425c-af95-ee44c42bc03e
+  name: 🇫🇮 FI²_7|1.0MB/s|20%|GPT⁺|TK|X|Succeed|[广播|商宽]
+- name: 🇳🇱 NL²_3|3.1MB/s|GPT⁺|X|Succeed
+  type: socks5
+  server: 161.35.82.57
+  port: 1080
+- type: ss
+  skip-cert-verify: false
+  udp: false
+  server: 45.12.136.170
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: l668XHPejoSNNuD66BYzyehaCpZexiF7
+  name: 🇨🇾 CY²_1|5.5MB/s|22%|GPT⁺|YT-US|TK|NF|X|[广播|机房]
+- type: vless
+  name: 🇩🇪 DE²_7|6.9MB/s|33%|GPT|X|History|[原生|商宽]
+  server: api.dark-coffe.com
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2048
+  encryption: none
+  client-fingerprint: chrome
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇳🇱 NL_9 | ⬇️ 5.0MB/s
+  server: 172.66.0.102
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 32143
+  encryption: none
+  client-fingerprint: chrome
+- type: vless
+  name: 🇫🇮 FI²_4|3.7MB/s|0%|GPT⁺|X|Succeed|[广播|商宽]
+  server: 144.31.90.215
+  port: 443
+  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: tcp
+  encryption: none
+  servername: ficdn19.suio.me
+- skip-cert-verify: true
+  sni: 58.152.53.219
+  network: tcp
+  type: trojan
+  password: BxceQaOe
+  server: 58.152.53.219
+  port: 443
+  name: 🇭🇰 HK²_4|2.2MB/s|2%|YT|D+|X|Succeed
+  client-fingerprint: chrome
+- type: vless
+  name: 🇩🇪 DE_7 | ⬇️ 2.8MB/s
+  server: 5.10.214.0
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_2 | ⬇️ 3.5MB/s
+  server: 5.10.214.5
+  port: 443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: GfV5t2331T.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: GfV5t2331T.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE²_4|6.8MB/s|9%|GPT⁺|X|History|[原生|机房]
+  server: oon.visaups.ir
+  port: 80
+  uuid: 087d8602-503b-4091-9f05-44c20792083c
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: oon.visaups.ir
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: hyfuuf6.wsone.icu
+  network: tcp
+  type: trojan
+  password: M7v%w11Se*
+  server: hyfuuf6.wsone.icu
+  port: 443
+  name: 🇮🇳 IN²_1|6.4MB/s|GPT⁺|GM|YT|X|[广播|机房]
+  client-fingerprint: chrome
+- type: vless
+  name: 🇩🇪 DE²_6|6.8MB/s|33%|GPT⁺|X|History|[原生|商宽]
+  server: api.dark-coffe.com
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2048
+  encryption: none
+  client-fingerprint: chrome
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇩🇪 DE_5 | ⬇️ 2.5MB/s
+  server: 5.10.214.5
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇺🇸 US_11 | ⬇️ 6.1MB/s
+  server: www.visa.com
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇰🇿 KZ²_1|4.2MB/s|GPT|X|Succeed|[广播|机房]
+  server: kz.fasti.win
+  port: 443
+  uuid: 0d93b787-b66b-4696-a036-a0f549764f69
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rmjxUM7tGXK1tCx9DN6LujbEflBHixsg8oTsVrdTrDM
+    short-id: a28842ab2911096b
+  network: tcp
+  encryption: none
+  servername: kz.fasti.win
+- type: vless
+  name: 🇩🇪 DE²_2|9.0MB/s|X|History
+  server: api.dark-coffe.com
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- name: 🇰🇷 KR²_3|1.7MB/s|2%|GPT⁺|GM|YT|X|History
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+  username: Og%3D%3D
+- type: vless
+  name: 🇰🇿 KZ²_2|4.6MB/s|0%|GPT|X|Succeed|[广播|机房]
+  server: 91.217.10.68
+  port: 443
+  uuid: 0d93b787-b66b-4696-a036-a0f549764f69
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rmjxUM7tGXK1tCx9DN6LujbEflBHixsg8oTsVrdTrDM
+    short-id: a28842ab2911096b
+  network: tcp
+  encryption: none
+  servername: kz.fasti.win
+- type: vless
+  name: 🇩🇪 DE²_7|6.5MB/s|X
+  server: 5.10.214.0
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- name: 🇰🇷 KR²_4|1.4MB/s|2%|GPT⁺|GM|X
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+- type: vless
+  name: 🇳🇱 NL_2 | ⬇️ 2.1MB/s
+  server: bastion.h3.speed.cloudflare.com
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+  encryption: none
+- type: vless
+  name: 🇭🇰 NL²_1|4.9MB/s|0%|GPT⁺|YT-HK|TK|D+|X|[广播|机房]
+  server: miow.thecommit.sbs
+  port: 8949
+  uuid: 28f609a0-ce33-4431-97be-64d650d78157
+  tls: false
+  skip-cert-verify: false
+  network: http
+  http-opts:
+    headers:
+      Host:
+      - mdundo.com
+    path:
+    - /
+  encryption: none
+  client-fingerprint: chrome
+  servername: mdundo.com
+- type: vless
+  name: 🇺🇸 US_1 | ⬇️ 6.2MB/s
+  server: 162.159.16.63
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_2 | ⬇️ 6.3MB/s
+  server: cloudflare.182682.xyz
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇩🇪 DE_1 | ⬇️ 3.5MB/s
+  server: 25.129.197.138
+  port: 2053
+  uuid: 8a07740f-b932-4372-a3a2-ed91f184cd33
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: khamenei.dpdns.org
+    path: /eyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: khamenei.dpdns.org
+- type: vless
+  name: 🇺🇸 US_3 | ⬇️ 1.2MB/s
+  server: 136.175.178.165
+  port: 443
+  uuid: 28a825dd-81d7-47a9-93fa-d7ff003241f6
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: 2da72ce6
+  network: tcp
+  encryption: none
+  servername: navi.bankrate.com
+- type: vless
+  name: 🇰🇿 KZ_1 | ⬇️ 1.5MB/s
+  server: 91.224.74.91
+  port: 443
+  uuid: 0d93b787-b66b-4696-a036-a0f549764f69
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rmjxUM7tGXK1tCx9DN6LujbEflBHixsg8oTsVrdTrDM
+    short-id: a28842ab2911096b
+  network: tcp
+  encryption: none
+  servername: kz.fasti.win
+- type: vless
+  name: 🇰🇿 KZ_2 | ⬇️ 1.4MB/s
+  server: 91.217.10.68
+  port: 443
+  uuid: 0d93b787-b66b-4696-a036-a0f549764f69
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rmjxUM7tGXK1tCx9DN6LujbEflBHixsg8oTsVrdTrDM
+    short-id: a28842ab2911096b
+  network: tcp
+  encryption: none
+  servername: kz.fasti.win
+- type: vless
+  name: 🇹🇷 TR_1 | ⬇️ 2.5MB/s
+  server: turkiye.torprospeed.ir
+  port: 587
+  uuid: 65a1e22c-d37e-4b92-b6ca-1d09dcd1d441
+  tls: true
+  client-fingerprint: firefox
+  skip-cert-verify: false
+  reality-opts:
+    public-key: HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc
+    short-id: 916e8258c4a01b02
+  network: tcp
+  encryption: none
+  servername: excoino.com
+- type: vless
+  name: 🇫🇮 FI_1 | ⬇️ 3.9MB/s
+  server: 25.129.199.122
+  port: 2095
+  uuid: 06d4a2dd-b823-4b6a-843e-c159b6858d91
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: ip6-free2.shakhle.ir.
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  servername: ip6-free2.shakhle.ir.
+- type: vless
+  name: 🇩🇪 DE_2 | ⬇️ 2.9MB/s
+  server: api.dark-coffe.com
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2048
+  encryption: none
+  client-fingerprint: chrome
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇩🇪 DE_3 | ⬇️ 3.8MB/s
+  server: api.dark-coffe.com
+  port: 443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: GfV5t2331T.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: GfV5t2331T.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_4 | ⬇️ 5.1MB/s
+  server: api.dark-coffe.com
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇺🇸 US_4 | ⬇️ 2.6MB/s
+  server: 217.142.185.111
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇭🇰 HK_1 | ⬇️ 2.2MB/s
+  server: 43.161.253.78
+  port: 9527
+  uuid: d4a23188-85b0-4b46-b84b-f1d36d66c03e
+  tls: false
+  skip-cert-verify: false
+  network: tcp
+  encryption: none
+  client-fingerprint: chrome
+- type: vless
+  name: 🇬🇧 GB_1 | ⬇️ 3.8MB/s
+  server: england.torprospeed.ir
+  port: 587
+  uuid: 65a1e22c-d37e-4b92-b6ca-1d09dcd1d441
+  tls: true
+  client-fingerprint: firefox
+  skip-cert-verify: false
+  reality-opts:
+    public-key: HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc
+    short-id: 916e8258c4a01b02
+  network: tcp
+  encryption: none
+  servername: excoino.com
+- type: vless
+  name: 🇺🇸 US_5 | ⬇️ 4.7MB/s
+  server: 162.159.44.142
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_6 | ⬇️ 5.6MB/s
+  server: 162.159.45.232
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_7 | ⬇️ 3.9MB/s
+  server: 104.21.227.134
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_8 | ⬇️ 2.8MB/s
+  server: 104.16.250.22
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_9 | ⬇️ 5.9MB/s
+  server: 104.18.185.26
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: l.ayovo.netlib.re
+- name: 🇳🇱 NL_1 | ⬇️ 3.6MB/s
+  type: socks5
+  server: 161.35.82.57
+  port: 1080
+- type: vless
+  name: 🇰🇷 KR_1 | ⬇️ 3.9MB/s
+  server: staticdelivery.nexusmods.com
+  port: 443
+  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: kb.as129394.me
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: kb.as129394.me
+- type: vless
+  name: 🇺🇸 US_10 | ⬇️ 4.7MB/s
+  server: 104.17.25.173
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇩🇪 DE_5 | ⬇️ 2.9MB/s
+  server: api.dark-coffe.com
+  port: 8443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_6 | ⬇️ 2.7MB/s
+  server: 5.10.214.5
+  port: 443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: GfV5t2331T.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: GfV5t2331T.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_7 | ⬇️ 2.7MB/s
+  server: 5.10.214.5
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇩🇪 DE_8 | ⬇️ 3.7MB/s
+  server: 5.10.214.0
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_9 | ⬇️ 3.7MB/s
+  server: api.dark-coffe.com
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.InFo
+- type: vless
+  name: 🇺🇸 US_11 | ⬇️ 5.3MB/s
+  server: v2.dabache.top
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_12 | ⬇️ 4.4MB/s
+  server: 104.21.224.5
+  port: 443
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: l.ayovo.netlib.re
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: l.ayovo.netlib.re
+- type: vless
+  name: 🇺🇸 US_13 | ⬇️ 4.5MB/s
+  server: 104.17.102.95
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇮🇳 IN_1 | ⬇️ 4.0MB/s
+  server: 95.174.92.156
+  port: 443
+  uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw
+    short-id: c7e42004e5f024be
+  network: tcp
+  encryption: none
+  servername: sun6-21.userapi.com
+- type: vless
+  name: 🇩🇪 DE_10 | ⬇️ 2.8MB/s
+  server: 5.10.214.0
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇺🇸 US_14 | ⬇️ 1.1MB/s
+  server: 104.17.102.95
+  port: 8443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_15 | ⬇️ 3.2MB/s
+  server: 104.18.45.223
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_16 | ⬇️ 4.5MB/s
+  server: saas.sin.fan
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_17 | ⬇️ 4.2MB/s
+  server: 104.19.150.163
+  port: 8443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇩🇪 DE_11 | ⬇️ 3.4MB/s
+  server: 5.10.214.0
+  port: 443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: GfV5t2331T.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: GfV5t2331T.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_12 | ⬇️ 3.9MB/s
+  server: 5.10.214.5
+  port: 2096
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TzS7v35LfD.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TzS7v35LfD.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇩🇪 DE_13 | ⬇️ 3.2MB/s
+  server: 5.10.214.5
+  port: 8443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+- type: vless
+  name: 🇺🇸 US_18 | ⬇️ 3.6MB/s
+  server: www.visa.com
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_19 | ⬇️ 3.7MB/s
+  server: 172.64.229.220
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇩🇪 DE_14 | ⬇️ 2.3MB/s
+  server: 5.10.214.5
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.InFo
+- type: vless
+  name: 🇩🇪 DE_15 | ⬇️ 4.0MB/s
+  server: 5.10.214.0
+  port: 8443
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+    path: /
+  encryption: none
+  servername: TjLwH7cTdH.sMaRtTeChZaAl.InFo
+- skip-cert-verify: true
+  sni: 35.180.16.16
+  client-fingerprint: chrome
+  network: tcp
+  type: trojan
+  password: telegram-id-privatevpns
+  server: 35.180.16.16
+  port: 22222
+  name: 🇫🇷 FR_1 | ⬇️ 3.9MB/s
+- type: hysteria2
+  name: 🇩🇪 DE_16 | ⬇️ 2.8MB/s
+  server: de3.xiaoliyu.cyou
+  port: 4433
+  password: 7424db1f-ba68-496d-9426-4018b6a3a23c
+  sni: de3.xiaoliyu.cyou
+  skip-cert-verify: true
+  tfo: false
+- type: vless
+  name: 🇳🇱 NL_2 | ⬇️ 4.1MB/s
+  server: bastion.h3.speed.cloudflare.com
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+  encryption: none
+- type: vless
+  name: 🇵🇱 PL_1 | ⬇️ 3.1MB/s
+  server: 144.31.0.64
+  port: 443
+  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: tcp
+  encryption: none
+  servername: plcdn1.suio.me
+- type: vless
+  name: 🇺🇸 US_20 | ⬇️ 5.5MB/s
+  server: vip3.kaixincloud.top
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_21 | ⬇️ 5.0MB/s
+  server: vip2.kaixincloud.top
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_22 | ⬇️ 5.6MB/s
+  server: v3.dabache.top
+  port: 8443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_23 | ⬇️ 5.5MB/s
+  server: quick-edit.devprod.cloudflare.dev
+  port: 2053
+  uuid: 696b542d-770f-e4e2-8414-be6f18a25439
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: ss.saas.int.yt
+    path: /proxyip=sjc.o00o.ooo
+  encryption: none
+  servername: ss.saas.int.yt
+- type: vless
+  name: 🇳🇱 NL_3 | ⬇️ 5.0MB/s
+  server: bastion.h3.speed.cloudflare.com
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+  encryption: none
+  servername: visvuev-272526281716252527717252.poshakhowdy.ir.
+- type: vless
+  name: 🇩🇪 DE_17 | ⬇️ 6.6MB/s
+  server: 104.17.15.87
+  port: 80
+  uuid: f929cc78-e2a1-4ce3-8051-3e9538405144
+  tls: false
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: germany.xydcqd.workers.dev
+    path: /@WireXnet
+  encryption: none
+- type: vless
+  name: 🇩🇪 DE_18 | ⬇️ 4.5MB/s
+  server: 159.195.26.28
+  port: 443
+  uuid: 84f66368-8a37-468e-ae95-5622255fd4db
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ckRcueERkPqqjZABwxqni_J_Nbb70Q6k5fEEUAjoImw
+  network: tcp
+  encryption: none
+  servername: live.com
+- type: vless
+  name: 🇺🇸 US_24 | ⬇️ 3.1MB/s
+  server: 136.175.178.165
+  port: 443
+  uuid: cbbfd28f-7c3f-48b4-b33c-a78cd362f5e5
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: 2da72ce6
+  network: tcp
+  encryption: none
+  servername: navi.bankrate.com
+- type: vless
+  name: 🇺🇸 US_25 | ⬇️ 5.2MB/s
+  server: vip1.kaixincloud.top
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+  encryption: none
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇺🇸 US_26 | ⬇️ 1.8MB/s
+  server: 136.175.178.165
+  port: 443
+  uuid: e778320b-8bc2-4fa8-a4c6-18cb412d03e6
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: 2da72ce6
+  network: tcp
+  encryption: none
+  servername: navi.bankrate.com
+- type: vless
+  name: 🇩🇪 DE_19 | ⬇️ 6.6MB/s
+  server: 213.176.73.206
+  port: 2083
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ
+    short-id: 6da16b1335651b38
+  network: grpc
+  grpc-opts:
+    grpc-service-name: UpdateService
+  encryption: none
+  servername: apple.com
+- type: vless
+  name: 🇷🇺 RU_1 | ⬇️ 3.3MB/s
+  server: 51.250.43.188
+  port: 51191
+  uuid: 62770d79-dc4d-07d0-b01c-ea30399725aa
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4CH3o5zOMcFNMbnwXnkAg0FFepmsc0QzhahXkUzb1ik
+    short-id: d8c6b58bcbb0c323
+  network: tcp
+  encryption: none
+  servername: ads.x5.ru
+- type: vless
+  name: 🇰🇿 KZ_3 | ⬇️ 2.9MB/s
+  server: kz.fasti.win
+  port: 443
+  uuid: 0d93b787-b66b-4696-a036-a0f549764f69
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rmjxUM7tGXK1tCx9DN6LujbEflBHixsg8oTsVrdTrDM
+    short-id: a28842ab2911096b
+  network: tcp
+  encryption: none
+  servername: kz.fasti.win
+- type: vless
+  name: 🇷🇺 RU_2 | ⬇️ 2.8MB/s
+  server: 37.18.15.139
+  port: 443
+  uuid: 4371ad14-b981-4699-bedf-83fb79bde3e6
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: FkmYFobwxLMLEktYXywmjthuEYCZggITsxwPNasTKUg
+    short-id: 4a3ad88ff867a295
+  network: tcp
+  encryption: none
+  servername: max.ru
+- type: vless
+  name: 🇵🇱 PL_2 | ⬇️ 3.2MB/s
+  server: 144.31.1.127
+  port: 443
+  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  tls: true
+  skip-cert-verify: false
+  network: tcp
+  encryption: none
+  client-fingerprint: chrome
+  servername: plcdn13.suio.me
+- type: vless
+  name: 🇸🇪 SE_1 | ⬇️ 3.1MB/s
+  server: 176.125.240.166
+  port: 443
+  uuid: 002accb526534fcab24a72b0ea1cff59
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: GgiY38LjRI1hS1LKhdqvtJ5SDDO436GvihG-TzEI2XE
+    short-id: aabbccdd
+  network: tcp
+  encryption: none
+  servername: apple.com
+- type: vless
+  name: 🇫🇮 FI_2 | ⬇️ 3.0MB/s
+  server: 144.31.90.215
+  port: 443
+  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  tls: true
+  skip-cert-verify: false
+  network: tcp
+  encryption: none
+  client-fingerprint: chrome
+  servername: ficdn19.suio.me
+- type: vless
+  name: 🇵🇱 PL_3 | ⬇️ 2.9MB/s
+  server: 144.31.2.122
+  port: 443
+  uuid: 7993192f-2875-4aed-ac8f-26f1596cf8e7
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 8CLRwG6JsXb1MrOpnmMlnAFLQ4bQqwaE57iEACmiF1o
+    short-id: 8be9fb528a
+  network: tcp
+  encryption: none
+  servername: sun6-21.userapi.com
+- type: vless
+  name: 🇺🇸 US_27 | ⬇️ 4.1MB/s
+  server: cf-cname.xingpingcn.top
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇳🇱 NL_4 | ⬇️ 3.5MB/s
+  server: 172.66.0.102
+  port: 80
+  uuid: 👉👉BanV2ray👈👈
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: visvuev-272526281716252527717252.poshakhowdy.ir.
+    path: /www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.speedtest.net-www.speedtest.net-www.bunny.net-www.bunny.net-www.speedtest.net-www.bunny.net-www.speedtest.net
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 32143
+  encryption: none
+  client-fingerprint: chrome
+- type: vless
+  name: 🇺🇸 US_28 | ⬇️ 4.6MB/s
+  server: cf.3666888.xyz
+  port: 2096
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: sni.meibidi.pp.ua
+    path: /
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  client-fingerprint: chrome
+  servername: sni.meibidi.pp.ua
+- type: vless
+  name: 🇷🇺 RU_3 | ⬇️ 5.6MB/s
+  server: 95.163.209.178
+  port: 2083
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ
+    short-id: 6da16b1335651b38
+  network: grpc
+  grpc-opts:
+    grpc-service-name: UpdateService
+  encryption: none
+  servername: ads.x5.ru
+- type: vless
+  name: 🇦🇹 AT_1 | ⬇️ 3.2MB/s
+  server: 152.53.48.224
+  port: 22955
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 9Mt_Y8J_qDb1khlieWnhDSAq-kGtLHw6aOKgkAzOMms
+    short-id: 6ba85179e30d4fc2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
+  encryption: none
+  servername: one-piece.com
+- type: vless
+  name: 🇷🇺 RU_4 | ⬇️ 2.7MB/s
+  server: 79.174.92.44
+  port: 2083
+  uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ
+    short-id: 6da16b1335651b38
+  network: grpc
+  grpc-opts:
+    grpc-service-name: UpdateService
+  encryption: none
+  servername: ads.x5.ru
+- type: vless
+  name: 🇷🇺 RU_5 | ⬇️ 2.8MB/s
+  server: 146.185.208.60
+  port: 443
+  uuid: 7d39c92f-abae-46ff-a669-9e4d1e7e8a62
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: LHcascaxOxugVSALgsYx46nB-vuhT7ANOneu0xb6SzQ
+    short-id: 3b25133dd9e5c23f
+  network: tcp
+  encryption: none
+  servername: max.ru
+- type: vless
+  name: 🇮🇳 IN_2 | ⬇️ 3.3MB/s
+  server: 45.89.105.24
+  port: 4443
+  uuid: 3f688b2a-373a-4be1-846d-b159404b73b2
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
+  network: tcp
+  encryption: none
+  servername: github.com
+- name: 🇷🇺 RU_6 | ⬇️ 1.1MB/s
+  type: vmess
+  server: 130.49.213.103
+  port: 26824
+  cipher: auto
+  uuid: 9631096d-3032-4942-9446-bdf12665682b
+  alterId: 0
+  tls: true
+  network: ws
+  ws-opts:
+    path: /speedtest
+    headers:
+      Host: imafake.locker
+  client-fingerprint: chrome
+  servername: imafake.locker
+- type: vless
+  name: 🇳🇱 NL_5 | ⬇️ 6.3MB/s
+  server: 25.129.199.205
+  port: 2053
+  uuid: 8a07740f-b932-4372-a3a2-ed91f184cd33
+  tls: true
+  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    headers:
+      Host: khamenei.dpdns.org
+    path: /eyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
+    early-data-header-name: Sec-WebSocket-Protocol
+    max-early-data: 2560
+  encryption: none
+  servername: KhAmeneI.DPdNs.OrG
+- sni: de.yiciyuanquicken.online
+  client-fingerprint: chrome
+  network: tcp
+  type: trojan
+  password: d51abb35-94a4-4529-9244-2808beaa4624
+  server: de.yiciyuanquicken.online
+  port: 35837
+  name: 🇩🇪 DE_20 | ⬇️ 2.2MB/s
+- type: ss
+  skip-cert-verify: false
+  udp: false
+  server: 103.236.62.154
+  port: 33014
+  cipher: 2022-blake3-aes-256-gcm
+  password: axT9g9SpM2MMMu5GJxDSGCJsuhfc3YpqtmsaQKfpLNs=:3AplWDlQp/OQt6advNeFF/LgjdfTYn2rPX+7F4Y8kOE=
+  name: 🇸🇬 新加坡
+- skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  network: tcp
+  type: trojan
+  password: 6a4d5172-89c1-4876-9f2e-db4aa1868764
+  server: green2.cdntencentmusic.com
+  port: 31103
+  name: 🇭🇰 香港
+  client-fingerprint: chrome
+- type: vless
+  name: 🇩🇪 DE Florian 05
+  server: 5.10.214.5
+  port: 2087
+  uuid: 7e58699f-1d5d-4f6b-b181-cb74f0ad9509
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    headers:
+      Host: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  servername: 5JxGp6VrFh.SmArTtEcHzAaL.iNfO
+- type: vless
+  name: 🇫🇮 FI GCSL 03
+  server: 78.153.139.68
+  port: 8443
+  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: true
+  reality-opts:
+    public-key: pekfYPV5U8EjfQ4_zS5c6I2NnOZ2jUlyMGAWa4FWPF4
+    short-id: 58c512b4422e2517
+  network: tcp
+  encryption: none
+  servername: images.apple.com
+- type: vless
+  name: 🇷🇺 RU Kviktel 03
+  server: 45.139.26.152
+  port: 7443
+  uuid: 7fc953d6-ae75-46fb-a970-10b57d513487
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  skip-cert-verify: true
+  reality-opts:
+    public-key: BTkKaFt2xac4xAHn3EXrBKV0d8ItHSfciMFnxg57BGA
+    short-id: fd88bd27db4cc661
+  network: tcp
+  encryption: none
+  servername: eh.vk.com
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 33941
+  name: 🇭🇰 香港02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 49562
+  name: 🇭🇰 香港03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 49649
+  name: 🇭🇰 香港04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: bvc.bilivideo.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 30005
+  name: 🇭🇰 香港05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 22335
+  name: 🇭🇰 香港08
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 36091
+  name: 🇭🇰 香港09
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 24976
+  name: 🇭🇰 香港10
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 24557
+  name: 🇭🇰 香港11
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 24184
+  name: 🇭🇰 香港12
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 61142
+  name: 🇭🇰 香港13
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 42492
+  name: 🇭🇰 香港14
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 61110
+  name: 🇭🇰 香港15
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 33935
+  name: 🇭🇰 香港16
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 28249
+  name: 🇭🇰 香港17
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 23282
+  name: 🇭🇰 香港18
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 62250
+  name: 🇭🇰 香港19
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 10628
+  name: 🇭🇰 香港20
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 47107
+  name: 🇭🇰 香港21
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 44639
+  name: 🇭🇰 香港22
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 45787
+  name: 🇸🇬 新加坡01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 41166
+  name: 🇸🇬 新加坡02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 36008
+  name: 🇸🇬 新加坡03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 36009
+  name: 🇸🇬 新加坡04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 29956
+  name: 🇸🇬 新加坡05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 20259
+  name: 🇸🇬 新加坡06
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 52977
+  name: 🇸🇬 新加坡07
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 36260
+  name: 🇸🇬 新加坡08
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 31585
+  name: 🇸🇬 新加坡09
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 42545
+  name: 🇸🇬 新加坡10
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 46976
+  name: 🇯🇵 日本01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 38066
+  name: 🇯🇵 日本02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 15016
+  name: 🇯🇵 日本04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 59477
+  name: 🇯🇵 日本05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 44100
+  name: 🇯🇵 日本06
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 19266
+  name: 🇯🇵 日本07
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 37473
+  name: 🇯🇵 日本08
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 34976
+  name: 🇯🇵 日本09
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 20803
+  name: 🇹🇼 台湾01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 13121
+  name: 🇹🇼 台湾02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 28035
+  name: 🇹🇼 台湾03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 52134
+  name: 🇹🇼 台湾04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: v1.kwaicdn.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 54325
+  name: 🇹🇼 台湾05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 12474
+  name: 🇰🇷 韩国01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 35121
+  name: 🇰🇷 韩国02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 21994
+  name: 🇮🇳 印度01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 22290
+  name: 🇮🇳 印度02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 16129
+  name: 🇮🇳 印度03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 26236
+  name: 🇮🇳 印度04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 49033
+  name: 🇮🇳 印度05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 31794
+  name: 🇻🇳 越南01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 52026
+  name: 🇻🇳 越南02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 50290
+  name: 🇻🇳 越南03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 39477
+  name: 🇻🇳 越南04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 19606
+  name: 🇻🇳 越南05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 53381
+  name: 🇻🇳 越南06
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 50838
+  name: 🇻🇳 越南07
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 50283
+  name: 🇻🇳 越南08
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 38818
+  name: 🇻🇳 越南09
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 35238
+  name: 🇻🇳 越南10
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 61812
+  name: 🇻🇳 越南11
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 15485
+  name: 🇻🇳 越南12
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 23834
+  name: 🇻🇳 越南13
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 43651
+  name: 🇻🇳 越南14
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 27292
+  name: 🇻🇳 越南15
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 57281
+  name: 🇺🇸 美国01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 56306
+  name: 🇺🇸 美国02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 50977
+  name: 🇺🇸 美国03
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 57999
+  name: 🇺🇸 美国04
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 38185
+  name: 🇺🇸 美国05
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 52725
+  name: 🇺🇸 美国06
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 34015
+  name: 🇺🇸 美国07
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 53367
+  name: 🇺🇸 美国08
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 13377
+  name: 🇺🇸 美国09
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: bvc.bilivideo.com
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 45367
+  name: 🇩🇪 德国01
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 53760
+  name: 🇩🇪 德国02
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 17684
+  name: 🇲🇴 澳门
+  client-fingerprint: chrome
+- skip-cert-verify: true
+  sni: mmbiz.qpic.cn
+  network: tcp
+  type: trojan
+  password: 65762559-4288-4b42-b7ea-edf80342415d
+  server: 123001.wdy88.com
+  port: 15516
+  name: 🇹🇭 泰国1
+  client-fingerprint: chrome
 proxy-groups:
 - name: 节点选择
   type: select
@@ -84,11 +2536,413 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   strategy: consistent-hashing
+  proxies:
+  - '🏴‍☠️ Group: https://t.me/txwl233'
+  - '🏴‍☠️ Channel: https://t.me/txwl666'
+  - 🇺🇸 US²_2|3.8MB/s|29%|GPT⁺|TK|NF|X|[广播|机房]
+  - 🇫🇮 FI²_9|2.5MB/s|41%|GPT⁺|YT-RU|D+|X|History|[广播|商宽]
+  - 🇩🇪 DE_20 | ⬇️ 1.2MB/s
+  - 🇩🇪 DE_6 | ⬇️ 4.4MB/s
+  - 🇳🇱 NL²_5|7.0MB/s|GPT⁺|TK|NF|X|History|[广播|机房]
+  - 🇩🇪 DE_8 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE²_5|5.4MB/s|YT-US|X|[原生|商宽]
+  - 🇩🇪 DE_4 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_3 | ⬇️ 4.2MB/s
+  - 🇩🇪 DE²_8|6.6MB/s|100%|GPT|X|History
+  - 🇩🇪 DE²_3|5.5MB/s|GPT⁺|X|Succeed
+  - 🇩🇪 DE²_10|6.9MB/s|9%|GPT⁺|YT-US|X|Succeed|[原生|机房]
+  - 🇩🇪 DE_12 | ⬇️ 3.8MB/s
+  - 🇩🇪 DE²_4|6.3MB/s|100%|GPT|X|Succeed|[原生|商宽]
+  - 🇩🇪 DE_2 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE_17 | ⬇️ 3.4MB/s
+  - 🏴‍☠️ ❓Other_1 | ⬇️ 5.9MB/s
+  - 🇳🇱 NL²_2|5.7MB/s|GPT⁺|X|Succeed
+  - 🇫🇮 FI²_7|1.0MB/s|20%|GPT⁺|TK|X|Succeed|[广播|商宽]
+  - 🇳🇱 NL²_3|3.1MB/s|GPT⁺|X|Succeed
+  - 🇨🇾 CY²_1|5.5MB/s|22%|GPT⁺|YT-US|TK|NF|X|[广播|机房]
+  - 🇩🇪 DE²_7|6.9MB/s|33%|GPT|X|History|[原生|商宽]
+  - 🇳🇱 NL_9 | ⬇️ 5.0MB/s
+  - 🇫🇮 FI²_4|3.7MB/s|0%|GPT⁺|X|Succeed|[广播|商宽]
+  - 🇭🇰 HK²_4|2.2MB/s|2%|YT|D+|X|Succeed
+  - 🇩🇪 DE_7 | ⬇️ 2.8MB/s
+  - 🇩🇪 DE_2 | ⬇️ 3.5MB/s
+  - 🇩🇪 DE²_4|6.8MB/s|9%|GPT⁺|X|History|[原生|机房]
+  - 🇮🇳 IN²_1|6.4MB/s|GPT⁺|GM|YT|X|[广播|机房]
+  - 🇩🇪 DE²_6|6.8MB/s|33%|GPT⁺|X|History|[原生|商宽]
+  - 🇩🇪 DE_5 | ⬇️ 2.5MB/s
+  - 🇺🇸 US_11 | ⬇️ 6.1MB/s
+  - 🇰🇿 KZ²_1|4.2MB/s|GPT|X|Succeed|[广播|机房]
+  - 🇩🇪 DE²_2|9.0MB/s|X|History
+  - 🇰🇷 KR²_3|1.7MB/s|2%|GPT⁺|GM|YT|X|History
+  - 🇰🇿 KZ²_2|4.6MB/s|0%|GPT|X|Succeed|[广播|机房]
+  - 🇩🇪 DE²_7|6.5MB/s|X
+  - 🇰🇷 KR²_4|1.4MB/s|2%|GPT⁺|GM|X
+  - 🇳🇱 NL_2 | ⬇️ 2.1MB/s
+  - 🇭🇰 NL²_1|4.9MB/s|0%|GPT⁺|YT-HK|TK|D+|X|[广播|机房]
+  - 🇺🇸 US_1 | ⬇️ 6.2MB/s
+  - 🇺🇸 US_2 | ⬇️ 6.3MB/s
+  - 🇩🇪 DE_1 | ⬇️ 3.5MB/s
+  - 🇺🇸 US_3 | ⬇️ 1.2MB/s
+  - 🇰🇿 KZ_1 | ⬇️ 1.5MB/s
+  - 🇰🇿 KZ_2 | ⬇️ 1.4MB/s
+  - 🇹🇷 TR_1 | ⬇️ 2.5MB/s
+  - 🇫🇮 FI_1 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_2 | ⬇️ 2.9MB/s
+  - 🇩🇪 DE_3 | ⬇️ 3.8MB/s
+  - 🇩🇪 DE_4 | ⬇️ 5.1MB/s
+  - 🇺🇸 US_4 | ⬇️ 2.6MB/s
+  - 🇭🇰 HK_1 | ⬇️ 2.2MB/s
+  - 🇬🇧 GB_1 | ⬇️ 3.8MB/s
+  - 🇺🇸 US_5 | ⬇️ 4.7MB/s
+  - 🇺🇸 US_6 | ⬇️ 5.6MB/s
+  - 🇺🇸 US_7 | ⬇️ 3.9MB/s
+  - 🇺🇸 US_8 | ⬇️ 2.8MB/s
+  - 🇺🇸 US_9 | ⬇️ 5.9MB/s
+  - 🇳🇱 NL_1 | ⬇️ 3.6MB/s
+  - 🇰🇷 KR_1 | ⬇️ 3.9MB/s
+  - 🇺🇸 US_10 | ⬇️ 4.7MB/s
+  - 🇩🇪 DE_5 | ⬇️ 2.9MB/s
+  - 🇩🇪 DE_6 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_7 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_8 | ⬇️ 3.7MB/s
+  - 🇩🇪 DE_9 | ⬇️ 3.7MB/s
+  - 🇺🇸 US_11 | ⬇️ 5.3MB/s
+  - 🇺🇸 US_12 | ⬇️ 4.4MB/s
+  - 🇺🇸 US_13 | ⬇️ 4.5MB/s
+  - 🇮🇳 IN_1 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE_10 | ⬇️ 2.8MB/s
+  - 🇺🇸 US_14 | ⬇️ 1.1MB/s
+  - 🇺🇸 US_15 | ⬇️ 3.2MB/s
+  - 🇺🇸 US_16 | ⬇️ 4.5MB/s
+  - 🇺🇸 US_17 | ⬇️ 4.2MB/s
+  - 🇩🇪 DE_11 | ⬇️ 3.4MB/s
+  - 🇩🇪 DE_12 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_13 | ⬇️ 3.2MB/s
+  - 🇺🇸 US_18 | ⬇️ 3.6MB/s
+  - 🇺🇸 US_19 | ⬇️ 3.7MB/s
+  - 🇩🇪 DE_14 | ⬇️ 2.3MB/s
+  - 🇩🇪 DE_15 | ⬇️ 4.0MB/s
+  - 🇫🇷 FR_1 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_16 | ⬇️ 2.8MB/s
+  - 🇳🇱 NL_2 | ⬇️ 4.1MB/s
+  - 🇵🇱 PL_1 | ⬇️ 3.1MB/s
+  - 🇺🇸 US_20 | ⬇️ 5.5MB/s
+  - 🇺🇸 US_21 | ⬇️ 5.0MB/s
+  - 🇺🇸 US_22 | ⬇️ 5.6MB/s
+  - 🇺🇸 US_23 | ⬇️ 5.5MB/s
+  - 🇳🇱 NL_3 | ⬇️ 5.0MB/s
+  - 🇩🇪 DE_17 | ⬇️ 6.6MB/s
+  - 🇩🇪 DE_18 | ⬇️ 4.5MB/s
+  - 🇺🇸 US_24 | ⬇️ 3.1MB/s
+  - 🇺🇸 US_25 | ⬇️ 5.2MB/s
+  - 🇺🇸 US_26 | ⬇️ 1.8MB/s
+  - 🇩🇪 DE_19 | ⬇️ 6.6MB/s
+  - 🇷🇺 RU_1 | ⬇️ 3.3MB/s
+  - 🇰🇿 KZ_3 | ⬇️ 2.9MB/s
+  - 🇷🇺 RU_2 | ⬇️ 2.8MB/s
+  - 🇵🇱 PL_2 | ⬇️ 3.2MB/s
+  - 🇸🇪 SE_1 | ⬇️ 3.1MB/s
+  - 🇫🇮 FI_2 | ⬇️ 3.0MB/s
+  - 🇵🇱 PL_3 | ⬇️ 2.9MB/s
+  - 🇺🇸 US_27 | ⬇️ 4.1MB/s
+  - 🇳🇱 NL_4 | ⬇️ 3.5MB/s
+  - 🇺🇸 US_28 | ⬇️ 4.6MB/s
+  - 🇷🇺 RU_3 | ⬇️ 5.6MB/s
+  - 🇦🇹 AT_1 | ⬇️ 3.2MB/s
+  - 🇷🇺 RU_4 | ⬇️ 2.7MB/s
+  - 🇷🇺 RU_5 | ⬇️ 2.8MB/s
+  - 🇮🇳 IN_2 | ⬇️ 3.3MB/s
+  - 🇷🇺 RU_6 | ⬇️ 1.1MB/s
+  - 🇳🇱 NL_5 | ⬇️ 6.3MB/s
+  - 🇩🇪 DE_20 | ⬇️ 2.2MB/s
+  - 🇸🇬 新加坡
+  - 🇭🇰 香港
+  - 🇩🇪 DE Florian 05
+  - 🇫🇮 FI GCSL 03
+  - 🇷🇺 RU Kviktel 03
+  - 🇭🇰 香港02
+  - 🇭🇰 香港03
+  - 🇭🇰 香港04
+  - 🇭🇰 香港05
+  - 🇭🇰 香港08
+  - 🇭🇰 香港09
+  - 🇭🇰 香港10
+  - 🇭🇰 香港11
+  - 🇭🇰 香港12
+  - 🇭🇰 香港13
+  - 🇭🇰 香港14
+  - 🇭🇰 香港15
+  - 🇭🇰 香港16
+  - 🇭🇰 香港17
+  - 🇭🇰 香港18
+  - 🇭🇰 香港19
+  - 🇭🇰 香港20
+  - 🇭🇰 香港21
+  - 🇭🇰 香港22
+  - 🇸🇬 新加坡01
+  - 🇸🇬 新加坡02
+  - 🇸🇬 新加坡03
+  - 🇸🇬 新加坡04
+  - 🇸🇬 新加坡05
+  - 🇸🇬 新加坡06
+  - 🇸🇬 新加坡07
+  - 🇸🇬 新加坡08
+  - 🇸🇬 新加坡09
+  - 🇸🇬 新加坡10
+  - 🇯🇵 日本01
+  - 🇯🇵 日本02
+  - 🇯🇵 日本04
+  - 🇯🇵 日本05
+  - 🇯🇵 日本06
+  - 🇯🇵 日本07
+  - 🇯🇵 日本08
+  - 🇯🇵 日本09
+  - 🇹🇼 台湾01
+  - 🇹🇼 台湾02
+  - 🇹🇼 台湾03
+  - 🇹🇼 台湾04
+  - 🇹🇼 台湾05
+  - 🇰🇷 韩国01
+  - 🇰🇷 韩国02
+  - 🇮🇳 印度01
+  - 🇮🇳 印度02
+  - 🇮🇳 印度03
+  - 🇮🇳 印度04
+  - 🇮🇳 印度05
+  - 🇻🇳 越南01
+  - 🇻🇳 越南02
+  - 🇻🇳 越南03
+  - 🇻🇳 越南04
+  - 🇻🇳 越南05
+  - 🇻🇳 越南06
+  - 🇻🇳 越南07
+  - 🇻🇳 越南08
+  - 🇻🇳 越南09
+  - 🇻🇳 越南10
+  - 🇻🇳 越南11
+  - 🇻🇳 越南12
+  - 🇻🇳 越南13
+  - 🇻🇳 越南14
+  - 🇻🇳 越南15
+  - 🇺🇸 美国01
+  - 🇺🇸 美国02
+  - 🇺🇸 美国03
+  - 🇺🇸 美国04
+  - 🇺🇸 美国05
+  - 🇺🇸 美国06
+  - 🇺🇸 美国07
+  - 🇺🇸 美国08
+  - 🇺🇸 美国09
+  - 🇩🇪 德国01
+  - 🇩🇪 德国02
+  - 🇲🇴 澳门
+  - 🇹🇭 泰国1
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
+  proxies:
+  - '🏴‍☠️ Group: https://t.me/txwl233'
+  - '🏴‍☠️ Channel: https://t.me/txwl666'
+  - 🇺🇸 US²_2|3.8MB/s|29%|GPT⁺|TK|NF|X|[广播|机房]
+  - 🇫🇮 FI²_9|2.5MB/s|41%|GPT⁺|YT-RU|D+|X|History|[广播|商宽]
+  - 🇩🇪 DE_20 | ⬇️ 1.2MB/s
+  - 🇩🇪 DE_6 | ⬇️ 4.4MB/s
+  - 🇳🇱 NL²_5|7.0MB/s|GPT⁺|TK|NF|X|History|[广播|机房]
+  - 🇩🇪 DE_8 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE²_5|5.4MB/s|YT-US|X|[原生|商宽]
+  - 🇩🇪 DE_4 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_3 | ⬇️ 4.2MB/s
+  - 🇩🇪 DE²_8|6.6MB/s|100%|GPT|X|History
+  - 🇩🇪 DE²_3|5.5MB/s|GPT⁺|X|Succeed
+  - 🇩🇪 DE²_10|6.9MB/s|9%|GPT⁺|YT-US|X|Succeed|[原生|机房]
+  - 🇩🇪 DE_12 | ⬇️ 3.8MB/s
+  - 🇩🇪 DE²_4|6.3MB/s|100%|GPT|X|Succeed|[原生|商宽]
+  - 🇩🇪 DE_2 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE_17 | ⬇️ 3.4MB/s
+  - 🏴‍☠️ ❓Other_1 | ⬇️ 5.9MB/s
+  - 🇳🇱 NL²_2|5.7MB/s|GPT⁺|X|Succeed
+  - 🇫🇮 FI²_7|1.0MB/s|20%|GPT⁺|TK|X|Succeed|[广播|商宽]
+  - 🇳🇱 NL²_3|3.1MB/s|GPT⁺|X|Succeed
+  - 🇨🇾 CY²_1|5.5MB/s|22%|GPT⁺|YT-US|TK|NF|X|[广播|机房]
+  - 🇩🇪 DE²_7|6.9MB/s|33%|GPT|X|History|[原生|商宽]
+  - 🇳🇱 NL_9 | ⬇️ 5.0MB/s
+  - 🇫🇮 FI²_4|3.7MB/s|0%|GPT⁺|X|Succeed|[广播|商宽]
+  - 🇭🇰 HK²_4|2.2MB/s|2%|YT|D+|X|Succeed
+  - 🇩🇪 DE_7 | ⬇️ 2.8MB/s
+  - 🇩🇪 DE_2 | ⬇️ 3.5MB/s
+  - 🇩🇪 DE²_4|6.8MB/s|9%|GPT⁺|X|History|[原生|机房]
+  - 🇮🇳 IN²_1|6.4MB/s|GPT⁺|GM|YT|X|[广播|机房]
+  - 🇩🇪 DE²_6|6.8MB/s|33%|GPT⁺|X|History|[原生|商宽]
+  - 🇩🇪 DE_5 | ⬇️ 2.5MB/s
+  - 🇺🇸 US_11 | ⬇️ 6.1MB/s
+  - 🇰🇿 KZ²_1|4.2MB/s|GPT|X|Succeed|[广播|机房]
+  - 🇩🇪 DE²_2|9.0MB/s|X|History
+  - 🇰🇷 KR²_3|1.7MB/s|2%|GPT⁺|GM|YT|X|History
+  - 🇰🇿 KZ²_2|4.6MB/s|0%|GPT|X|Succeed|[广播|机房]
+  - 🇩🇪 DE²_7|6.5MB/s|X
+  - 🇰🇷 KR²_4|1.4MB/s|2%|GPT⁺|GM|X
+  - 🇳🇱 NL_2 | ⬇️ 2.1MB/s
+  - 🇭🇰 NL²_1|4.9MB/s|0%|GPT⁺|YT-HK|TK|D+|X|[广播|机房]
+  - 🇺🇸 US_1 | ⬇️ 6.2MB/s
+  - 🇺🇸 US_2 | ⬇️ 6.3MB/s
+  - 🇩🇪 DE_1 | ⬇️ 3.5MB/s
+  - 🇺🇸 US_3 | ⬇️ 1.2MB/s
+  - 🇰🇿 KZ_1 | ⬇️ 1.5MB/s
+  - 🇰🇿 KZ_2 | ⬇️ 1.4MB/s
+  - 🇹🇷 TR_1 | ⬇️ 2.5MB/s
+  - 🇫🇮 FI_1 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_2 | ⬇️ 2.9MB/s
+  - 🇩🇪 DE_3 | ⬇️ 3.8MB/s
+  - 🇩🇪 DE_4 | ⬇️ 5.1MB/s
+  - 🇺🇸 US_4 | ⬇️ 2.6MB/s
+  - 🇭🇰 HK_1 | ⬇️ 2.2MB/s
+  - 🇬🇧 GB_1 | ⬇️ 3.8MB/s
+  - 🇺🇸 US_5 | ⬇️ 4.7MB/s
+  - 🇺🇸 US_6 | ⬇️ 5.6MB/s
+  - 🇺🇸 US_7 | ⬇️ 3.9MB/s
+  - 🇺🇸 US_8 | ⬇️ 2.8MB/s
+  - 🇺🇸 US_9 | ⬇️ 5.9MB/s
+  - 🇳🇱 NL_1 | ⬇️ 3.6MB/s
+  - 🇰🇷 KR_1 | ⬇️ 3.9MB/s
+  - 🇺🇸 US_10 | ⬇️ 4.7MB/s
+  - 🇩🇪 DE_5 | ⬇️ 2.9MB/s
+  - 🇩🇪 DE_6 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_7 | ⬇️ 2.7MB/s
+  - 🇩🇪 DE_8 | ⬇️ 3.7MB/s
+  - 🇩🇪 DE_9 | ⬇️ 3.7MB/s
+  - 🇺🇸 US_11 | ⬇️ 5.3MB/s
+  - 🇺🇸 US_12 | ⬇️ 4.4MB/s
+  - 🇺🇸 US_13 | ⬇️ 4.5MB/s
+  - 🇮🇳 IN_1 | ⬇️ 4.0MB/s
+  - 🇩🇪 DE_10 | ⬇️ 2.8MB/s
+  - 🇺🇸 US_14 | ⬇️ 1.1MB/s
+  - 🇺🇸 US_15 | ⬇️ 3.2MB/s
+  - 🇺🇸 US_16 | ⬇️ 4.5MB/s
+  - 🇺🇸 US_17 | ⬇️ 4.2MB/s
+  - 🇩🇪 DE_11 | ⬇️ 3.4MB/s
+  - 🇩🇪 DE_12 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_13 | ⬇️ 3.2MB/s
+  - 🇺🇸 US_18 | ⬇️ 3.6MB/s
+  - 🇺🇸 US_19 | ⬇️ 3.7MB/s
+  - 🇩🇪 DE_14 | ⬇️ 2.3MB/s
+  - 🇩🇪 DE_15 | ⬇️ 4.0MB/s
+  - 🇫🇷 FR_1 | ⬇️ 3.9MB/s
+  - 🇩🇪 DE_16 | ⬇️ 2.8MB/s
+  - 🇳🇱 NL_2 | ⬇️ 4.1MB/s
+  - 🇵🇱 PL_1 | ⬇️ 3.1MB/s
+  - 🇺🇸 US_20 | ⬇️ 5.5MB/s
+  - 🇺🇸 US_21 | ⬇️ 5.0MB/s
+  - 🇺🇸 US_22 | ⬇️ 5.6MB/s
+  - 🇺🇸 US_23 | ⬇️ 5.5MB/s
+  - 🇳🇱 NL_3 | ⬇️ 5.0MB/s
+  - 🇩🇪 DE_17 | ⬇️ 6.6MB/s
+  - 🇩🇪 DE_18 | ⬇️ 4.5MB/s
+  - 🇺🇸 US_24 | ⬇️ 3.1MB/s
+  - 🇺🇸 US_25 | ⬇️ 5.2MB/s
+  - 🇺🇸 US_26 | ⬇️ 1.8MB/s
+  - 🇩🇪 DE_19 | ⬇️ 6.6MB/s
+  - 🇷🇺 RU_1 | ⬇️ 3.3MB/s
+  - 🇰🇿 KZ_3 | ⬇️ 2.9MB/s
+  - 🇷🇺 RU_2 | ⬇️ 2.8MB/s
+  - 🇵🇱 PL_2 | ⬇️ 3.2MB/s
+  - 🇸🇪 SE_1 | ⬇️ 3.1MB/s
+  - 🇫🇮 FI_2 | ⬇️ 3.0MB/s
+  - 🇵🇱 PL_3 | ⬇️ 2.9MB/s
+  - 🇺🇸 US_27 | ⬇️ 4.1MB/s
+  - 🇳🇱 NL_4 | ⬇️ 3.5MB/s
+  - 🇺🇸 US_28 | ⬇️ 4.6MB/s
+  - 🇷🇺 RU_3 | ⬇️ 5.6MB/s
+  - 🇦🇹 AT_1 | ⬇️ 3.2MB/s
+  - 🇷🇺 RU_4 | ⬇️ 2.7MB/s
+  - 🇷🇺 RU_5 | ⬇️ 2.8MB/s
+  - 🇮🇳 IN_2 | ⬇️ 3.3MB/s
+  - 🇷🇺 RU_6 | ⬇️ 1.1MB/s
+  - 🇳🇱 NL_5 | ⬇️ 6.3MB/s
+  - 🇩🇪 DE_20 | ⬇️ 2.2MB/s
+  - 🇸🇬 新加坡
+  - 🇭🇰 香港
+  - 🇩🇪 DE Florian 05
+  - 🇫🇮 FI GCSL 03
+  - 🇷🇺 RU Kviktel 03
+  - 🇭🇰 香港02
+  - 🇭🇰 香港03
+  - 🇭🇰 香港04
+  - 🇭🇰 香港05
+  - 🇭🇰 香港08
+  - 🇭🇰 香港09
+  - 🇭🇰 香港10
+  - 🇭🇰 香港11
+  - 🇭🇰 香港12
+  - 🇭🇰 香港13
+  - 🇭🇰 香港14
+  - 🇭🇰 香港15
+  - 🇭🇰 香港16
+  - 🇭🇰 香港17
+  - 🇭🇰 香港18
+  - 🇭🇰 香港19
+  - 🇭🇰 香港20
+  - 🇭🇰 香港21
+  - 🇭🇰 香港22
+  - 🇸🇬 新加坡01
+  - 🇸🇬 新加坡02
+  - 🇸🇬 新加坡03
+  - 🇸🇬 新加坡04
+  - 🇸🇬 新加坡05
+  - 🇸🇬 新加坡06
+  - 🇸🇬 新加坡07
+  - 🇸🇬 新加坡08
+  - 🇸🇬 新加坡09
+  - 🇸🇬 新加坡10
+  - 🇯🇵 日本01
+  - 🇯🇵 日本02
+  - 🇯🇵 日本04
+  - 🇯🇵 日本05
+  - 🇯🇵 日本06
+  - 🇯🇵 日本07
+  - 🇯🇵 日本08
+  - 🇯🇵 日本09
+  - 🇹🇼 台湾01
+  - 🇹🇼 台湾02
+  - 🇹🇼 台湾03
+  - 🇹🇼 台湾04
+  - 🇹🇼 台湾05
+  - 🇰🇷 韩国01
+  - 🇰🇷 韩国02
+  - 🇮🇳 印度01
+  - 🇮🇳 印度02
+  - 🇮🇳 印度03
+  - 🇮🇳 印度04
+  - 🇮🇳 印度05
+  - 🇻🇳 越南01
+  - 🇻🇳 越南02
+  - 🇻🇳 越南03
+  - 🇻🇳 越南04
+  - 🇻🇳 越南05
+  - 🇻🇳 越南06
+  - 🇻🇳 越南07
+  - 🇻🇳 越南08
+  - 🇻🇳 越南09
+  - 🇻🇳 越南10
+  - 🇻🇳 越南11
+  - 🇻🇳 越南12
+  - 🇻🇳 越南13
+  - 🇻🇳 越南14
+  - 🇻🇳 越南15
+  - 🇺🇸 美国01
+  - 🇺🇸 美国02
+  - 🇺🇸 美国03
+  - 🇺🇸 美国04
+  - 🇺🇸 美国05
+  - 🇺🇸 美国06
+  - 🇺🇸 美国07
+  - 🇺🇸 美国08
+  - 🇺🇸 美国09
+  - 🇩🇪 德国01
+  - 🇩🇪 德国02
+  - 🇲🇴 澳门
+  - 🇹🇭 泰国1
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-SUFFIX,baidu.com,DIRECT
