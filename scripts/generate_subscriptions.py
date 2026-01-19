@@ -16,6 +16,7 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, parse_qs, unquote
 import time
 import shutil
+import random
 
 def get_beijing_time():
     """获取东八区北京时间"""
@@ -355,7 +356,7 @@ def parse_trojan(url, remark=None):
         else:
             server_port_part = server_part
         
-        if ':' in server_part:
+        if ':' in server_port_part:
             server, port_str = server_port_part.split(':', 1)
             port = int(port_str)
         else:
@@ -552,33 +553,134 @@ def parse_clash_yaml_content(content, remark=None):
     
     return proxies
 
-def fetch_subscription(url, timeout=60):
-    """获取订阅内容"""
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/plain, */*',
+def get_random_user_agent():
+    """获取随机用户代理"""
+    user_agents = [
+        # Chrome Windows
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+        
+        # Chrome macOS
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+        
+        # Firefox Windows
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0',
+        
+        # Firefox macOS
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0',
+        
+        # Safari macOS
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
+        
+        # Edge Windows
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0',
+    ]
+    return random.choice(user_agents)
+
+def get_request_headers():
+    """获取完整的请求头，模拟浏览器请求"""
+    return {
+        'User-Agent': get_random_user_agent(),
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Cache-Control': 'max-age=0',
+        'Pragma': 'no-cache',
     }
+
+def fetch_subscription(url, timeout=30, max_retries=2):
+    """获取订阅内容，支持重试"""
+    headers = get_request_headers()
     
-    try:
-        response = requests.get(url, headers=headers, timeout=timeout)
-        response.raise_for_status()
-        
-        content = response.text.strip()
-        decoded = safe_decode_base64(content)
-        
-        if decoded:
-            return decoded, True, None
-        
-        return content, True, None
-        
-    except requests.exceptions.Timeout:
-        return None, False, "请求超时"
-    except requests.exceptions.ConnectionError:
-        return None, False, "连接错误"
-    except requests.exceptions.HTTPError as e:
-        return None, False, f"HTTP错误: {e.response.status_code}"
-    except Exception as e:
-        return None, False, f"未知错误: {str(e)}"
+    # 对于订阅链接，添加特定的Accept头
+    if 'clash' in url.lower() or 'subscribe' in url.lower() or 'sub' in url.lower():
+        headers['Accept'] = 'text/plain, */*'
+    else:
+        headers['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    
+    retry_count = 0
+    last_error = None
+    
+    while retry_count <= max_retries:
+        try:
+            # 添加随机延迟，避免请求过于频繁
+            if retry_count > 0:
+                delay_time = random.uniform(1, 3)
+                time.sleep(delay_time)
+                print(f"    第 {retry_count + 1} 次重试，等待 {delay_time:.1f} 秒...")
+            
+            response = requests.get(url, headers=headers, timeout=timeout)
+            response.raise_for_status()
+            
+            # 检查响应内容类型
+            content_type = response.headers.get('Content-Type', '').lower()
+            
+            # 处理响应
+            if 'application/octet-stream' in content_type or 'text/plain' in content_type:
+                content = response.content.decode('utf-8', errors='ignore').strip()
+            else:
+                content = response.text.strip()
+            
+            # 尝试解码Base64
+            decoded = safe_decode_base64(content)
+            
+            if decoded:
+                return decoded, True, None
+            
+            return content, True, None
+            
+        except requests.exceptions.Timeout:
+            last_error = "请求超时"
+            retry_count += 1
+            if retry_count <= max_retries:
+                continue
+            else:
+                return None, False, last_error
+                
+        except requests.exceptions.ConnectionError as e:
+            last_error = f"连接错误: {str(e)}"
+            retry_count += 1
+            if retry_count <= max_retries:
+                continue
+            else:
+                return None, False, last_error
+                
+        except requests.exceptions.HTTPError as e:
+            status_code = e.response.status_code
+            if status_code in [429, 503]:  # 限流或服务不可用，尝试重试
+                retry_count += 1
+                if retry_count <= max_retries:
+                    # 如果有Retry-After头部，按照建议等待
+                    retry_after = e.response.headers.get('Retry-After')
+                    if retry_after:
+                        try:
+                            wait_time = int(retry_after)
+                            print(f"    服务器要求等待 {wait_time} 秒")
+                            time.sleep(wait_time)
+                        except:
+                            time.sleep(2)
+                    continue
+                else:
+                    return None, False, f"HTTP错误 {status_code}: 重试次数用尽"
+            else:
+                return None, False, f"HTTP错误: {status_code}"
+                
+        except Exception as e:
+            return None, False, f"未知错误: {str(e)}"
+    
+    return None, False, last_error or "重试次数用尽"
 
 def is_clash_yaml_content(content):
     """判断内容是否为Clash YAML格式"""
@@ -1140,7 +1242,12 @@ https://example.com/free.txt
             if remark:
                 print(f"    备注: {remark}")
             
-            result = fetch_subscription(url, timeout=15)
+            # 添加随机延迟，避免请求过于频繁
+            if i > 0:
+                delay_time = random.uniform(1, 2)
+                time.sleep(delay_time)
+            
+            result = fetch_subscription(url, timeout=20, max_retries=2)
             content, success, error_msg = result
             
             entry_info = {
@@ -1191,10 +1298,6 @@ https://example.com/free.txt
             
             # 保存URL处理结果，用于生成源文件内容
             url_entries[i].update(entry_info)
-            
-            # 避免请求过快
-            if i < total_count - 1:
-                time.sleep(1)
         
         # 生成失败链接备注
         failed_comments = "\n".join(failed_urls) if failed_urls else "# 无失败链接"
