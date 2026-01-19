@@ -127,6 +127,7 @@ def clean_config(config):
         if value is None or value == '':
             continue
         
+        # 对于列表和字典，如果为空则不保留
         if isinstance(value, (list, dict)) and len(value) == 0:
             continue
         
@@ -142,43 +143,6 @@ def clean_config(config):
             cleaned[key] = value
     
     return cleaned
-
-def ensure_proxy_required_fields(proxy):
-    """确保代理节点包含必要的字段"""
-    if not isinstance(proxy, dict):
-        return proxy
-    
-    # 确保所有代理节点都有name、type、server、port基本字段
-    if 'name' not in proxy:
-        proxy['name'] = f"节点-{hash(str(proxy)) % 10000}"
-    
-    if 'type' not in proxy:
-        # 尝试从现有字段推断类型
-        if 'cipher' in proxy and 'password' in proxy:
-            proxy['type'] = 'ss'
-        elif 'uuid' in proxy:
-            if 'alterId' in proxy:
-                proxy['type'] = 'vmess'
-            else:
-                proxy['type'] = 'vless'
-        elif 'password' in proxy and 'sni' in proxy:
-            proxy['type'] = 'trojan'
-        elif 'password' in proxy and 'alpn' in proxy:
-            proxy['type'] = 'hysteria2'
-        else:
-            proxy['type'] = 'http'  # 默认类型
-    
-    if 'server' not in proxy:
-        proxy['server'] = 'unknown-server'
-    
-    if 'port' not in proxy:
-        proxy['port'] = 443
-    
-    # 确保有udp字段
-    if 'udp' not in proxy:
-        proxy['udp'] = True
-    
-    return proxy
 
 def parse_hysteria2(url, remark=None):
     """解析Hysteria2链接"""
@@ -228,7 +192,6 @@ def parse_hysteria2(url, remark=None):
             'server': server,
             'port': port,
             'password': password,
-            'udp': True
         }
         
         if query_params.get('sni'):
@@ -241,7 +204,7 @@ def parse_hysteria2(url, remark=None):
         if query_params.get('alpn'):
             config['alpn'] = query_params['alpn'][0].split(',')
         
-        return ensure_proxy_required_fields(clean_config(config))
+        return config
         
     except Exception as e:
         print(f"  Hysteria2解析失败: {e}")
@@ -306,7 +269,7 @@ def parse_ss(url, remark=None):
             'udp': True
         }
         
-        return ensure_proxy_required_fields(clean_config(config))
+        return config
         
     except Exception as e:
         print(f"  SS解析失败: {e}")
@@ -363,7 +326,7 @@ def parse_vmess(url, remark=None):
                 if ws_opts:
                     config['ws-opts'] = ws_opts
         
-        return ensure_proxy_required_fields(clean_config(config))
+        return config
         
     except Exception as e:
         print(f"  VMess解析失败: {e}")
@@ -422,7 +385,7 @@ def parse_trojan(url, remark=None):
             'udp': True
         }
         
-        return ensure_proxy_required_fields(clean_config(config))
+        return config
         
     except Exception as e:
         print(f"  Trojan解析失败: {e}")
@@ -487,7 +450,7 @@ def parse_vless(url, remark=None):
         sni = query_params.get('sni', [''])[0] or server
         config['servername'] = sni
         
-        return ensure_proxy_required_fields(clean_config(config))
+        return config
         
     except Exception as e:
         print(f"  VLESS解析失败: {e}")
@@ -531,6 +494,7 @@ def parse_clash_yaml_node(line, remark=None):
         
         # 确保必要的字段存在
         if 'name' not in node_data or 'server' not in node_data or 'type' not in node_data:
+            print(f"    节点缺少必要字段: name={node_data.get('name')}, server={node_data.get('server')}, type={node_data.get('type')}")
             return None
         
         # 添加备注前缀
@@ -548,7 +512,7 @@ def parse_clash_yaml_node(line, remark=None):
         if 'udp' not in node_data:
             node_data['udp'] = True
         
-        return ensure_proxy_required_fields(clean_config(node_data))
+        return node_data
         
     except Exception as e:
         print(f"  Clash YAML节点解析失败: {e}")
@@ -579,7 +543,7 @@ def parse_clash_yaml_content(content, remark=None):
                     if 'udp' not in proxy_config:
                         proxy_config['udp'] = True
                     
-                    proxies.append(ensure_proxy_required_fields(clean_config(proxy_config)))
+                    proxies.append(proxy_config)
         
         print(f"    从Clash配置解析到 {len(proxies)} 个节点")
         
@@ -793,7 +757,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
                     if 'udp' not in proxy_config:
                         proxy_config['udp'] = True
                     
-                    proxies.append(ensure_proxy_required_fields(clean_config(proxy_config)))
+                    proxies.append(proxy_config)
             
             if proxies:
                 print(f"    从YAML列表解析到 {len(proxies)} 个节点")
@@ -824,7 +788,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
                     if 'udp' not in current_node:
                         current_node['udp'] = True
                     
-                    proxies.append(ensure_proxy_required_fields(clean_config(current_node)))
+                    proxies.append(current_node)
                 
                 # 开始新节点
                 current_node = {}
@@ -873,7 +837,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
             if 'udp' not in current_node:
                 current_node['udp'] = True
             
-            proxies.append(ensure_proxy_required_fields(clean_config(current_node)))
+            proxies.append(current_node)
         
         if proxies:
             print(f"    从多行YAML解析到 {len(proxies)} 个节点")
@@ -979,50 +943,6 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             'udp': True
         }]
     
-    # 确保所有节点都有正确的格式
-    validated_nodes = []
-    for i, node in enumerate(all_nodes[:200]):
-        if not isinstance(node, dict):
-            print(f"  警告: 节点{i+1}不是字典格式，跳过")
-            continue
-        
-        try:
-            # 确保节点有必要的字段
-            validated_node = ensure_proxy_required_fields(node.copy())
-            
-            # 检查节点是否包含必要字段
-            required_fields = ['name', 'type', 'server', 'port']
-            missing_fields = [field for field in required_fields if field not in validated_node or not validated_node[field]]
-            
-            if missing_fields:
-                print(f"  警告: 节点{i+1}缺少必要字段 {missing_fields}，跳过")
-                continue
-                
-            validated_nodes.append(validated_node)
-        except Exception as e:
-            print(f"  警告: 节点{i+1}验证失败: {e}，跳过")
-            continue
-    
-    # 打印节点信息用于调试
-    print(f"  准备写入 {len(validated_nodes)} 个节点到配置文件")
-    for i, node in enumerate(validated_nodes[:3]):  # 只打印前3个节点用于调试
-        print(f"    节点{i+1}: {node.get('name', '未命名')} - {node.get('type', '未知')} - {node.get('server', '未知')}:{node.get('port', '未知')}")
-    
-    if len(validated_nodes) > 3:
-        print(f"    ... 还有 {len(validated_nodes) - 3} 个节点")
-    
-    # 确保proxy-groups中的proxies字段不为空
-    for i, group in enumerate(proxy_groups):
-        if 'proxies' in group and isinstance(group['proxies'], list):
-            # 过滤掉proxies中不存在的节点名称
-            valid_node_names = [node.get('name', '') for node in validated_nodes]
-            group['proxies'] = [proxy for proxy in group['proxies'] if proxy in valid_node_names or proxy in ['负载均衡', '自动选择', 'DIRECT']]
-            
-            # 如果proxies为空，添加DIRECT作为默认值
-            if not group['proxies']:
-                group['proxies'] = ['DIRECT']
-                print(f"  警告: 策略组 '{group.get('name', f'组{i+1}')}' 的proxies为空，已添加DIRECT")
-    
     # Clash配置 - 终极简化版
     config = {
         'mixed-port': 7890,  # 统一使用混合端口
@@ -1043,41 +963,40 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
                 'https://doh.pub/dns-query',
                 'https://dns.alidns.com/dns-query'
             ]
-        }
+        },
+        
+        # 代理节点 - 清理配置
+        'proxies': [clean_config(node) for node in all_nodes[:200]],  # 最多200个节点
+        
+        # 策略组 - 极度简化版
+        'proxy-groups': proxy_groups,
+        
+        # 规则 - 简化路由
+        'rules': [
+            # 国内域名直连
+            'DOMAIN-SUFFIX,cn,DIRECT',
+            'DOMAIN-SUFFIX,baidu.com,DIRECT',
+            'DOMAIN-SUFFIX,qq.com,DIRECT',
+            'DOMAIN-SUFFIX,taobao.com,DIRECT',
+            'DOMAIN-SUFFIX,jd.com,DIRECT',
+            'DOMAIN-SUFFIX,weibo.com,DIRECT',
+            'DOMAIN-SUFFIX,sina.com,DIRECT',
+            'DOMAIN-SUFFIX,163.com,DIRECT',
+            'DOMAIN-SUFFIX,alibaba.com,DIRECT',
+            'DOMAIN-SUFFIX,alipay.com,DIRECT',
+            'DOMAIN-SUFFIX,tencent.com,DIRECT',
+            'DOMAIN-SUFFIX,bilibili.com,DIRECT',
+            'DOMAIN-SUFFIX,zhihu.com,DIRECT',
+            
+            # GEOIP中国直连
+            'GEOIP,CN,DIRECT',
+            
+            # 最终规则 - 使用节点选择（默认负载均衡）
+            'MATCH,节点选择'
+        ]
     }
     
-    # 只有在有节点时才添加proxies部分
-    if validated_nodes:
-        config['proxies'] = validated_nodes
-    
-    # 添加策略组
-    config['proxy-groups'] = proxy_groups
-    
-    # 添加规则
-    config['rules'] = [
-        # 国内域名直连
-        'DOMAIN-SUFFIX,cn,DIRECT',
-        'DOMAIN-SUFFIX,baidu.com,DIRECT',
-        'DOMAIN-SUFFIX,qq.com,DIRECT',
-        'DOMAIN-SUFFIX,taobao.com,DIRECT',
-        'DOMAIN-SUFFIX,jd.com,DIRECT',
-        'DOMAIN-SUFFIX,weibo.com,DIRECT',
-        'DOMAIN-SUFFIX,sina.com,DIRECT',
-        'DOMAIN-SUFFIX,163.com,DIRECT',
-        'DOMAIN-SUFFIX,alibaba.com,DIRECT',
-        'DOMAIN-SUFFIX,alipay.com,DIRECT',
-        'DOMAIN-SUFFIX,tencent.com,DIRECT',
-        'DOMAIN-SUFFIX,bilibili.com,DIRECT',
-        'DOMAIN-SUFFIX,zhihu.com,DIRECT',
-        
-        # GEOIP中国直连
-        'GEOIP,CN,DIRECT',
-        
-        # 最终规则 - 使用节点选择（默认负载均衡）
-        'MATCH,节点选择'
-    ]
-    
-    # 清理配置
+    # 清理整个配置
     config = clean_config(config)
     
     # 写入文件
@@ -1086,101 +1005,27 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
     
     output_path = os.path.join(output_dir, f'{filename}.yaml')
     
-    try:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            # 写入备注
-            f.write(comments)
-            # 写入配置
-            yaml.dump(config, f, 
-                     allow_unicode=True, 
-                     default_flow_style=False, 
-                     sort_keys=False,
-                     width=float("inf"))
-        
-        print(f"  生成配置文件: {output_path}")
-        print(f"  包含 {len(validated_nodes)} 个节点")
-        print(f"  包含 {len(proxy_groups)} 个策略组")
-        print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
-        
-        # 验证生成的配置文件
-        print(f"  验证配置文件...")
-        try:
-            with open(output_path, 'r', encoding='utf-8') as f:
-                test_config = yaml.safe_load(f)
-            
-            if 'proxies' in test_config:
-                print(f"  ✓ 配置文件包含 {len(test_config['proxies'])} 个节点")
-            else:
-                print(f"  ⚠️ 配置文件不包含节点")
-            
-            if 'proxy-groups' in test_config:
-                print(f"  ✓ 配置文件包含 {len(test_config['proxy-groups'])} 个策略组")
-            else:
-                print(f"  ⚠️ 配置文件不包含策略组")
-                
-        except Exception as e:
-            print(f"  ⚠️ 配置文件验证失败: {e}")
-        
-        return len(validated_nodes)
-        
-    except Exception as e:
-        print(f"  ❌ 写入配置文件失败: {e}")
-        # 尝试写入一个简化的配置文件
-        try:
-            simple_config = {
-                'mixed-port': 7890,
-                'allow-lan': False,
-                'mode': 'rule',
-                'log-level': 'info',
-                'external-controller': '127.0.0.1:9090',
-                'dns': {
-                    'enable': True,
-                    'ipv6': False,
-                    'listen': '127.0.0.1:53',
-                    'default-nameserver': ['223.5.5.5', '119.29.29.29'],
-                    'enhanced-mode': 'fake-ip',
-                    'fake-ip-range': '198.18.0.1/16',
-                    'nameserver': [
-                        'https://doh.pub/dns-query',
-                        'https://dns.alidns.com/dns-query'
-                    ]
-                },
-                'proxy-groups': [
-                    {
-                        'name': '节点选择',
-                        'type': 'select',
-                        'proxies': ['DIRECT']
-                    }
-                ],
-                'rules': [
-                    'GEOIP,CN,DIRECT',
-                    'MATCH,节点选择'
-                ]
-            }
-            
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(comments)
-                yaml.dump(simple_config, f, 
-                         allow_unicode=True, 
-                         default_flow_style=False, 
-                         sort_keys=False,
-                         width=float("inf"))
-            
-            print(f"  ⚠️ 已生成简化配置文件")
-            return 0
-            
-        except Exception as e2:
-            print(f"  ❌ 生成简化配置文件也失败: {e2}")
-            return 0
+    with open(output_path, 'w', encoding='utf-8') as f:
+        # 写入备注
+        f.write(comments)
+        # 写入配置
+        yaml.dump(config, f, 
+                 allow_unicode=True, 
+                 default_flow_style=False, 
+                 sort_keys=False,
+                 width=float("inf"))
+    
+    print(f"  生成配置文件: {output_path}")
+    print(f"  包含 {len(all_nodes[:200])} 个节点")
+    print(f"  包含 {len(proxy_groups)} 个策略组")
+    print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
+    
+    return len(all_nodes[:200])
 
 def build_proxy_groups(all_nodes, remark_nodes_map):
     """构建策略组配置 - 极度简化版"""
     # 获取所有节点名称
-    all_node_names = []
-    for i, node in enumerate(all_nodes[:200]):
-        node_name = node.get('name', f'节点{i+1}')
-        if node_name and isinstance(node_name, str):
-            all_node_names.append(node_name)
+    all_node_names = [node.get('name', f'节点{i+1}') for i, node in enumerate(all_nodes[:200])]
     
     # 基础策略组 - 极度简化版
     proxy_groups = [
@@ -1195,7 +1040,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'strategy': 'consistent-hashing',
-            'proxies': all_node_names[:100] if all_node_names else ['DIRECT']  # 最多100个节点
+            'proxies': all_node_names
         },
         {
             'name': '自动选择',
@@ -1203,19 +1048,14 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'tolerance': 50,
-            'proxies': all_node_names[:100] if all_node_names else ['DIRECT']  # 最多100个节点
+            'proxies': all_node_names
         }
     ]
     
     # 为每个有备注的链接创建独立策略组
     for remark, nodes in remark_nodes_map.items():
         if remark and nodes:
-            node_names = []
-            for node in nodes:
-                node_name = node.get('name')
-                if node_name and isinstance(node_name, str):
-                    node_names.append(node_name)
-            
+            node_names = [node.get('name') for node in nodes if node.get('name')]
             if node_names:
                 proxy_groups.append({
                     'name': remark,
@@ -1492,6 +1332,10 @@ https://example.com/free.txt
                         
                         entry_info['node_count'] = len(proxies)
                         print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
+                        
+                        # 调试信息：显示前3个节点的详细信息
+                        if proxies:
+                            print(f"    第一个节点示例: {proxies[0].get('name', '未知')} - {proxies[0].get('type', '未知')}")
                     else:
                         print(f"    ⚠️ 获取成功但未找到有效节点")
                         entry_info['error'] = "无有效节点"
@@ -1532,12 +1376,9 @@ https://example.com/free.txt
             if not proxy:
                 continue
             
-            # 检查节点是否有效
-            if not isinstance(proxy, dict):
-                continue
-            
-            key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
-            if key not in seen:
+            # 使用更简单的去重键，避免因为字段缺失导致节点被过滤
+            key = f"{proxy.get('name', '')}-{proxy.get('server', '')}-{proxy.get('port', '')}"
+            if key and key not in seen:
                 seen.add(key)
                 unique_proxies.append(proxy)
         
@@ -1549,6 +1390,12 @@ https://example.com/free.txt
         print(f"    失败链接: {total_count - success_count}")
         print(f"    原始节点: {len(all_proxies)} 个")
         print(f"    去重节点: {len(unique_proxies)} 个")
+        
+        # 显示节点详细信息（前5个）
+        if unique_proxies:
+            print(f"    节点示例（前5个）:")
+            for i, proxy in enumerate(unique_proxies[:5]):
+                print(f"      {i+1}. {proxy.get('name', '未知')} - {proxy.get('type', '未知')} - {proxy.get('server', '未知')}:{proxy.get('port', '未知')}")
         
         # 合并分组统计
         combined_stats = generate_combined_stats(remark_stats, remark_failed_stats)
@@ -1588,6 +1435,11 @@ https://example.com/free.txt
             print(f"    🏷️  成功分组策略组: {len(remark_nodes_map)} 个")
             print(f"    ⚖️  默认策略: 负载均衡")
             print(f"    🔌 代理端口: 7890")
+            
+            # 显示生成的配置文件路径
+            output_path = os.path.join('订阅链接', f'{base_name}.yaml')
+            if os.path.exists(output_path):
+                print(f"    📁 配置文件: {output_path}")
         else:
             print("\n    ⚠️ 没有有效节点，生成空配置")
             # 生成一个空配置，但仍然包含备注
