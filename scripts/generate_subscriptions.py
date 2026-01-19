@@ -143,6 +143,43 @@ def clean_config(config):
     
     return cleaned
 
+def ensure_proxy_required_fields(proxy):
+    """确保代理节点包含必要的字段"""
+    if not isinstance(proxy, dict):
+        return proxy
+    
+    # 确保所有代理节点都有name、type、server、port基本字段
+    if 'name' not in proxy:
+        proxy['name'] = f"节点-{hash(str(proxy)) % 10000}"
+    
+    if 'type' not in proxy:
+        # 尝试从现有字段推断类型
+        if 'cipher' in proxy and 'password' in proxy:
+            proxy['type'] = 'ss'
+        elif 'uuid' in proxy:
+            if 'alterId' in proxy:
+                proxy['type'] = 'vmess'
+            else:
+                proxy['type'] = 'vless'
+        elif 'password' in proxy and 'sni' in proxy:
+            proxy['type'] = 'trojan'
+        elif 'password' in proxy and 'alpn' in proxy:
+            proxy['type'] = 'hysteria2'
+        else:
+            proxy['type'] = 'http'  # 默认类型
+    
+    if 'server' not in proxy:
+        proxy['server'] = 'unknown-server'
+    
+    if 'port' not in proxy:
+        proxy['port'] = 443
+    
+    # 确保有udp字段
+    if 'udp' not in proxy:
+        proxy['udp'] = True
+    
+    return proxy
+
 def parse_hysteria2(url, remark=None):
     """解析Hysteria2链接"""
     try:
@@ -191,6 +228,7 @@ def parse_hysteria2(url, remark=None):
             'server': server,
             'port': port,
             'password': password,
+            'udp': True
         }
         
         if query_params.get('sni'):
@@ -203,7 +241,7 @@ def parse_hysteria2(url, remark=None):
         if query_params.get('alpn'):
             config['alpn'] = query_params['alpn'][0].split(',')
         
-        return clean_config(config)
+        return ensure_proxy_required_fields(clean_config(config))
         
     except Exception as e:
         print(f"  Hysteria2解析失败: {e}")
@@ -268,7 +306,7 @@ def parse_ss(url, remark=None):
             'udp': True
         }
         
-        return clean_config(config)
+        return ensure_proxy_required_fields(clean_config(config))
         
     except Exception as e:
         print(f"  SS解析失败: {e}")
@@ -325,7 +363,7 @@ def parse_vmess(url, remark=None):
                 if ws_opts:
                     config['ws-opts'] = ws_opts
         
-        return clean_config(config)
+        return ensure_proxy_required_fields(clean_config(config))
         
     except Exception as e:
         print(f"  VMess解析失败: {e}")
@@ -384,7 +422,7 @@ def parse_trojan(url, remark=None):
             'udp': True
         }
         
-        return clean_config(config)
+        return ensure_proxy_required_fields(clean_config(config))
         
     except Exception as e:
         print(f"  Trojan解析失败: {e}")
@@ -449,7 +487,7 @@ def parse_vless(url, remark=None):
         sni = query_params.get('sni', [''])[0] or server
         config['servername'] = sni
         
-        return clean_config(config)
+        return ensure_proxy_required_fields(clean_config(config))
         
     except Exception as e:
         print(f"  VLESS解析失败: {e}")
@@ -510,7 +548,7 @@ def parse_clash_yaml_node(line, remark=None):
         if 'udp' not in node_data:
             node_data['udp'] = True
         
-        return clean_config(node_data)
+        return ensure_proxy_required_fields(clean_config(node_data))
         
     except Exception as e:
         print(f"  Clash YAML节点解析失败: {e}")
@@ -541,7 +579,7 @@ def parse_clash_yaml_content(content, remark=None):
                     if 'udp' not in proxy_config:
                         proxy_config['udp'] = True
                     
-                    proxies.append(clean_config(proxy_config))
+                    proxies.append(ensure_proxy_required_fields(clean_config(proxy_config)))
         
         print(f"    从Clash配置解析到 {len(proxies)} 个节点")
         
@@ -755,7 +793,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
                     if 'udp' not in proxy_config:
                         proxy_config['udp'] = True
                     
-                    proxies.append(clean_config(proxy_config))
+                    proxies.append(ensure_proxy_required_fields(clean_config(proxy_config)))
             
             if proxies:
                 print(f"    从YAML列表解析到 {len(proxies)} 个节点")
@@ -786,7 +824,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
                     if 'udp' not in current_node:
                         current_node['udp'] = True
                     
-                    proxies.append(clean_config(current_node))
+                    proxies.append(ensure_proxy_required_fields(clean_config(current_node)))
                 
                 # 开始新节点
                 current_node = {}
@@ -835,7 +873,7 @@ def extract_yaml_proxies_from_content(content, remark=None):
             if 'udp' not in current_node:
                 current_node['udp'] = True
             
-            proxies.append(clean_config(current_node))
+            proxies.append(ensure_proxy_required_fields(clean_config(current_node)))
         
         if proxies:
             print(f"    从多行YAML解析到 {len(proxies)} 个节点")
@@ -941,6 +979,25 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             'udp': True
         }]
     
+    # 确保所有节点都有正确的格式
+    validated_nodes = []
+    for i, node in enumerate(all_nodes[:200]):
+        if not isinstance(node, dict):
+            print(f"  警告: 节点{i+1}不是字典格式，跳过")
+            continue
+        
+        # 确保节点有必要的字段
+        validated_node = ensure_proxy_required_fields(node.copy())
+        validated_nodes.append(validated_node)
+    
+    # 打印节点信息用于调试
+    print(f"  准备写入 {len(validated_nodes)} 个节点到配置文件")
+    for i, node in enumerate(validated_nodes[:3]):  # 只打印前3个节点用于调试
+        print(f"    节点{i+1}: {node.get('name', '未命名')} - {node.get('type', '未知')} - {node.get('server', '未知')}:{node.get('port', '未知')}")
+    
+    if len(validated_nodes) > 3:
+        print(f"    ... 还有 {len(validated_nodes) - 3} 个节点")
+    
     # Clash配置 - 终极简化版
     config = {
         'mixed-port': 7890,  # 统一使用混合端口
@@ -963,8 +1020,8 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             ]
         },
         
-        # 代理节点
-        'proxies': all_nodes[:200],  # 最多200个节点
+        # 代理节点 - 使用验证后的节点
+        'proxies': validated_nodes,
         
         # 策略组 - 极度简化版
         'proxy-groups': proxy_groups,
@@ -1013,11 +1070,11 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
                  width=float("inf"))
     
     print(f"  生成配置文件: {output_path}")
-    print(f"  包含 {len(all_nodes[:200])} 个节点")
+    print(f"  包含 {len(validated_nodes)} 个节点")
     print(f"  包含 {len(proxy_groups)} 个策略组")
     print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
     
-    return len(all_nodes[:200])
+    return len(validated_nodes)
 
 def build_proxy_groups(all_nodes, remark_nodes_map):
     """构建策略组配置 - 极度简化版"""
