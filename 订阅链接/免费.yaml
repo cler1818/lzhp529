@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 21:00:57
+# 更新时间（东八区北京时间）: 2026-01-19 21:22:49
 # 仓库名称: lzhp529
 # 输入源文件: 免费
 # 订阅链接获取情况: 5/6
@@ -241,96 +241,6 @@ proxies:
   skip-cert-verify: true
   sni: hyfuuf6.wsone.icu
   type: trojan
-  udp: true
-- name: LD论坛公益2-01-WS-saas.sin.fan
-  server: saas.sin.fan
-  port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-02-WS-AI
-  server: jp.111000.cc.cd
-  port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-03-WS-030101.xyz
-  server: bestcf.030101.xyz
-  port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-01-Trojan-saas.sin.fan
-  server: saas.sin.fan
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-02-Trojan-AI
-  server: jp.111000.cc.cd
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-03-Trojan-030101.xyz
-  server: bestcf.030101.xyz
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
   udp: true
 - name: 免费2-🔔 关注https://github.com/wzdnzd不迷路
   server: 9.9.9.9
@@ -1895,6 +1805,96 @@ proxies:
   sni: cdnfire.xiaomispeed.com
   skip-cert-verify: true
   udp: true
+- name: LD论坛公益2-01-WS-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-WS-AI
+  server: jp.111000.cc.cd
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-WS-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-01-Trojan-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-Trojan-AI
+  server: jp.111000.cc.cd
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-Trojan-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
 - name: 'LD论坛公益3-⚫︎ Channel: @MxlShare'
   server: 9.9.9.9
   port: 23333
@@ -2200,12 +2200,6 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
-  - LD论坛公益2-01-WS-saas.sin.fan
-  - LD论坛公益2-02-WS-AI
-  - LD论坛公益2-03-WS-030101.xyz
-  - LD论坛公益2-01-Trojan-saas.sin.fan
-  - LD论坛公益2-02-Trojan-AI
-  - LD论坛公益2-03-Trojan-030101.xyz
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
   - 免费2-🇭🇰 香港 097
   - 免费2-🇸🇬 新加坡 31
@@ -2357,6 +2351,12 @@ proxy-groups:
   - 免费2-🇯🇵 日本 23
   - 免费2-🇸🇬 新加坡 08
   - 免费2-🇭🇰 香港 027
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
   - 'LD论坛公益3-⚫︎ Channel: @MxlShare'
   - 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
   - LD论坛公益3-🇦🇪 阿联酋 | ARE
@@ -2406,12 +2406,6 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
-  - LD论坛公益2-01-WS-saas.sin.fan
-  - LD论坛公益2-02-WS-AI
-  - LD论坛公益2-03-WS-030101.xyz
-  - LD论坛公益2-01-Trojan-saas.sin.fan
-  - LD论坛公益2-02-Trojan-AI
-  - LD论坛公益2-03-Trojan-030101.xyz
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
   - 免费2-🇭🇰 香港 097
   - 免费2-🇸🇬 新加坡 31
@@ -2563,6 +2557,12 @@ proxy-groups:
   - 免费2-🇯🇵 日本 23
   - 免费2-🇸🇬 新加坡 08
   - 免费2-🇭🇰 香港 027
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
   - 'LD论坛公益3-⚫︎ Channel: @MxlShare'
   - 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
   - LD论坛公益3-🇦🇪 阿联酋 | ARE
@@ -2612,18 +2612,6 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
-- name: LD论坛公益2
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - LD论坛公益2-01-WS-saas.sin.fan
-  - LD论坛公益2-02-WS-AI
-  - LD论坛公益2-03-WS-030101.xyz
-  - LD论坛公益2-01-Trojan-saas.sin.fan
-  - LD论坛公益2-02-Trojan-AI
-  - LD论坛公益2-03-Trojan-030101.xyz
 - name: 免费2
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2680,6 +2668,18 @@ proxy-groups:
   - 免费2-🇩🇪 德国 06
   - 免费2-🇬🇧 英国 01
   - 免费2-🇺🇸 美国 09
+- name: LD论坛公益2
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
 - name: LD论坛公益3
   type: url-test
   url: http://www.gstatic.com/generate_204
