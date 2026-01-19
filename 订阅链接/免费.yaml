@@ -2,41 +2,39 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 20:48:24
+# 更新时间（东八区北京时间）: 2026-01-19 21:00:57
 # 仓库名称: lzhp529
 # 输入源文件: 免费
-# 订阅链接获取情况: 3/6
+# 订阅链接获取情况: 5/6
 # --------------------------------------------------
 
 # 分组统计:
 #   LD论坛公益2: 6 个节点
+#   LD论坛公益3: 297 个节点
+#   免费1: 974 个节点
 #   免费2: 151 个节点
 #   免费3: 19 个节点
 #   LD论坛公益1: 失败 (HTTP错误: 403)
-#   LD论坛公益3: 失败 (无有效节点)
-#   免费1: 失败 (请求超时)
 # --------------------------------------------------
 
 # 失败的链接:
-# 免费1: https://rss.zyfx6.xyz/clash/ - 请求超时
 # LD论坛公益1: https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml - HTTP错误: 403
-# LD论坛公益3: https://mxlsub.qzz.io/free
 # --------------------------------------------------
 
 # 输入源文件内容:
 # 免费1
 # https://rss.zyfx6.xyz/clash/
-# 节点数量: 0 (失败原因: 请求超时)
+# 节点数量: 0
 #
 #
 # 免费2 官方token链接
 # https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=5xwthvdjbvm1sbrwomlpcralcs5km568&target=clash
-# 节点数量: 151
+# 节点数量: 0
 #
 #
 # 免费3
 # https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml
-# 节点数量: 19
+# 节点数量: 0
 #
 #
 # LD论坛公益1
@@ -45,11 +43,11 @@
 #
 # LD论坛公益2
 # https://download.nature.qq.com/SnsShare/Windy/1768620180_b65eb5ff_ech-mihomo
-# 节点数量: 6
+# 节点数量: 0
 #
 # LD论坛公益3
 # https://mxlsub.qzz.io/free
-# 节点数量: 0 (失败原因: 无有效节点)
+# 节点数量: 0
 # 
 # ========================================
 # 配置说明:
@@ -79,6 +77,261 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
+- cipher: aes-256-cfb
+  name: 免费3-12|tg频道:@ripaojiedian
+  password: amazonskr05
+  port: 443
+  server: 63.180.254.10
+  type: ss
+  udp: true
+- alterId: 2
+  cipher: auto
+  name: 免费3-12|🇭🇰 香港|@ripaojiedian
+  port: 30807
+  server: v10.hdacd.com
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  udp: true
+- name: 免费3-12,13|香港3|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 443
+  server: 58.152.18.247
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|香港4|@ripaojiedian
+  network: tcp
+  password: BxceQaOe
+  port: 3830
+  server: 54.95.183.161
+  skip-cert-verify: true
+  sni: t.me%2Fripaojiedian
+  type: trojan
+  udp: true
+- name: 免费3-12,13|香港5|@ripaojiedian
+  network: tcp
+  password: BxceQaOe
+  port: 2266
+  server: 54.238.101.170
+  skip-cert-verify: true
+  sni: t.me%2Fripaojiedian
+  type: trojan
+  udp: true
+- name: 免费3-12,13|日本|@ripaojiedian
+  network: tcp
+  password: BxceQaOe
+  port: 26378
+  server: 13.114.104.131
+  skip-cert-verify: true
+  sni: t.me%252Fripaojiedian
+  type: trojan
+  udp: true
+- name: 免费3-12,13|日本2|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 3423
+  server: 153.121.38.213
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|日本3|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 4006
+  server: 153.121.38.213
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|新加坡|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 3901
+  server: 153.121.38.213
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|新加坡2|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 544
+  server: 153.121.38.213
+  skip-cert-verify: true
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|新加坡3|@ripaojiedian
+  network: tcp
+  password: BxceQaOe
+  port: 2673
+  server: 16.162.252.227
+  skip-cert-verify: true
+  sni: t.me%252Fripaojiedian
+  type: trojan
+  udp: true
+- name: 免费3-12,13|美国|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 5076
+  server: 153.121.38.213
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|美国2|@ripaojiedian
+  network: tcp
+  password: 4843e94d205f3893f588255a591abe94
+  port: 5076
+  server: 23.170.49.110
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-12,13|美国3|@ripaojiedian
+  network: tcp
+  password: BxceQaOe
+  port: 2773
+  server: 13.114.104.131
+  skip-cert-verify: true
+  sni: t.me%2Fripaojiedian
+  type: trojan
+  udp: true
+- cipher: aes-256-cfb
+  name: 免费3-12|🇻🇳 越南|@ripaojiedian
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  port: 38388
+  server: 103.186.155.76
+  type: ss
+  udp: true
+- alterId: 2
+  cipher: auto
+  name: 免费3-13|香港|@ripaojiedian
+  network: tcp
+  port: '30807'
+  server: v10.hdacd.com
+  tls: false
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  udp: true
+- name: 免费3-14|HK_speednode_0013
+  password: 4843e94d205f3893f588255a591abe94
+  port: 443
+  server: 58.152.18.124
+  skip-cert-verify: true
+  sni: www.nintendogames.net
+  type: trojan
+  udp: true
+- name: 免费3-14|HK_speednode_0014
+  password: 4843e94d205f3893f588255a591abe94
+  port: 443
+  server: 58.152.18.124
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 免费3-14|IN_speednode_0016
+  password: M7v%w11Se*
+  port: 443
+  server: hyfuuf6.wsone.icu
+  skip-cert-verify: true
+  sni: hyfuuf6.wsone.icu
+  type: trojan
+  udp: true
+- name: LD论坛公益2-01-WS-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-WS-AI
+  server: jp.111000.cc.cd
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-WS-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-01-Trojan-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-Trojan-AI
+  server: jp.111000.cc.cd
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-Trojan-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
 - name: 免费2-🔔 关注https://github.com/wzdnzd不迷路
   server: 9.9.9.9
   port: 54321
@@ -1642,260 +1895,278 @@ proxies:
   sni: cdnfire.xiaomispeed.com
   skip-cert-verify: true
   udp: true
-- cipher: aes-256-cfb
-  name: 免费3-12|tg频道:@ripaojiedian
+- name: 'LD论坛公益3-⚫︎ Channel: @MxlShare'
+  server: 9.9.9.9
+  port: 23333
+  type: vless
+  uuid: 2348b74d-42a8-41f5-899c-371330fe4de1
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: www.com
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: www.com
+  udp: true
+- name: 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
+  server: 9.9.9.9
+  port: 56789
+  type: vless
+  uuid: 2348b74d-42a8-41f5-899c-371330fe4de1
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: www.com
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: www.com
+  udp: true
+- name: LD论坛公益3-🇦🇪 阿联酋 | ARE
+  server: 154.90.55.15
+  port: 11201
+  type: ss
+  cipher: rc4-md5
+  password: b13c4c021cec2c0b
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT
+  server: 51.15.23.63
+  port: 989
+  type: ss
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT 2
+  server: 152.53.48.237
+  port: 22955
+  type: vless
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: one-piece.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT 3
+  server: dfg.octopusss.net
+  port: 22955
+  type: vless
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: one-piece.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT 4
+  server: 152.53.51.24
+  port: 22955
+  type: vless
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: one-piece.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT 5
+  server: 152.53.48.224
+  port: 22955
+  type: vless
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: one-piece.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+- name: LD论坛公益3-🇦🇹 奥地利 | AUT 6
+  server: 152.53.51.29
+  port: 22955
+  type: vless
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: one-piece.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+- name: LD论坛公益3-🇦🇺 澳大利亚 | AUS
+  server: gtm1.ktmwan.net
+  port: 12889
+  type: vmess
+  uuid: 3c6e9518-50e3-482e-8e5d-3a6fe8b9f859
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  udp: true
+- name: LD论坛公益3-🇧🇷 巴西 | BRA
+  server: 77.111.101.241
+  port: 443
+  type: vless
+  uuid: 88711601-8e80-4f29-bd11-aba35fafb63e
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: LD论坛公益3-🇧🇷 巴西 | BRA 2
+  server: slur.izenny.com
+  port: 57577
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: a7856023-d5c8-411b-b82a-6f05a02b34e2
+  udp: true
+- name: LD论坛公益3-🇧🇷 巴西 | BRA 3
+  server: 51.38.65.155
+  port: 443
+  type: trojan
+  password: dd6dcb10-4683-11f0-ae79-1239d0255272
+  skip-cert-verify: true
+  udp: true
+- name: LD论坛公益3-🇨🇦 加拿大 | CAN
+  server: gtm1.ktmwan.net
+  port: 12897
+  type: vmess
+  uuid: 3c6e9518-50e3-482e-8e5d-3a6fe8b9f859
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  udp: true
+- name: LD论坛公益3-🇨🇦 加拿大 | CAN 2
+  server: 34.229.92.150
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
   password: amazonskr05
-  port: 443
-  server: 63.180.254.10
-  type: ss
   udp: true
-- alterId: 2
-  cipher: auto
-  name: 免费3-12|🇭🇰 香港|@ripaojiedian
-  port: 30807
-  server: v10.hdacd.com
-  skip-cert-verify: false
-  tls: false
+- name: LD论坛公益3-🇨🇦 加拿大 | CAN 3
+  server: 45.88.183.130
+  port: 443
+  type: trojan
+  password: 5a2c16f9
+  skip-cert-verify: true
+  udp: true
+- name: LD论坛公益3-🇨🇳 台湾 | TWN
+  server: gtm1.ktmwan.net
+  port: 12888
   type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  udp: true
-- name: 免费3-12,13|香港3|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 443
-  server: 58.152.18.247
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|香港4|@ripaojiedian
-  network: tcp
-  password: BxceQaOe
-  port: 3830
-  server: 54.95.183.161
-  skip-cert-verify: true
-  sni: t.me%2Fripaojiedian
-  type: trojan
-  udp: true
-- name: 免费3-12,13|香港5|@ripaojiedian
-  network: tcp
-  password: BxceQaOe
-  port: 2266
-  server: 54.238.101.170
-  skip-cert-verify: true
-  sni: t.me%2Fripaojiedian
-  type: trojan
-  udp: true
-- name: 免费3-12,13|日本|@ripaojiedian
-  network: tcp
-  password: BxceQaOe
-  port: 26378
-  server: 13.114.104.131
-  skip-cert-verify: true
-  sni: t.me%252Fripaojiedian
-  type: trojan
-  udp: true
-- name: 免费3-12,13|日本2|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 3423
-  server: 153.121.38.213
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|日本3|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 4006
-  server: 153.121.38.213
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|新加坡|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 3901
-  server: 153.121.38.213
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|新加坡2|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 544
-  server: 153.121.38.213
-  skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|新加坡3|@ripaojiedian
-  network: tcp
-  password: BxceQaOe
-  port: 2673
-  server: 16.162.252.227
-  skip-cert-verify: true
-  sni: t.me%252Fripaojiedian
-  type: trojan
-  udp: true
-- name: 免费3-12,13|美国|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 5076
-  server: 153.121.38.213
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|美国2|@ripaojiedian
-  network: tcp
-  password: 4843e94d205f3893f588255a591abe94
-  port: 5076
-  server: 23.170.49.110
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 免费3-12,13|美国3|@ripaojiedian
-  network: tcp
-  password: BxceQaOe
-  port: 2773
-  server: 13.114.104.131
-  skip-cert-verify: true
-  sni: t.me%2Fripaojiedian
-  type: trojan
-  udp: true
-- cipher: aes-256-cfb
-  name: 免费3-12|🇻🇳 越南|@ripaojiedian
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.155.76
-  type: ss
-  udp: true
-- alterId: 2
+  uuid: 3c6e9518-50e3-482e-8e5d-3a6fe8b9f859
+  alterId: 0
   cipher: auto
-  name: 免费3-13|香港|@ripaojiedian
-  network: tcp
-  port: '30807'
-  server: v10.hdacd.com
   tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
+  udp: true
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 2
+  server: gtm1.ktmwan.net
+  port: 12888
   type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  udp: true
-- name: 免费3-14|HK_speednode_0013
-  password: 4843e94d205f3893f588255a591abe94
-  port: 443
-  server: 58.152.18.124
+  uuid: 3c6e9518-50e3-482e-8e5d-3a6fe8b9f859
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
   udp: true
-- name: 免费3-14|HK_speednode_0014
-  password: 4843e94d205f3893f588255a591abe94
-  port: 443
-  server: 58.152.18.124
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 3
+  server: gtm1.ktmwan.net
+  port: 12888
+  type: vmess
+  uuid: 3c6e9518-50e3-482e-8e5d-3a6fe8b9f859
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: true
-  type: trojan
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: baidu.com
   udp: true
-- name: 免费3-14|IN_speednode_0016
-  password: M7v%w11Se*
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 4
+  server: 15.188.84.124
   port: 443
-  server: hyfuuf6.wsone.icu
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 5
+  server: 104.17.162.3
+  port: 443
+  type: trojan
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
   skip-cert-verify: true
-  sni: hyfuuf6.wsone.icu
-  type: trojan
   udp: true
-- name: LD论坛公益2-01-WS-saas.sin.fan
-  server: saas.sin.fan
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 6
+  server: 172.64.229.2
   port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  type: trojan
+  password: 5a2c16f9
+  sni: snippets.kkii.eu.org
+  skip-cert-verify: true
+  udp: true
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 7
+  server: ef329b08-t96740-tryjtz-12ach.tw3.p5pv.com
+  port: 443
+  type: http
+  username: fc5ba91a-acd7-11ef-97e0-f23c9164ca5d
+  password: fc5ba91a-acd7-11ef-97e0-f23c9164ca5d
   tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
+  skip-cert-verify: true
   udp: true
-- name: LD论坛公益2-02-WS-AI
-  server: jp.111000.cc.cd
+- name: LD论坛公益3-🇨🇳 台湾 | TWN 8
+  server: 1ba97128-t96740-tnfe2z-1s4hc.tw3.p5pv.com
   port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  type: http
+  username: aafedc64-9c23-11ef-a79f-f23c91cfbbc9
+  password: aafedc64-9c23-11ef-a79f-f23c91cfbbc9
   tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-03-WS-030101.xyz
-  server: bestcf.030101.xyz
-  port: 443
-  client-fingerprint: firefox
-  type: vless
-  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  tls: true
-  servername: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-01-Trojan-saas.sin.fan
-  server: saas.sin.fan
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-02-Trojan-AI
-  server: jp.111000.cc.cd
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
-  udp: true
-- name: LD论坛公益2-03-Trojan-030101.xyz
-  server: bestcf.030101.xyz
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.111000.de5.net
-  network: ws
-  ws-opts:
-    path: /?ip=ip.111000.de5.net:443
-    headers:
-      Host: sni.111000.de5.net
-  ech-opts:
-    enable: true
+  skip-cert-verify: true
   udp: true
 proxy-groups:
 - name: 节点选择
@@ -1910,157 +2181,6 @@ proxy-groups:
   interval: 300
   strategy: consistent-hashing
   proxies:
-  - 免费2-🔔 关注https://github.com/wzdnzd不迷路
-  - 免费2-🇭🇰 香港 097
-  - 免费2-🇸🇬 新加坡 31
-  - 免费2-🇭🇰 香港 034
-  - 免费2-🇹🇼 台湾 19
-  - 免费2-🇭🇰 香港家宽 03
-  - 免费2-🇩🇪 德国 20
-  - 免费2-🇻🇳 越南 05
-  - 免费2-🇫🇷 法国 01
-  - 免费2-🇻🇳 越南 24
-  - 免费2-🇻🇳 越南 08
-  - 免费2-🇭🇰 香港家宽 01
-  - 免费2-🇹🇼 台湾 14
-  - 免费2-🇮🇳 印度 01
-  - 免费2-🇺🇸 美国 69
-  - 免费2-🇭🇰 香港 015
-  - 免费2-🇻🇳 越南 22
-  - 免费2-🇹🇼 台湾家宽 03
-  - 免费2-🇳🇱 荷兰 14
-  - 免费2-🇹🇼 台湾 18
-  - 免费2-🇻🇳 越南 04
-  - 免费2-🇻🇳 越南 36
-  - 免费2-🇹🇼 台湾家宽 01
-  - 免费2-🇹🇼 台湾 17
-  - 免费2-🇭🇰 香港 090
-  - 免费2-🇯🇵 日本 22
-  - 免费2-🇯🇵 日本 16
-  - 免费2-🇺🇸 美国 74
-  - 免费2-🇹🇼 台湾 10
-  - 免费2-🇳🇱 荷兰 09
-  - 免费2-🇻🇳 越南 43
-  - 免费2-🇺🇸 美国 20
-  - 免费2-🇭🇰 香港 046
-  - 免费2-🇸🇬 新加坡 28
-  - 免费2-🇺🇸 美国 65
-  - 免费2-🇭🇰 香港 108
-  - 免费2-🇭🇰 香港 008
-  - 免费2-🇭🇰 香港 077
-  - 免费2-🇳🇱 荷兰 13
-  - 免费2-🇺🇸 美国 14
-  - 免费2-🇺🇸 美国 45
-  - 免费2-🇺🇸 美国 42
-  - 免费2-🇺🇸 美国 60
-  - 免费2-🇺🇸 美国 34
-  - 免费2-🇭🇰 香港 049
-  - 免费2-🇭🇰 香港 106
-  - 免费2-🇭🇰 香港 081
-  - 免费2-🇩🇪 德国 06
-  - 免费2-🇬🇧 英国 01
-  - 免费2-🇺🇸 美国 09
-  - 免费2-🇸🇬 新加坡 35
-  - 免费2-🇩🇪 德国 07
-  - 免费2-🇭🇰 香港 060
-  - 免费2-🇳🇱 荷兰 12
-  - 免费2-🇺🇸 美国 39
-  - 免费2-🇭🇰 香港 012
-  - 免费2-🇺🇸 美国 37
-  - 免费2-🇸🇬 新加坡 06
-  - 免费2-🇵🇱 波兰 01
-  - 免费2-🇻🇳 越南 25
-  - 免费2-🇻🇳 越南 14
-  - 免费2-🇻🇳 越南 10
-  - 免费2-🇻🇳 越南 17
-  - 免费2-🇸🇬 新加坡 22
-  - 免费2-🇭🇰 香港 073
-  - 免费2-🇭🇰 香港 030
-  - 免费2-🇭🇰 香港 048
-  - 免费2-🇯🇵 日本 10
-  - 免费2-🇺🇸 美国 55
-  - 免费2-🇹🇼 台湾家宽 06
-  - 免费2-🇭🇰 香港 014
-  - 免费2-🇯🇵 日本 06
-  - 免费2-🇸🇦 沙特阿拉伯 02
-  - 免费2-🇺🇸 美国 72
-  - 免费2-🇹🇼 台湾 03
-  - 免费2-🇭🇰 香港 088
-  - 免费2-🇸🇬 新加坡 43
-  - 免费2-🇩🇪 德国 03
-  - 免费2-🇸🇬 新加坡 44
-  - 免费2-🇭🇰 香港 058
-  - 免费2-🇭🇰 香港 035
-  - 免费2-🇺🇸 美国 11
-  - 免费2-🇩🇪 德国 14
-  - 免费2-🇭🇰 香港 094
-  - 免费2-🇧🇷 巴西 01
-  - 免费2-🇭🇰 香港 096
-  - 免费2-🇳🇱 荷兰 03
-  - 免费2-🇺🇸 美国 04
-  - 免费2-🇭🇰 香港 072
-  - 免费2-🇭🇰 香港 047
-  - 免费2-🇯🇵 日本 14
-  - 免费2-🇳🇱 荷兰 08
-  - 免费2-🇸🇦 沙特阿拉伯 01
-  - 免费2-🇩🇪 德国 04
-  - 免费2-🇸🇬 新加坡 21
-  - 免费2-🇭🇰 香港 052
-  - 免费2-🇸🇬 新加坡 38
-  - 免费2-🇻🇳 越南 21
-  - 免费2-🇭🇰 香港 083
-  - 免费2-🇹🇼 台湾 08
-  - 免费2-🇻🇳 越南 23
-  - 免费2-🇭🇰 香港 050
-  - 免费2-🇩🇪 德国 21
-  - 免费2-🇻🇳 越南 27
-  - 免费2-🇭🇰 香港 020
-  - 免费2-🇭🇰 香港 018
-  - 免费2-🇭🇰 香港 032
-  - 免费2-🇺🇸 美国 61
-  - 免费2-🇺🇸 美国 30
-  - 免费2-🇭🇰 香港 110
-  - 免费2-🇺🇸 美国 32
-  - 免费2-🇻🇳 越南 07
-  - 免费2-🇱🇹 立陶宛 01
-  - 免费2-🇺🇸 美国 58
-  - 免费2-🇭🇰 香港 003
-  - 免费2-🇸🇬 新加坡 14
-  - 免费2-🇩🇪 德国 09
-  - 免费2-🇻🇳 越南 11
-  - 免费2-🇭🇰 香港 005
-  - 免费2-🇺🇸 美国 17
-  - 免费2-🇭🇰 香港 009
-  - 免费2-🇯🇵 日本 21
-  - 免费2-🇸🇬 新加坡 30
-  - 免费2-🇯🇵 日本 13
-  - 免费2-🇺🇸 美国 26
-  - 免费2-🇸🇬 新加坡 13
-  - 免费2-🇭🇰 香港 042
-  - 免费2-🇹🇷 土耳其商宽 01
-  - 免费2-🇯🇵 日本 05
-  - 免费2-🇩🇪 德国 22
-  - 免费2-🇺🇸 美国 53
-  - 免费2-🇩🇪 德国 16
-  - 免费2-🇺🇸 美国 15
-  - 免费2-🇩🇪 德国 01
-  - 免费2-🇺🇸 美国 70
-  - 免费2-🇳🇱 荷兰 04
-  - 免费2-🇭🇰 香港 089
-  - 免费2-🇭🇰 香港 067
-  - 免费2-🇸🇬 新加坡 40
-  - 免费2-🇯🇵 日本 19
-  - 免费2-🇯🇵 日本 08
-  - 免费2-🇭🇰 香港 016
-  - 免费2-🇭🇰 香港 055
-  - 免费2-🇺🇸 美国 40
-  - 免费2-🇯🇵 日本 11
-  - 免费2-🇹🇼 台湾 07
-  - 免费2-🇻🇳 越南 03
-  - 免费2-🇸🇬 新加坡 29
-  - 免费2-🇯🇵 日本 23
-  - 免费2-🇸🇬 新加坡 08
-  - 免费2-🇭🇰 香港 027
   - 免费3-12|tg频道:@ripaojiedian
   - 免费3-12|🇭🇰 香港|@ripaojiedian
   - 免费3-12,13|香港3|@ripaojiedian
@@ -2086,12 +2206,6 @@ proxy-groups:
   - LD论坛公益2-01-Trojan-saas.sin.fan
   - LD论坛公益2-02-Trojan-AI
   - LD论坛公益2-03-Trojan-030101.xyz
-- name: 自动选择
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
   - 免费2-🇭🇰 香港 097
   - 免费2-🇸🇬 新加坡 31
@@ -2243,6 +2357,36 @@ proxy-groups:
   - 免费2-🇯🇵 日本 23
   - 免费2-🇸🇬 新加坡 08
   - 免费2-🇭🇰 香港 027
+  - 'LD论坛公益3-⚫︎ Channel: @MxlShare'
+  - 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
+  - LD论坛公益3-🇦🇪 阿联酋 | ARE
+  - LD论坛公益3-🇦🇹 奥地利 | AUT
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 2
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 3
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 4
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 5
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 6
+  - LD论坛公益3-🇦🇺 澳大利亚 | AUS
+  - LD论坛公益3-🇧🇷 巴西 | BRA
+  - LD论坛公益3-🇧🇷 巴西 | BRA 2
+  - LD论坛公益3-🇧🇷 巴西 | BRA 3
+  - LD论坛公益3-🇨🇦 加拿大 | CAN
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 2
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN
+  - LD论坛公益3-🇨🇳 台湾 | TWN 2
+  - LD论坛公益3-🇨🇳 台湾 | TWN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN 4
+  - LD论坛公益3-🇨🇳 台湾 | TWN 5
+  - LD论坛公益3-🇨🇳 台湾 | TWN 6
+  - LD论坛公益3-🇨🇳 台湾 | TWN 7
+  - LD论坛公益3-🇨🇳 台湾 | TWN 8
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
   - 免费3-12|tg频道:@ripaojiedian
   - 免费3-12|🇭🇰 香港|@ripaojiedian
   - 免费3-12,13|香港3|@ripaojiedian
@@ -2262,6 +2406,218 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
+  - 免费2-🔔 关注https://github.com/wzdnzd不迷路
+  - 免费2-🇭🇰 香港 097
+  - 免费2-🇸🇬 新加坡 31
+  - 免费2-🇭🇰 香港 034
+  - 免费2-🇹🇼 台湾 19
+  - 免费2-🇭🇰 香港家宽 03
+  - 免费2-🇩🇪 德国 20
+  - 免费2-🇻🇳 越南 05
+  - 免费2-🇫🇷 法国 01
+  - 免费2-🇻🇳 越南 24
+  - 免费2-🇻🇳 越南 08
+  - 免费2-🇭🇰 香港家宽 01
+  - 免费2-🇹🇼 台湾 14
+  - 免费2-🇮🇳 印度 01
+  - 免费2-🇺🇸 美国 69
+  - 免费2-🇭🇰 香港 015
+  - 免费2-🇻🇳 越南 22
+  - 免费2-🇹🇼 台湾家宽 03
+  - 免费2-🇳🇱 荷兰 14
+  - 免费2-🇹🇼 台湾 18
+  - 免费2-🇻🇳 越南 04
+  - 免费2-🇻🇳 越南 36
+  - 免费2-🇹🇼 台湾家宽 01
+  - 免费2-🇹🇼 台湾 17
+  - 免费2-🇭🇰 香港 090
+  - 免费2-🇯🇵 日本 22
+  - 免费2-🇯🇵 日本 16
+  - 免费2-🇺🇸 美国 74
+  - 免费2-🇹🇼 台湾 10
+  - 免费2-🇳🇱 荷兰 09
+  - 免费2-🇻🇳 越南 43
+  - 免费2-🇺🇸 美国 20
+  - 免费2-🇭🇰 香港 046
+  - 免费2-🇸🇬 新加坡 28
+  - 免费2-🇺🇸 美国 65
+  - 免费2-🇭🇰 香港 108
+  - 免费2-🇭🇰 香港 008
+  - 免费2-🇭🇰 香港 077
+  - 免费2-🇳🇱 荷兰 13
+  - 免费2-🇺🇸 美国 14
+  - 免费2-🇺🇸 美国 45
+  - 免费2-🇺🇸 美国 42
+  - 免费2-🇺🇸 美国 60
+  - 免费2-🇺🇸 美国 34
+  - 免费2-🇭🇰 香港 049
+  - 免费2-🇭🇰 香港 106
+  - 免费2-🇭🇰 香港 081
+  - 免费2-🇩🇪 德国 06
+  - 免费2-🇬🇧 英国 01
+  - 免费2-🇺🇸 美国 09
+  - 免费2-🇸🇬 新加坡 35
+  - 免费2-🇩🇪 德国 07
+  - 免费2-🇭🇰 香港 060
+  - 免费2-🇳🇱 荷兰 12
+  - 免费2-🇺🇸 美国 39
+  - 免费2-🇭🇰 香港 012
+  - 免费2-🇺🇸 美国 37
+  - 免费2-🇸🇬 新加坡 06
+  - 免费2-🇵🇱 波兰 01
+  - 免费2-🇻🇳 越南 25
+  - 免费2-🇻🇳 越南 14
+  - 免费2-🇻🇳 越南 10
+  - 免费2-🇻🇳 越南 17
+  - 免费2-🇸🇬 新加坡 22
+  - 免费2-🇭🇰 香港 073
+  - 免费2-🇭🇰 香港 030
+  - 免费2-🇭🇰 香港 048
+  - 免费2-🇯🇵 日本 10
+  - 免费2-🇺🇸 美国 55
+  - 免费2-🇹🇼 台湾家宽 06
+  - 免费2-🇭🇰 香港 014
+  - 免费2-🇯🇵 日本 06
+  - 免费2-🇸🇦 沙特阿拉伯 02
+  - 免费2-🇺🇸 美国 72
+  - 免费2-🇹🇼 台湾 03
+  - 免费2-🇭🇰 香港 088
+  - 免费2-🇸🇬 新加坡 43
+  - 免费2-🇩🇪 德国 03
+  - 免费2-🇸🇬 新加坡 44
+  - 免费2-🇭🇰 香港 058
+  - 免费2-🇭🇰 香港 035
+  - 免费2-🇺🇸 美国 11
+  - 免费2-🇩🇪 德国 14
+  - 免费2-🇭🇰 香港 094
+  - 免费2-🇧🇷 巴西 01
+  - 免费2-🇭🇰 香港 096
+  - 免费2-🇳🇱 荷兰 03
+  - 免费2-🇺🇸 美国 04
+  - 免费2-🇭🇰 香港 072
+  - 免费2-🇭🇰 香港 047
+  - 免费2-🇯🇵 日本 14
+  - 免费2-🇳🇱 荷兰 08
+  - 免费2-🇸🇦 沙特阿拉伯 01
+  - 免费2-🇩🇪 德国 04
+  - 免费2-🇸🇬 新加坡 21
+  - 免费2-🇭🇰 香港 052
+  - 免费2-🇸🇬 新加坡 38
+  - 免费2-🇻🇳 越南 21
+  - 免费2-🇭🇰 香港 083
+  - 免费2-🇹🇼 台湾 08
+  - 免费2-🇻🇳 越南 23
+  - 免费2-🇭🇰 香港 050
+  - 免费2-🇩🇪 德国 21
+  - 免费2-🇻🇳 越南 27
+  - 免费2-🇭🇰 香港 020
+  - 免费2-🇭🇰 香港 018
+  - 免费2-🇭🇰 香港 032
+  - 免费2-🇺🇸 美国 61
+  - 免费2-🇺🇸 美国 30
+  - 免费2-🇭🇰 香港 110
+  - 免费2-🇺🇸 美国 32
+  - 免费2-🇻🇳 越南 07
+  - 免费2-🇱🇹 立陶宛 01
+  - 免费2-🇺🇸 美国 58
+  - 免费2-🇭🇰 香港 003
+  - 免费2-🇸🇬 新加坡 14
+  - 免费2-🇩🇪 德国 09
+  - 免费2-🇻🇳 越南 11
+  - 免费2-🇭🇰 香港 005
+  - 免费2-🇺🇸 美国 17
+  - 免费2-🇭🇰 香港 009
+  - 免费2-🇯🇵 日本 21
+  - 免费2-🇸🇬 新加坡 30
+  - 免费2-🇯🇵 日本 13
+  - 免费2-🇺🇸 美国 26
+  - 免费2-🇸🇬 新加坡 13
+  - 免费2-🇭🇰 香港 042
+  - 免费2-🇹🇷 土耳其商宽 01
+  - 免费2-🇯🇵 日本 05
+  - 免费2-🇩🇪 德国 22
+  - 免费2-🇺🇸 美国 53
+  - 免费2-🇩🇪 德国 16
+  - 免费2-🇺🇸 美国 15
+  - 免费2-🇩🇪 德国 01
+  - 免费2-🇺🇸 美国 70
+  - 免费2-🇳🇱 荷兰 04
+  - 免费2-🇭🇰 香港 089
+  - 免费2-🇭🇰 香港 067
+  - 免费2-🇸🇬 新加坡 40
+  - 免费2-🇯🇵 日本 19
+  - 免费2-🇯🇵 日本 08
+  - 免费2-🇭🇰 香港 016
+  - 免费2-🇭🇰 香港 055
+  - 免费2-🇺🇸 美国 40
+  - 免费2-🇯🇵 日本 11
+  - 免费2-🇹🇼 台湾 07
+  - 免费2-🇻🇳 越南 03
+  - 免费2-🇸🇬 新加坡 29
+  - 免费2-🇯🇵 日本 23
+  - 免费2-🇸🇬 新加坡 08
+  - 免费2-🇭🇰 香港 027
+  - 'LD论坛公益3-⚫︎ Channel: @MxlShare'
+  - 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
+  - LD论坛公益3-🇦🇪 阿联酋 | ARE
+  - LD论坛公益3-🇦🇹 奥地利 | AUT
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 2
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 3
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 4
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 5
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 6
+  - LD论坛公益3-🇦🇺 澳大利亚 | AUS
+  - LD论坛公益3-🇧🇷 巴西 | BRA
+  - LD论坛公益3-🇧🇷 巴西 | BRA 2
+  - LD论坛公益3-🇧🇷 巴西 | BRA 3
+  - LD论坛公益3-🇨🇦 加拿大 | CAN
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 2
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN
+  - LD论坛公益3-🇨🇳 台湾 | TWN 2
+  - LD论坛公益3-🇨🇳 台湾 | TWN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN 4
+  - LD论坛公益3-🇨🇳 台湾 | TWN 5
+  - LD论坛公益3-🇨🇳 台湾 | TWN 6
+  - LD论坛公益3-🇨🇳 台湾 | TWN 7
+  - LD论坛公益3-🇨🇳 台湾 | TWN 8
+- name: 免费3
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 免费3-12|tg频道:@ripaojiedian
+  - 免费3-12|🇭🇰 香港|@ripaojiedian
+  - 免费3-12,13|香港3|@ripaojiedian
+  - 免费3-12,13|香港4|@ripaojiedian
+  - 免费3-12,13|香港5|@ripaojiedian
+  - 免费3-12,13|日本|@ripaojiedian
+  - 免费3-12,13|日本2|@ripaojiedian
+  - 免费3-12,13|日本3|@ripaojiedian
+  - 免费3-12,13|新加坡|@ripaojiedian
+  - 免费3-12,13|新加坡2|@ripaojiedian
+  - 免费3-12,13|新加坡3|@ripaojiedian
+  - 免费3-12,13|美国|@ripaojiedian
+  - 免费3-12,13|美国2|@ripaojiedian
+  - 免费3-12,13|美国3|@ripaojiedian
+  - 免费3-12|🇻🇳 越南|@ripaojiedian
+  - 免费3-13|香港|@ripaojiedian
+  - 免费3-14|HK_speednode_0013
+  - 免费3-14|HK_speednode_0014
+  - 免费3-14|IN_speednode_0016
+- name: LD论坛公益2
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
   - LD论坛公益2-01-WS-saas.sin.fan
   - LD论坛公益2-02-WS-AI
   - LD论坛公益2-03-WS-030101.xyz
@@ -2324,43 +2680,118 @@ proxy-groups:
   - 免费2-🇩🇪 德国 06
   - 免费2-🇬🇧 英国 01
   - 免费2-🇺🇸 美国 09
-- name: 免费3
+- name: LD论坛公益3
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 免费3-12|tg频道:@ripaojiedian
-  - 免费3-12|🇭🇰 香港|@ripaojiedian
-  - 免费3-12,13|香港3|@ripaojiedian
-  - 免费3-12,13|香港4|@ripaojiedian
-  - 免费3-12,13|香港5|@ripaojiedian
-  - 免费3-12,13|日本|@ripaojiedian
-  - 免费3-12,13|日本2|@ripaojiedian
-  - 免费3-12,13|日本3|@ripaojiedian
-  - 免费3-12,13|新加坡|@ripaojiedian
-  - 免费3-12,13|新加坡2|@ripaojiedian
-  - 免费3-12,13|新加坡3|@ripaojiedian
-  - 免费3-12,13|美国|@ripaojiedian
-  - 免费3-12,13|美国2|@ripaojiedian
-  - 免费3-12,13|美国3|@ripaojiedian
-  - 免费3-12|🇻🇳 越南|@ripaojiedian
-  - 免费3-13|香港|@ripaojiedian
-  - 免费3-14|HK_speednode_0013
-  - 免费3-14|HK_speednode_0014
-  - 免费3-14|IN_speednode_0016
-- name: LD论坛公益2
+  - 'LD论坛公益3-⚫︎ Channel: @MxlShare'
+  - 'LD论坛公益3-⚫︎ Website: https://mxlsub.qzz.io'
+  - LD论坛公益3-🇦🇪 阿联酋 | ARE
+  - LD论坛公益3-🇦🇹 奥地利 | AUT
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 2
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 3
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 4
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 5
+  - LD论坛公益3-🇦🇹 奥地利 | AUT 6
+  - LD论坛公益3-🇦🇺 澳大利亚 | AUS
+  - LD论坛公益3-🇧🇷 巴西 | BRA
+  - LD论坛公益3-🇧🇷 巴西 | BRA 2
+  - LD论坛公益3-🇧🇷 巴西 | BRA 3
+  - LD论坛公益3-🇨🇦 加拿大 | CAN
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 2
+  - LD论坛公益3-🇨🇦 加拿大 | CAN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN
+  - LD论坛公益3-🇨🇳 台湾 | TWN 2
+  - LD论坛公益3-🇨🇳 台湾 | TWN 3
+  - LD论坛公益3-🇨🇳 台湾 | TWN 4
+  - LD论坛公益3-🇨🇳 台湾 | TWN 5
+  - LD论坛公益3-🇨🇳 台湾 | TWN 6
+  - LD论坛公益3-🇨🇳 台湾 | TWN 7
+  - LD论坛公益3-🇨🇳 台湾 | TWN 8
+  - LD论坛公益3-🇨🇳 台湾 | TWN 9
+  - LD论坛公益3-🇨🇳 台湾 | TWN 10
+  - LD论坛公益3-🇨🇳 台湾 | TWN 11
+  - LD论坛公益3-🇨🇿 捷克 | CZE
+  - LD论坛公益3-🇩🇪 德国 | DEU
+  - LD论坛公益3-🇩🇪 德国 | DEU 2
+  - LD论坛公益3-🇩🇪 德国 | DEU 3
+  - LD论坛公益3-🇩🇪 德国 | DEU 4
+  - LD论坛公益3-🇩🇪 德国 | DEU 5
+  - LD论坛公益3-🇩🇪 德国 | DEU 6
+  - LD论坛公益3-🇩🇪 德国 | DEU 7
+  - LD论坛公益3-🇩🇪 德国 | DEU 8
+  - LD论坛公益3-🇩🇪 德国 | DEU 9
+  - LD论坛公益3-🇩🇪 德国 | DEU 10
+  - LD论坛公益3-🇩🇪 德国 | DEU 11
+  - LD论坛公益3-🇩🇪 德国 | DEU 12
+  - LD论坛公益3-🇩🇪 德国 | DEU 13
+  - LD论坛公益3-🇩🇪 德国 | DEU 14
+  - LD论坛公益3-🇩🇪 德国 | DEU 15
+  - LD论坛公益3-🇫🇮 芬兰 | FIN
+  - LD论坛公益3-🇫🇮 芬兰 | FIN 2
+  - LD论坛公益3-🇫🇮 芬兰 | FIN 3
+  - LD论坛公益3-🇫🇷 法国 | FRA
+  - LD论坛公益3-🇫🇷 法国 | FRA 2
+  - LD论坛公益3-🇫🇷 法国 | FRA 3
+  - LD论坛公益3-🇫🇷 法国 | FRA 4
+- name: 免费1
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - LD论坛公益2-01-WS-saas.sin.fan
-  - LD论坛公益2-02-WS-AI
-  - LD论坛公益2-03-WS-030101.xyz
-  - LD论坛公益2-01-Trojan-saas.sin.fan
-  - LD论坛公益2-02-Trojan-AI
-  - LD论坛公益2-03-Trojan-030101.xyz
+  - '免费1-🏴‍☠️ Group: https://t.me/txwl233'
+  - '免费1-🏴‍☠️ Channel: https://t.me/txwl666'
+  - 免费1-🇺🇸 US²_2|3.8MB/s|29%|GPT⁺|TK|NF|X|[广播|机房]
+  - 免费1-🇫🇮 FI²_9|2.5MB/s|41%|GPT⁺|YT-RU|D+|X|History|[广播|商宽]
+  - 免费1-🇩🇪 DE_20 | ⬇️ 1.2MB/s
+  - 免费1-🇩🇪 DE_6 | ⬇️ 4.4MB/s
+  - 免费1-🇳🇱 NL²_5|7.0MB/s|GPT⁺|TK|NF|X|History|[广播|机房]
+  - 免费1-🇩🇪 DE_8 | ⬇️ 4.0MB/s
+  - 免费1-🇩🇪 DE²_5|5.4MB/s|YT-US|X|[原生|商宽]
+  - 免费1-🇩🇪 DE_4 | ⬇️ 2.7MB/s
+  - 免费1-🇩🇪 DE_3 | ⬇️ 4.2MB/s
+  - 免费1-🇩🇪 DE²_8|6.6MB/s|100%|GPT|X|History
+  - 免费1-🇩🇪 DE²_3|5.5MB/s|GPT⁺|X|Succeed
+  - 免费1-🇩🇪 DE²_10|6.9MB/s|9%|GPT⁺|YT-US|X|Succeed|[原生|机房]
+  - 免费1-🇩🇪 DE_12 | ⬇️ 3.8MB/s
+  - 免费1-🇩🇪 DE²_4|6.3MB/s|100%|GPT|X|Succeed|[原生|商宽]
+  - 免费1-🇩🇪 DE_2 | ⬇️ 4.0MB/s
+  - 免费1-🇩🇪 DE_17 | ⬇️ 3.4MB/s
+  - 免费1-🏴‍☠️ ❓Other_1 | ⬇️ 5.9MB/s
+  - 免费1-🇳🇱 NL²_2|5.7MB/s|GPT⁺|X|Succeed
+  - 免费1-🇫🇮 FI²_7|1.0MB/s|20%|GPT⁺|TK|X|Succeed|[广播|商宽]
+  - 免费1-🇳🇱 NL²_3|3.1MB/s|GPT⁺|X|Succeed
+  - 免费1-🇨🇾 CY²_1|5.5MB/s|22%|GPT⁺|YT-US|TK|NF|X|[广播|机房]
+  - 免费1-🇩🇪 DE²_7|6.9MB/s|33%|GPT|X|History|[原生|商宽]
+  - 免费1-🇳🇱 NL_9 | ⬇️ 5.0MB/s
+  - 免费1-🇫🇮 FI²_4|3.7MB/s|0%|GPT⁺|X|Succeed|[广播|商宽]
+  - 免费1-🇭🇰 HK²_4|2.2MB/s|2%|YT|D+|X|Succeed
+  - 免费1-🇩🇪 DE_7 | ⬇️ 2.8MB/s
+  - 免费1-🇩🇪 DE_2 | ⬇️ 3.5MB/s
+  - 免费1-🇩🇪 DE²_4|6.8MB/s|9%|GPT⁺|X|History|[原生|机房]
+  - 免费1-🇮🇳 IN²_1|6.4MB/s|GPT⁺|GM|YT|X|[广播|机房]
+  - 免费1-🇩🇪 DE²_6|6.8MB/s|33%|GPT⁺|X|History|[原生|商宽]
+  - 免费1-🇩🇪 DE_5 | ⬇️ 2.5MB/s
+  - 免费1-🇺🇸 US_11 | ⬇️ 6.1MB/s
+  - 免费1-🇰🇿 KZ²_1|4.2MB/s|GPT|X|Succeed|[广播|机房]
+  - 免费1-🇩🇪 DE²_2|9.0MB/s|X|History
+  - 免费1-🇰🇷 KR²_3|1.7MB/s|2%|GPT⁺|GM|YT|X|History
+  - 免费1-🇰🇿 KZ²_2|4.6MB/s|0%|GPT|X|Succeed|[广播|机房]
+  - 免费1-🇩🇪 DE²_7|6.5MB/s|X
+  - 免费1-🇰🇷 KR²_4|1.4MB/s|2%|GPT⁺|GM|X
+  - 免费1-🇳🇱 NL_2 | ⬇️ 2.1MB/s
+  - 免费1-🇭🇰 NL²_1|4.9MB/s|0%|GPT⁺|YT-HK|TK|D+|X|[广播|机房]
+  - 免费1-🇺🇸 US_1 | ⬇️ 6.2MB/s
+  - 免费1-🇺🇸 US_2 | ⬇️ 6.3MB/s
+  - 免费1-🇩🇪 DE_1 | ⬇️ 3.5MB/s
+  - 免费1-🇺🇸 US_3 | ⬇️ 1.2MB/s
+  - 免费1-🇰🇿 KZ_1 | ⬇️ 1.5MB/s
+  - 免费1-🇰🇿 KZ_2 | ⬇️ 1.4MB/s
+  - 免费1-🇹🇷 TR_1 | ⬇️ 2.5MB/s
+  - 免费1-🇫🇮 FI_1 | ⬇️ 3.9MB/s
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-SUFFIX,baidu.com,DIRECT
