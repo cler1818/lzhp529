@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 18:28:06
+# 更新时间（东八区北京时间）: 2026-01-19 19:21:11
 # 仓库名称: lzhp529
 # 输入源文件: 免费
 # 订阅链接获取情况: 4/6
@@ -1623,7 +1623,7 @@ proxies:
       Host: snippet.sh21.eu.org
   udp: true
 - cipher: aes-256-cfb
-  name: 免费3-12|tg频道:@ripaojiedian
+  name: 免费3-11|tg频道:@ripaojiedian
   password: amazonskr05
   port: 443
   server: 63.180.254.10
@@ -1631,7 +1631,7 @@ proxies:
   udp: true
 - alterId: 2
   cipher: auto
-  name: 免费3-12|🇭🇰 香港|@ripaojiedian
+  name: 免费3-11|🇭🇰 香港|@ripaojiedian
   port: 30807
   server: v10.hdacd.com
   skip-cert-verify: false
@@ -1639,7 +1639,7 @@ proxies:
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   udp: true
-- name: 免费3-12,13|香港3|@ripaojiedian
+- name: 免费3-11,12|香港3|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 443
@@ -1648,7 +1648,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|香港4|@ripaojiedian
+- name: 免费3-11,12|香港4|@ripaojiedian
   network: tcp
   password: BxceQaOe
   port: 3830
@@ -1657,7 +1657,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   type: trojan
   udp: true
-- name: 免费3-12,13|香港5|@ripaojiedian
+- name: 免费3-11,12|香港5|@ripaojiedian
   network: tcp
   password: BxceQaOe
   port: 2266
@@ -1666,7 +1666,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   type: trojan
   udp: true
-- name: 免费3-12,13|日本|@ripaojiedian
+- name: 免费3-11,12|日本|@ripaojiedian
   network: tcp
   password: BxceQaOe
   port: 26378
@@ -1675,7 +1675,7 @@ proxies:
   sni: t.me%252Fripaojiedian
   type: trojan
   udp: true
-- name: 免费3-12,13|日本2|@ripaojiedian
+- name: 免费3-11,12|日本2|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 3423
@@ -1684,7 +1684,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|日本3|@ripaojiedian
+- name: 免费3-11,12|日本3|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 4006
@@ -1693,7 +1693,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|新加坡|@ripaojiedian
+- name: 免费3-11,12|新加坡|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 3901
@@ -1702,7 +1702,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|新加坡2|@ripaojiedian
+- name: 免费3-11,12|新加坡2|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 544
@@ -1711,7 +1711,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|新加坡3|@ripaojiedian
+- name: 免费3-11,12|新加坡3|@ripaojiedian
   network: tcp
   password: BxceQaOe
   port: 2673
@@ -1720,7 +1720,7 @@ proxies:
   sni: t.me%252Fripaojiedian
   type: trojan
   udp: true
-- name: 免费3-12,13|美国|@ripaojiedian
+- name: 免费3-11,12|美国|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 5076
@@ -1729,7 +1729,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|美国2|@ripaojiedian
+- name: 免费3-11,12|美国2|@ripaojiedian
   network: tcp
   password: 4843e94d205f3893f588255a591abe94
   port: 5076
@@ -1738,7 +1738,7 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-12,13|美国3|@ripaojiedian
+- name: 免费3-11,12|美国3|@ripaojiedian
   network: tcp
   password: BxceQaOe
   port: 2773
@@ -1748,7 +1748,7 @@ proxies:
   type: trojan
   udp: true
 - cipher: aes-256-cfb
-  name: 免费3-12|🇻🇳 越南|@ripaojiedian
+  name: 免费3-11|🇻🇳 越南|@ripaojiedian
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   port: 38388
   server: 103.186.155.76
@@ -1756,7 +1756,7 @@ proxies:
   udp: true
 - alterId: 2
   cipher: auto
-  name: 免费3-13|香港|@ripaojiedian
+  name: 免费3-12|香港|@ripaojiedian
   network: tcp
   port: '30807'
   server: v10.hdacd.com
@@ -1764,7 +1764,7 @@ proxies:
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   udp: true
-- name: 免费3-14|HK_speednode_0013
+- name: 免费3-13|HK_speednode_0013
   password: 4843e94d205f3893f588255a591abe94
   port: 443
   server: 58.152.18.124
@@ -1772,14 +1772,14 @@ proxies:
   sni: www.nintendogames.net
   type: trojan
   udp: true
-- name: 免费3-14|HK_speednode_0014
+- name: 免费3-13|HK_speednode_0014
   password: 4843e94d205f3893f588255a591abe94
   port: 443
   server: 58.152.18.124
   skip-cert-verify: true
   type: trojan
   udp: true
-- name: 免费3-14|IN_speednode_0016
+- name: 免费3-13|IN_speednode_0016
   password: M7v%w11Se*
   port: 443
   server: hyfuuf6.wsone.icu
@@ -2048,25 +2048,25 @@ proxy-groups:
   - 免费2-🇺🇸 美国 24
   - 免费2-🇸🇬 新加坡 01
   - 免费2-🇺🇸 美国 09
-  - 免费3-12|tg频道:@ripaojiedian
-  - 免费3-12|🇭🇰 香港|@ripaojiedian
-  - 免费3-12,13|香港3|@ripaojiedian
-  - 免费3-12,13|香港4|@ripaojiedian
-  - 免费3-12,13|香港5|@ripaojiedian
-  - 免费3-12,13|日本|@ripaojiedian
-  - 免费3-12,13|日本2|@ripaojiedian
-  - 免费3-12,13|日本3|@ripaojiedian
-  - 免费3-12,13|新加坡|@ripaojiedian
-  - 免费3-12,13|新加坡2|@ripaojiedian
-  - 免费3-12,13|新加坡3|@ripaojiedian
-  - 免费3-12,13|美国|@ripaojiedian
-  - 免费3-12,13|美国2|@ripaojiedian
-  - 免费3-12,13|美国3|@ripaojiedian
-  - 免费3-12|🇻🇳 越南|@ripaojiedian
-  - 免费3-13|香港|@ripaojiedian
-  - 免费3-14|HK_speednode_0013
-  - 免费3-14|HK_speednode_0014
-  - 免费3-14|IN_speednode_0016
+  - 免费3-11|tg频道:@ripaojiedian
+  - 免费3-11|🇭🇰 香港|@ripaojiedian
+  - 免费3-11,12|香港3|@ripaojiedian
+  - 免费3-11,12|香港4|@ripaojiedian
+  - 免费3-11,12|香港5|@ripaojiedian
+  - 免费3-11,12|日本|@ripaojiedian
+  - 免费3-11,12|日本2|@ripaojiedian
+  - 免费3-11,12|日本3|@ripaojiedian
+  - 免费3-11,12|新加坡|@ripaojiedian
+  - 免费3-11,12|新加坡2|@ripaojiedian
+  - 免费3-11,12|新加坡3|@ripaojiedian
+  - 免费3-11,12|美国|@ripaojiedian
+  - 免费3-11,12|美国2|@ripaojiedian
+  - 免费3-11,12|美国3|@ripaojiedian
+  - 免费3-11|🇻🇳 越南|@ripaojiedian
+  - 免费3-12|香港|@ripaojiedian
+  - 免费3-13|HK_speednode_0013
+  - 免费3-13|HK_speednode_0014
+  - 免费3-13|IN_speednode_0016
   - LD论坛公益2-01-WS-saas.sin.fan
   - LD论坛公益2-02-WS-AI
   - LD论坛公益2-03-WS-030101.xyz
@@ -2232,25 +2232,25 @@ proxy-groups:
   - 免费2-🇺🇸 美国 24
   - 免费2-🇸🇬 新加坡 01
   - 免费2-🇺🇸 美国 09
-  - 免费3-12|tg频道:@ripaojiedian
-  - 免费3-12|🇭🇰 香港|@ripaojiedian
-  - 免费3-12,13|香港3|@ripaojiedian
-  - 免费3-12,13|香港4|@ripaojiedian
-  - 免费3-12,13|香港5|@ripaojiedian
-  - 免费3-12,13|日本|@ripaojiedian
-  - 免费3-12,13|日本2|@ripaojiedian
-  - 免费3-12,13|日本3|@ripaojiedian
-  - 免费3-12,13|新加坡|@ripaojiedian
-  - 免费3-12,13|新加坡2|@ripaojiedian
-  - 免费3-12,13|新加坡3|@ripaojiedian
-  - 免费3-12,13|美国|@ripaojiedian
-  - 免费3-12,13|美国2|@ripaojiedian
-  - 免费3-12,13|美国3|@ripaojiedian
-  - 免费3-12|🇻🇳 越南|@ripaojiedian
-  - 免费3-13|香港|@ripaojiedian
-  - 免费3-14|HK_speednode_0013
-  - 免费3-14|HK_speednode_0014
-  - 免费3-14|IN_speednode_0016
+  - 免费3-11|tg频道:@ripaojiedian
+  - 免费3-11|🇭🇰 香港|@ripaojiedian
+  - 免费3-11,12|香港3|@ripaojiedian
+  - 免费3-11,12|香港4|@ripaojiedian
+  - 免费3-11,12|香港5|@ripaojiedian
+  - 免费3-11,12|日本|@ripaojiedian
+  - 免费3-11,12|日本2|@ripaojiedian
+  - 免费3-11,12|日本3|@ripaojiedian
+  - 免费3-11,12|新加坡|@ripaojiedian
+  - 免费3-11,12|新加坡2|@ripaojiedian
+  - 免费3-11,12|新加坡3|@ripaojiedian
+  - 免费3-11,12|美国|@ripaojiedian
+  - 免费3-11,12|美国2|@ripaojiedian
+  - 免费3-11,12|美国3|@ripaojiedian
+  - 免费3-11|🇻🇳 越南|@ripaojiedian
+  - 免费3-12|香港|@ripaojiedian
+  - 免费3-13|HK_speednode_0013
+  - 免费3-13|HK_speednode_0014
+  - 免费3-13|IN_speednode_0016
   - LD论坛公益2-01-WS-saas.sin.fan
   - LD论坛公益2-02-WS-AI
   - LD论坛公益2-03-WS-030101.xyz
@@ -2321,25 +2321,25 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 免费3-12|tg频道:@ripaojiedian
-  - 免费3-12|🇭🇰 香港|@ripaojiedian
-  - 免费3-12,13|香港3|@ripaojiedian
-  - 免费3-12,13|香港4|@ripaojiedian
-  - 免费3-12,13|香港5|@ripaojiedian
-  - 免费3-12,13|日本|@ripaojiedian
-  - 免费3-12,13|日本2|@ripaojiedian
-  - 免费3-12,13|日本3|@ripaojiedian
-  - 免费3-12,13|新加坡|@ripaojiedian
-  - 免费3-12,13|新加坡2|@ripaojiedian
-  - 免费3-12,13|新加坡3|@ripaojiedian
-  - 免费3-12,13|美国|@ripaojiedian
-  - 免费3-12,13|美国2|@ripaojiedian
-  - 免费3-12,13|美国3|@ripaojiedian
-  - 免费3-12|🇻🇳 越南|@ripaojiedian
-  - 免费3-13|香港|@ripaojiedian
-  - 免费3-14|HK_speednode_0013
-  - 免费3-14|HK_speednode_0014
-  - 免费3-14|IN_speednode_0016
+  - 免费3-11|tg频道:@ripaojiedian
+  - 免费3-11|🇭🇰 香港|@ripaojiedian
+  - 免费3-11,12|香港3|@ripaojiedian
+  - 免费3-11,12|香港4|@ripaojiedian
+  - 免费3-11,12|香港5|@ripaojiedian
+  - 免费3-11,12|日本|@ripaojiedian
+  - 免费3-11,12|日本2|@ripaojiedian
+  - 免费3-11,12|日本3|@ripaojiedian
+  - 免费3-11,12|新加坡|@ripaojiedian
+  - 免费3-11,12|新加坡2|@ripaojiedian
+  - 免费3-11,12|新加坡3|@ripaojiedian
+  - 免费3-11,12|美国|@ripaojiedian
+  - 免费3-11,12|美国2|@ripaojiedian
+  - 免费3-11,12|美国3|@ripaojiedian
+  - 免费3-11|🇻🇳 越南|@ripaojiedian
+  - 免费3-12|香港|@ripaojiedian
+  - 免费3-13|HK_speednode_0013
+  - 免费3-13|HK_speednode_0014
+  - 免费3-13|IN_speednode_0016
 - name: LD论坛公益2
   type: url-test
   url: http://www.gstatic.com/generate_204
