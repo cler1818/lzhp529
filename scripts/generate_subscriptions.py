@@ -869,8 +869,8 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             ]
         },
         
-        # 代理节点
-        'proxies': all_nodes[:200],  # 最多200个节点
+        # 代理节点 - 确保只包含真正的代理节点，不包含策略组
+        'proxies': all_nodes[:2000],  # 最多2000个节点
         
         # 策略组 - 极度简化版
         'proxy-groups': proxy_groups,
@@ -919,16 +919,22 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
                  width=float("inf"))
     
     print(f"  生成配置文件: {output_path}")
-    print(f"  包含 {len(all_nodes[:200])} 个节点")
+    print(f"  包含 {len(all_nodes[:2000])} 个节点")
     print(f"  包含 {len(proxy_groups)} 个策略组")
     print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
     
-    return len(all_nodes[:200])
+    return len(all_nodes[:2000])
 
 def build_proxy_groups(all_nodes, remark_nodes_map):
     """构建策略组配置 - 极度简化版"""
-    # 获取所有节点名称
-    all_node_names = [node.get('name', f'节点{i+1}') for i, node in enumerate(all_nodes[:200])]
+    # 获取所有节点名称（只获取有效的代理节点）
+    all_node_names = []
+    for i, node in enumerate(all_nodes[:2000]):  # 最多2000个节点
+        if isinstance(node, dict) and 'name' in node and 'server' in node and 'type' in node:
+            # 确保是真正的代理节点类型，不是策略组
+            node_type = node.get('type', '')
+            if node_type in ['ss', 'vmess', 'trojan', 'vless', 'hysteria2', 'socks5', 'http']:
+                all_node_names.append(node.get('name', f'节点{i+1}'))
     
     # 基础策略组 - 极度简化版
     proxy_groups = [
@@ -943,7 +949,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'strategy': 'consistent-hashing',
-            'proxies': all_node_names
+            'proxies': all_node_names[:1000]  # 最多1000个节点
         },
         {
             'name': '自动选择',
@@ -951,14 +957,18 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'tolerance': 50,
-            'proxies': all_node_names
+            'proxies': all_node_names[:1000]  # 最多1000个节点
         }
     ]
     
     # 为每个有备注的链接创建独立策略组
     for remark, nodes in remark_nodes_map.items():
         if remark and nodes:
-            node_names = [node.get('name') for node in nodes if node.get('name')]
+            node_names = []
+            for node in nodes[:1000]:  # 每个分组最多1000个节点
+                if isinstance(node, dict) and 'name' in node:
+                    node_names.append(node['name'])
+            
             if node_names:
                 proxy_groups.append({
                     'name': remark,
@@ -966,7 +976,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
                     'url': 'http://www.gstatic.com/generate_204',
                     'interval': 300,
                     'tolerance': 50,
-                    'proxies': node_names[:50]  # 最多50个节点
+                    'proxies': node_names[:1000]  # 最多1000个节点
                 })
     
     return proxy_groups
@@ -1207,10 +1217,13 @@ https://example.com/free.txt
             if not proxy:
                 continue
             
-            key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
-            if key not in seen:
-                seen.add(key)
-                unique_proxies.append(proxy)
+            # 确保是真正的代理节点，不是策略组
+            node_type = proxy.get('type', '')
+            if node_type in ['ss', 'vmess', 'trojan', 'vless', 'hysteria2', 'socks5', 'http']:
+                key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
+                if key not in seen:
+                    seen.add(key)
+                    unique_proxies.append(proxy)
         
         # 统计信息
         print(f"\n  {'='*30}")
@@ -1259,6 +1272,7 @@ https://example.com/free.txt
             print(f"    🏷️  成功分组策略组: {len(remark_nodes_map)} 个")
             print(f"    ⚖️  默认策略: 负载均衡")
             print(f"    🔌 代理端口: 7890")
+            print(f"    📈 每个策略组最多包含: 1000 个节点")
         else:
             print("\n    ⚠️ 没有有效节点，生成空配置")
             # 生成一个空配置，但仍然包含备注
