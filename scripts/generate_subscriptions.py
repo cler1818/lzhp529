@@ -790,11 +790,15 @@ def process_subscription_content(content, remark=None):
     return proxies
 
 def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_content, 
-                                     success_count, total_count, failed_urls, remark_stats):
+                                     success_count, total_count, failed_urls, remark_stats,
+                                     remark_failed_stats):
     """生成带分组功能的Clash配置 - 终极简化版"""
     
     # 获取当前时间
     update_time = get_beijing_time()
+    
+    # 生成分割线
+    divider = "# " + "-" * 50 + "\n"
     
     # 生成备注
     comments = f"""# ========================================
@@ -804,14 +808,18 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
 # 更新时间（东八区北京时间）: {update_time}
 # 仓库名称: lzhp529
 # 输入源文件: {filename}
+{divider}
 # 订阅链接获取情况: {success_count}/{total_count}
-# 
+{divider}
 # 分组统计:
 {remark_stats}
-# 
+
+# 失败的分组:
+{remark_failed_stats}
+{divider}
 # 失败的链接:
 {failed_urls}
-# 
+{divider}
 # 输入源文件内容:
 {source_content}
 # 
@@ -987,18 +995,71 @@ def clear_output_directory():
         os.makedirs(output_dir, exist_ok=True)
         print("创建输出目录")
 
-def read_source_file_content(filepath):
-    """读取源文件内容并添加#注释"""
+def read_source_file_content(filepath, url_results):
+    """读取源文件内容并添加节点数量和失败原因"""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             lines = f.readlines()
         
+        # 创建一个映射，便于查找备注
+        url_to_remark = {}
+        url_to_node_count = {}
+        url_to_error = {}
+        
+        for result in url_results:
+            url = result.get('url', '')
+            remark = result.get('remark', '')
+            node_count = result.get('node_count', 0)
+            error_msg = result.get('error', '')
+            
+            if url:
+                url_to_remark[url] = remark
+                url_to_node_count[url] = node_count
+                if error_msg:
+                    url_to_error[url] = error_msg
+        
         commented_lines = []
+        current_remark = None
+        
         for line in lines:
             line = line.rstrip('\n')
-            if line.strip():
+            original_line = line
+            
+            # 检查是否是注释行
+            if line.strip().startswith('#'):
+                # 提取备注
+                remark = extract_remark_from_comment(line)
+                if remark:
+                    current_remark = remark
+                commented_lines.append(f"# {line[1:].lstrip()}" if line.startswith('#') else f"# {line}")
+                continue
+            
+            # 检查是否是URL行
+            if line.strip() and re.match(r'^https?://', line.strip()):
+                url = line.strip()
+                remark = url_to_remark.get(url, current_remark)
+                node_count = url_to_node_count.get(url, 0)
+                error_msg = url_to_error.get(url, '')
+                
+                # 添加带备注的注释行
+                if remark:
+                    commented_lines.append(f"# {remark}")
+                
+                # 添加URL行
+                commented_lines.append(f"# {line}")
+                
+                # 添加节点数量或错误信息
+                if error_msg:
+                    commented_lines.append(f"#     节点数量: 0 (失败原因: {error_msg})")
+                else:
+                    commented_lines.append(f"#     节点数量: {node_count}")
+                
+                current_remark = None  # 重置当前备注
+            elif line.strip():
+                # 其他非空行
                 commented_lines.append(f"# {line}")
             else:
+                # 空行
                 commented_lines.append("#")
         
         return "\n".join(commented_lines)
@@ -1015,6 +1076,17 @@ def generate_remark_stats(remark_stats):
     stats_lines = []
     for remark, count in remark_stats.items():
         stats_lines.append(f"#   {remark}: {count} 个节点")
+    
+    return "\n".join(stats_lines)
+
+def generate_remark_failed_stats(remark_failed_stats):
+    """生成失败分组统计信息"""
+    if not remark_failed_stats:
+        return "#   无失败分组"
+    
+    stats_lines = []
+    for remark, reason in remark_failed_stats.items():
+        stats_lines.append(f"#   {remark}: {reason}")
     
     return "\n".join(stats_lines)
 
@@ -1060,9 +1132,6 @@ https://example.com/free.txt
         
         filepath = os.path.join(input_dir, filename)
         
-        # 读取源文件内容（用于备注）
-        source_content = read_source_file_content(filepath)
-        
         # 解析源文件，提取带备注的链接
         url_entries = parse_source_file(filepath)
         
@@ -1076,9 +1145,11 @@ https://example.com/free.txt
         # 统计信息
         all_proxies = []
         failed_urls = []
+        failed_entries = []  # 保存失败的条目信息
         success_count = 0
-        remark_nodes_map = {}  # 按备注分组的节点
-        remark_stats = {}      # 分组统计
+        remark_nodes_map = {}  # 按备注分组的成功节点
+        remark_stats = {}      # 成功分组统计
+        remark_failed_stats = {}  # 失败分组统计
         
         # 处理每个链接
         for i, entry in enumerate(url_entries):
@@ -1092,6 +1163,13 @@ https://example.com/free.txt
             
             result = fetch_subscription(url, timeout=15)
             content, success, error_msg = result
+            
+            entry_info = {
+                'url': url,
+                'remark': remark,
+                'node_count': 0,
+                'error': ''
+            }
             
             if success and content:
                 proxies = process_subscription_content(content, remark)
@@ -1108,14 +1186,32 @@ https://example.com/free.txt
                         # 更新统计
                         remark_stats[remark] = remark_stats.get(remark, 0) + len(proxies)
                     
+                    entry_info['node_count'] = len(proxies)
                     print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
                 else:
                     print(f"    ⚠️ 获取成功但未找到有效节点")
-                    failed_urls.append(f"# {url} - 无有效节点")
+                    entry_info['error'] = "无有效节点"
+                    
+                    # 添加到失败分组统计
+                    if remark:
+                        remark_failed_stats[remark] = "无有效节点"
+                    
+                    failed_urls.append(f"# {remark if remark else '未命名'}: {url}")
+                    failed_entries.append(entry_info)
             else:
                 error_info = error_msg if error_msg else "未知错误"
                 print(f"    ❌ 失败: {error_info}")
-                failed_urls.append(f"# {url} - {error_info}")
+                entry_info['error'] = error_info
+                
+                # 添加到失败分组统计
+                if remark:
+                    remark_failed_stats[remark] = error_info
+                
+                failed_urls.append(f"# {remark if remark else '未命名'}: {url} - {error_info}")
+                failed_entries.append(entry_info)
+            
+            # 保存URL处理结果，用于生成源文件内容
+            url_entries[i].update(entry_info)
             
             # 避免请求过快
             if i < total_count - 1:
@@ -1148,9 +1244,14 @@ https://example.com/free.txt
         
         # 分组统计
         if remark_stats:
-            print(f"    分组节点分布:")
+            print(f"    成功分组节点分布:")
             for remark, count in sorted(remark_stats.items()):
                 print(f"      {remark}: {count} 个")
+        
+        if remark_failed_stats:
+            print(f"    失败分组统计:")
+            for remark, reason in sorted(remark_failed_stats.items()):
+                print(f"      {remark}: {reason}")
         
         # 按类型统计
         type_stats = {}
@@ -1165,7 +1266,11 @@ https://example.com/free.txt
         
         # 构建策略组
         remark_stats_comments = generate_remark_stats(remark_stats)
+        remark_failed_stats_comments = generate_remark_failed_stats(remark_failed_stats)
         proxy_groups = build_proxy_groups(unique_proxies, remark_nodes_map)
+        
+        # 读取源文件内容（包含节点数量和失败原因）
+        source_content = read_source_file_content(filepath, url_entries)
         
         # 生成配置
         if unique_proxies:
@@ -1178,11 +1283,12 @@ https://example.com/free.txt
                 success_count,
                 total_count,
                 failed_comments,
-                remark_stats_comments
+                remark_stats_comments,
+                remark_failed_stats_comments
             )
             print(f"\n    ✅ 配置文件生成成功")
             print(f"    📊 代理节点: {node_count} 个")
-            print(f"    🏷️  分组策略组: {len(remark_nodes_map)} 个")
+            print(f"    🏷️  成功分组策略组: {len(remark_nodes_map)} 个")
             print(f"    ⚖️  默认策略: 负载均衡")
             print(f"    🔌 代理端口: 7890")
         else:
@@ -1199,7 +1305,8 @@ https://example.com/free.txt
                 success_count,
                 total_count,
                 failed_comments,
-                remark_stats_comments
+                remark_stats_comments,
+                remark_failed_stats_comments
             )
     
     print(f"\n" + "=" * 70)
