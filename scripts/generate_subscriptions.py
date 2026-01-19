@@ -1040,7 +1040,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'strategy': 'consistent-hashing',
-            'proxies': all_node_names
+            'proxies': all_node_names if all_node_names else ['DIRECT']  # 确保有节点
         },
         {
             'name': '自动选择',
@@ -1048,7 +1048,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'tolerance': 50,
-            'proxies': all_node_names
+            'proxies': all_node_names if all_node_names else ['DIRECT']  # 确保有节点
         }
     ]
     
@@ -1065,6 +1065,18 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
                     'tolerance': 50,
                     'proxies': node_names[:50]  # 最多50个节点
                 })
+            else:
+                # 如果该分组没有有效节点，则使用DIRECT
+                proxy_groups.append({
+                    'name': remark,
+                    'type': 'select',
+                    'proxies': ['DIRECT']
+                })
+    
+    # 确保所有策略组都有有效的proxies字段
+    for group in proxy_groups:
+        if 'proxies' not in group or not group['proxies']:
+            group['proxies'] = ['DIRECT']
     
     return proxy_groups
 
@@ -1440,6 +1452,31 @@ https://example.com/free.txt
             output_path = os.path.join('订阅链接', f'{base_name}.yaml')
             if os.path.exists(output_path):
                 print(f"    📁 配置文件: {output_path}")
+                
+                # 验证配置文件
+                try:
+                    with open(output_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                        # 提取YAML部分（跳过注释）
+                        yaml_start = content.find('proxies:')
+                        if yaml_start != -1:
+                            yaml_content = content[yaml_start:]
+                            config = yaml.safe_load(yaml_content)
+                            
+                            # 检查节点数量
+                            proxies_count = len(config.get('proxies', []))
+                            groups_count = len(config.get('proxy-groups', []))
+                            
+                            print(f"    ✅ 配置文件验证通过:")
+                            print(f"       代理节点数: {proxies_count}")
+                            print(f"       策略组数: {groups_count}")
+                            
+                            # 检查每个策略组是否有proxies字段
+                            for i, group in enumerate(config.get('proxy-groups', [])):
+                                if 'proxies' not in group or not group['proxies']:
+                                    print(f"    ⚠️  策略组 {group.get('name', f'第{i+1}组')} 缺少proxies字段")
+                except Exception as e:
+                    print(f"    ⚠️  配置文件验证失败: {e}")
         else:
             print("\n    ⚠️ 没有有效节点，生成空配置")
             # 生成一个空配置，但仍然包含备注
