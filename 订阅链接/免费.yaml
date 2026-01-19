@@ -2,25 +2,24 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 00:19:26
+# 更新时间（东八区北京时间）: 2026-01-20 00:22:42
 # 仓库名称: lzhp529
 # 输入源文件: 免费
-# 订阅链接获取情况: 3/6
+# 订阅链接获取情况: 4/6
 # --------------------------------------------------
 
 # 分组统计:
+#   LD论坛公益2: 6 个节点
 #   LD论坛公益3: 16 个节点
 #   免费2: 94 个节点
 #   免费3: 19 个节点
 #   LD论坛公益1: 失败 (HTTP错误: 403)
-#   LD论坛公益2: 失败 (请求超时)
 #   免费1: 失败 (请求超时)
 # --------------------------------------------------
 
 # 失败的链接:
 # 免费1: https://rss.zyfx6.xyz/clash/ - 请求超时
 # LD论坛公益1: https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml - HTTP错误: 403
-# LD论坛公益2: https://download.nature.qq.com/SnsShare/Windy/1768620180_b65eb5ff_ech-mihomo - 请求超时
 # --------------------------------------------------
 
 # 输入源文件内容:
@@ -45,7 +44,7 @@
 #
 # LD论坛公益2
 # https://download.nature.qq.com/SnsShare/Windy/1768620180_b65eb5ff_ech-mihomo
-# 节点数量: 0 (失败原因: 请求超时)
+# 节点数量: 6
 #
 # LD论坛公益3
 # https://mxlsub.qzz.io/free
@@ -1181,6 +1180,96 @@ proxies:
   sni: hyfuuf6.wsone.icu
   type: trojan
   udp: true
+- name: LD论坛公益2-01-WS-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-WS-AI
+  server: jp.111000.cc.cd
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-WS-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  client-fingerprint: firefox
+  type: vless
+  UUID: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  tls: true
+  servername: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-01-Trojan-saas.sin.fan
+  server: saas.sin.fan
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-02-Trojan-AI
+  server: jp.111000.cc.cd
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
+- name: LD论坛公益2-03-Trojan-030101.xyz
+  server: bestcf.030101.xyz
+  port: 443
+  type: trojan
+  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
+  sni: sni.111000.de5.net
+  network: ws
+  ws-opts:
+    path: /?ip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.de5.net
+  ech-opts:
+    enable: true
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -1307,6 +1396,12 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1426,6 +1521,12 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
 - name: 免费2
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1551,6 +1652,18 @@ proxy-groups:
   - 免费3-14|HK_speednode_0013
   - 免费3-14|HK_speednode_0014
   - 免费3-14|IN_speednode_0016
+- name: LD论坛公益2
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - LD论坛公益2-01-WS-saas.sin.fan
+  - LD论坛公益2-02-WS-AI
+  - LD论坛公益2-03-WS-030101.xyz
+  - LD论坛公益2-01-Trojan-saas.sin.fan
+  - LD论坛公益2-02-Trojan-AI
+  - LD论坛公益2-03-Trojan-030101.xyz
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-SUFFIX,baidu.com,DIRECT

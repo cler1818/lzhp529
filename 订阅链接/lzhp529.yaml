@@ -2,25 +2,24 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 00:20:08
+# 更新时间（东八区北京时间）: 2026-01-20 00:22:54
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
-# 订阅链接获取情况: 3/6
+# 订阅链接获取情况: 4/6
 # --------------------------------------------------
 
 # 分组统计:
 #   一元机场: 34 个节点
+#   宝可梦: 43 个节点
 #   维云云: 57 个节点
 #   风萧萧: 69 个节点
 #   FSCloud: 失败 (HTTP错误: 403)
 #   便宜机场: 失败 (HTTP错误: 403)
-#   宝可梦: 失败 (请求超时)
 # --------------------------------------------------
 
 # 失败的链接:
 # FSCloud: https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f - HTTP错误: 403
 # 便宜机场: https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e - HTTP错误: 403
-# 宝可梦: https://subpoke.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=366bcf5298dc6fd97ebb70a182a6ea1f - 请求超时
 # --------------------------------------------------
 
 # 输入源文件内容:
@@ -51,7 +50,7 @@
 #
 # 宝可梦 LD论坛公益 月免
 # https://subpoke.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=366bcf5298dc6fd97ebb70a182a6ea1f
-# 节点数量: 0 (失败原因: 请求超时)
+# 节点数量: 43
 # 
 # ========================================
 # 配置说明:
@@ -1258,6 +1257,334 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
+- name: 宝可梦-剩余流量：7.59 GB
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-距离下次重置剩余：23 天
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-套餐到期：2026-02-12
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-建议：感到卡顿请切换到专线节点
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-放丢失官网:https://love.p6m6.com
+  type: trojan
+  server: sssg01.go52pokemon.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54257
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54257
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  type: trojan
+  server: v601.xsaym.com
+  port: 54357
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  type: trojan
+  server: v602.xsaym.com
+  port: 54357
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55016
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55015
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 55015
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  type: ss
+  server: v602.xsaym.com
+  port: 54258
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 55017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 55017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54225
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54225
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54032
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 54032
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54261
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 54029
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 54029
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54259
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 59110
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 59099
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54265
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56115
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56115
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  type: trojan
+  server: ptxl01.xsaym.com
+  port: 56017
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54263
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  type: ss
+  server: hkbgp.xsaym.com
+  port: 54263
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54273
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  type: ss
+  server: v601.xsaym.com
+  port: 54273
+  cipher: 2022-blake3-aes-128-gcm
+  password: MjA0YzgwZjBlM2ZkNmRlNA==:ZDIwYzFlZWItYWI3Mi00ZA==
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 56019
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
+- name: 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+  type: trojan
+  server: ptxl02.xsaym.com
+  port: 56019
+  password: d20c1eeb-ab72-4d9d-8a52-63aa1b2ec188
+  sni: www.volcengine.com
+  skip-cert-verify: true
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -1431,6 +1758,49 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+  - 宝可梦-剩余流量：7.59 GB
+  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1597,6 +1967,49 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+  - 宝可梦-剩余流量：7.59 GB
+  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
 - name: 维云云
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1775,6 +2188,55 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
+- name: 宝可梦
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 宝可梦-剩余流量：7.59 GB
+  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-套餐到期：2026-02-12
+  - 宝可梦-建议：感到卡顿请切换到专线节点
+  - 宝可梦-放丢失官网:https://love.p6m6.com
+  - 宝可梦-🇭🇰【亚洲】香港01丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨AWS【2x】
+  - 宝可梦-🇭🇰【亚洲】香港01丨V6【1x】
+  - 宝可梦-🇭🇰【亚洲】香港02丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡01丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡02丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡03丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡04丨专线【3x】
+  - 宝可梦-🇸🇬【亚洲】新加坡05丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡06丨AWS【2x】
+  - 宝可梦-🇸🇬【亚洲】新加坡07丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡08丨V6【1x】
+  - 宝可梦-🇸🇬【亚洲】新加坡09丨IPLC【10x】
+  - 宝可梦-🇸🇬【亚洲】新加坡10丨IPLC【10x】
+  - 宝可梦-🇯🇵【亚洲】日本01丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本02丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本03丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本04丨专线【3x】
+  - 宝可梦-🇯🇵【亚洲】日本05丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本06丨AWS【2x】
+  - 宝可梦-🇯🇵【亚洲】日本07丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本08丨V6【1x】
+  - 宝可梦-🇯🇵【亚洲】日本09丨IPLC游戏专线【10x】
+  - 宝可梦-🇯🇵【亚洲】日本10丨IPLC游戏专线【10x】
+  - 宝可梦-🇹🇼【亚洲】台湾家宽01丨AWS【3x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽02丨专线【6x】
+  - 宝可梦-🇰🇷【亚洲】韩国家宽01丨AWS【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨专线【3x】
+  - 宝可梦-🇺🇸【北美洲】美国01丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国02丨AWS【2x】
+  - 宝可梦-🇺🇸【北美洲】美国03丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
+  - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
+  - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-SUFFIX,baidu.com,DIRECT
