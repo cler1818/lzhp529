@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 21:22:52
+# 更新时间（东八区北京时间）: 2026-01-19 21:35:25
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 4/6
@@ -824,7 +824,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 宝可梦-剩余流量：11.78 GB
+- name: 宝可梦-剩余流量：11.77 GB
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1152,11 +1152,12 @@ proxies:
   sni: www.volcengine.com
   skip-cert-verify: true
   udp: true
-- name: 维云云-剩余流量：87.01 GB
+- name: 维云云-剩余流量：87 GB
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-距离下次重置剩余：24 天
@@ -1164,6 +1165,7 @@ proxies:
   server: hkzl1.vyunyunnode.top
   port: 49000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-套餐到期：2028-02-12
@@ -1171,6 +1173,7 @@ proxies:
   server: hkzl1.vyunyunnode.top
   port: 49000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-香港1直连
@@ -1178,6 +1181,7 @@ proxies:
   server: hkzl1.vyunyunnode.top
   port: 49000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-香港2直连
@@ -1185,6 +1189,7 @@ proxies:
   server: hkzl2.vyunyunnode.top
   port: 50000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl2.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-香港3直连
@@ -1192,6 +1197,7 @@ proxies:
   server: hkzl3.vyunyunnode.top
   port: 44001
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: hkzl3.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-台湾家宽直连
@@ -1199,6 +1205,7 @@ proxies:
   server: twzl.vyunyunnode.top
   port: 47887
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: twzl.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-美国🇺🇸直连
@@ -1206,6 +1213,7 @@ proxies:
   server: uszl2.vyunyunnode.top
   port: 44006
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: uszl2.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-新加坡🇸🇬直连
@@ -1213,6 +1221,7 @@ proxies:
   server: sgzl1.vyunyunnode.top
   port: 44008
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: sgzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-韩国直连
@@ -1220,11 +1229,13 @@ proxies:
   server: hgzl.vyunyunnode.top
   port: 44098
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
 - name: 维云云-美国🇺🇸直连02
   type: hysteria2
   server: zzlmg2.hhwyy.xyz
   port: 44088
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: uszl3.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-日本🇯🇵直连
@@ -1232,6 +1243,7 @@ proxies:
   server: jpzl1.vyunyunnode.top
   port: 44011
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  udp: true
   sni: jpzl1.vyunyunnode.top
   skip-cert-verify: true
 - name: 维云云-🇭🇰香港01
@@ -1660,7 +1672,7 @@ proxy-groups:
   - 风萧萧-🇺🇸US5x家宽-wz佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：11.78 GB
+  - 宝可梦-剩余流量：11.77 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1703,7 +1715,7 @@ proxy-groups:
   - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
   - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
   - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
-  - 维云云-剩余流量：87.01 GB
+  - 维云云-剩余流量：87 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1864,7 +1876,7 @@ proxy-groups:
   - 风萧萧-🇺🇸US5x家宽-wz佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：11.78 GB
+  - 宝可梦-剩余流量：11.77 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1907,7 +1919,7 @@ proxy-groups:
   - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
   - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
   - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
-  - 维云云-剩余流量：87.01 GB
+  - 维云云-剩余流量：87 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -2066,7 +2078,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：11.78 GB
+  - 宝可梦-剩余流量：11.77 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -2115,7 +2127,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：87.01 GB
+  - 维云云-剩余流量：87 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
