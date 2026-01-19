@@ -2,61 +2,44 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 14:37:17
+# 更新时间（东八区北京时间）: 2026-01-19 14:41:52
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 4/6
 # 
 # 分组统计:
-#   分组统计:
-#   FSCloud：获取失败  -  HTTP错误: 403
 #   维云云: 57 个节点
 #   一元机场: 34 个节点
-#   便宜机场：获取失败  -  HTTP错误: 403
 #   风萧萧: 64 个节点
 #   宝可梦: 43 个节点
 # 
 # 失败的链接:
-# 【FSCloud】
-# https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f
-# 失败原因：HTTP错误: 403
-#
-# 【便宜机场】
-# https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e
-# 失败原因：HTTP错误: 403
-#
+# https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f - HTTP错误: 403
+# https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e - HTTP错误: 403
 # 
 # 输入源文件内容:
 # # FSCloud 到期：28.12.4
 # https://dash.fscloud.app/answer/land/9aead98f660a15012bae621202cb770f
-# 节点数量：获取失败
-# 失败原因：HTTP错误: 403
 #
 #
 # # 维云云 到期：28.2.12
 # https://vyy.cqsvhb.cn/s/c59454c04c7395f58b5d8165a598ad64
-# 节点数量：57 个
 #
 #
 # # 一元机场 到期26.11.13
 # https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=6d43847f2612748359fd8a8b9932efeb
-# 节点数量：34 个
 #
 #
 # # 便宜机场 月免 
 # https://xn--wtq35pfyd55o.co/answer/land/031688fb5f267e252e5fc67fcf3a6b7e
-# 节点数量：获取失败
-# 失败原因：HTTP错误: 403
 #
 #
 # # 风萧萧 LD论坛公益 长期流量
 # https://hermes.xiaoyao-88.com/s/8bfd6799e01c61ada760e88d56f91eb9
-# 节点数量：64 个
 #
 #
 # # 宝可梦 LD论坛公益 月免
 # https://subpoke.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=366bcf5298dc6fd97ebb70a182a6ea1f
-# 节点数量：43 个
 # 
 # ========================================
 # 配置说明:
@@ -1227,7 +1210,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 宝可梦-剩余流量：19.28 GB
+- name: 宝可梦-剩余流量：19.27 GB
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1723,7 +1706,7 @@ proxy-groups:
   - 风萧萧-🇺🇸US5x家宽-wz佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：19.28 GB
+  - 宝可梦-剩余流量：19.27 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1927,7 +1910,7 @@ proxy-groups:
   - 风萧萧-🇺🇸US5x家宽-wz佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：19.28 GB
+  - 宝可梦-剩余流量：19.27 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -2128,7 +2111,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：19.28 GB
+  - 宝可梦-剩余流量：19.27 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
