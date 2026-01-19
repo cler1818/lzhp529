@@ -986,9 +986,22 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             print(f"  警告: 节点{i+1}不是字典格式，跳过")
             continue
         
-        # 确保节点有必要的字段
-        validated_node = ensure_proxy_required_fields(node.copy())
-        validated_nodes.append(validated_node)
+        try:
+            # 确保节点有必要的字段
+            validated_node = ensure_proxy_required_fields(node.copy())
+            
+            # 检查节点是否包含必要字段
+            required_fields = ['name', 'type', 'server', 'port']
+            missing_fields = [field for field in required_fields if field not in validated_node or not validated_node[field]]
+            
+            if missing_fields:
+                print(f"  警告: 节点{i+1}缺少必要字段 {missing_fields}，跳过")
+                continue
+                
+            validated_nodes.append(validated_node)
+        except Exception as e:
+            print(f"  警告: 节点{i+1}验证失败: {e}，跳过")
+            continue
     
     # 打印节点信息用于调试
     print(f"  准备写入 {len(validated_nodes)} 个节点到配置文件")
@@ -1030,39 +1043,41 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
                 'https://doh.pub/dns-query',
                 'https://dns.alidns.com/dns-query'
             ]
-        },
-        
-        # 代理节点 - 使用验证后的节点
-        'proxies': validated_nodes,
-        
-        # 策略组 - 极度简化版
-        'proxy-groups': proxy_groups,
-        
-        # 规则 - 简化路由
-        'rules': [
-            # 国内域名直连
-            'DOMAIN-SUFFIX,cn,DIRECT',
-            'DOMAIN-SUFFIX,baidu.com,DIRECT',
-            'DOMAIN-SUFFIX,qq.com,DIRECT',
-            'DOMAIN-SUFFIX,taobao.com,DIRECT',
-            'DOMAIN-SUFFIX,jd.com,DIRECT',
-            'DOMAIN-SUFFIX,weibo.com,DIRECT',
-            'DOMAIN-SUFFIX,sina.com,DIRECT',
-            'DOMAIN-SUFFIX,163.com,DIRECT',
-            'DOMAIN-SUFFIX,alibaba.com,DIRECT',
-            'DOMAIN-SUFFIX,alipay.com,DIRECT',
-            'DOMAIN-SUFFIX,tencent.com,DIRECT',
-            'DOMAIN-SUFFIX,bilibili.com,DIRECT',
-            'DOMAIN-SUFFIX,zhihu.com,DIRECT',
-            
-            # GEOIP中国直连
-            'GEOIP,CN,DIRECT',
-            
-            # 最终规则 - 使用节点选择（默认负载均衡）
-            'MATCH,节点选择'
-        ]
+        }
     }
     
+    # 只有在有节点时才添加proxies部分
+    if validated_nodes:
+        config['proxies'] = validated_nodes
+    
+    # 添加策略组
+    config['proxy-groups'] = proxy_groups
+    
+    # 添加规则
+    config['rules'] = [
+        # 国内域名直连
+        'DOMAIN-SUFFIX,cn,DIRECT',
+        'DOMAIN-SUFFIX,baidu.com,DIRECT',
+        'DOMAIN-SUFFIX,qq.com,DIRECT',
+        'DOMAIN-SUFFIX,taobao.com,DIRECT',
+        'DOMAIN-SUFFIX,jd.com,DIRECT',
+        'DOMAIN-SUFFIX,weibo.com,DIRECT',
+        'DOMAIN-SUFFIX,sina.com,DIRECT',
+        'DOMAIN-SUFFIX,163.com,DIRECT',
+        'DOMAIN-SUFFIX,alibaba.com,DIRECT',
+        'DOMAIN-SUFFIX,alipay.com,DIRECT',
+        'DOMAIN-SUFFIX,tencent.com,DIRECT',
+        'DOMAIN-SUFFIX,bilibili.com,DIRECT',
+        'DOMAIN-SUFFIX,zhihu.com,DIRECT',
+        
+        # GEOIP中国直连
+        'GEOIP,CN,DIRECT',
+        
+        # 最终规则 - 使用节点选择（默认负载均衡）
+        'MATCH,节点选择'
+    ]
+    
+    # 清理配置
     config = clean_config(config)
     
     # 写入文件
@@ -1071,27 +1086,101 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
     
     output_path = os.path.join(output_dir, f'{filename}.yaml')
     
-    with open(output_path, 'w', encoding='utf-8') as f:
-        # 写入备注
-        f.write(comments)
-        # 写入配置
-        yaml.dump(config, f, 
-                 allow_unicode=True, 
-                 default_flow_style=False, 
-                 sort_keys=False,
-                 width=float("inf"))
-    
-    print(f"  生成配置文件: {output_path}")
-    print(f"  包含 {len(validated_nodes)} 个节点")
-    print(f"  包含 {len(proxy_groups)} 个策略组")
-    print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
-    
-    return len(validated_nodes)
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            # 写入备注
+            f.write(comments)
+            # 写入配置
+            yaml.dump(config, f, 
+                     allow_unicode=True, 
+                     default_flow_style=False, 
+                     sort_keys=False,
+                     width=float("inf"))
+        
+        print(f"  生成配置文件: {output_path}")
+        print(f"  包含 {len(validated_nodes)} 个节点")
+        print(f"  包含 {len(proxy_groups)} 个策略组")
+        print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
+        
+        # 验证生成的配置文件
+        print(f"  验证配置文件...")
+        try:
+            with open(output_path, 'r', encoding='utf-8') as f:
+                test_config = yaml.safe_load(f)
+            
+            if 'proxies' in test_config:
+                print(f"  ✓ 配置文件包含 {len(test_config['proxies'])} 个节点")
+            else:
+                print(f"  ⚠️ 配置文件不包含节点")
+            
+            if 'proxy-groups' in test_config:
+                print(f"  ✓ 配置文件包含 {len(test_config['proxy-groups'])} 个策略组")
+            else:
+                print(f"  ⚠️ 配置文件不包含策略组")
+                
+        except Exception as e:
+            print(f"  ⚠️ 配置文件验证失败: {e}")
+        
+        return len(validated_nodes)
+        
+    except Exception as e:
+        print(f"  ❌ 写入配置文件失败: {e}")
+        # 尝试写入一个简化的配置文件
+        try:
+            simple_config = {
+                'mixed-port': 7890,
+                'allow-lan': False,
+                'mode': 'rule',
+                'log-level': 'info',
+                'external-controller': '127.0.0.1:9090',
+                'dns': {
+                    'enable': True,
+                    'ipv6': False,
+                    'listen': '127.0.0.1:53',
+                    'default-nameserver': ['223.5.5.5', '119.29.29.29'],
+                    'enhanced-mode': 'fake-ip',
+                    'fake-ip-range': '198.18.0.1/16',
+                    'nameserver': [
+                        'https://doh.pub/dns-query',
+                        'https://dns.alidns.com/dns-query'
+                    ]
+                },
+                'proxy-groups': [
+                    {
+                        'name': '节点选择',
+                        'type': 'select',
+                        'proxies': ['DIRECT']
+                    }
+                ],
+                'rules': [
+                    'GEOIP,CN,DIRECT',
+                    'MATCH,节点选择'
+                ]
+            }
+            
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(comments)
+                yaml.dump(simple_config, f, 
+                         allow_unicode=True, 
+                         default_flow_style=False, 
+                         sort_keys=False,
+                         width=float("inf"))
+            
+            print(f"  ⚠️ 已生成简化配置文件")
+            return 0
+            
+        except Exception as e2:
+            print(f"  ❌ 生成简化配置文件也失败: {e2}")
+            return 0
 
 def build_proxy_groups(all_nodes, remark_nodes_map):
     """构建策略组配置 - 极度简化版"""
     # 获取所有节点名称
-    all_node_names = [node.get('name', f'节点{i+1}') for i, node in enumerate(all_nodes[:200])]
+    all_node_names = []
+    for i, node in enumerate(all_nodes[:200]):
+        node_name = node.get('name', f'节点{i+1}')
+        if node_name and isinstance(node_name, str):
+            all_node_names.append(node_name)
     
     # 基础策略组 - 极度简化版
     proxy_groups = [
@@ -1106,7 +1195,7 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'strategy': 'consistent-hashing',
-            'proxies': all_node_names
+            'proxies': all_node_names[:100] if all_node_names else ['DIRECT']  # 最多100个节点
         },
         {
             'name': '自动选择',
@@ -1114,14 +1203,19 @@ def build_proxy_groups(all_nodes, remark_nodes_map):
             'url': 'http://www.gstatic.com/generate_204',
             'interval': 300,
             'tolerance': 50,
-            'proxies': all_node_names
+            'proxies': all_node_names[:100] if all_node_names else ['DIRECT']  # 最多100个节点
         }
     ]
     
     # 为每个有备注的链接创建独立策略组
     for remark, nodes in remark_nodes_map.items():
         if remark and nodes:
-            node_names = [node.get('name') for node in nodes if node.get('name')]
+            node_names = []
+            for node in nodes:
+                node_name = node.get('name')
+                if node_name and isinstance(node_name, str):
+                    node_names.append(node_name)
+            
             if node_names:
                 proxy_groups.append({
                     'name': remark,
@@ -1436,6 +1530,10 @@ https://example.com/free.txt
         
         for proxy in all_proxies:
             if not proxy:
+                continue
+            
+            # 检查节点是否有效
+            if not isinstance(proxy, dict):
                 continue
             
             key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
