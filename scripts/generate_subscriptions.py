@@ -552,7 +552,7 @@ def parse_clash_yaml_content(content, remark=None):
     
     return proxies
 
-def fetch_subscription(url, timeout=30):
+def fetch_subscription(url, timeout=60):
     """获取订阅内容"""
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
