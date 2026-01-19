@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 00:22:42
+# 更新时间（东八区北京时间）: 2026-01-20 00:24:51
 # 仓库名称: lzhp529
 # 输入源文件: 免费
 # 订阅链接获取情况: 4/6
@@ -11,7 +11,7 @@
 # 分组统计:
 #   LD论坛公益2: 6 个节点
 #   LD论坛公益3: 16 个节点
-#   免费2: 94 个节点
+#   免费2: 151 个节点
 #   免费3: 19 个节点
 #   LD论坛公益1: 失败 (HTTP错误: 403)
 #   免费1: 失败 (请求超时)
@@ -30,7 +30,7 @@
 #
 # 免费2 官方token链接
 # https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=5xwthvdjbvm1sbrwomlpcralcs5km568&target=clash
-# 节点数量: 94
+# 节点数量: 151
 #
 #
 # 免费3
@@ -86,78 +86,121 @@ proxies:
   cipher: aes-256-cfb
   password: febf501b-e19d-4451-8071-aa6144bb8825
   udp: true
-- name: 免费2-🇺🇸 美国 23
-  server: 104.16.224.92
-  port: 2096
+- name: 免费2-🇭🇰 香港 097
+  server: cdnfire.xiaomispeed.com
+  port: 21103
+  type: trojan
+  password: 89313bd1-3033-4139-85e9-6da7b8b07756
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇸🇬 新加坡 31
+  server: ns.cloudflare.com
+  port: 2095
   type: vless
-  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
-  tls: true
-  servername: go-79m.pages.dev
-  client-fingerprint: random
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  tls: false
+  client-fingerprint: randomized
   network: ws
   ws-opts:
-    path: /?ed=2560
+    path: /
     headers:
-      Host: go-79m.pages.dev
+      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
   udp: true
-- name: 免费2-🇸🇬 新加坡 01
-  server: freea.glyphara.com
-  port: 30403
-  type: vless
-  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: avy1Z524LLGhXuHyCYV_k_hqi_fnHPCNSdNE85Z4qDo
-    short-id: 1b3f5a2e
-  servername: www.samsung.com
-  client-fingerprint: firefox
-  network: tcp
+- name: 免费2-🇭🇰 香港 034
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: a0838e25-3f25-437d-9c6a-3b59e617f3eb
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
   udp: true
-- name: 免费2-🇹🇼 台湾家宽 05
-  server: freea.glyphara.com
-  port: 30201
-  type: vless
-  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kb5IP7-mBUXwW7zszu-grmOgNEWmqDiCvf1NRfbF3AQ
-    short-id: c1e12817
-  servername: lol.secure.dyn.riotcdn.net
-  client-fingerprint: firefox
-  network: tcp
+- name: 免费2-🇹🇼 台湾 19
+  server: green2.cdntencentmusic.com
+  port: 31103
+  type: trojan
+  password: 023bf5a1-e233-487d-b59e-a45b58009937
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
   udp: true
-- name: 免费2-🇸🇪 瑞典 01
-  server: 176.125.240.166
+- name: 免费2-🇭🇰 香港家宽 03
+  server: 58.152.46.246
   port: 443
-  type: vless
-  uuid: 002accb526534fcab24a72b0ea1cff59
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GgiY38LjRI1hS1LKhdqvtJ5SDDO436GvihG-TzEI2XE
-    short-id: aabbccdd
-  servername: apple.com
-  client-fingerprint: chrome
-  network: tcp
+  type: trojan
+  password: BxceQaOe
+  sni: t.me/ripaojiedian
+  skip-cert-verify: true
   udp: true
-- name: 免费2-🇻🇳 越南 28
-  server: 103.186.155.105
+- name: 免费2-🇩🇪 德国 20
+  server: 85.209.53.178
+  port: 8080
+  type: hysteria2
+  password: 7410f6b0-c2f8-4dbb-8bd5-53a89fadda58
+  auth: 7410f6b0-c2f8-4dbb-8bd5-53a89fadda58
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇻🇳 越南 05
+  server: 103.186.155.43
   port: 38388
   type: ss
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-- name: 免费2-🇭🇰 香港 101
-  server: cdnfire.xiaomispeed.com
-  port: 21101
-  type: trojan
-  password: 72e03954-88fe-41af-9e94-913ca7d213b3
-  sni: cdnfire.xiaomispeed.com
+- name: 免费2-🇫🇷 法国 01
+  server: fr.locations-service.com
+  port: 3032
+  type: vless
+  uuid: e59083aa-d933-4952-8cf0-eec74f718705
+  tls: true
+  reality-opts:
+    public-key: 21V_VkMUD2XRbyRDg7hjpblUAwxHvlLmbarATdhhJQI
+  servername: refersion.com
+  client-fingerprint: chrome
+  network: tcp
   udp: true
-- name: 免费2-🇺🇸 美国 54
-  server: quick-edit.devprod.cloudflare.dev
+- name: 免费2-🇻🇳 越南 24
+  server: 103.186.155.103
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇻🇳 越南 08
+  server: 103.186.154.165
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇭🇰 香港家宽 01
+  server: 58.152.53.219
+  port: 443
+  type: trojan
+  password: BxceQaOe
+  sni: 58.152.53.219
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇹🇼 台湾 14
+  server: green2.cdntencentmusic.com
+  port: 35502
+  type: trojan
+  password: 0d982421-42ab-4eef-bb67-3682dee8080c
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇮🇳 印度 01
+  server: slur.izenny.com
+  port: 17254
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 7ecdca3d-f26a-4f9b-ad85-58b52a7f5f50
+  udp: true
+- name: 免费2-🇺🇸 美国 69
+  server: convera.com
   port: 2053
   type: vless
   uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
@@ -170,8 +213,124 @@ proxies:
     headers:
       Host: snippet.danfeng.nn.kg
   udp: true
-- name: 免费2-🇳🇱 荷兰 15
-  server: www.whatismyip.net
+- name: 免费2-🇭🇰 香港 015
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 483e1b3c-4c04-483d-8051-279bd743c5f3
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇻🇳 越南 22
+  server: 103.186.155.84
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇹🇼 台湾家宽 03
+  server: g9ffk1q2.gura.lol
+  port: 31239
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇳🇱 荷兰 14
+  server: legion.lenovo.com
+  port: 2053
+  type: vless
+  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  tls: true
+  servername: snippet.danfeng.nn.kg
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.nn.kg
+  udp: true
+- name: 免费2-🇹🇼 台湾 18
+  server: cdnfire.xiaomispeed.com
+  port: 21103
+  type: trojan
+  password: 00a5153f-d263-405f-9687-634e54ffd18c
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇻🇳 越南 04
+  server: 103.186.155.107
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇻🇳 越南 36
+  server: 103.186.154.52
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇹🇼 台湾家宽 01
+  server: freea.glyphara.com
+  port: 30201
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: kb5IP7-mBUXwW7zszu-grmOgNEWmqDiCvf1NRfbF3AQ
+    short-id: c1e12817
+  servername: lol.secure.dyn.riotcdn.net
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇹🇼 台湾 17
+  server: green2.cdntencentmusic.com
+  port: 35502
+  type: trojan
+  password: c2dd7c53-c617-4f9a-8bcc-37f771a811d1
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 090
+  server: cdnfire.xiaomispeed.com
+  port: 21101
+  type: trojan
+  password: 7d98cd01-adca-4e46-b5f6-e7c514f8698f
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇯🇵 日本 22
+  server: v1.dabache.top
+  port: 2096
+  type: vless
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  servername: sni.meibidi.pp.ua
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.meibidi.pp.ua
+  udp: true
+- name: 免费2-🇯🇵 日本 16
+  server: freea.glyphara.com
+  port: 30303
+  type: vless
+  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RuNAMARjcI4VNAkqWazbFm4sa3Kc-uViiruuByx2TiM
+    short-id: 4d77021d
+  servername: mensura.cdn-apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇺🇸 美国 74
+  server: developers.cloudflare.com
   port: 2095
   type: vless
   uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
@@ -183,65 +342,282 @@ proxies:
     headers:
       Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
   udp: true
-- name: 免费2-🇯🇵 日本 01
-  server: vip3.kaixincloud.top
+- name: 免费2-🇹🇼 台湾 10
+  server: cdnfire.xiaomispeed.com
+  port: 25502
+  type: trojan
+  password: 3e8ac18c-4aae-41c3-8605-1a8eb298fd11
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇳🇱 荷兰 09
+  server: 207.174.30.152
+  port: 443
+  type: vmess
+  uuid: 4dd859b3-c9f6-477e-95f5-283abb3129e5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /content/dam/reinvent/2024/media/ripples/fav-icon.svg
+    headers:
+      Host:
+      - reinvent.awsevents.com
+  udp: true
+- name: 免费2-🇻🇳 越南 43
+  server: 103.186.154.243
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇺🇸 美国 20
+  server: cdnfire.xiaomispeed.com
+  port: 25501
+  type: trojan
+  password: 72e03954-88fe-41af-9e94-913ca7d213b3
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 046
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 524a5f00-faee-4dfa-9383-c7d01918d98f
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇸🇬 新加坡 28
+  server: freea.glyphara.com
+  port: 30403
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: avy1Z524LLGhXuHyCYV_k_hqi_fnHPCNSdNE85Z4qDo
+    short-id: 1b3f5a2e
+  servername: www.samsung.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇺🇸 美国 65
+  server: freea.glyphara.com
+  port: 30701
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: cgGav3P_PeaM4grdSECGj4Tt9IsCmSqhGo_EJ0_KdWY
+    short-id: e62db878
+  servername: www.amd.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇭🇰 香港 108
+  server: freea.glyphara.com
+  port: 30101
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: egnl0iFXY3IZYfvHwoNd72sCaULkoFRoL78wQiFwcDU
+    short-id: 176d4445
+  servername: itunes.apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇭🇰 香港 008
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: a21089f4-d7b7-40fe-80db-cf483ff8e6c6
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 077
+  server: green2.cdntencentmusic.com
+  port: 31101
+  type: trojan
+  password: 9d23ec89-a50a-4634-b09e-37330ce09b37
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇳🇱 荷兰 13
+  server: 104.26.12.27
+  port: 2053
+  type: vless
+  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  tls: true
+  servername: snippet.danfeng.nn.kg
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.nn.kg
+  udp: true
+- name: 免费2-🇺🇸 美国 14
+  server: g9ffk1q2.gura.lol
+  port: 33136
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇺🇸 美国 45
+  server: 104.16.250.22
   port: 443
   type: vless
-  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
   tls: true
-  servername: kb.as129394.me
+  servername: l.ayovo.netlib.re
   client-fingerprint: chrome
   network: ws
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: kb.as129394.me
+      Host: l.ayovo.netlib.re
   udp: true
-- name: 免费2-🇳🇱 荷兰 17
-  server: 213.155.28.92
-  port: 16140
+- name: 免费2-🇺🇸 美国 42
+  server: support.cloudflare.com
+  port: 2095
   type: vless
-  uuid: a489c356-a51f-4da9-ae2b-87460e01d4f4
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  tls: false
+  client-fingerprint: randomized
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
+  udp: true
+- name: 免费2-🇺🇸 美国 60
+  server: freea.glyphara.com
+  port: 30703
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
   tls: true
+  flow: xtls-rprx-vision
   reality-opts:
-    public-key: Pq0Y4a9cwUPfgisqPNY4QUypmKOBr_zp6l6vIu8Hm1M
-    short-id: 2eee13be
-  servername: web.max.ru
-  client-fingerprint: chrome
+    public-key: Fpcp8ed_KjL5rnn0gstMa0AQPL8GcYMtArb--r1AhnI
+    short-id: 845532fa
+  servername: mensura.cdn-apple.com
+  client-fingerprint: firefox
   network: tcp
   udp: true
-- name: 免费2-🇭🇰 香港 086
-  server: green2.cdntencentmusic.com
-  port: 31101
-  type: trojan
-  password: e18959dd-114c-4418-bb80-18b0e7212314
-  sni: green2.cdntencentmusic.com
+- name: 免费2-🇺🇸 美国 34
+  server: 103.21.244.37
+  port: 8443
+  type: vless
+  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
+  tls: true
+  servername: go-79m.pages.dev
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go-79m.pages.dev
   udp: true
-- name: 免费2-🇭🇰 香港 104
+- name: 免费2-🇭🇰 香港 049
   server: green2.cdntencentmusic.com
-  port: 31103
+  port: 31102
   type: trojan
-  password: 1f86e372-1ee6-47eb-8c33-72bfc310dee6
+  password: 29f942d6-41b9-406e-84c5-77b9991ab58b
   sni: green2.cdntencentmusic.com
   skip-cert-verify: true
   udp: true
-- name: 免费2-🇭🇰 香港 080
-  server: cdnfire.xiaomispeed.com
-  port: 21101
+- name: 免费2-🇭🇰 香港 106
+  server: green2.cdntencentmusic.com
+  port: 31101
   type: trojan
-  password: f576771a-3fea-404b-bec7-f2c374dcebb6
+  password: b8a8025b-275a-4304-a789-b0881b281b81
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 081
+  server: green2.cdntencentmusic.com
+  port: 31101
+  type: trojan
+  password: 0d982421-42ab-4eef-bb67-3682dee8080c
+  sni: green2.cdntencentmusic.com
+  udp: true
+- name: 免费2-🇩🇪 德国 06
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 003b6a3f-4bff-46f7-a515-73c734a24dd7
+  auth: 003b6a3f-4bff-46f7-a515-73c734a24dd7
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇬🇧 英国 01
+  server: cf-proxy.202507.xyz
+  port: 443
+  type: vmess
+  uuid: fa8c811b-7bd3-4c04-b9dd-c701698f1efd
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: gb.202507.xyz
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: gb.202507.xyz
+  udp: true
+- name: 免费2-🇺🇸 美国 09
+  server: cdnfire.xiaomispeed.com
+  port: 25501
+  type: trojan
+  password: 97b365f9-fb05-47fc-a6fd-a97a3fdce8ee
   sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: false
+  skip-cert-verify: true
   udp: true
-- name: 免费2-🇮🇸 冰岛 01
-  server: slur.izenny.com
-  port: 32009
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7ecdca3d-f26a-4f9b-ad85-58b52a7f5f50
+- name: 免费2-🇸🇬 新加坡 35
+  server: freea.glyphara.com
+  port: 30401
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ZeXA8rcM3TV466jK83J157gY7U2JTI9KP9nmn_Nbawk
+    short-id: 105a652c
+  servername: learn.microsoft.com
+  client-fingerprint: firefox
+  network: tcp
   udp: true
-- name: 免费2-🇺🇸 美国 18
-  server: 103.21.244.227
+- name: 免费2-🇩🇪 德国 07
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 81a01287-368f-4427-b040-f7c27164f338
+  auth: 81a01287-368f-4427-b040-f7c27164f338
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇭🇰 香港 060
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: cb2e780c-c570-40ea-846a-2072c9cc26f6
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇳🇱 荷兰 12
+  server: 188.114.98.17
   port: 2083
   type: vless
   uuid: 92092474-994a-4537-ae93-76729a0ee7d7
@@ -254,143 +630,8 @@ proxies:
     headers:
       Host: go-79m.pages.dev
   udp: true
-- name: 免费2-🇭🇰 香港 107
-  server: 68.64.176.135
-  port: 443
-  type: vless
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  tls: true
-  servername: sni.meibidi.pp.ua
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.meibidi.pp.ua
-  udp: true
-- name: 免费2-🇺🇸 美国 35
-  server: 104.16.82.177
-  port: 2053
-  type: vless
-  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
-  tls: true
-  servername: go-79m.pages.dev
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go-79m.pages.dev
-  udp: true
-- name: 免费2-🇸🇬 新加坡 19
-  server: g9ffk1q2.gura.lol
-  port: 14121
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
-  udp: true
-- name: 免费2-🇿🇦 南非 01
-  server: 172.65.90.48
-  port: 443
-  type: vless
-  uuid: d5d6faa0-9136-4e2d-b7b5-51a1b9e61126
-  tls: true
-  servername: cfzx.653827.xyz
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: cfzx.653827.xyz
-  udp: true
-- name: 免费2-🇸🇬 新加坡 17
-  server: 217.142.185.111
-  port: 443
-  type: vless
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  tls: true
-  servername: sni.meibidi.pp.ua
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.meibidi.pp.ua
-  udp: true
-- name: 免费2-🇸🇬 新加坡 04
-  server: v2.dabache.top
-  port: 8443
-  type: vless
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  tls: true
-  servername: sni.meibidi.pp.ua
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.meibidi.pp.ua
-  udp: true
-- name: 免费2-🇹🇼 台湾 11
-  server: cdnfire.xiaomispeed.com
-  port: 25502
-  type: trojan
-  password: 89313bd1-3033-4139-85e9-6da7b8b07756
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇲🇽 墨西哥 01
-  server: slur.izenny.com
-  port: 48907
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7ecdca3d-f26a-4f9b-ad85-58b52a7f5f50
-  udp: true
-- name: 免费2-🇸🇬 新加坡 27
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  port: 443
-  type: trojan
-  password: 1a25f8ad-cad2-4e93-b5bf-34e42bcac02a
-  sni: sni.latonyamadeline.ndjp.net
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.latonyamadeline.ndjp.net
-  udp: true
-- name: 免费2-🇺🇸 美国 49
-  server: v4.hdacd.com
-  port: 30804
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 免费2-🇭🇰 香港 011
-  server: cdnfire.xiaomispeed.com
-  port: 21102
-  type: trojan
-  password: 3e8ac18c-4aae-41c3-8605-1a8eb298fd11
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇻🇳 越南 15
-  server: 103.186.155.224
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇹🇼 台湾 09
-  server: green2.cdntencentmusic.com
-  port: 35502
-  type: trojan
-  password: e18959dd-114c-4418-bb80-18b0e7212314
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇳🇱 荷兰 11
-  server: 104.24.227.87
+- name: 免费2-🇺🇸 美国 39
+  server: 104.16.212.208
   port: 8443
   type: vless
   uuid: 92092474-994a-4537-ae93-76729a0ee7d7
@@ -403,509 +644,213 @@ proxies:
     headers:
       Host: go-79m.pages.dev
   udp: true
-- name: 免费2-🇩🇪 德国 08
-  server: 85.209.53.178
-  port: 8443
-  type: hysteria2
-  password: f134a509-eb9f-45d6-a70c-b92fa21490c4
-  auth: f134a509-eb9f-45d6-a70c-b92fa21490c4
-  up: 100
-  down: 100
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
-  udp: true
-- name: 免费2-🇻🇳 越南 26
-  server: 103.186.154.60
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇭🇰 香港 074
-  server: 149.104.29.219
-  port: 443
-  type: vless
-  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
-  tls: true
-  servername: kb.as129394.me
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: kb.as129394.me
-  udp: true
-- name: 免费2-🇳🇱 荷兰 20
-  server: 172.65.90.69
-  port: 443
-  type: vless
-  uuid: d5d6faa0-9136-4e2d-b7b5-51a1b9e61126
-  tls: true
-  servername: cfzx.653827.xyz
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: cfzx.653827.xyz
-  udp: true
-- name: 免费2-🇮🇳 印度 02
-  server: 134.209.147.198
-  port: 989
-  type: ss
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-- name: 免费2-🇭🇰 香港 082
-  server: cdnfire.xiaomispeed.com
-  port: 21101
-  type: trojan
-  password: c61ed8b2-fb7c-48f6-a953-5c49888b8944
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: false
-  udp: true
-- name: 免费2-🇺🇸 美国 62
-  server: www.npmjs.com
-  port: 2095
-  type: vless
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-  tls: false
-  client-fingerprint: randomized
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
-  udp: true
-- name: 免费2-🇸🇬 新加坡 20
-  server: g9ffk1q2.gura.lol
-  port: 14123
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
-  udp: true
-- name: 免费2-🇸🇬 新加坡 41
-  server: vip1.kaixincloud.top
-  port: 2096
-  type: vless
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  tls: true
-  servername: sni.meibidi.pp.ua
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.meibidi.pp.ua
-  udp: true
-- name: 免费2-🇸🇬 新加坡 34
-  server: www.shopify.com
-  port: 2095
-  type: vless
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-  tls: false
-  client-fingerprint: randomized
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
-  udp: true
-- name: 免费2-🇭🇰 香港 084
-  server: cdnfire.xiaomispeed.com
-  port: 21101
-  type: trojan
-  password: 3e8ac18c-4aae-41c3-8605-1a8eb298fd11
-  sni: cdnfire.xiaomispeed.com
-  udp: true
-- name: 免费2-🇻🇳 越南 02
-  server: 103.186.155.204
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇸🇬 新加坡 24
-  server: cloudflare.seeck.cn
-  port: 2053
-  type: vless
-  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
-  tls: true
-  servername: snippet.danfeng.nn.kg
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: snippet.danfeng.nn.kg
-  udp: true
-- name: 免费2-🇹🇼 台湾 16
-  server: cdnfire.xiaomispeed.com
-  port: 25502
-  type: trojan
-  password: 8fc5efa6-9c9f-43cf-b839-8237883e9134
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇻🇳 越南 40
-  server: 103.186.154.158
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇺🇸 美国 12
-  server: g9ffk1q2.gura.lol
-  port: 33135
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
-  udp: true
-- name: 免费2-🇹🇼 台湾家宽 04
-  server: g9ffk1q2.gura.lol
-  port: 32236
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
-  udp: true
-- name: 免费2-🇹🇼 台湾 13
-  server: green2.cdntencentmusic.com
-  port: 35502
-  type: trojan
-  password: 29f942d6-41b9-406e-84c5-77b9991ab58b
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇭🇰 香港 092
-  server: cdnfire.xiaomispeed.com
-  port: 21101
-  type: trojan
-  password: 154c8b8c-68f3-4225-9fc7-f4c9e2249ded
-  sni: cdnfire.xiaomispeed.com
-  udp: true
-- name: 免费2-🇭🇰 香港 010
-  server: green2.cdntencentmusic.com
-  port: 31102
-  type: trojan
-  password: e54aaded-7d83-4dad-a65b-972e11e641a4
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇺🇸 美国 51
-  server: green2.cdntencentmusic.com
-  port: 35502
-  type: trojan
-  password: efe9d5fc-823d-43d5-baef-9bc1fb0e651d
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇭🇰 香港 054
-  server: 103.149.183.80
-  port: 8388
-  type: ss
-  cipher: chacha20-ietf
-  password: asd123456
-  udp: true
-- name: 免费2-🇫🇮 芬兰商宽 01
-  server: 144.31.90.215
-  port: 443
-  type: vless
-  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
-  tls: true
-  servername: ficdn19.suio.me
-  network: tcp
-  udp: true
-- name: 免费2-🇻🇳 越南 30
-  server: 103.186.154.239
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇹🇼 台湾 15
-  server: green2.cdntencentmusic.com
-  port: 35502
-  type: trojan
-  password: 715e7164-c698-4c04-9944-ad4b960fa51d
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇫🇷 法国 03
-  server: platform.wise.com
-  port: 2053
-  type: vless
-  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
-  tls: true
-  servername: snippet.danfeng.nn.kg
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: snippet.danfeng.nn.kg
-  udp: true
-- name: 免费2-🇺🇸 美国 52
-  server: cloudflare-dns.com
-  port: 2095
-  type: vless
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-  tls: false
-  client-fingerprint: randomized
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
-  udp: true
-- name: 免费2-🇭🇰 香港 040
-  server: green2.cdntencentmusic.com
-  port: 31102
-  type: trojan
-  password: e7354b6e-7bf8-4dd1-9926-d6c3cc12416d
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇸🇬 新加坡 02
-  server: freea.glyphara.com
-  port: 30401
-  type: vless
-  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZeXA8rcM3TV466jK83J157gY7U2JTI9KP9nmn_Nbawk
-    short-id: 105a652c
-  servername: learn.microsoft.com
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-- name: 免费2-🇭🇰 香港 069
-  server: green2.cdntencentmusic.com
-  port: 31102
-  type: trojan
-  password: abe81309-c37c-4ee8-9b2b-2e1b1073dd6c
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇻🇳 越南 20
-  server: 103.186.155.106
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇺🇸 美国 56
-  server: freea.glyphara.com
-  port: 30703
-  type: vless
-  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Fpcp8ed_KjL5rnn0gstMa0AQPL8GcYMtArb--r1AhnI
-    short-id: 845532fa
-  servername: mensura.cdn-apple.com
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-- name: 免费2-🇭🇰 香港 041
+- name: 免费2-🇭🇰 香港 012
   server: cdnfire.xiaomispeed.com
   port: 21102
-  type: trojan
-  password: c9e6aeaf-5e23-4b0e-86c0-ecc7ad230209
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇹🇼 台湾 01
-  server: jry.izenny.com
-  port: 27689
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: f9c3a672-4388-4bf7-9354-9337ea0c2179
-  udp: true
-- name: 免费2-🇸🇬 新加坡 32
-  server: cf.3666888.xyz
-  port: 2096
-  type: vless
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  tls: true
-  servername: sni.meibidi.pp.ua
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.meibidi.pp.ua
-  udp: true
-- name: 免费2-🇮🇱 以色列 01
-  server: slur.izenny.com
-  port: 30348
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7ecdca3d-f26a-4f9b-ad85-58b52a7f5f50
-  udp: true
-- name: 免费2-🇻🇳 越南 35
-  server: 103.186.154.77
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇻🇳 越南 39
-  server: 103.186.155.75
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇻🇳 越南 31
-  server: 103.186.154.55
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇸🇬 新加坡 15
-  server: sg.zuomomo.top
-  port: 16667
-  type: hysteria2
-  password: 4dd859b3-c9f6-477e-95f5-283abb3129e5
-  auth: 4dd859b3-c9f6-477e-95f5-283abb3129e5
-  skip-cert-verify: false
-  udp: true
-- name: 免费2-🇺🇸 美国 47
-  server: 104.21.224.5
-  port: 443
-  type: vless
-  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
-  tls: true
-  servername: l.ayovo.netlib.re
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: l.ayovo.netlib.re
-  udp: true
-- name: 免费2-🇭🇰 香港 066
-  server: green2.cdntencentmusic.com
-  port: 31102
-  type: trojan
-  password: 08b31bc0-9abb-4c10-884d-334a42d1e118
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇯🇵 日本 07
-  server: 162.159.44.142
-  port: 443
-  type: vless
-  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
-  tls: true
-  servername: l.ayovo.netlib.re
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: l.ayovo.netlib.re
-  udp: true
-- name: 免费2-🇹🇼 台湾家宽 02
-  server: g9ffk1q2.gura.lol
-  port: 31237
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
-  udp: true
-- name: 免费2-🇭🇰 香港 068
-  server: green2.cdntencentmusic.com
-  port: 31102
-  type: trojan
-  password: 401a44f1-eab0-432b-95e7-32709b1a1942
-  sni: green2.cdntencentmusic.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇭🇰 香港 028
-  server: cdnfire.xiaomispeed.com
-  port: 21102
-  type: trojan
-  password: 28227414-045b-4cf7-9b8b-81d5fba6b50f
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇭🇰 香港 026
-  server: cdnfire.xiaomispeed.com
-  port: 21103
-  type: trojan
-  password: 886ec7f5-efaf-4898-a5b0-3fccbcf4a40f
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇺🇸 美国 10
-  server: cdnfire.xiaomispeed.com
-  port: 25501
   type: trojan
   password: dadd13b8-2b26-402c-9457-cd842d4522ca
   sni: cdnfire.xiaomispeed.com
   skip-cert-verify: true
   udp: true
-- name: 免费2-🇳🇱 荷兰 19
-  server: docker.1panel.live
-  port: 2053
+- name: 免费2-🇺🇸 美国 37
+  server: 104.16.222.89
+  port: 2096
   type: vless
-  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
   tls: true
-  servername: snippet.danfeng.nn.kg
-  client-fingerprint: chrome
+  servername: go-79m.pages.dev
+  client-fingerprint: random
   network: ws
   ws-opts:
-    path: /danfeng?ed=2560
+    path: /?ed=2560
     headers:
-      Host: snippet.danfeng.nn.kg
+      Host: go-79m.pages.dev
   udp: true
-- name: 免费2-🇻🇳 越南 12
-  server: 103.186.155.231
-  port: 38388
-  type: ss
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-- name: 免费2-🇸🇬 新加坡 37
-  server: 34.143.159.175
-  port: 443
+- name: 免费2-🇸🇬 新加坡 06
+  server: v2.dabache.top
+  port: 2096
   type: vless
   uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
   tls: true
   servername: sni.meibidi.pp.ua
+  client-fingerprint: chrome
   network: ws
   ws-opts:
     path: /?ed=2560
     headers:
       Host: sni.meibidi.pp.ua
   udp: true
-- name: 免费2-🇭🇰 香港 102
-  server: green2.cdntencentmusic.com
-  port: 31101
-  type: trojan
-  password: c2dd7c53-c617-4f9a-8bcc-37f771a811d1
-  sni: green2.cdntencentmusic.com
+- name: 免费2-🇵🇱 波兰 01
+  server: 144.31.0.228
+  port: 443
+  type: vless
+  uuid: 02fb468f-21f2-460e-bfa1-ef52ae5e627f
+  tls: true
+  servername: plcdn5.suio.me
+  network: tcp
   udp: true
-- name: 免费2-🇺🇸 美国 03
-  server: cdnfire.xiaomispeed.com
-  port: 25501
-  type: trojan
-  password: 7d98cd01-adca-4e46-b5f6-e7c514f8698f
-  sni: cdnfire.xiaomispeed.com
-  skip-cert-verify: true
-  udp: true
-- name: 免费2-🇻🇳 越南 42
-  server: 103.186.155.36
+- name: 免费2-🇻🇳 越南 25
+  server: 103.186.154.34
   port: 38388
   type: ss
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-- name: 免费2-🇯🇵 日本 09
+- name: 免费2-🇻🇳 越南 14
+  server: 103.186.154.51
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇻🇳 越南 10
+  server: 103.186.155.111
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇻🇳 越南 17
+  server: 103.186.154.166
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇸🇬 新加坡 22
+  server: vip2.kaixincloud.top
+  port: 443
+  type: vless
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  servername: sni.meibidi.pp.ua
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.meibidi.pp.ua
+  udp: true
+- name: 免费2-🇭🇰 香港 073
+  server: freea.glyphara.com
+  port: 30101
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: egnl0iFXY3IZYfvHwoNd72sCaULkoFRoL78wQiFwcDU
+    short-id: 176d4445
+  servername: itunes.apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇭🇰 香港 030
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 2f914df1-a8e2-45b5-bdcd-a7bb4aed663f
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 048
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 59d240c9-c72e-4ea1-9672-4a319f3c9541
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇯🇵 日本 10
+  server: backupaaa.7yq.top
+  port: 12702
+  type: vless
+  uuid: b6cfe5d2-19e9-436d-b862-1935c62dcb14
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: -vwrdHcquc5QwGZNaV4y8vq-kgBcrRCKeWyV1o8tYxg
+    short-id: 1d53eaef
+  servername: itunes.apple.com
+  client-fingerprint: edge
+  network: tcp
+  udp: true
+- name: 免费2-🇺🇸 美国 55
+  server: www.fbi.gov
+  port: 2095
+  type: vless
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  tls: false
+  client-fingerprint: randomized
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
+  udp: true
+- name: 免费2-🇹🇼 台湾家宽 06
+  server: freea.glyphara.com
+  port: 30201
+  type: vless
+  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: kb5IP7-mBUXwW7zszu-grmOgNEWmqDiCvf1NRfbF3AQ
+    short-id: c1e12817
+  servername: lol.secure.dyn.riotcdn.net
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇭🇰 香港 014
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: c61ed8b2-fb7c-48f6-a953-5c49888b8944
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇯🇵 日本 06
+  server: v6.hdacd.com
+  port: 30806
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 免费2-🇸🇦 沙特阿拉伯 02
+  server: 172.65.90.47
+  port: 443
+  type: vless
+  uuid: d5d6faa0-9136-4e2d-b7b5-51a1b9e61126
+  tls: true
+  servername: cfzx.653827.xyz
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: cfzx.653827.xyz
+  udp: true
+- name: 免费2-🇺🇸 美国 72
+  server: 162.159.152.112
+  port: 443
+  type: vless
+  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
+  tls: true
+  servername: go-79m.pages.dev
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go-79m.pages.dev
+  udp: true
+- name: 免费2-🇹🇼 台湾 03
   server: mlbackupaaa.7yq.top
-  port: 48692
+  port: 19301
   type: vmess
   uuid: b6cfe5d2-19e9-436d-b862-1935c62dcb14
   alterId: 0
@@ -918,8 +863,15 @@ proxies:
     headers:
       Host: shoutingtoutiao3.10010.com
   udp: true
-- name: 免费2-🇳🇱 荷兰 16
-  server: notability.com
+- name: 免费2-🇭🇰 香港 088
+  server: green2.cdntencentmusic.com
+  port: 31101
+  type: trojan
+  password: 0949b660-d349-4b5b-b3ce-3349058f7be8
+  sni: green2.cdntencentmusic.com
+  udp: true
+- name: 免费2-🇸🇬 新加坡 43
+  server: www.gco.gov.qa
   port: 2053
   type: vless
   uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
@@ -932,45 +884,351 @@ proxies:
     headers:
       Host: snippet.danfeng.nn.kg
   udp: true
-- name: 免费2-🇺🇸 美国 28
+- name: 免费2-🇩🇪 德国 03
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 30e50044-1bb7-4f5a-8110-2c1127653ce5
+  auth: 30e50044-1bb7-4f5a-8110-2c1127653ce5
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇸🇬 新加坡 44
+  server: cfxr.eu.org
+  port: 2053
+  type: vless
+  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  tls: true
+  servername: snippet.danfeng.nn.kg
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.nn.kg
+  udp: true
+- name: 免费2-🇭🇰 香港 058
   server: cdnfire.xiaomispeed.com
-  port: 25501
+  port: 21102
   type: trojan
   password: c2f0efa1-2389-4cfd-82e7-1231c8e2153d
   sni: cdnfire.xiaomispeed.com
   skip-cert-verify: true
   udp: true
-- name: 免费2-🇯🇵 日本 17
-  server: freea.glyphara.com
-  port: 30301
+- name: 免费2-🇭🇰 香港 035
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 0623c4c7-1157-4ae6-9333-ad5907c2a768
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇺🇸 美国 11
+  server: green2.cdntencentmusic.com
+  port: 35501
+  type: trojan
+  password: 30b2eb56-ce6c-4936-8704-304d5fb19c86
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇩🇪 德国 14
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 237dd34d-e8b5-492e-8917-d63abb200eea
+  auth: 237dd34d-e8b5-492e-8917-d63abb200eea
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇭🇰 香港 094
+  server: green2.cdntencentmusic.com
+  port: 31103
+  type: trojan
+  password: adbdfdab-59ca-42d7-8f32-bfc2cee7de94
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇧🇷 巴西 01
+  server: slur.izenny.com
+  port: 57577
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 7ecdca3d-f26a-4f9b-ad85-58b52a7f5f50
+  udp: true
+- name: 免费2-🇭🇰 香港 096
+  server: cdnfire.xiaomispeed.com
+  port: 21103
+  type: trojan
+  password: 97b365f9-fb05-47fc-a6fd-a97a3fdce8ee
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇳🇱 荷兰 03
+  server: 185.221.222.202
+  port: 31779
   type: vless
-  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: IoW1RqD-BzW9oxaM4KtHx5ap6haIENhYyZt_oMZqlCM
-    short-id: 950cee8a
-  servername: lol.secure.dyn.riotcdn.net
-  client-fingerprint: firefox
+  uuid: 052df1a5-f53f-46dc-8aeb-7ed893310551
+  tls: false
+  client-fingerprint: chrome
   network: tcp
   udp: true
-- name: 免费2-🇺🇸 美国 13
+- name: 免费2-🇺🇸 美国 04
+  server: green2.cdntencentmusic.com
+  port: 35501
+  type: trojan
+  password: 808b5ae2-7b94-43e7-8632-c639c3f72415
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 072
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: b9244b12-17ea-40b3-af90-c17b36af648f
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 047
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 73a0bb88-1a71-4a58-a510-c232474eaaed
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇯🇵 日本 14
+  server: nrt.xxxxxxxx.nyc.mn
+  port: 2053
+  type: vless
+  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  tls: true
+  servername: snippet.danfeng.nn.kg
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.nn.kg
+  udp: true
+- name: 免费2-🇳🇱 荷兰 08
+  server: 104.24.236.108
+  port: 8443
+  type: vless
+  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
+  tls: true
+  servername: go-79m.pages.dev
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go-79m.pages.dev
+  udp: true
+- name: 免费2-🇸🇦 沙特阿拉伯 01
+  server: 172.65.90.46
+  port: 443
+  type: vless
+  uuid: d5d6faa0-9136-4e2d-b7b5-51a1b9e61126
+  tls: true
+  servername: cfzx.653827.xyz
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: cfzx.653827.xyz
+  udp: true
+- name: 免费2-🇩🇪 德国 04
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 772bf9bf-7808-4933-a9c1-1b9f4f41c1e2
+  auth: 772bf9bf-7808-4933-a9c1-1b9f4f41c1e2
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇸🇬 新加坡 21
   server: g9ffk1q2.gura.lol
-  port: 33137
+  port: 14119
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
   udp: true
-- name: 免费2-🇭🇰 香港 017
+- name: 免费2-🇭🇰 香港 052
+  server: g9ffk1q2.gura.lol
+  port: 45125
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇸🇬 新加坡 38
+  server: freea.glyphara.com
+  port: 30402
+  type: vless
+  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: uTOYAGREMpfEr3cQFcLwgMAWwwxjS3e2Yw32kCdN3Ew
+    short-id: f5f6e6f4
+  servername: itunes.apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇻🇳 越南 21
+  server: 103.186.155.115
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇭🇰 香港 083
   server: green2.cdntencentmusic.com
-  port: 31102
+  port: 31101
   type: trojan
-  password: b8a8025b-275a-4304-a789-b0881b281b81
+  password: efe9d5fc-823d-43d5-baef-9bc1fb0e651d
   sni: green2.cdntencentmusic.com
   skip-cert-verify: true
   udp: true
-- name: 免费2-🇸🇬 新加坡 42
-  server: cloudflare.182682.xyz
+- name: 免费2-🇹🇼 台湾 08
+  server: green2.cdntencentmusic.com
+  port: 35502
+  type: trojan
+  password: 57d69288-b782-4798-81d6-64b13777549a
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇻🇳 越南 23
+  server: 103.186.155.31
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇭🇰 香港 050
+  server: g9ffk1q2.gura.lol
+  port: 45146
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇩🇪 德国 21
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 93c426c5-a686-4e2b-b321-25998f606ea2
+  auth: 93c426c5-a686-4e2b-b321-25998f606ea2
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇻🇳 越南 27
+  server: 103.186.154.37
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇭🇰 香港 020
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 7d98cd01-adca-4e46-b5f6-e7c514f8698f
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 018
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 154c8b8c-68f3-4225-9fc7-f4c9e2249ded
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 032
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 43541094-75a3-4d59-b88f-1b8042b74b8b
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇺🇸 美国 61
+  server: 50.62.172.8
+  port: 443
+  type: vless
+  uuid: e258977b-e413-4718-a3af-02d75492c349
+  tls: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ww2.allxniu.qzz.io
+  udp: true
+- name: 免费2-🇺🇸 美国 30
+  server: freea.glyphara.com
+  port: 30703
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Fpcp8ed_KjL5rnn0gstMa0AQPL8GcYMtArb--r1AhnI
+    short-id: 845532fa
+  servername: mensura.cdn-apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇭🇰 香港 110
+  server: 43.161.253.78
+  port: 9527
+  type: vless
+  uuid: d4a23188-85b0-4b46-b84b-f1d36d66c03e
+  tls: false
+  network: tcp
+  udp: true
+- name: 免费2-🇺🇸 美国 32
+  server: freea.glyphara.com
+  port: 30701
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: cgGav3P_PeaM4grdSECGj4Tt9IsCmSqhGo_EJ0_KdWY
+    short-id: e62db878
+  servername: www.amd.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇻🇳 越南 07
+  server: 103.186.155.129
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇱🇹 立陶宛 01
+  server: 45.12.136.170
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: l668XHPejoSNNuD66BYzyehaCpZexiF7
+  udp: true
+- name: 免费2-🇺🇸 美国 58
+  server: 104.17.25.173
   port: 443
   type: vless
   uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
@@ -978,32 +1236,177 @@ proxies:
   servername: l.ayovo.netlib.re
   network: ws
   ws-opts:
-    path: /x-aniu/?ed=2560
+    path: /?ed=2560
     headers:
       Host: l.ayovo.netlib.re
   udp: true
-- name: 免费2-🇯🇵 日本 20
-  server: cf-cname.xingpingcn.top
-  port: 2096
+- name: 免费2-🇭🇰 香港 003
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 886ec7f5-efaf-4898-a5b0-3fccbcf4a40f
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇸🇬 新加坡 14
+  server: vip1.kaixincloud.top
+  port: 8443
   type: vless
   uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
   tls: true
   servername: sni.meibidi.pp.ua
+  client-fingerprint: chrome
   network: ws
   ws-opts:
     path: /?ed=2560
     headers:
       Host: sni.meibidi.pp.ua
   udp: true
-- name: 免费2-🇻🇳 越南 16
-  server: 103.186.155.68
+- name: 免费2-🇩🇪 德国 09
+  server: 85.209.53.178
+  port: 8443
+  type: hysteria2
+  password: 259df9c9-1629-4f24-8161-817c203380e7
+  auth: 259df9c9-1629-4f24-8161-817c203380e7
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇻🇳 越南 11
+  server: 103.186.154.76
   port: 38388
   type: ss
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-- name: 免费2-🇸🇬 新加坡 33
-  server: openai.com
+- name: 免费2-🇭🇰 香港 005
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 023bf5a1-e233-487d-b59e-a45b58009937
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇺🇸 美国 17
+  server: los.zuomomo.top
+  port: 16667
+  type: hysteria2
+  password: 4dd859b3-c9f6-477e-95f5-283abb3129e5
+  auth: 4dd859b3-c9f6-477e-95f5-283abb3129e5
+  skip-cert-verify: false
+  udp: true
+- name: 免费2-🇭🇰 香港 009
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 259dc1a9-d8f5-4db5-924d-d846ec7fbd9b
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇯🇵 日本 21
+  server: vip3.kaixincloud.top
+  port: 2096
+  type: vless
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  tls: true
+  servername: sni.meibidi.pp.ua
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.meibidi.pp.ua
+  udp: true
+- name: 免费2-🇸🇬 新加坡 30
+  server: freea.glyphara.com
+  port: 30403
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: avy1Z524LLGhXuHyCYV_k_hqi_fnHPCNSdNE85Z4qDo
+    short-id: 1b3f5a2e
+  servername: www.samsung.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇯🇵 日本 13
+  server: freea.glyphara.com
+  port: 30303
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RuNAMARjcI4VNAkqWazbFm4sa3Kc-uViiruuByx2TiM
+    short-id: 4d77021d
+  servername: mensura.cdn-apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇺🇸 美国 26
+  server: 104.16.21.243
+  port: 2053
+  type: vless
+  uuid: 92092474-994a-4537-ae93-76729a0ee7d7
+  tls: true
+  servername: go-79m.pages.dev
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go-79m.pages.dev
+  udp: true
+- name: 免费2-🇸🇬 新加坡 13
+  server: sg.zuomomo.top
+  port: 16666
+  type: hysteria2
+  password: 4dd859b3-c9f6-477e-95f5-283abb3129e5
+  auth: 4dd859b3-c9f6-477e-95f5-283abb3129e5
+  skip-cert-verify: false
+  udp: true
+- name: 免费2-🇭🇰 香港 042
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: 715e7164-c698-4c04-9944-ad4b960fa51d
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇹🇷 土耳其商宽 01
+  server: 92.60.70.36
+  port: 2053
+  type: vless
+  uuid: 08c7f096-d057-4d53-82fd-c739d372887b
+  tls: false
+  network: tcp
+  udp: true
+- name: 免费2-🇯🇵 日本 05
+  server: g9ffk1q2.gura.lol
+  port: 32597
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇩🇪 德国 22
+  server: clean.photoggenic.ir
+  port: 8880
+  type: vless
+  uuid: 8e997404-cb62-4fa1-a8c9-c77a32f10153
+  tls: false
+  servername: rightel.IRANCEELL.mci.it.www.speedtest.net.zula.ir.focusontrade.ir
+  network: ws
+  ws-opts:
+    path: /?ed=8880
+    headers:
+      Host: rightel.IRANCEELL.mci.it.www.speedtest.net.zula.ir.focusontrade.ir
+  udp: true
+- name: 免费2-🇺🇸 美国 53
+  server: www.epicgames.com
   port: 2095
   type: vless
   uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
@@ -1014,6 +1417,230 @@ proxies:
     path: /
     headers:
       Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
+  udp: true
+- name: 免费2-🇩🇪 德国 16
+  server: 85.209.53.178
+  port: 8080
+  type: hysteria2
+  password: 93c426c5-a686-4e2b-b321-25998f606ea2
+  auth: 93c426c5-a686-4e2b-b321-25998f606ea2
+  up: 2
+  down: 2
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 免费2-🇺🇸 美国 15
+  server: g9ffk1q2.gura.lol
+  port: 33133
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 266f4c29-f6b3-4c98-b36b-19312c2f1736
+  udp: true
+- name: 免费2-🇩🇪 德国 01
+  server: 162.19.228.25
+  port: 16014
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: e1052b0e6c949481
+  udp: true
+- name: 免费2-🇺🇸 美国 70
+  server: blog.cloudflare.com
+  port: 2095
+  type: vless
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  tls: false
+  client-fingerprint: randomized
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
+  udp: true
+- name: 免费2-🇳🇱 荷兰 04
+  server: singapore.com
+  port: 2053
+  type: vless
+  uuid: a2a396c3-f40e-4dee-bdbb-b1201f12dc1c
+  tls: true
+  servername: snippet.danfeng.nn.kg
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.nn.kg
+  udp: true
+- name: 免费2-🇭🇰 香港 089
+  server: cdnfire.xiaomispeed.com
+  port: 21101
+  type: trojan
+  password: 89313bd1-3033-4139-85e9-6da7b8b07756
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 067
+  server: green2.cdntencentmusic.com
+  port: 31102
+  type: trojan
+  password: c2dd7c53-c617-4f9a-8bcc-37f771a811d1
+  sni: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇸🇬 新加坡 40
+  server: freea.glyphara.com
+  port: 30401
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ZeXA8rcM3TV466jK83J157gY7U2JTI9KP9nmn_Nbawk
+    short-id: 105a652c
+  servername: learn.microsoft.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇯🇵 日本 19
+  server: freea.glyphara.com
+  port: 30301
+  type: vless
+  uuid: b0452c30-8eb7-45af-b1e9-22a6ec4d9950
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: IoW1RqD-BzW9oxaM4KtHx5ap6haIENhYyZt_oMZqlCM
+    short-id: 950cee8a
+  servername: lol.secure.dyn.riotcdn.net
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇯🇵 日本 08
+  server: v1.dabache.top
+  port: 443
+  type: vless
+  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
+  tls: true
+  servername: kb.as129394.me
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: kb.as129394.me
+  udp: true
+- name: 免费2-🇭🇰 香港 016
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 97b365f9-fb05-47fc-a6fd-a97a3fdce8ee
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇭🇰 香港 055
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 72e03954-88fe-41af-9e94-913ca7d213b3
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  udp: true
+- name: 免费2-🇺🇸 美国 40
+  server: www.temu.com
+  port: 2095
+  type: vless
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  tls: false
+  client-fingerprint: randomized
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cnmfangbinxing-nmsl.cnm-fangbinxing-nmsl-wcnm.workers.dev
+  udp: true
+- name: 免费2-🇯🇵 日本 11
+  server: mlmainaaa.7yq.top
+  port: 48690
+  type: vmess
+  uuid: b6cfe5d2-19e9-436d-b862-1935c62dcb14
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: shoutingtoutiao3.10010.com
+  udp: true
+- name: 免费2-🇹🇼 台湾 07
+  server: freea.glyphara.com
+  port: 30202
+  type: vless
+  uuid: 7396b23c-4e81-4e27-bf34-0d0180091773
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 9ahErgB4NKffqiZe3HHRx7Wb5br086fhnI75YuCdN0U
+    short-id: 10fa499e
+  servername: www.samsung.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇻🇳 越南 03
+  server: 103.186.154.176
+  port: 38388
+  type: ss
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+- name: 免费2-🇸🇬 新加坡 29
+  server: freea.glyphara.com
+  port: 30402
+  type: vless
+  uuid: 511185e8-d205-4b41-9971-e118f09ed4ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: uTOYAGREMpfEr3cQFcLwgMAWwwxjS3e2Yw32kCdN3Ew
+    short-id: f5f6e6f4
+  servername: itunes.apple.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: 免费2-🇯🇵 日本 23
+  server: 162.159.45.232
+  port: 443
+  type: vless
+  uuid: 3e2e3c21-3fc8-468f-9ab5-e782bdf5bf97
+  tls: true
+  servername: l.ayovo.netlib.re
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: l.ayovo.netlib.re
+  udp: true
+- name: 免费2-🇸🇬 新加坡 08
+  server: v2.dabache.top
+  port: 443
+  type: vless
+  uuid: b5dbd0aa-22f6-4a00-9bcc-3606fa8fc56d
+  tls: true
+  servername: kb.as129394.me
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: kb.as129394.me
+  udp: true
+- name: 免费2-🇭🇰 香港 027
+  server: cdnfire.xiaomispeed.com
+  port: 21102
+  type: trojan
+  password: 4d746d75-c667-464d-8ed2-7441c01d9285
+  sni: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
   udp: true
 - cipher: aes-256-cfb
   name: 免费3-12|tg频道:@ripaojiedian
@@ -1284,99 +1911,156 @@ proxy-groups:
   strategy: consistent-hashing
   proxies:
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
-  - 免费2-🇺🇸 美国 23
-  - 免费2-🇸🇬 新加坡 01
-  - 免费2-🇹🇼 台湾家宽 05
-  - 免费2-🇸🇪 瑞典 01
-  - 免费2-🇻🇳 越南 28
-  - 免费2-🇭🇰 香港 101
-  - 免费2-🇺🇸 美国 54
-  - 免费2-🇳🇱 荷兰 15
-  - 免费2-🇯🇵 日本 01
-  - 免费2-🇳🇱 荷兰 17
-  - 免费2-🇭🇰 香港 086
-  - 免费2-🇭🇰 香港 104
-  - 免费2-🇭🇰 香港 080
-  - 免费2-🇮🇸 冰岛 01
-  - 免费2-🇺🇸 美国 18
-  - 免费2-🇭🇰 香港 107
-  - 免费2-🇺🇸 美国 35
-  - 免费2-🇸🇬 新加坡 19
-  - 免费2-🇿🇦 南非 01
-  - 免费2-🇸🇬 新加坡 17
-  - 免费2-🇸🇬 新加坡 04
-  - 免费2-🇹🇼 台湾 11
-  - 免费2-🇲🇽 墨西哥 01
-  - 免费2-🇸🇬 新加坡 27
-  - 免费2-🇺🇸 美国 49
-  - 免费2-🇭🇰 香港 011
-  - 免费2-🇻🇳 越南 15
-  - 免费2-🇹🇼 台湾 09
-  - 免费2-🇳🇱 荷兰 11
-  - 免费2-🇩🇪 德国 08
-  - 免费2-🇻🇳 越南 26
-  - 免费2-🇭🇰 香港 074
-  - 免费2-🇳🇱 荷兰 20
-  - 免费2-🇮🇳 印度 02
-  - 免费2-🇭🇰 香港 082
-  - 免费2-🇺🇸 美国 62
-  - 免费2-🇸🇬 新加坡 20
-  - 免费2-🇸🇬 新加坡 41
-  - 免费2-🇸🇬 新加坡 34
-  - 免费2-🇭🇰 香港 084
-  - 免费2-🇻🇳 越南 02
-  - 免费2-🇸🇬 新加坡 24
-  - 免费2-🇹🇼 台湾 16
-  - 免费2-🇻🇳 越南 40
-  - 免费2-🇺🇸 美国 12
-  - 免费2-🇹🇼 台湾家宽 04
-  - 免费2-🇹🇼 台湾 13
-  - 免费2-🇭🇰 香港 092
-  - 免费2-🇭🇰 香港 010
-  - 免费2-🇺🇸 美国 51
-  - 免费2-🇭🇰 香港 054
-  - 免费2-🇫🇮 芬兰商宽 01
-  - 免费2-🇻🇳 越南 30
-  - 免费2-🇹🇼 台湾 15
-  - 免费2-🇫🇷 法国 03
-  - 免费2-🇺🇸 美国 52
-  - 免费2-🇭🇰 香港 040
-  - 免费2-🇸🇬 新加坡 02
-  - 免费2-🇭🇰 香港 069
-  - 免费2-🇻🇳 越南 20
-  - 免费2-🇺🇸 美国 56
-  - 免费2-🇭🇰 香港 041
-  - 免费2-🇹🇼 台湾 01
-  - 免费2-🇸🇬 新加坡 32
-  - 免费2-🇮🇱 以色列 01
-  - 免费2-🇻🇳 越南 35
-  - 免费2-🇻🇳 越南 39
-  - 免费2-🇻🇳 越南 31
-  - 免费2-🇸🇬 新加坡 15
-  - 免费2-🇺🇸 美国 47
-  - 免费2-🇭🇰 香港 066
-  - 免费2-🇯🇵 日本 07
-  - 免费2-🇹🇼 台湾家宽 02
-  - 免费2-🇭🇰 香港 068
-  - 免费2-🇭🇰 香港 028
-  - 免费2-🇭🇰 香港 026
-  - 免费2-🇺🇸 美国 10
-  - 免费2-🇳🇱 荷兰 19
-  - 免费2-🇻🇳 越南 12
-  - 免费2-🇸🇬 新加坡 37
-  - 免费2-🇭🇰 香港 102
-  - 免费2-🇺🇸 美国 03
-  - 免费2-🇻🇳 越南 42
-  - 免费2-🇯🇵 日本 09
-  - 免费2-🇳🇱 荷兰 16
-  - 免费2-🇺🇸 美国 28
-  - 免费2-🇯🇵 日本 17
-  - 免费2-🇺🇸 美国 13
-  - 免费2-🇭🇰 香港 017
-  - 免费2-🇸🇬 新加坡 42
-  - 免费2-🇯🇵 日本 20
-  - 免费2-🇻🇳 越南 16
-  - 免费2-🇸🇬 新加坡 33
+  - 免费2-🇭🇰 香港 097
+  - 免费2-🇸🇬 新加坡 31
+  - 免费2-🇭🇰 香港 034
+  - 免费2-🇹🇼 台湾 19
+  - 免费2-🇭🇰 香港家宽 03
+  - 免费2-🇩🇪 德国 20
+  - 免费2-🇻🇳 越南 05
+  - 免费2-🇫🇷 法国 01
+  - 免费2-🇻🇳 越南 24
+  - 免费2-🇻🇳 越南 08
+  - 免费2-🇭🇰 香港家宽 01
+  - 免费2-🇹🇼 台湾 14
+  - 免费2-🇮🇳 印度 01
+  - 免费2-🇺🇸 美国 69
+  - 免费2-🇭🇰 香港 015
+  - 免费2-🇻🇳 越南 22
+  - 免费2-🇹🇼 台湾家宽 03
+  - 免费2-🇳🇱 荷兰 14
+  - 免费2-🇹🇼 台湾 18
+  - 免费2-🇻🇳 越南 04
+  - 免费2-🇻🇳 越南 36
+  - 免费2-🇹🇼 台湾家宽 01
+  - 免费2-🇹🇼 台湾 17
+  - 免费2-🇭🇰 香港 090
+  - 免费2-🇯🇵 日本 22
+  - 免费2-🇯🇵 日本 16
+  - 免费2-🇺🇸 美国 74
+  - 免费2-🇹🇼 台湾 10
+  - 免费2-🇳🇱 荷兰 09
+  - 免费2-🇻🇳 越南 43
+  - 免费2-🇺🇸 美国 20
+  - 免费2-🇭🇰 香港 046
+  - 免费2-🇸🇬 新加坡 28
+  - 免费2-🇺🇸 美国 65
+  - 免费2-🇭🇰 香港 108
+  - 免费2-🇭🇰 香港 008
+  - 免费2-🇭🇰 香港 077
+  - 免费2-🇳🇱 荷兰 13
+  - 免费2-🇺🇸 美国 14
+  - 免费2-🇺🇸 美国 45
+  - 免费2-🇺🇸 美国 42
+  - 免费2-🇺🇸 美国 60
+  - 免费2-🇺🇸 美国 34
+  - 免费2-🇭🇰 香港 049
+  - 免费2-🇭🇰 香港 106
+  - 免费2-🇭🇰 香港 081
+  - 免费2-🇩🇪 德国 06
+  - 免费2-🇬🇧 英国 01
+  - 免费2-🇺🇸 美国 09
+  - 免费2-🇸🇬 新加坡 35
+  - 免费2-🇩🇪 德国 07
+  - 免费2-🇭🇰 香港 060
+  - 免费2-🇳🇱 荷兰 12
+  - 免费2-🇺🇸 美国 39
+  - 免费2-🇭🇰 香港 012
+  - 免费2-🇺🇸 美国 37
+  - 免费2-🇸🇬 新加坡 06
+  - 免费2-🇵🇱 波兰 01
+  - 免费2-🇻🇳 越南 25
+  - 免费2-🇻🇳 越南 14
+  - 免费2-🇻🇳 越南 10
+  - 免费2-🇻🇳 越南 17
+  - 免费2-🇸🇬 新加坡 22
+  - 免费2-🇭🇰 香港 073
+  - 免费2-🇭🇰 香港 030
+  - 免费2-🇭🇰 香港 048
+  - 免费2-🇯🇵 日本 10
+  - 免费2-🇺🇸 美国 55
+  - 免费2-🇹🇼 台湾家宽 06
+  - 免费2-🇭🇰 香港 014
+  - 免费2-🇯🇵 日本 06
+  - 免费2-🇸🇦 沙特阿拉伯 02
+  - 免费2-🇺🇸 美国 72
+  - 免费2-🇹🇼 台湾 03
+  - 免费2-🇭🇰 香港 088
+  - 免费2-🇸🇬 新加坡 43
+  - 免费2-🇩🇪 德国 03
+  - 免费2-🇸🇬 新加坡 44
+  - 免费2-🇭🇰 香港 058
+  - 免费2-🇭🇰 香港 035
+  - 免费2-🇺🇸 美国 11
+  - 免费2-🇩🇪 德国 14
+  - 免费2-🇭🇰 香港 094
+  - 免费2-🇧🇷 巴西 01
+  - 免费2-🇭🇰 香港 096
+  - 免费2-🇳🇱 荷兰 03
+  - 免费2-🇺🇸 美国 04
+  - 免费2-🇭🇰 香港 072
+  - 免费2-🇭🇰 香港 047
+  - 免费2-🇯🇵 日本 14
+  - 免费2-🇳🇱 荷兰 08
+  - 免费2-🇸🇦 沙特阿拉伯 01
+  - 免费2-🇩🇪 德国 04
+  - 免费2-🇸🇬 新加坡 21
+  - 免费2-🇭🇰 香港 052
+  - 免费2-🇸🇬 新加坡 38
+  - 免费2-🇻🇳 越南 21
+  - 免费2-🇭🇰 香港 083
+  - 免费2-🇹🇼 台湾 08
+  - 免费2-🇻🇳 越南 23
+  - 免费2-🇭🇰 香港 050
+  - 免费2-🇩🇪 德国 21
+  - 免费2-🇻🇳 越南 27
+  - 免费2-🇭🇰 香港 020
+  - 免费2-🇭🇰 香港 018
+  - 免费2-🇭🇰 香港 032
+  - 免费2-🇺🇸 美国 61
+  - 免费2-🇺🇸 美国 30
+  - 免费2-🇭🇰 香港 110
+  - 免费2-🇺🇸 美国 32
+  - 免费2-🇻🇳 越南 07
+  - 免费2-🇱🇹 立陶宛 01
+  - 免费2-🇺🇸 美国 58
+  - 免费2-🇭🇰 香港 003
+  - 免费2-🇸🇬 新加坡 14
+  - 免费2-🇩🇪 德国 09
+  - 免费2-🇻🇳 越南 11
+  - 免费2-🇭🇰 香港 005
+  - 免费2-🇺🇸 美国 17
+  - 免费2-🇭🇰 香港 009
+  - 免费2-🇯🇵 日本 21
+  - 免费2-🇸🇬 新加坡 30
+  - 免费2-🇯🇵 日本 13
+  - 免费2-🇺🇸 美国 26
+  - 免费2-🇸🇬 新加坡 13
+  - 免费2-🇭🇰 香港 042
+  - 免费2-🇹🇷 土耳其商宽 01
+  - 免费2-🇯🇵 日本 05
+  - 免费2-🇩🇪 德国 22
+  - 免费2-🇺🇸 美国 53
+  - 免费2-🇩🇪 德国 16
+  - 免费2-🇺🇸 美国 15
+  - 免费2-🇩🇪 德国 01
+  - 免费2-🇺🇸 美国 70
+  - 免费2-🇳🇱 荷兰 04
+  - 免费2-🇭🇰 香港 089
+  - 免费2-🇭🇰 香港 067
+  - 免费2-🇸🇬 新加坡 40
+  - 免费2-🇯🇵 日本 19
+  - 免费2-🇯🇵 日本 08
+  - 免费2-🇭🇰 香港 016
+  - 免费2-🇭🇰 香港 055
+  - 免费2-🇺🇸 美国 40
+  - 免费2-🇯🇵 日本 11
+  - 免费2-🇹🇼 台湾 07
+  - 免费2-🇻🇳 越南 03
+  - 免费2-🇸🇬 新加坡 29
+  - 免费2-🇯🇵 日本 23
+  - 免费2-🇸🇬 新加坡 08
+  - 免费2-🇭🇰 香港 027
   - 免费3-12|tg频道:@ripaojiedian
   - 免费3-12|🇭🇰 香港|@ripaojiedian
   - 免费3-12,13|香港3|@ripaojiedian
@@ -1409,99 +2093,156 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
-  - 免费2-🇺🇸 美国 23
-  - 免费2-🇸🇬 新加坡 01
-  - 免费2-🇹🇼 台湾家宽 05
-  - 免费2-🇸🇪 瑞典 01
-  - 免费2-🇻🇳 越南 28
-  - 免费2-🇭🇰 香港 101
-  - 免费2-🇺🇸 美国 54
-  - 免费2-🇳🇱 荷兰 15
-  - 免费2-🇯🇵 日本 01
-  - 免费2-🇳🇱 荷兰 17
-  - 免费2-🇭🇰 香港 086
-  - 免费2-🇭🇰 香港 104
-  - 免费2-🇭🇰 香港 080
-  - 免费2-🇮🇸 冰岛 01
-  - 免费2-🇺🇸 美国 18
-  - 免费2-🇭🇰 香港 107
-  - 免费2-🇺🇸 美国 35
-  - 免费2-🇸🇬 新加坡 19
-  - 免费2-🇿🇦 南非 01
-  - 免费2-🇸🇬 新加坡 17
-  - 免费2-🇸🇬 新加坡 04
-  - 免费2-🇹🇼 台湾 11
-  - 免费2-🇲🇽 墨西哥 01
-  - 免费2-🇸🇬 新加坡 27
-  - 免费2-🇺🇸 美国 49
-  - 免费2-🇭🇰 香港 011
-  - 免费2-🇻🇳 越南 15
-  - 免费2-🇹🇼 台湾 09
-  - 免费2-🇳🇱 荷兰 11
-  - 免费2-🇩🇪 德国 08
-  - 免费2-🇻🇳 越南 26
-  - 免费2-🇭🇰 香港 074
-  - 免费2-🇳🇱 荷兰 20
-  - 免费2-🇮🇳 印度 02
-  - 免费2-🇭🇰 香港 082
-  - 免费2-🇺🇸 美国 62
-  - 免费2-🇸🇬 新加坡 20
-  - 免费2-🇸🇬 新加坡 41
-  - 免费2-🇸🇬 新加坡 34
-  - 免费2-🇭🇰 香港 084
-  - 免费2-🇻🇳 越南 02
-  - 免费2-🇸🇬 新加坡 24
-  - 免费2-🇹🇼 台湾 16
-  - 免费2-🇻🇳 越南 40
-  - 免费2-🇺🇸 美国 12
-  - 免费2-🇹🇼 台湾家宽 04
-  - 免费2-🇹🇼 台湾 13
-  - 免费2-🇭🇰 香港 092
-  - 免费2-🇭🇰 香港 010
-  - 免费2-🇺🇸 美国 51
-  - 免费2-🇭🇰 香港 054
-  - 免费2-🇫🇮 芬兰商宽 01
-  - 免费2-🇻🇳 越南 30
-  - 免费2-🇹🇼 台湾 15
-  - 免费2-🇫🇷 法国 03
-  - 免费2-🇺🇸 美国 52
-  - 免费2-🇭🇰 香港 040
-  - 免费2-🇸🇬 新加坡 02
-  - 免费2-🇭🇰 香港 069
-  - 免费2-🇻🇳 越南 20
-  - 免费2-🇺🇸 美国 56
-  - 免费2-🇭🇰 香港 041
-  - 免费2-🇹🇼 台湾 01
-  - 免费2-🇸🇬 新加坡 32
-  - 免费2-🇮🇱 以色列 01
-  - 免费2-🇻🇳 越南 35
-  - 免费2-🇻🇳 越南 39
-  - 免费2-🇻🇳 越南 31
-  - 免费2-🇸🇬 新加坡 15
-  - 免费2-🇺🇸 美国 47
-  - 免费2-🇭🇰 香港 066
-  - 免费2-🇯🇵 日本 07
-  - 免费2-🇹🇼 台湾家宽 02
-  - 免费2-🇭🇰 香港 068
-  - 免费2-🇭🇰 香港 028
-  - 免费2-🇭🇰 香港 026
-  - 免费2-🇺🇸 美国 10
-  - 免费2-🇳🇱 荷兰 19
-  - 免费2-🇻🇳 越南 12
-  - 免费2-🇸🇬 新加坡 37
-  - 免费2-🇭🇰 香港 102
-  - 免费2-🇺🇸 美国 03
-  - 免费2-🇻🇳 越南 42
-  - 免费2-🇯🇵 日本 09
-  - 免费2-🇳🇱 荷兰 16
-  - 免费2-🇺🇸 美国 28
-  - 免费2-🇯🇵 日本 17
-  - 免费2-🇺🇸 美国 13
-  - 免费2-🇭🇰 香港 017
-  - 免费2-🇸🇬 新加坡 42
-  - 免费2-🇯🇵 日本 20
-  - 免费2-🇻🇳 越南 16
-  - 免费2-🇸🇬 新加坡 33
+  - 免费2-🇭🇰 香港 097
+  - 免费2-🇸🇬 新加坡 31
+  - 免费2-🇭🇰 香港 034
+  - 免费2-🇹🇼 台湾 19
+  - 免费2-🇭🇰 香港家宽 03
+  - 免费2-🇩🇪 德国 20
+  - 免费2-🇻🇳 越南 05
+  - 免费2-🇫🇷 法国 01
+  - 免费2-🇻🇳 越南 24
+  - 免费2-🇻🇳 越南 08
+  - 免费2-🇭🇰 香港家宽 01
+  - 免费2-🇹🇼 台湾 14
+  - 免费2-🇮🇳 印度 01
+  - 免费2-🇺🇸 美国 69
+  - 免费2-🇭🇰 香港 015
+  - 免费2-🇻🇳 越南 22
+  - 免费2-🇹🇼 台湾家宽 03
+  - 免费2-🇳🇱 荷兰 14
+  - 免费2-🇹🇼 台湾 18
+  - 免费2-🇻🇳 越南 04
+  - 免费2-🇻🇳 越南 36
+  - 免费2-🇹🇼 台湾家宽 01
+  - 免费2-🇹🇼 台湾 17
+  - 免费2-🇭🇰 香港 090
+  - 免费2-🇯🇵 日本 22
+  - 免费2-🇯🇵 日本 16
+  - 免费2-🇺🇸 美国 74
+  - 免费2-🇹🇼 台湾 10
+  - 免费2-🇳🇱 荷兰 09
+  - 免费2-🇻🇳 越南 43
+  - 免费2-🇺🇸 美国 20
+  - 免费2-🇭🇰 香港 046
+  - 免费2-🇸🇬 新加坡 28
+  - 免费2-🇺🇸 美国 65
+  - 免费2-🇭🇰 香港 108
+  - 免费2-🇭🇰 香港 008
+  - 免费2-🇭🇰 香港 077
+  - 免费2-🇳🇱 荷兰 13
+  - 免费2-🇺🇸 美国 14
+  - 免费2-🇺🇸 美国 45
+  - 免费2-🇺🇸 美国 42
+  - 免费2-🇺🇸 美国 60
+  - 免费2-🇺🇸 美国 34
+  - 免费2-🇭🇰 香港 049
+  - 免费2-🇭🇰 香港 106
+  - 免费2-🇭🇰 香港 081
+  - 免费2-🇩🇪 德国 06
+  - 免费2-🇬🇧 英国 01
+  - 免费2-🇺🇸 美国 09
+  - 免费2-🇸🇬 新加坡 35
+  - 免费2-🇩🇪 德国 07
+  - 免费2-🇭🇰 香港 060
+  - 免费2-🇳🇱 荷兰 12
+  - 免费2-🇺🇸 美国 39
+  - 免费2-🇭🇰 香港 012
+  - 免费2-🇺🇸 美国 37
+  - 免费2-🇸🇬 新加坡 06
+  - 免费2-🇵🇱 波兰 01
+  - 免费2-🇻🇳 越南 25
+  - 免费2-🇻🇳 越南 14
+  - 免费2-🇻🇳 越南 10
+  - 免费2-🇻🇳 越南 17
+  - 免费2-🇸🇬 新加坡 22
+  - 免费2-🇭🇰 香港 073
+  - 免费2-🇭🇰 香港 030
+  - 免费2-🇭🇰 香港 048
+  - 免费2-🇯🇵 日本 10
+  - 免费2-🇺🇸 美国 55
+  - 免费2-🇹🇼 台湾家宽 06
+  - 免费2-🇭🇰 香港 014
+  - 免费2-🇯🇵 日本 06
+  - 免费2-🇸🇦 沙特阿拉伯 02
+  - 免费2-🇺🇸 美国 72
+  - 免费2-🇹🇼 台湾 03
+  - 免费2-🇭🇰 香港 088
+  - 免费2-🇸🇬 新加坡 43
+  - 免费2-🇩🇪 德国 03
+  - 免费2-🇸🇬 新加坡 44
+  - 免费2-🇭🇰 香港 058
+  - 免费2-🇭🇰 香港 035
+  - 免费2-🇺🇸 美国 11
+  - 免费2-🇩🇪 德国 14
+  - 免费2-🇭🇰 香港 094
+  - 免费2-🇧🇷 巴西 01
+  - 免费2-🇭🇰 香港 096
+  - 免费2-🇳🇱 荷兰 03
+  - 免费2-🇺🇸 美国 04
+  - 免费2-🇭🇰 香港 072
+  - 免费2-🇭🇰 香港 047
+  - 免费2-🇯🇵 日本 14
+  - 免费2-🇳🇱 荷兰 08
+  - 免费2-🇸🇦 沙特阿拉伯 01
+  - 免费2-🇩🇪 德国 04
+  - 免费2-🇸🇬 新加坡 21
+  - 免费2-🇭🇰 香港 052
+  - 免费2-🇸🇬 新加坡 38
+  - 免费2-🇻🇳 越南 21
+  - 免费2-🇭🇰 香港 083
+  - 免费2-🇹🇼 台湾 08
+  - 免费2-🇻🇳 越南 23
+  - 免费2-🇭🇰 香港 050
+  - 免费2-🇩🇪 德国 21
+  - 免费2-🇻🇳 越南 27
+  - 免费2-🇭🇰 香港 020
+  - 免费2-🇭🇰 香港 018
+  - 免费2-🇭🇰 香港 032
+  - 免费2-🇺🇸 美国 61
+  - 免费2-🇺🇸 美国 30
+  - 免费2-🇭🇰 香港 110
+  - 免费2-🇺🇸 美国 32
+  - 免费2-🇻🇳 越南 07
+  - 免费2-🇱🇹 立陶宛 01
+  - 免费2-🇺🇸 美国 58
+  - 免费2-🇭🇰 香港 003
+  - 免费2-🇸🇬 新加坡 14
+  - 免费2-🇩🇪 德国 09
+  - 免费2-🇻🇳 越南 11
+  - 免费2-🇭🇰 香港 005
+  - 免费2-🇺🇸 美国 17
+  - 免费2-🇭🇰 香港 009
+  - 免费2-🇯🇵 日本 21
+  - 免费2-🇸🇬 新加坡 30
+  - 免费2-🇯🇵 日本 13
+  - 免费2-🇺🇸 美国 26
+  - 免费2-🇸🇬 新加坡 13
+  - 免费2-🇭🇰 香港 042
+  - 免费2-🇹🇷 土耳其商宽 01
+  - 免费2-🇯🇵 日本 05
+  - 免费2-🇩🇪 德国 22
+  - 免费2-🇺🇸 美国 53
+  - 免费2-🇩🇪 德国 16
+  - 免费2-🇺🇸 美国 15
+  - 免费2-🇩🇪 德国 01
+  - 免费2-🇺🇸 美国 70
+  - 免费2-🇳🇱 荷兰 04
+  - 免费2-🇭🇰 香港 089
+  - 免费2-🇭🇰 香港 067
+  - 免费2-🇸🇬 新加坡 40
+  - 免费2-🇯🇵 日本 19
+  - 免费2-🇯🇵 日本 08
+  - 免费2-🇭🇰 香港 016
+  - 免费2-🇭🇰 香港 055
+  - 免费2-🇺🇸 美国 40
+  - 免费2-🇯🇵 日本 11
+  - 免费2-🇹🇼 台湾 07
+  - 免费2-🇻🇳 越南 03
+  - 免费2-🇸🇬 新加坡 29
+  - 免费2-🇯🇵 日本 23
+  - 免费2-🇸🇬 新加坡 08
+  - 免费2-🇭🇰 香港 027
   - 免费3-12|tg频道:@ripaojiedian
   - 免费3-12|🇭🇰 香港|@ripaojiedian
   - 免费3-12,13|香港3|@ripaojiedian
@@ -1534,99 +2275,156 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 免费2-🔔 关注https://github.com/wzdnzd不迷路
-  - 免费2-🇺🇸 美国 23
-  - 免费2-🇸🇬 新加坡 01
-  - 免费2-🇹🇼 台湾家宽 05
-  - 免费2-🇸🇪 瑞典 01
-  - 免费2-🇻🇳 越南 28
-  - 免费2-🇭🇰 香港 101
-  - 免费2-🇺🇸 美国 54
-  - 免费2-🇳🇱 荷兰 15
-  - 免费2-🇯🇵 日本 01
-  - 免费2-🇳🇱 荷兰 17
-  - 免费2-🇭🇰 香港 086
-  - 免费2-🇭🇰 香港 104
-  - 免费2-🇭🇰 香港 080
-  - 免费2-🇮🇸 冰岛 01
-  - 免费2-🇺🇸 美国 18
-  - 免费2-🇭🇰 香港 107
-  - 免费2-🇺🇸 美国 35
-  - 免费2-🇸🇬 新加坡 19
-  - 免费2-🇿🇦 南非 01
-  - 免费2-🇸🇬 新加坡 17
-  - 免费2-🇸🇬 新加坡 04
-  - 免费2-🇹🇼 台湾 11
-  - 免费2-🇲🇽 墨西哥 01
-  - 免费2-🇸🇬 新加坡 27
-  - 免费2-🇺🇸 美国 49
-  - 免费2-🇭🇰 香港 011
-  - 免费2-🇻🇳 越南 15
-  - 免费2-🇹🇼 台湾 09
-  - 免费2-🇳🇱 荷兰 11
-  - 免费2-🇩🇪 德国 08
-  - 免费2-🇻🇳 越南 26
-  - 免费2-🇭🇰 香港 074
-  - 免费2-🇳🇱 荷兰 20
-  - 免费2-🇮🇳 印度 02
-  - 免费2-🇭🇰 香港 082
-  - 免费2-🇺🇸 美国 62
-  - 免费2-🇸🇬 新加坡 20
-  - 免费2-🇸🇬 新加坡 41
-  - 免费2-🇸🇬 新加坡 34
-  - 免费2-🇭🇰 香港 084
-  - 免费2-🇻🇳 越南 02
-  - 免费2-🇸🇬 新加坡 24
-  - 免费2-🇹🇼 台湾 16
-  - 免费2-🇻🇳 越南 40
-  - 免费2-🇺🇸 美国 12
-  - 免费2-🇹🇼 台湾家宽 04
-  - 免费2-🇹🇼 台湾 13
-  - 免费2-🇭🇰 香港 092
-  - 免费2-🇭🇰 香港 010
-  - 免费2-🇺🇸 美国 51
-  - 免费2-🇭🇰 香港 054
-  - 免费2-🇫🇮 芬兰商宽 01
-  - 免费2-🇻🇳 越南 30
-  - 免费2-🇹🇼 台湾 15
-  - 免费2-🇫🇷 法国 03
-  - 免费2-🇺🇸 美国 52
-  - 免费2-🇭🇰 香港 040
-  - 免费2-🇸🇬 新加坡 02
-  - 免费2-🇭🇰 香港 069
-  - 免费2-🇻🇳 越南 20
-  - 免费2-🇺🇸 美国 56
-  - 免费2-🇭🇰 香港 041
-  - 免费2-🇹🇼 台湾 01
-  - 免费2-🇸🇬 新加坡 32
-  - 免费2-🇮🇱 以色列 01
-  - 免费2-🇻🇳 越南 35
-  - 免费2-🇻🇳 越南 39
-  - 免费2-🇻🇳 越南 31
-  - 免费2-🇸🇬 新加坡 15
-  - 免费2-🇺🇸 美国 47
-  - 免费2-🇭🇰 香港 066
-  - 免费2-🇯🇵 日本 07
-  - 免费2-🇹🇼 台湾家宽 02
-  - 免费2-🇭🇰 香港 068
-  - 免费2-🇭🇰 香港 028
-  - 免费2-🇭🇰 香港 026
-  - 免费2-🇺🇸 美国 10
-  - 免费2-🇳🇱 荷兰 19
-  - 免费2-🇻🇳 越南 12
-  - 免费2-🇸🇬 新加坡 37
-  - 免费2-🇭🇰 香港 102
-  - 免费2-🇺🇸 美国 03
-  - 免费2-🇻🇳 越南 42
-  - 免费2-🇯🇵 日本 09
-  - 免费2-🇳🇱 荷兰 16
-  - 免费2-🇺🇸 美国 28
-  - 免费2-🇯🇵 日本 17
-  - 免费2-🇺🇸 美国 13
-  - 免费2-🇭🇰 香港 017
-  - 免费2-🇸🇬 新加坡 42
-  - 免费2-🇯🇵 日本 20
-  - 免费2-🇻🇳 越南 16
-  - 免费2-🇸🇬 新加坡 33
+  - 免费2-🇭🇰 香港 097
+  - 免费2-🇸🇬 新加坡 31
+  - 免费2-🇭🇰 香港 034
+  - 免费2-🇹🇼 台湾 19
+  - 免费2-🇭🇰 香港家宽 03
+  - 免费2-🇩🇪 德国 20
+  - 免费2-🇻🇳 越南 05
+  - 免费2-🇫🇷 法国 01
+  - 免费2-🇻🇳 越南 24
+  - 免费2-🇻🇳 越南 08
+  - 免费2-🇭🇰 香港家宽 01
+  - 免费2-🇹🇼 台湾 14
+  - 免费2-🇮🇳 印度 01
+  - 免费2-🇺🇸 美国 69
+  - 免费2-🇭🇰 香港 015
+  - 免费2-🇻🇳 越南 22
+  - 免费2-🇹🇼 台湾家宽 03
+  - 免费2-🇳🇱 荷兰 14
+  - 免费2-🇹🇼 台湾 18
+  - 免费2-🇻🇳 越南 04
+  - 免费2-🇻🇳 越南 36
+  - 免费2-🇹🇼 台湾家宽 01
+  - 免费2-🇹🇼 台湾 17
+  - 免费2-🇭🇰 香港 090
+  - 免费2-🇯🇵 日本 22
+  - 免费2-🇯🇵 日本 16
+  - 免费2-🇺🇸 美国 74
+  - 免费2-🇹🇼 台湾 10
+  - 免费2-🇳🇱 荷兰 09
+  - 免费2-🇻🇳 越南 43
+  - 免费2-🇺🇸 美国 20
+  - 免费2-🇭🇰 香港 046
+  - 免费2-🇸🇬 新加坡 28
+  - 免费2-🇺🇸 美国 65
+  - 免费2-🇭🇰 香港 108
+  - 免费2-🇭🇰 香港 008
+  - 免费2-🇭🇰 香港 077
+  - 免费2-🇳🇱 荷兰 13
+  - 免费2-🇺🇸 美国 14
+  - 免费2-🇺🇸 美国 45
+  - 免费2-🇺🇸 美国 42
+  - 免费2-🇺🇸 美国 60
+  - 免费2-🇺🇸 美国 34
+  - 免费2-🇭🇰 香港 049
+  - 免费2-🇭🇰 香港 106
+  - 免费2-🇭🇰 香港 081
+  - 免费2-🇩🇪 德国 06
+  - 免费2-🇬🇧 英国 01
+  - 免费2-🇺🇸 美国 09
+  - 免费2-🇸🇬 新加坡 35
+  - 免费2-🇩🇪 德国 07
+  - 免费2-🇭🇰 香港 060
+  - 免费2-🇳🇱 荷兰 12
+  - 免费2-🇺🇸 美国 39
+  - 免费2-🇭🇰 香港 012
+  - 免费2-🇺🇸 美国 37
+  - 免费2-🇸🇬 新加坡 06
+  - 免费2-🇵🇱 波兰 01
+  - 免费2-🇻🇳 越南 25
+  - 免费2-🇻🇳 越南 14
+  - 免费2-🇻🇳 越南 10
+  - 免费2-🇻🇳 越南 17
+  - 免费2-🇸🇬 新加坡 22
+  - 免费2-🇭🇰 香港 073
+  - 免费2-🇭🇰 香港 030
+  - 免费2-🇭🇰 香港 048
+  - 免费2-🇯🇵 日本 10
+  - 免费2-🇺🇸 美国 55
+  - 免费2-🇹🇼 台湾家宽 06
+  - 免费2-🇭🇰 香港 014
+  - 免费2-🇯🇵 日本 06
+  - 免费2-🇸🇦 沙特阿拉伯 02
+  - 免费2-🇺🇸 美国 72
+  - 免费2-🇹🇼 台湾 03
+  - 免费2-🇭🇰 香港 088
+  - 免费2-🇸🇬 新加坡 43
+  - 免费2-🇩🇪 德国 03
+  - 免费2-🇸🇬 新加坡 44
+  - 免费2-🇭🇰 香港 058
+  - 免费2-🇭🇰 香港 035
+  - 免费2-🇺🇸 美国 11
+  - 免费2-🇩🇪 德国 14
+  - 免费2-🇭🇰 香港 094
+  - 免费2-🇧🇷 巴西 01
+  - 免费2-🇭🇰 香港 096
+  - 免费2-🇳🇱 荷兰 03
+  - 免费2-🇺🇸 美国 04
+  - 免费2-🇭🇰 香港 072
+  - 免费2-🇭🇰 香港 047
+  - 免费2-🇯🇵 日本 14
+  - 免费2-🇳🇱 荷兰 08
+  - 免费2-🇸🇦 沙特阿拉伯 01
+  - 免费2-🇩🇪 德国 04
+  - 免费2-🇸🇬 新加坡 21
+  - 免费2-🇭🇰 香港 052
+  - 免费2-🇸🇬 新加坡 38
+  - 免费2-🇻🇳 越南 21
+  - 免费2-🇭🇰 香港 083
+  - 免费2-🇹🇼 台湾 08
+  - 免费2-🇻🇳 越南 23
+  - 免费2-🇭🇰 香港 050
+  - 免费2-🇩🇪 德国 21
+  - 免费2-🇻🇳 越南 27
+  - 免费2-🇭🇰 香港 020
+  - 免费2-🇭🇰 香港 018
+  - 免费2-🇭🇰 香港 032
+  - 免费2-🇺🇸 美国 61
+  - 免费2-🇺🇸 美国 30
+  - 免费2-🇭🇰 香港 110
+  - 免费2-🇺🇸 美国 32
+  - 免费2-🇻🇳 越南 07
+  - 免费2-🇱🇹 立陶宛 01
+  - 免费2-🇺🇸 美国 58
+  - 免费2-🇭🇰 香港 003
+  - 免费2-🇸🇬 新加坡 14
+  - 免费2-🇩🇪 德国 09
+  - 免费2-🇻🇳 越南 11
+  - 免费2-🇭🇰 香港 005
+  - 免费2-🇺🇸 美国 17
+  - 免费2-🇭🇰 香港 009
+  - 免费2-🇯🇵 日本 21
+  - 免费2-🇸🇬 新加坡 30
+  - 免费2-🇯🇵 日本 13
+  - 免费2-🇺🇸 美国 26
+  - 免费2-🇸🇬 新加坡 13
+  - 免费2-🇭🇰 香港 042
+  - 免费2-🇹🇷 土耳其商宽 01
+  - 免费2-🇯🇵 日本 05
+  - 免费2-🇩🇪 德国 22
+  - 免费2-🇺🇸 美国 53
+  - 免费2-🇩🇪 德国 16
+  - 免费2-🇺🇸 美国 15
+  - 免费2-🇩🇪 德国 01
+  - 免费2-🇺🇸 美国 70
+  - 免费2-🇳🇱 荷兰 04
+  - 免费2-🇭🇰 香港 089
+  - 免费2-🇭🇰 香港 067
+  - 免费2-🇸🇬 新加坡 40
+  - 免费2-🇯🇵 日本 19
+  - 免费2-🇯🇵 日本 08
+  - 免费2-🇭🇰 香港 016
+  - 免费2-🇭🇰 香港 055
+  - 免费2-🇺🇸 美国 40
+  - 免费2-🇯🇵 日本 11
+  - 免费2-🇹🇼 台湾 07
+  - 免费2-🇻🇳 越南 03
+  - 免费2-🇸🇬 新加坡 29
+  - 免费2-🇯🇵 日本 23
+  - 免费2-🇸🇬 新加坡 08
+  - 免费2-🇭🇰 香港 027
 - name: 免费3
   type: url-test
   url: http://www.gstatic.com/generate_204
