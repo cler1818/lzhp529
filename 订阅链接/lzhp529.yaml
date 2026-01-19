@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-19 23:26:00
+# 更新时间（东八区北京时间）: 2026-01-19 23:38:15
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 4/6
@@ -80,6 +80,294 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
+- name: 一元机场-一元机场.asia
+  type: trojan
+  server: 0.0.0.0
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: 0.0.0.0
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-请立即到官网下载新客户端！
+  type: trojan
+  server: 0.0.0.0
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: 0.0.0.0
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-您正在使用的是最新客户端
+  type: vless
+  server: 0.0.0.0
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 01 | 高级专线
+  type: vless
+  server: hk1.5d51af20-b66a-7922-0249-cf8779ae28f9.000d4ee1.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 02 | 高级专线
+  type: vless
+  server: hk2.5d51af20-b66a-7922-0249-cf8779ae28f9.71a30608.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 03 | 高级专线
+  type: vless
+  server: hk3.5d51af20-b66a-7922-0249-cf8779ae28f9.fc5d5972.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 04 | 高级专线
+  type: vless
+  server: hk4.5d51af20-b66a-7922-0249-cf8779ae28f9.e69b99d9.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 05 | 高级专线
+  type: vless
+  server: hk5.5d51af20-b66a-7922-0249-cf8779ae28f9.7b6e516a.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 06 | 高级专线
+  type: vless
+  server: hk6.5d51af20-b66a-7922-0249-cf8779ae28f9.c0900bc3.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇭🇰香港 | 25倍计费
+  type: vless
+  server: zx1.5d51af20-b66a-7922-0249-cf8779ae28f9.f6468651.the-best-airport.com
+  port: 10000
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: baidu.com
+- name: 一元机场-🇯🇵日本 01 | 高级专线
+  type: vless
+  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.272a1519.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 02 | 高级专线
+  type: vless
+  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.a9b0b718.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 03 | 高级专线
+  type: vless
+  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.ue86f537.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 04 | 高级专线
+  type: vless
+  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.4ce9c3b4.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 05 | 高级专线
+  type: vless
+  server: jp5.5d51af20-b66a-7922-0249-cf8779ae28f9.fabe993b.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 06 | 高级专线
+  type: vless
+  server: jp6.5d51af20-b66a-7922-0249-cf8779ae28f9.bfd39278.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 07 | 高级专线
+  type: vless
+  server: jp7.5d51af20-b66a-7922-0249-cf8779ae28f9.5132e51f.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 08 | 高级专线
+  type: vless
+  server: jp8.5d51af20-b66a-7922-0249-cf8779ae28f9.d9241b31.the-best-airport.com
+  port: 443
+  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: new.download.the-best-airport.com
+- name: 一元机场-🇯🇵日本 01 | 专线
+  type: trojan
+  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.7adf211e.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 02 | 专线
+  type: trojan
+  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.02444020.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 03 | 专线
+  type: trojan
+  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.5584fc1f.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇯🇵日本 04 | 专线
+  type: trojan
+  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.69408ae5.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 01 | 专线
+  type: trojan
+  server: sg1.5d51af20-b66a-7922-0249-cf8779ae28f9.2dde7df3.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 02 | 专线
+  type: trojan
+  server: sg2.5d51af20-b66a-7922-0249-cf8779ae28f9.2c4b5066.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 03 | 专线
+  type: trojan
+  server: sg3.5d51af20-b66a-7922-0249-cf8779ae28f9.d4f84ebb.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 04 | 专线
+  type: trojan
+  server: sg4.5d51af20-b66a-7922-0249-cf8779ae28f9.2ce203e5.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 05 | 专线
+  type: trojan
+  server: sg5.5d51af20-b66a-7922-0249-cf8779ae28f9.dede0d54.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 06 | 专线
+  type: trojan
+  server: sg6.5d51af20-b66a-7922-0249-cf8779ae28f9.0aca10d1.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 07 | 专线
+  type: trojan
+  server: sg7.5d51af20-b66a-7922-0249-cf8779ae28f9.57aaa8ec.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇸🇬新加坡 08 | 专线
+  type: trojan
+  server: sg8.5d51af20-b66a-7922-0249-cf8779ae28f9.c586e7c2.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 01 | 专线
+  type: trojan
+  server: us1.5d51af20-b66a-7922-0249-cf8779ae28f9.36a8c922.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 02 | 专线
+  type: trojan
+  server: us2.5d51af20-b66a-7922-0249-cf8779ae28f9.2f6cd430.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 03 | 专线
+  type: trojan
+  server: us3.5d51af20-b66a-7922-0249-cf8779ae28f9.47253001.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
+- name: 一元机场-🇺🇸美国 04 | 专线
+  type: trojan
+  server: us4.5d51af20-b66a-7922-0249-cf8779ae28f9.30d6a0d0.the-best-airport.com
+  port: 443
+  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
+  sni: new.download.the-best-airport.com
+  skip-cert-verify: true
+  udp: true
 - name: 风萧萧-剩余流量：98.58 GB
   type: ss
   server: 120.77.38.81
@@ -571,295 +859,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 一元机场-一元机场.asia
-  type: trojan
-  server: 0.0.0.0
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: 0.0.0.0
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-请立即到官网下载新客户端！
-  type: trojan
-  server: 0.0.0.0
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: 0.0.0.0
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-您正在使用的是最新客户端
-  type: vless
-  server: 0.0.0.0
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 01 | 高级专线
-  type: vless
-  server: hk1.5d51af20-b66a-7922-0249-cf8779ae28f9.000d4ee1.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 02 | 高级专线
-  type: vless
-  server: hk2.5d51af20-b66a-7922-0249-cf8779ae28f9.71a30608.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 03 | 高级专线
-  type: vless
-  server: hk3.5d51af20-b66a-7922-0249-cf8779ae28f9.fc5d5972.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 04 | 高级专线
-  type: vless
-  server: hk4.5d51af20-b66a-7922-0249-cf8779ae28f9.e69b99d9.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 05 | 高级专线
-  type: vless
-  server: hk5.5d51af20-b66a-7922-0249-cf8779ae28f9.7b6e516a.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 06 | 高级专线
-  type: vless
-  server: hk6.5d51af20-b66a-7922-0249-cf8779ae28f9.c0900bc3.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇭🇰香港 | 25倍计费
-  type: vless
-  server: zx1.5d51af20-b66a-7922-0249-cf8779ae28f9.f6468651.the-best-airport.com
-  port: 10000
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: baidu.com
-- name: 一元机场-🇯🇵日本 01 | 高级专线
-  type: vless
-  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.272a1519.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 02 | 高级专线
-  type: vless
-  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.a9b0b718.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 03 | 高级专线
-  type: vless
-  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.ue86f537.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 04 | 高级专线
-  type: vless
-  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.4ce9c3b4.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 05 | 高级专线
-  type: vless
-  server: jp5.5d51af20-b66a-7922-0249-cf8779ae28f9.fabe993b.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 06 | 高级专线
-  type: vless
-  server: jp6.5d51af20-b66a-7922-0249-cf8779ae28f9.bfd39278.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 07 | 高级专线
-  type: vless
-  server: jp7.5d51af20-b66a-7922-0249-cf8779ae28f9.5132e51f.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 08 | 高级专线
-  type: vless
-  server: jp8.5d51af20-b66a-7922-0249-cf8779ae28f9.d9241b31.the-best-airport.com
-  port: 443
-  uuid: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: new.download.the-best-airport.com
-- name: 一元机场-🇯🇵日本 01 | 专线
-  type: trojan
-  server: jp1.5d51af20-b66a-7922-0249-cf8779ae28f9.7adf211e.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇯🇵日本 02 | 专线
-  type: trojan
-  server: jp2.5d51af20-b66a-7922-0249-cf8779ae28f9.02444020.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇯🇵日本 03 | 专线
-  type: trojan
-  server: jp3.5d51af20-b66a-7922-0249-cf8779ae28f9.5584fc1f.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇯🇵日本 04 | 专线
-  type: trojan
-  server: jp4.5d51af20-b66a-7922-0249-cf8779ae28f9.69408ae5.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 01 | 专线
-  type: trojan
-  server: sg1.5d51af20-b66a-7922-0249-cf8779ae28f9.2dde7df3.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 02 | 专线
-  type: trojan
-  server: sg2.5d51af20-b66a-7922-0249-cf8779ae28f9.2c4b5066.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 03 | 专线
-  type: trojan
-  server: sg3.5d51af20-b66a-7922-0249-cf8779ae28f9.d4f84ebb.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 04 | 专线
-  type: trojan
-  server: sg4.5d51af20-b66a-7922-0249-cf8779ae28f9.2ce203e5.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 05 | 专线
-  type: trojan
-  server: sg5.5d51af20-b66a-7922-0249-cf8779ae28f9.dede0d54.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 06 | 专线
-  type: trojan
-  server: sg6.5d51af20-b66a-7922-0249-cf8779ae28f9.0aca10d1.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 07 | 专线
-  type: trojan
-  server: sg7.5d51af20-b66a-7922-0249-cf8779ae28f9.57aaa8ec.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇸🇬新加坡 08 | 专线
-  type: trojan
-  server: sg8.5d51af20-b66a-7922-0249-cf8779ae28f9.c586e7c2.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇺🇸美国 01 | 专线
-  type: trojan
-  server: us1.5d51af20-b66a-7922-0249-cf8779ae28f9.36a8c922.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇺🇸美国 02 | 专线
-  type: trojan
-  server: us2.5d51af20-b66a-7922-0249-cf8779ae28f9.2f6cd430.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇺🇸美国 03 | 专线
-  type: trojan
-  server: us3.5d51af20-b66a-7922-0249-cf8779ae28f9.47253001.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 一元机场-🇺🇸美国 04 | 专线
-  type: trojan
-  server: us4.5d51af20-b66a-7922-0249-cf8779ae28f9.30d6a0d0.the-best-airport.com
-  port: 443
-  password: 4e8e9d60-9198-432a-8bd6-b6770816fe99
-  sni: new.download.the-best-airport.com
-  skip-cert-verify: true
-  udp: true
-- name: 宝可梦-剩余流量：7.74 GB
+- name: 宝可梦-剩余流量：7.72 GB
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1576,6 +1576,40 @@ proxy-groups:
   interval: 300
   strategy: consistent-hashing
   proxies:
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
   - 风萧萧-剩余流量：98.58 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
@@ -1645,41 +1679,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 一元机场-一元机场.asia
-  - 一元机场-请立即到官网下载新客户端！
-  - 一元机场-您正在使用的是最新客户端
-  - 一元机场-🇭🇰香港 01 | 高级专线
-  - 一元机场-🇭🇰香港 02 | 高级专线
-  - 一元机场-🇭🇰香港 03 | 高级专线
-  - 一元机场-🇭🇰香港 04 | 高级专线
-  - 一元机场-🇭🇰香港 05 | 高级专线
-  - 一元机场-🇭🇰香港 06 | 高级专线
-  - 一元机场-🇭🇰香港 | 25倍计费
-  - 一元机场-🇯🇵日本 01 | 高级专线
-  - 一元机场-🇯🇵日本 02 | 高级专线
-  - 一元机场-🇯🇵日本 03 | 高级专线
-  - 一元机场-🇯🇵日本 04 | 高级专线
-  - 一元机场-🇯🇵日本 05 | 高级专线
-  - 一元机场-🇯🇵日本 06 | 高级专线
-  - 一元机场-🇯🇵日本 07 | 高级专线
-  - 一元机场-🇯🇵日本 08 | 高级专线
-  - 一元机场-🇯🇵日本 01 | 专线
-  - 一元机场-🇯🇵日本 02 | 专线
-  - 一元机场-🇯🇵日本 03 | 专线
-  - 一元机场-🇯🇵日本 04 | 专线
-  - 一元机场-🇸🇬新加坡 01 | 专线
-  - 一元机场-🇸🇬新加坡 02 | 专线
-  - 一元机场-🇸🇬新加坡 03 | 专线
-  - 一元机场-🇸🇬新加坡 04 | 专线
-  - 一元机场-🇸🇬新加坡 05 | 专线
-  - 一元机场-🇸🇬新加坡 06 | 专线
-  - 一元机场-🇸🇬新加坡 07 | 专线
-  - 一元机场-🇸🇬新加坡 08 | 专线
-  - 一元机场-🇺🇸美国 01 | 专线
-  - 一元机场-🇺🇸美国 02 | 专线
-  - 一元机场-🇺🇸美国 03 | 专线
-  - 一元机场-🇺🇸美国 04 | 专线
-  - 宝可梦-剩余流量：7.74 GB
+  - 宝可梦-剩余流量：7.72 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1782,6 +1782,40 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
   - 风萧萧-剩余流量：98.58 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
@@ -1851,41 +1885,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 一元机场-一元机场.asia
-  - 一元机场-请立即到官网下载新客户端！
-  - 一元机场-您正在使用的是最新客户端
-  - 一元机场-🇭🇰香港 01 | 高级专线
-  - 一元机场-🇭🇰香港 02 | 高级专线
-  - 一元机场-🇭🇰香港 03 | 高级专线
-  - 一元机场-🇭🇰香港 04 | 高级专线
-  - 一元机场-🇭🇰香港 05 | 高级专线
-  - 一元机场-🇭🇰香港 06 | 高级专线
-  - 一元机场-🇭🇰香港 | 25倍计费
-  - 一元机场-🇯🇵日本 01 | 高级专线
-  - 一元机场-🇯🇵日本 02 | 高级专线
-  - 一元机场-🇯🇵日本 03 | 高级专线
-  - 一元机场-🇯🇵日本 04 | 高级专线
-  - 一元机场-🇯🇵日本 05 | 高级专线
-  - 一元机场-🇯🇵日本 06 | 高级专线
-  - 一元机场-🇯🇵日本 07 | 高级专线
-  - 一元机场-🇯🇵日本 08 | 高级专线
-  - 一元机场-🇯🇵日本 01 | 专线
-  - 一元机场-🇯🇵日本 02 | 专线
-  - 一元机场-🇯🇵日本 03 | 专线
-  - 一元机场-🇯🇵日本 04 | 专线
-  - 一元机场-🇸🇬新加坡 01 | 专线
-  - 一元机场-🇸🇬新加坡 02 | 专线
-  - 一元机场-🇸🇬新加坡 03 | 专线
-  - 一元机场-🇸🇬新加坡 04 | 专线
-  - 一元机场-🇸🇬新加坡 05 | 专线
-  - 一元机场-🇸🇬新加坡 06 | 专线
-  - 一元机场-🇸🇬新加坡 07 | 专线
-  - 一元机场-🇸🇬新加坡 08 | 专线
-  - 一元机场-🇺🇸美国 01 | 专线
-  - 一元机场-🇺🇸美国 02 | 专线
-  - 一元机场-🇺🇸美国 03 | 专线
-  - 一元机场-🇺🇸美国 04 | 专线
-  - 宝可梦-剩余流量：7.74 GB
+  - 宝可梦-剩余流量：7.72 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1982,6 +1982,46 @@ proxy-groups:
   - 维云云-🇺🇸美国02纽约GPT
   - 维云云-🇺🇸美国03纽约GPT
   - 维云云-🇺🇸美国04纽约GPT
+- name: 一元机场
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 一元机场-一元机场.asia
+  - 一元机场-请立即到官网下载新客户端！
+  - 一元机场-您正在使用的是最新客户端
+  - 一元机场-🇭🇰香港 01 | 高级专线
+  - 一元机场-🇭🇰香港 02 | 高级专线
+  - 一元机场-🇭🇰香港 03 | 高级专线
+  - 一元机场-🇭🇰香港 04 | 高级专线
+  - 一元机场-🇭🇰香港 05 | 高级专线
+  - 一元机场-🇭🇰香港 06 | 高级专线
+  - 一元机场-🇭🇰香港 | 25倍计费
+  - 一元机场-🇯🇵日本 01 | 高级专线
+  - 一元机场-🇯🇵日本 02 | 高级专线
+  - 一元机场-🇯🇵日本 03 | 高级专线
+  - 一元机场-🇯🇵日本 04 | 高级专线
+  - 一元机场-🇯🇵日本 05 | 高级专线
+  - 一元机场-🇯🇵日本 06 | 高级专线
+  - 一元机场-🇯🇵日本 07 | 高级专线
+  - 一元机场-🇯🇵日本 08 | 高级专线
+  - 一元机场-🇯🇵日本 01 | 专线
+  - 一元机场-🇯🇵日本 02 | 专线
+  - 一元机场-🇯🇵日本 03 | 专线
+  - 一元机场-🇯🇵日本 04 | 专线
+  - 一元机场-🇸🇬新加坡 01 | 专线
+  - 一元机场-🇸🇬新加坡 02 | 专线
+  - 一元机场-🇸🇬新加坡 03 | 专线
+  - 一元机场-🇸🇬新加坡 04 | 专线
+  - 一元机场-🇸🇬新加坡 05 | 专线
+  - 一元机场-🇸🇬新加坡 06 | 专线
+  - 一元机场-🇸🇬新加坡 07 | 专线
+  - 一元机场-🇸🇬新加坡 08 | 专线
+  - 一元机场-🇺🇸美国 01 | 专线
+  - 一元机场-🇺🇸美国 02 | 专线
+  - 一元机场-🇺🇸美国 03 | 专线
+  - 一元机场-🇺🇸美国 04 | 专线
 - name: 风萧萧
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2038,53 +2078,13 @@ proxy-groups:
   - 风萧萧-🇺🇸US@123nhh佬赞助
   - 风萧萧-🇺🇸US@dong佬赞助
   - 风萧萧-🇨🇦CA@Tokinx佬赞助
-- name: 一元机场
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 一元机场-一元机场.asia
-  - 一元机场-请立即到官网下载新客户端！
-  - 一元机场-您正在使用的是最新客户端
-  - 一元机场-🇭🇰香港 01 | 高级专线
-  - 一元机场-🇭🇰香港 02 | 高级专线
-  - 一元机场-🇭🇰香港 03 | 高级专线
-  - 一元机场-🇭🇰香港 04 | 高级专线
-  - 一元机场-🇭🇰香港 05 | 高级专线
-  - 一元机场-🇭🇰香港 06 | 高级专线
-  - 一元机场-🇭🇰香港 | 25倍计费
-  - 一元机场-🇯🇵日本 01 | 高级专线
-  - 一元机场-🇯🇵日本 02 | 高级专线
-  - 一元机场-🇯🇵日本 03 | 高级专线
-  - 一元机场-🇯🇵日本 04 | 高级专线
-  - 一元机场-🇯🇵日本 05 | 高级专线
-  - 一元机场-🇯🇵日本 06 | 高级专线
-  - 一元机场-🇯🇵日本 07 | 高级专线
-  - 一元机场-🇯🇵日本 08 | 高级专线
-  - 一元机场-🇯🇵日本 01 | 专线
-  - 一元机场-🇯🇵日本 02 | 专线
-  - 一元机场-🇯🇵日本 03 | 专线
-  - 一元机场-🇯🇵日本 04 | 专线
-  - 一元机场-🇸🇬新加坡 01 | 专线
-  - 一元机场-🇸🇬新加坡 02 | 专线
-  - 一元机场-🇸🇬新加坡 03 | 专线
-  - 一元机场-🇸🇬新加坡 04 | 专线
-  - 一元机场-🇸🇬新加坡 05 | 专线
-  - 一元机场-🇸🇬新加坡 06 | 专线
-  - 一元机场-🇸🇬新加坡 07 | 专线
-  - 一元机场-🇸🇬新加坡 08 | 专线
-  - 一元机场-🇺🇸美国 01 | 专线
-  - 一元机场-🇺🇸美国 02 | 专线
-  - 一元机场-🇺🇸美国 03 | 专线
-  - 一元机场-🇺🇸美国 04 | 专线
 - name: 宝可梦
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：7.74 GB
+  - 宝可梦-剩余流量：7.72 GB
   - 宝可梦-距离下次重置剩余：24 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -2183,6 +2183,14 @@ proxy-groups:
   - 维云云-🇨🇳台湾03
   - 维云云-🇨🇳台湾04家宽
   - 维云云-🇨🇳台湾家宽05
+- name: 便宜机场
+  type: select
+  proxies:
+  - DIRECT
+- name: FSCloud
+  type: select
+  proxies:
+  - DIRECT
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-SUFFIX,baidu.com,DIRECT
