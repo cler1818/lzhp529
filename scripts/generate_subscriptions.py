@@ -16,6 +16,8 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, parse_qs, unquote
 import time
 import shutil
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 def get_beijing_time():
     """获取东八区北京时间"""
@@ -355,7 +357,7 @@ def parse_trojan(url, remark=None):
         else:
             server_port_part = server_part
         
-        if ':' in server_part:
+        if ':' in server_port_part:
             server, port_str = server_port_part.split(':', 1)
             port = int(port_str)
         else:
@@ -552,33 +554,119 @@ def parse_clash_yaml_content(content, remark=None):
     
     return proxies
 
-def fetch_subscription(url, timeout=30):
-    """获取订阅内容"""
+def create_session_with_retry(retries=3, backoff_factor=0.5, timeout=30):
+    """创建带有重试机制的会话"""
+    session = requests.Session()
+    
+    # 配置重试策略
+    retry_strategy = Retry(
+        total=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET", "HEAD"]
+    )
+    
+    adapter = HTTPAdapter(max_retries=retry_strategy, pool_connections=10, pool_maxsize=10)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    
+    # 设置超时
+    session.timeout = timeout
+    
+    return session
+
+def fetch_subscription(url, timeout=30, max_retries=3):
+    """获取订阅内容 - 增强版"""
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/plain, */*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/plain, text/html, application/json, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
     }
     
+    # 创建会话
+    session = create_session_with_retry(retries=max_retries, timeout=timeout)
+    
     try:
-        response = requests.get(url, headers=headers, timeout=timeout)
+        # 设置更长的超时时间
+        response = session.get(
+            url, 
+            headers=headers, 
+            timeout=(10, 30),  # 连接超时10秒，读取超时30秒
+            verify=True,  # 启用SSL验证
+            allow_redirects=True,  # 允许重定向
+            stream=False  # 不流式传输
+        )
+        
+        # 检查响应状态
         response.raise_for_status()
         
-        content = response.text.strip()
-        decoded = safe_decode_base64(content)
+        # 检查内容类型
+        content_type = response.headers.get('Content-Type', '').lower()
         
-        if decoded:
-            return decoded, True, None
-        
-        return content, True, None
-        
+        # 处理响应内容
+        if 'text/plain' in content_type or 'application/json' in content_type or 'text/html' in content_type:
+            content = response.text.strip()
+            
+            # 尝试解码Base64
+            decoded = safe_decode_base64(content)
+            if decoded:
+                print(f"    成功获取订阅内容 (Base64编码，大小: {len(decoded)} 字符)")
+                return decoded, True, None
+            
+            print(f"    成功获取订阅内容 (明文，大小: {len(content)} 字符)")
+            return content, True, None
+        else:
+            # 尝试处理二进制内容
+            content = response.content
+            try:
+                decoded_content = content.decode('utf-8', errors='ignore')
+                decoded = safe_decode_base64(decoded_content)
+                if decoded:
+                    print(f"    成功获取订阅内容 (二进制Base64，大小: {len(decoded)} 字符)")
+                    return decoded, True, None
+                else:
+                    print(f"    成功获取订阅内容 (二进制，大小: {len(content)} 字节)")
+                    return decoded_content, True, None
+            except:
+                return None, False, "无法解码订阅内容"
+    
     except requests.exceptions.Timeout:
-        return None, False, "请求超时"
-    except requests.exceptions.ConnectionError:
-        return None, False, "连接错误"
+        return None, False, f"请求超时 (超过{timeout}秒)"
+    except requests.exceptions.ConnectionError as e:
+        error_msg = str(e)
+        if 'SSL' in error_msg or '证书' in error_msg:
+            print(f"    ⚠️ SSL证书错误，尝试忽略SSL验证...")
+            try:
+                # 尝试忽略SSL验证
+                response = requests.get(
+                    url, 
+                    headers=headers, 
+                    timeout=15,
+                    verify=False,
+                    allow_redirects=True
+                )
+                response.raise_for_status()
+                content = response.text.strip()
+                decoded = safe_decode_base64(content)
+                if decoded:
+                    return decoded, True, None
+                return content, True, None
+            except Exception as retry_e:
+                return None, False, f"连接错误 (包括SSL): {str(retry_e)}"
+        return None, False, f"连接错误: {error_msg}"
     except requests.exceptions.HTTPError as e:
-        return None, False, f"HTTP错误: {e.response.status_code}"
+        status_code = e.response.status_code if e.response else '未知'
+        return None, False, f"HTTP错误: {status_code}"
+    except requests.exceptions.RequestException as e:
+        return None, False, f"请求异常: {str(e)}"
     except Exception as e:
         return None, False, f"未知错误: {str(e)}"
+    finally:
+        session.close()
 
 def is_clash_yaml_content(content):
     """判断内容是否为Clash YAML格式"""
@@ -1140,7 +1228,8 @@ https://example.com/free.txt
             if remark:
                 print(f"    备注: {remark}")
             
-            result = fetch_subscription(url, timeout=15)
+            # 增加超时时间到30秒，重试3次
+            result = fetch_subscription(url, timeout=30, max_retries=3)
             content, success, error_msg = result
             
             entry_info = {
@@ -1192,9 +1281,9 @@ https://example.com/free.txt
             # 保存URL处理结果，用于生成源文件内容
             url_entries[i].update(entry_info)
             
-            # 避免请求过快
+            # 避免请求过快，但减少等待时间
             if i < total_count - 1:
-                time.sleep(1)
+                time.sleep(0.5)  # 减少到0.5秒
         
         # 生成失败链接备注
         failed_comments = "\n".join(failed_urls) if failed_urls else "# 无失败链接"
@@ -1282,4 +1371,8 @@ https://example.com/free.txt
     print("=" * 70)
 
 if __name__ == '__main__':
+    # 禁用SSL警告（如果需要）
+    import urllib3
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    
     main()
