@@ -3,6 +3,7 @@
 自动订阅生成器 - 终极简化版
 支持从备注中提取分组信息，为每个订阅链接创建独立策略组
 统一使用混合端口7890，策略组极度简化
+支持解析Clash YAML格式节点
 """
 
 import os
@@ -472,6 +473,81 @@ def parse_proxy_url(url, remark=None):
     
     return None
 
+def parse_clash_yaml_node(line, remark=None):
+    """解析Clash YAML格式节点"""
+    try:
+        # 移除开头的"- "和空格
+        line = line.strip()
+        if line.startswith('- '):
+            line = line[2:].strip()
+        elif line.startswith('-'):
+            line = line[1:].strip()
+        
+        # 解析YAML格式的节点
+        node_data = yaml.safe_load(line)
+        
+        if not isinstance(node_data, dict):
+            return None
+        
+        # 确保必要的字段存在
+        if 'name' not in node_data or 'server' not in node_data or 'type' not in node_data:
+            return None
+        
+        # 添加备注前缀
+        original_name = node_data.get('name', '')
+        if remark and original_name:
+            node_data['name'] = f"{remark}-{original_name}"
+        elif remark:
+            # 生成默认名称
+            server = node_data.get('server', 'unknown')
+            port = node_data.get('port', '')
+            proxy_type = node_data.get('type', '').upper()
+            node_data['name'] = f"{remark}-{proxy_type}-{server}:{port}"
+        
+        # 确保udp字段存在
+        if 'udp' not in node_data:
+            node_data['udp'] = True
+        
+        return clean_config(node_data)
+        
+    except Exception as e:
+        print(f"  Clash YAML节点解析失败: {e}")
+        return None
+
+def parse_clash_yaml_content(content, remark=None):
+    """解析完整的Clash YAML配置文件"""
+    proxies = []
+    
+    try:
+        config = yaml.safe_load(content)
+        
+        if not isinstance(config, dict):
+            return proxies
+        
+        # 从配置文件的proxies部分提取节点
+        if 'proxies' in config and isinstance(config['proxies'], list):
+            for proxy in config['proxies']:
+                if isinstance(proxy, dict):
+                    # 克隆代理配置以避免修改原始数据
+                    proxy_config = dict(proxy)
+                    
+                    # 添加备注前缀
+                    if remark and 'name' in proxy_config:
+                        proxy_config['name'] = f"{remark}-{proxy_config['name']}"
+                    
+                    # 确保udp字段存在
+                    if 'udp' not in proxy_config:
+                        proxy_config['udp'] = True
+                    
+                    proxies.append(clean_config(proxy_config))
+        
+        print(f"    从Clash配置解析到 {len(proxies)} 个节点")
+        
+    except Exception as e:
+        print(f"  Clash配置解析失败: {e}")
+    
+    return proxies
+
 def fetch_subscription(url, timeout=30):
     """获取订阅内容"""
     headers = {
@@ -500,12 +576,197 @@ def fetch_subscription(url, timeout=30):
     except Exception as e:
         return None, False, f"未知错误: {str(e)}"
 
+def is_clash_yaml_content(content):
+    """判断内容是否为Clash YAML格式"""
+    if not content:
+        return False
+    
+    # 检查是否包含Clash关键字
+    clash_keywords = ['proxies:', 'proxy-groups:', 'rules:', 'mixed-port:', 'port:']
+    
+    # 检查前几行
+    first_lines = content.strip().split('\n')[:5]
+    for line in first_lines:
+        line_lower = line.lower().strip()
+        for keyword in clash_keywords:
+            if keyword in line_lower:
+                return True
+    
+    # 检查是否包含YAML格式的节点行
+    yaml_node_pattern = r'^\s*-\s*{.*?}\s*$'
+    lines = content.strip().split('\n')
+    yaml_node_count = 0
+    
+    for line in lines[:20]:  # 只检查前20行
+        if re.match(yaml_node_pattern, line):
+            yaml_node_count += 1
+    
+    # 如果有多个YAML格式节点行，认为是Clash YAML
+    if yaml_node_count >= 2:
+        return True
+    
+    # 检查是否包含标准的Clash proxies部分（带缩进的多行格式）
+    if 'proxies:' in content:
+        # 检查proxies后面的内容
+        lines = content.strip().split('\n')
+        in_proxies = False
+        dash_count = 0
+        
+        for line in lines:
+            line_stripped = line.strip()
+            if line_stripped == 'proxies:':
+                in_proxies = True
+                continue
+            
+            if in_proxies:
+                if line_stripped.startswith('- '):
+                    dash_count += 1
+                elif line_stripped.startswith('-'):
+                    dash_count += 1
+                elif line_stripped and not line_stripped.startswith('#'):
+                    # 非空非注释行，检查是否有缩进
+                    if line.startswith('  ') and ':' in line:
+                        dash_count += 0.5  # 多行格式
+        
+        if dash_count >= 2:
+            return True
+    
+    return False
+
+def extract_yaml_proxies_from_content(content, remark=None):
+    """从内容中提取YAML格式的节点"""
+    proxies = []
+    
+    try:
+        # 尝试解析完整YAML
+        config = yaml.safe_load(content)
+        
+        if isinstance(config, dict) and 'proxies' in config:
+            return parse_clash_yaml_content(content, remark)
+        elif isinstance(config, list):
+            # 直接是节点列表
+            for node in config:
+                if isinstance(node, dict) and 'name' in node and 'server' in node and 'type' in node:
+                    proxy_config = dict(node)
+                    
+                    # 添加备注前缀
+                    if remark and 'name' in proxy_config:
+                        proxy_config['name'] = f"{remark}-{proxy_config['name']}"
+                    
+                    # 确保udp字段存在
+                    if 'udp' not in proxy_config:
+                        proxy_config['udp'] = True
+                    
+                    proxies.append(clean_config(proxy_config))
+            
+            if proxies:
+                print(f"    从YAML列表解析到 {len(proxies)} 个节点")
+    
+    except Exception as e:
+        # 如果不是有效的YAML，尝试逐行解析
+        lines = content.split('\n')
+        current_node = {}
+        in_node = False
+        indent_level = 0
+        
+        for line in lines:
+            line = line.rstrip()
+            
+            # 跳过空行和注释
+            if not line.strip() or line.strip().startswith('#'):
+                continue
+            
+            # 检查是否是节点开始
+            if line.strip().startswith('- ') or line.strip().startswith('-'):
+                # 保存上一个节点
+                if current_node:
+                    # 添加备注前缀
+                    if remark and 'name' in current_node:
+                        current_node['name'] = f"{remark}-{current_node['name']}"
+                    
+                    # 确保udp字段存在
+                    if 'udp' not in current_node:
+                        current_node['udp'] = True
+                    
+                    proxies.append(clean_config(current_node))
+                
+                # 开始新节点
+                current_node = {}
+                in_node = True
+                indent_level = len(line) - len(line.lstrip())
+                line = line.strip()
+                
+                # 如果是紧凑格式：- {name: xxx, server: xxx}
+                if line.startswith('- {') and '}' in line:
+                    node_str = line[line.find('{'):line.rfind('}')+1]
+                    try:
+                        node_data = yaml.safe_load(node_str)
+                        if isinstance(node_data, dict):
+                            current_node = node_data
+                    except:
+                        pass
+                
+            elif in_node and line.strip():
+                # 处理节点属性
+                current_indent = len(line) - len(line.lstrip())
+                if current_indent > indent_level:
+                    # 这是节点属性的行
+                    line_stripped = line.strip()
+                    if ':' in line_stripped:
+                        key, value = line_stripped.split(':', 1)
+                        key = key.strip()
+                        value = value.strip()
+                        
+                        # 处理YAML值
+                        if value.lower() == 'true':
+                            value = True
+                        elif value.lower() == 'false':
+                            value = False
+                        elif value.isdigit():
+                            value = int(value)
+                        
+                        current_node[key] = value
+        
+        # 处理最后一个节点
+        if current_node:
+            # 添加备注前缀
+            if remark and 'name' in current_node:
+                current_node['name'] = f"{remark}-{current_node['name']}"
+            
+            # 确保udp字段存在
+            if 'udp' not in current_node:
+                current_node['udp'] = True
+            
+            proxies.append(clean_config(current_node))
+        
+        if proxies:
+            print(f"    从多行YAML解析到 {len(proxies)} 个节点")
+    
+    return proxies
+
 def process_subscription_content(content, remark=None):
     """处理订阅内容"""
     if not content:
         return []
     
     proxies = []
+    
+    # 首先尝试解析为完整的Clash YAML配置
+    if is_clash_yaml_content(content):
+        print(f"    检测到Clash YAML格式，尝试解析...")
+        # 尝试完整解析
+        clash_proxies = parse_clash_yaml_content(content, remark)
+        if clash_proxies:
+            proxies.extend(clash_proxies)
+            return proxies
+        
+        # 如果完整解析失败，尝试提取YAML节点
+        yaml_proxies = extract_yaml_proxies_from_content(content, remark)
+        if yaml_proxies:
+            proxies.extend(yaml_proxies)
+            return proxies
+    
+    # 如果不是完整Clash配置，则按行处理
     lines = content.split('\n')
     
     for line in lines:
@@ -513,9 +774,18 @@ def process_subscription_content(content, remark=None):
         if not line or line.startswith('#'):
             continue
         
+        # 尝试解析为代理URL
         proxy = parse_proxy_url(line, remark)
         if proxy:
             proxies.append(proxy)
+            continue
+        
+        # 尝试解析为紧凑格式的Clash YAML节点
+        if line.startswith('- ') and '{' in line and '}' in line:
+            proxy = parse_clash_yaml_node(line, remark)
+            if proxy:
+                proxies.append(proxy)
+                continue
     
     return proxies
 
