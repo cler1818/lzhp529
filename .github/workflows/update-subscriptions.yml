@@ -1,6 +1,6 @@
 name: Update Subscriptions - Simplified
 
-于:
+on:
   # schedule:
   #   # 每小时运行一次
   #   - cron: '0 * * * *'
