@@ -1,9 +1,9 @@
 name: Update Subscriptions - Simplified
 
-on:
-  schedule:
-    # 每小时运行一次
-    - cron: '0 * * * *'
+于:
+  # schedule:
+  #   # 每小时运行一次
+  #   - cron: '0 * * * *'
   workflow_dispatch: # 允许手动触发
   push:
     paths:
