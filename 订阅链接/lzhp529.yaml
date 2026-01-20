@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 12:44:16
+# 更新时间（东八区北京时间）: 2026-01-20 13:28:29
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 4/6
@@ -81,7 +81,7 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
-- name: 维云云-剩余流量：86.84 GB
+- name: 维云云-剩余流量：86.82 GB
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
@@ -1257,7 +1257,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 宝可梦-剩余流量：2.26 GB
+- name: 宝可梦-剩余流量：2.23 GB
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1598,7 +1598,7 @@ proxy-groups:
   interval: 300
   strategy: consistent-hashing
   proxies:
-  - 维云云-剩余流量：86.84 GB
+  - 维云云-剩余流量：86.82 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1758,7 +1758,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：2.26 GB
+  - 宝可梦-剩余流量：2.23 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1807,7 +1807,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：86.84 GB
+  - 维云云-剩余流量：86.82 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1967,7 +1967,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：2.26 GB
+  - 宝可梦-剩余流量：2.23 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -2016,7 +2016,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：86.84 GB
+  - 维云云-剩余流量：86.82 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -2194,7 +2194,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：2.26 GB
+  - 宝可梦-剩余流量：2.23 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
