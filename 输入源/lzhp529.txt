@@ -1,6 +1,5 @@
 # FSCloud 到期：28.12.4
-https://dash.fscloud.app/answer/land/7b32c5170d25e3506a1ecc0bc1f1d45f
-
+https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/FSCloud.yaml
 
 # 维云云 到期：28.2.12
 https://vyy.cqsvhb.cn/s/c59454c04c7395f58b5d8165a598ad64
@@ -11,8 +10,7 @@ https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=6d43847f261274835
 
 
 # 便宜机场 月免 
-https://xn--wtq35pfyd55o.co/answer/land/cc6bf942a6269f2ffe97ebaec4f884bc
-
+https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/便宜机场.yaml
 
 # 风萧萧 LD论坛公益 长期流量
 https://hermes.xiaoyao-88.com/s/8bfd6799e01c61ada760e88d56f91eb9
