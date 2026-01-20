@@ -2,31 +2,29 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 17:42:10
+# 更新时间（东八区北京时间）: 2026-01-20 18:06:55
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
-# 订阅链接获取情况: 4/6
+# 订阅链接获取情况: 6/6
 # --------------------------------------------------
 
 # 分组统计:
+#   FSCloud: 34 个节点
 #   一元机场: 34 个节点
+#   便宜机场: 7 个节点
 #   宝可梦: 43 个节点
 #   维云云: 57 个节点
 #   风萧萧: 69 个节点
-#   FSCloud: 失败 (HTTP错误: 403)
-#   便宜机场: 失败 (HTTP错误: 403)
 # --------------------------------------------------
 
 # 失败的链接:
-# FSCloud: https://dash.fscloud.app/answer/land/7b32c5170d25e3506a1ecc0bc1f1d45f - HTTP错误: 403
-# 便宜机场: https://xn--wtq35pfyd55o.co/answer/land/cc6bf942a6269f2ffe97ebaec4f884bc - HTTP错误: 403
+# 无失败链接
 # --------------------------------------------------
 
 # 输入源文件内容:
 # FSCloud 到期：28.12.4
-# https://dash.fscloud.app/answer/land/7b32c5170d25e3506a1ecc0bc1f1d45f
-# 节点数量: 0 (失败原因: HTTP错误: 403)
-#
+# https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/FSCloud.yaml
+# 节点数量: 34
 #
 # 维云云 到期：28.2.12
 # https://vyy.cqsvhb.cn/s/c59454c04c7395f58b5d8165a598ad64
@@ -39,9 +37,8 @@
 #
 #
 # 便宜机场 月免 
-# https://xn--wtq35pfyd55o.co/answer/land/cc6bf942a6269f2ffe97ebaec4f884bc
-# 节点数量: 0 (失败原因: HTTP错误: 403)
-#
+# https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/便宜机场.yaml
+# 节点数量: 7
 #
 # 风萧萧 LD论坛公益 长期流量
 # https://hermes.xiaoyao-88.com/s/8bfd6799e01c61ada760e88d56f91eb9
@@ -81,7 +78,446 @@ dns:
   - https://doh.pub/dns-query
   - https://dns.alidns.com/dns-query
 proxies:
-- name: 维云云-剩余流量：86.68 GB
+- name: FSCloud-剩余流量：99.17 GB
+  type: trojan
+  server: 123.dnscloudcloud.top
+  port: 443
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+  skip-cert-verify: false
+  sni: null.us1234567891.xyz
+  network: ws
+  ws-opts:
+    path: /music
+- name: FSCloud-距离下次重置剩余：15 天
+  type: trojan
+  server: 123.dnscloudcloud.top
+  port: 443
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+  skip-cert-verify: false
+  sni: null.us1234567891.xyz
+  network: ws
+  ws-opts:
+    path: /music
+- name: FSCloud-套餐到期：2028-12-04
+  type: trojan
+  server: 123.dnscloudcloud.top
+  port: 443
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+  skip-cert-verify: false
+  sni: null.us1234567891.xyz
+  network: ws
+  ws-opts:
+    path: /music
+- name: FSCloud-trojan-美国
+  type: trojan
+  server: 123.dnscloudcloud.top
+  port: 443
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+  skip-cert-verify: false
+  sni: null.us1234567891.xyz
+  network: ws
+  ws-opts:
+    path: /music
+- name: FSCloud-德国vless-3-联通电信
+  type: vless
+  server: 188.68.56.149
+  port: 56701
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: true
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-德国vless-4-联通电信
+  type: vless
+  server: 185.194.142.41
+  port: 56701
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: hyjlIzSsJLFvRHK5lWDl7HR1qWz87B1ST0cKvqW16Q4
+    short-id: a43342
+  client-fingerprint: firefox
+- name: FSCloud-德国vless-5-联通电信
+  type: vless
+  server: 188.68.43.202
+  port: 56701
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-新加坡vless-1-移动优化
+  type: vless
+  server: sg1.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: true
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: 5VW0EcRsVlWfE2sNgcPiX-4JTTFLwdU90KNzec-iwjM
+    short-id: 15d154a3f066
+  client-fingerprint: firefox
+- name: FSCloud-新加坡vless-2-移动优化
+  type: vless
+  server: sg2.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: DnLfVj9-80qjo4AAKZQVqAthh-zO7Eu1JVRrqKDV5Ts
+    short-id: f8f01964b2
+  client-fingerprint: firefox
+- name: FSCloud-新加坡vless-3-移动优化
+  type: vless
+  server: sg3.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: tjEnoxFwu-lx-RYYTNEQKk2osD4Eowa6OLszDc1g2Tw
+    short-id: 18e3e0
+  client-fingerprint: firefox
+- name: FSCloud-日本vless-1
+  type: vless
+  server: jp1.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-日本vless-2-移动优化
+  type: vless
+  server: jp2.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-日本vless-1-联通电信
+  type: vless
+  server: jp4.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-日本vless-2-联通电信
+  type: vless
+  server: jp3.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-美国vless-1-三网优化
+  type: vless
+  server: us1do.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-美国vless-2-三网优化
+  type: vless
+  server: us2do.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-美国vless-3-三网优化
+  type: vless
+  server: us3do.dnscloudcloud.top
+  port: 56702
+  uuid: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: sW8BfHeovVzmbFuAnr9nH8oJaKYze6shKoKMdek5ai8
+    short-id: 792147b8
+  client-fingerprint: firefox
+- name: FSCloud-新加坡hy2-1-移动优化
+  server: sg1.dnscloudcloud.top
+  port: 32823
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-新加坡hy2-2-移动优化
+  server: sg2.dnscloudcloud.top
+  port: 32542
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-新加坡hy2-3-移动优化
+  server: sg3.dnscloudcloud.top
+  port: 32766
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-日本hy2-1-移动优化
+  server: jp1.dnscloudcloud.top
+  port: 32947
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-日本hy2-2-移动优化
+  server: jp2.dnscloudcloud.top
+  port: 32588
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-日本hy2-4-移动优化
+  server: jp4.dnscloudcloud.top
+  port: 32570
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-日本hy2-3-移动优化
+  server: jp3.dnscloudcloud.top
+  port: 32127
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-美国hy2-1-三网优化
+  server: us1do.dnscloudcloud.top
+  port: 32956
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-美国hy2-2-三网优化
+  server: us2do.dnscloudcloud.top
+  port: 32353
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-美国hy2-4-移动优化
+  server: us3do.dnscloudcloud.top
+  port: 32502
+  sni: 234224.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-德国hy2-1-三网优化
+  server: 185.194.142.41
+  port: 32288
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 32000-33000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-德国hy2-2-三网优化
+  server: 188.68.56.149
+  port: 33450
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 33001-34000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-德国hy2-3-三网优化
+  server: 188.68.43.202
+  port: 33817
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 33001-34000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-德国hy2-4-三网优化
+  server: 45.157.177.210
+  port: 23050
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 23001-24000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-德国hy2-5-三网优化
+  server: 94.16.116.48
+  port: 23611
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 23001-24000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-越南hy2-1
+  server: 163.227.161.157
+  port: 23320
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 23001-24000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: FSCloud-泰国hy2-1
+  server: 43.229.148.12
+  port: 23265
+  sni: 123123.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 23001-24000
+  type: hysteria2
+  password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
+  udp: true
+- name: 维云云-剩余流量：86.66 GB
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
@@ -766,6 +1202,98 @@ proxies:
   sni: new.download.the-best-airport.com
   skip-cert-verify: true
   udp: true
+- name: 便宜机场-美国vless-do1
+  type: vless
+  server: us1do.dnscloudcloud.top
+  port: 10002
+  uuid: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: xnzUvDQZ4B45lUi40lFKOLWiJdPQW8LzhGsGandvvlc
+    short-id: ad081079
+  client-fingerprint: firefox
+- name: 便宜机场-美国vless-do2
+  type: vless
+  server: us2do.dnscloudcloud.top
+  port: 10002
+  uuid: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: xnzUvDQZ4B45lUi40lFKOLWiJdPQW8LzhGsGandvvlc
+    short-id: ad081079
+  client-fingerprint: firefox
+- name: 便宜机场-美国vless-do3
+  type: vless
+  server: us3do.dnscloudcloud.top
+  port: 10002
+  uuid: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  alterId: 0
+  cipher: auto
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: xnzUvDQZ4B45lUi40lFKOLWiJdPQW8LzhGsGandvvlc
+    short-id: ad081079
+  client-fingerprint: firefox
+- name: 便宜机场-新加坡hy2-3
+  server: sg3.dnscloudcloud.top
+  port: 36255
+  sni: 1231231.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 36000-37000
+  type: hysteria2
+  password: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  udp: true
+- name: 便宜机场-日本hy2-1
+  server: jp1.dnscloudcloud.top
+  port: 36312
+  sni: 1231231.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 36000-37000
+  type: hysteria2
+  password: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  udp: true
+- name: 便宜机场-日本hy2-1-z
+  server: jp1.dnscloudcloud.top
+  port: 36177
+  sni: 1231231.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 36000-37000
+  type: hysteria2
+  password: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  udp: true
+- name: 便宜机场-日本hy2-2-z
+  server: jp1.dnscloudcloud.top
+  port: 36623
+  sni: 1231231.1234567890spcloud.com
+  up: 1000
+  down: 1000
+  skip-cert-verify: true
+  ports: 36000-37000
+  type: hysteria2
+  password: 1fc92f68-e081-46cd-9c03-c483c7290a09
+  udp: true
 - name: 风萧萧-剩余流量：98.55 GB
   type: ss
   server: 120.77.38.81
@@ -1257,7 +1785,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 宝可梦-剩余流量：1.82 GB
+- name: 宝可梦-剩余流量：1.77 GB
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1598,7 +2126,41 @@ proxy-groups:
   interval: 300
   strategy: consistent-hashing
   proxies:
-  - 维云云-剩余流量：86.68 GB
+  - FSCloud-剩余流量：99.17 GB
+  - FSCloud-距离下次重置剩余：15 天
+  - FSCloud-套餐到期：2028-12-04
+  - FSCloud-trojan-美国
+  - FSCloud-德国vless-3-联通电信
+  - FSCloud-德国vless-4-联通电信
+  - FSCloud-德国vless-5-联通电信
+  - FSCloud-新加坡vless-1-移动优化
+  - FSCloud-新加坡vless-2-移动优化
+  - FSCloud-新加坡vless-3-移动优化
+  - FSCloud-日本vless-1
+  - FSCloud-日本vless-2-移动优化
+  - FSCloud-日本vless-1-联通电信
+  - FSCloud-日本vless-2-联通电信
+  - FSCloud-美国vless-1-三网优化
+  - FSCloud-美国vless-2-三网优化
+  - FSCloud-美国vless-3-三网优化
+  - FSCloud-新加坡hy2-1-移动优化
+  - FSCloud-新加坡hy2-2-移动优化
+  - FSCloud-新加坡hy2-3-移动优化
+  - FSCloud-日本hy2-1-移动优化
+  - FSCloud-日本hy2-2-移动优化
+  - FSCloud-日本hy2-4-移动优化
+  - FSCloud-日本hy2-3-移动优化
+  - FSCloud-美国hy2-1-三网优化
+  - FSCloud-美国hy2-2-三网优化
+  - FSCloud-美国hy2-4-移动优化
+  - FSCloud-德国hy2-1-三网优化
+  - FSCloud-德国hy2-2-三网优化
+  - FSCloud-德国hy2-3-三网优化
+  - FSCloud-德国hy2-4-三网优化
+  - FSCloud-德国hy2-5-三网优化
+  - FSCloud-越南hy2-1
+  - FSCloud-泰国hy2-1
+  - 维云云-剩余流量：86.66 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1689,6 +2251,13 @@ proxy-groups:
   - 一元机场-🇺🇸美国 02 | 专线
   - 一元机场-🇺🇸美国 03 | 专线
   - 一元机场-🇺🇸美国 04 | 专线
+  - 便宜机场-美国vless-do1
+  - 便宜机场-美国vless-do2
+  - 便宜机场-美国vless-do3
+  - 便宜机场-新加坡hy2-3
+  - 便宜机场-日本hy2-1
+  - 便宜机场-日本hy2-1-z
+  - 便宜机场-日本hy2-2-z
   - 风萧萧-剩余流量：98.55 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
@@ -1758,7 +2327,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：1.82 GB
+  - 宝可梦-剩余流量：1.77 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -1807,7 +2376,41 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：86.68 GB
+  - FSCloud-剩余流量：99.17 GB
+  - FSCloud-距离下次重置剩余：15 天
+  - FSCloud-套餐到期：2028-12-04
+  - FSCloud-trojan-美国
+  - FSCloud-德国vless-3-联通电信
+  - FSCloud-德国vless-4-联通电信
+  - FSCloud-德国vless-5-联通电信
+  - FSCloud-新加坡vless-1-移动优化
+  - FSCloud-新加坡vless-2-移动优化
+  - FSCloud-新加坡vless-3-移动优化
+  - FSCloud-日本vless-1
+  - FSCloud-日本vless-2-移动优化
+  - FSCloud-日本vless-1-联通电信
+  - FSCloud-日本vless-2-联通电信
+  - FSCloud-美国vless-1-三网优化
+  - FSCloud-美国vless-2-三网优化
+  - FSCloud-美国vless-3-三网优化
+  - FSCloud-新加坡hy2-1-移动优化
+  - FSCloud-新加坡hy2-2-移动优化
+  - FSCloud-新加坡hy2-3-移动优化
+  - FSCloud-日本hy2-1-移动优化
+  - FSCloud-日本hy2-2-移动优化
+  - FSCloud-日本hy2-4-移动优化
+  - FSCloud-日本hy2-3-移动优化
+  - FSCloud-美国hy2-1-三网优化
+  - FSCloud-美国hy2-2-三网优化
+  - FSCloud-美国hy2-4-移动优化
+  - FSCloud-德国hy2-1-三网优化
+  - FSCloud-德国hy2-2-三网优化
+  - FSCloud-德国hy2-3-三网优化
+  - FSCloud-德国hy2-4-三网优化
+  - FSCloud-德国hy2-5-三网优化
+  - FSCloud-越南hy2-1
+  - FSCloud-泰国hy2-1
+  - 维云云-剩余流量：86.66 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -1898,6 +2501,13 @@ proxy-groups:
   - 一元机场-🇺🇸美国 02 | 专线
   - 一元机场-🇺🇸美国 03 | 专线
   - 一元机场-🇺🇸美国 04 | 专线
+  - 便宜机场-美国vless-do1
+  - 便宜机场-美国vless-do2
+  - 便宜机场-美国vless-do3
+  - 便宜机场-新加坡hy2-3
+  - 便宜机场-日本hy2-1
+  - 便宜机场-日本hy2-1-z
+  - 便宜机场-日本hy2-2-z
   - 风萧萧-剩余流量：98.55 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
@@ -1967,7 +2577,7 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：1.82 GB
+  - 宝可梦-剩余流量：1.77 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
@@ -2010,13 +2620,53 @@ proxy-groups:
   - 宝可梦-🇺🇸【北美洲】美国04丨V6【1x】
   - 宝可梦-🇺🇸【北美洲】美国05丨IPLC【10x】
   - 宝可梦-🇺🇸【北美洲】美国06丨IPLC【10x】
+- name: FSCloud
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - FSCloud-剩余流量：99.17 GB
+  - FSCloud-距离下次重置剩余：15 天
+  - FSCloud-套餐到期：2028-12-04
+  - FSCloud-trojan-美国
+  - FSCloud-德国vless-3-联通电信
+  - FSCloud-德国vless-4-联通电信
+  - FSCloud-德国vless-5-联通电信
+  - FSCloud-新加坡vless-1-移动优化
+  - FSCloud-新加坡vless-2-移动优化
+  - FSCloud-新加坡vless-3-移动优化
+  - FSCloud-日本vless-1
+  - FSCloud-日本vless-2-移动优化
+  - FSCloud-日本vless-1-联通电信
+  - FSCloud-日本vless-2-联通电信
+  - FSCloud-美国vless-1-三网优化
+  - FSCloud-美国vless-2-三网优化
+  - FSCloud-美国vless-3-三网优化
+  - FSCloud-新加坡hy2-1-移动优化
+  - FSCloud-新加坡hy2-2-移动优化
+  - FSCloud-新加坡hy2-3-移动优化
+  - FSCloud-日本hy2-1-移动优化
+  - FSCloud-日本hy2-2-移动优化
+  - FSCloud-日本hy2-4-移动优化
+  - FSCloud-日本hy2-3-移动优化
+  - FSCloud-美国hy2-1-三网优化
+  - FSCloud-美国hy2-2-三网优化
+  - FSCloud-美国hy2-4-移动优化
+  - FSCloud-德国hy2-1-三网优化
+  - FSCloud-德国hy2-2-三网优化
+  - FSCloud-德国hy2-3-三网优化
+  - FSCloud-德国hy2-4-三网优化
+  - FSCloud-德国hy2-5-三网优化
+  - FSCloud-越南hy2-1
+  - FSCloud-泰国hy2-1
 - name: 维云云
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：86.68 GB
+  - 维云云-剩余流量：86.66 GB
   - 维云云-距离下次重置剩余：24 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
@@ -2113,6 +2763,19 @@ proxy-groups:
   - 一元机场-🇺🇸美国 02 | 专线
   - 一元机场-🇺🇸美国 03 | 专线
   - 一元机场-🇺🇸美国 04 | 专线
+- name: 便宜机场
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 便宜机场-美国vless-do1
+  - 便宜机场-美国vless-do2
+  - 便宜机场-美国vless-do3
+  - 便宜机场-新加坡hy2-3
+  - 便宜机场-日本hy2-1
+  - 便宜机场-日本hy2-1-z
+  - 便宜机场-日本hy2-2-z
 - name: 风萧萧
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2194,7 +2857,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：1.82 GB
+  - 宝可梦-剩余流量：1.77 GB
   - 宝可梦-距离下次重置剩余：23 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
