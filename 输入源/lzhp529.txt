@@ -1,4 +1,9 @@
-# FSCloud 到期：28.12.4
+# FSCloud、便宜机场都是clash订阅后把文件导入到了自己的github仓库，这样才能获取。这俩网站只允许第一次访问订阅链接能获取节点
+# ==================================================================================================================
+
+
+
+# FSCloud 到期：28.12.4 每次更新需重置订阅链接然后第一次可获取，第二次就失败
 https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/FSCloud.yaml
 
 # 维云云 到期：28.2.12
@@ -9,7 +14,7 @@ https://vyy.cqsvhb.cn/s/c59454c04c7395f58b5d8165a598ad64
 https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=6d43847f2612748359fd8a8b9932efeb
 
 
-# 便宜机场 月免 
+# 便宜机场 月免  每次更新需重置订阅链接然后第一次可获取，第二次就失败
 https://raw.githubusercontent.com/cler1818/Note/refs/heads/main/便宜机场.yaml
 
 # 风萧萧 LD论坛公益 长期流量
