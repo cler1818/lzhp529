@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-20 18:16:41
+# 更新时间（东八区北京时间）: 2026-01-23 11:56:37
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 6/6
@@ -522,14 +522,14 @@ proxies:
   type: hysteria2
   password: ac701d8c-acc1-4666-a4de-d7c4cdcc4a4b
   udp: true
-- name: 维云云-剩余流量：86.66 GB
+- name: 维云云-剩余流量：83.14 GB
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
   sni: hkzl1.vyunyunnode.top
   skip-cert-verify: true
-- name: 维云云-距离下次重置剩余：24 天
+- name: 维云云-距离下次重置剩余：21 天
   type: hysteria2
   server: hkzl1.vyunyunnode.top
   port: 49000
@@ -564,6 +564,12 @@ proxies:
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
   sni: hkzl3.vyunyunnode.top
   skip-cert-verify: true
+- name: 维云云-🇭🇰香港直连04
+  type: hysteria2
+  server: hkzl4.vyunyunnode.top
+  port: 44003
+  password: /e97be888-f728-4ef7-baab-7bcd504564ce
+  skip-cert-verify: true
 - name: 维云云-台湾家宽直连
   type: hysteria2
   server: twzl.vyunyunnode.top
@@ -585,11 +591,6 @@ proxies:
   password: /e97be888-f728-4ef7-baab-7bcd504564ce
   sni: sgzl1.vyunyunnode.top
   skip-cert-verify: true
-- name: 维云云-韩国直连
-  type: hysteria2
-  server: hgzl.vyunyunnode.top
-  port: 44098
-  password: /e97be888-f728-4ef7-baab-7bcd504564ce
 - name: 维云云-美国🇺🇸直连02
   type: hysteria2
   server: zzlmg2.hhwyy.xyz
@@ -1299,7 +1300,7 @@ proxies:
   type: hysteria2
   password: 1fc92f68-e081-46cd-9c03-c483c7290a09
   udp: true
-- name: 风萧萧-剩余流量：98.55 GB
+- name: 风萧萧-剩余流量：98.31 GB
   type: ss
   server: 120.77.38.81
   port: 11235
@@ -1790,7 +1791,7 @@ proxies:
   uuid: e49b9cb3-9cc3-49c2-b3ab-abdde722c27b
   udp: true
   servername: tesla.com
-- name: 宝可梦-剩余流量：1.77 GB
+- name: 宝可梦-剩余流量：0
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -1798,7 +1799,7 @@ proxies:
   sni: www.volcengine.com
   skip-cert-verify: true
   udp: true
-- name: 宝可梦-距离下次重置剩余：23 天
+- name: 宝可梦-距离下次重置剩余：20 天
   type: trojan
   server: sssg01.go52pokemon.com
   port: 55016
@@ -2165,16 +2166,16 @@ proxy-groups:
   - FSCloud-德国hy2-5-三网优化
   - FSCloud-越南hy2-1
   - FSCloud-泰国hy2-1
-  - 维云云-剩余流量：86.66 GB
-  - 维云云-距离下次重置剩余：24 天
+  - 维云云-剩余流量：83.14 GB
+  - 维云云-距离下次重置剩余：21 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
   - 维云云-香港2直连
   - 维云云-香港3直连
+  - 维云云-🇭🇰香港直连04
   - 维云云-台湾家宽直连
   - 维云云-美国🇺🇸直连
   - 维云云-新加坡🇸🇬直连
-  - 维云云-韩国直连
   - 维云云-美国🇺🇸直连02
   - 维云云-日本🇯🇵直连
   - 维云云-🇭🇰香港01
@@ -2263,7 +2264,7 @@ proxy-groups:
   - 便宜机场-日本hy2-1
   - 便宜机场-日本hy2-1-z
   - 便宜机场-日本hy2-2-z
-  - 风萧萧-剩余流量：98.55 GB
+  - 风萧萧-剩余流量：98.31 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
   - 风萧萧-🇭🇰HK@wuan佬赞助
@@ -2332,8 +2333,8 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：1.77 GB
-  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-剩余流量：0
+  - 宝可梦-距离下次重置剩余：20 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
   - 宝可梦-放丢失官网:https://love.p6m6.com
@@ -2415,16 +2416,16 @@ proxy-groups:
   - FSCloud-德国hy2-5-三网优化
   - FSCloud-越南hy2-1
   - FSCloud-泰国hy2-1
-  - 维云云-剩余流量：86.66 GB
-  - 维云云-距离下次重置剩余：24 天
+  - 维云云-剩余流量：83.14 GB
+  - 维云云-距离下次重置剩余：21 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
   - 维云云-香港2直连
   - 维云云-香港3直连
+  - 维云云-🇭🇰香港直连04
   - 维云云-台湾家宽直连
   - 维云云-美国🇺🇸直连
   - 维云云-新加坡🇸🇬直连
-  - 维云云-韩国直连
   - 维云云-美国🇺🇸直连02
   - 维云云-日本🇯🇵直连
   - 维云云-🇭🇰香港01
@@ -2513,7 +2514,7 @@ proxy-groups:
   - 便宜机场-日本hy2-1
   - 便宜机场-日本hy2-1-z
   - 便宜机场-日本hy2-2-z
-  - 风萧萧-剩余流量：98.55 GB
+  - 风萧萧-剩余流量：98.31 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
   - 风萧萧-🇭🇰HK@wuan佬赞助
@@ -2582,8 +2583,8 @@ proxy-groups:
   - 风萧萧-🇺🇸5x家宽@Anoxia佬赞助
   - 风萧萧-🇺🇸5x家宽-2@Bosa佬赞助
   - 风萧萧-🇺🇸5x家宽-2@hkxiaoyao佬赞助
-  - 宝可梦-剩余流量：1.77 GB
-  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-剩余流量：0
+  - 宝可梦-距离下次重置剩余：20 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
   - 宝可梦-放丢失官网:https://love.p6m6.com
@@ -2671,16 +2672,16 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 维云云-剩余流量：86.66 GB
-  - 维云云-距离下次重置剩余：24 天
+  - 维云云-剩余流量：83.14 GB
+  - 维云云-距离下次重置剩余：21 天
   - 维云云-套餐到期：2028-02-12
   - 维云云-香港1直连
   - 维云云-香港2直连
   - 维云云-香港3直连
+  - 维云云-🇭🇰香港直连04
   - 维云云-台湾家宽直连
   - 维云云-美国🇺🇸直连
   - 维云云-新加坡🇸🇬直连
-  - 维云云-韩国直连
   - 维云云-美国🇺🇸直连02
   - 维云云-日本🇯🇵直连
   - 维云云-🇭🇰香港01
@@ -2787,7 +2788,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 风萧萧-剩余流量：98.55 GB
+  - 风萧萧-剩余流量：98.31 GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇺🇸US@Bosa佬赞助
   - 风萧萧-🇭🇰HK@wuan佬赞助
@@ -2862,8 +2863,8 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 宝可梦-剩余流量：1.77 GB
-  - 宝可梦-距离下次重置剩余：23 天
+  - 宝可梦-剩余流量：0
+  - 宝可梦-距离下次重置剩余：20 天
   - 宝可梦-套餐到期：2026-02-12
   - 宝可梦-建议：感到卡顿请切换到专线节点
   - 宝可梦-放丢失官网:https://love.p6m6.com
