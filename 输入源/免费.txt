@@ -1,17 +1,14 @@
 # 免费1
 https://rss.zyfx6.xyz/clash/
 
-
 # 免费2 官方token链接
 https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=5xwthvdjbvm1sbrwomlpcralcs5km568&target=clash
-
 
 # 免费3
 https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml
 
-
 # LD论坛公益1
-https://violet.sakuraikaede.com/linuxdo-01-b6102967-f6c2-47ec-9eac-24b24f3d3f47/config.yaml
+https://violet.sakuraikaede.com/linuxdo-01-20260222-bf4b68ab-6626-4f37-bf2f-daed7a898e9d/config.yaml
 
 # LD论坛公益2
 https://download.nature.qq.com/SnsShare/Windy/1768620180_b65eb5ff_ech-mihomo
