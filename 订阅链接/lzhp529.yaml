@@ -2,7 +2,7 @@
 # Clash 配置文件 - 终极简化版
 # ========================================
 # 
-# 更新时间（东八区北京时间）: 2026-01-27 01:05:53
+# 更新时间（东八区北京时间）: 2026-01-27 01:23:05
 # 仓库名称: lzhp529
 # 输入源文件: lzhp529
 # 订阅链接获取情况: 5/6
@@ -1300,7 +1300,7 @@ proxies:
   type: hysteria2
   password: 1fc92f68-e081-46cd-9c03-c483c7290a09
   udp: true
-- name: 风萧萧-剩余流量：98.11+GB
+- name: 风萧萧-剩余流量：98.1+GB
   type: vless
   server: 69.165.68.74
   port: 41729
@@ -1929,7 +1929,7 @@ proxy-groups:
   - 便宜机场-日本hy2-1
   - 便宜机场-日本hy2-1-z
   - 便宜机场-日本hy2-2-z
-  - 风萧萧-剩余流量：98.11+GB
+  - 风萧萧-剩余流量：98.1+GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇭🇰HK@wuan佬赞助
   - 风萧萧-🇭🇰HK@Eliot.H佬赞助
@@ -2135,7 +2135,7 @@ proxy-groups:
   - 便宜机场-日本hy2-1
   - 便宜机场-日本hy2-1-z
   - 便宜机场-日本hy2-2-z
-  - 风萧萧-剩余流量：98.11+GB
+  - 风萧萧-剩余流量：98.1+GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇭🇰HK@wuan佬赞助
   - 风萧萧-🇭🇰HK@Eliot.H佬赞助
@@ -2365,7 +2365,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 风萧萧-剩余流量：98.11+GB
+  - 风萧萧-剩余流量：98.1+GB
   - 风萧萧-套餐到期：长期有效
   - 风萧萧-🇭🇰HK@wuan佬赞助
   - 风萧萧-🇭🇰HK@Eliot.H佬赞助
@@ -2447,5 +2447,31 @@ rules:
 - DOMAIN-SUFFIX,tencent.com,DIRECT
 - DOMAIN-SUFFIX,bilibili.com,DIRECT
 - DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,weixin.com,DIRECT
+- DOMAIN-SUFFIX,dingtalk.com,DIRECT
+- DOMAIN-SUFFIX,douyin.com,DIRECT
+- DOMAIN-SUFFIX,toutiao.com,DIRECT
+- DOMAIN-SUFFIX,xiaomi.com,DIRECT
+- DOMAIN-SUFFIX,meituan.com,DIRECT
+- DOMAIN-SUFFIX,bytedance.com,DIRECT
+- DOMAIN-SUFFIX,google.com,节点选择
+- DOMAIN-SUFFIX,gstatic.com,节点选择
+- DOMAIN-SUFFIX,youtube.com,节点选择
+- DOMAIN-SUFFIX,ytimg.com,节点选择
+- DOMAIN-SUFFIX,twitter.com,节点选择
+- DOMAIN-SUFFIX,facebook.com,节点选择
+- DOMAIN-SUFFIX,instagram.com,节点选择
+- DOMAIN-SUFFIX,whatsapp.com,节点选择
+- DOMAIN-SUFFIX,telegram.org,节点选择
+- DOMAIN-SUFFIX,wikipedia.org,节点选择
+- DOMAIN-SUFFIX,github.com,节点选择
+- DOMAIN-SUFFIX,gitlab.com,节点选择
+- DOMAIN-SUFFIX,medium.com,节点选择
+- DOMAIN-SUFFIX,reddit.com,节点选择
+- DOMAIN-SUFFIX,discord.com,节点选择
+- DOMAIN-SUFFIX,netflix.com,节点选择
+- DOMAIN-SUFFIX,spotify.com,节点选择
+- DOMAIN-SUFFIX,openai.com,节点选择
+- DOMAIN-SUFFIX,anthropic.com,节点选择
 - GEOIP,CN,DIRECT
 - MATCH,节点选择
