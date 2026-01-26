@@ -4,6 +4,7 @@
 支持从备注中提取分组信息，为每个订阅链接创建独立策略组
 统一使用混合端口7890，策略组极度简化
 支持解析Clash YAML格式节点
+修复GeoSite.dat缺少gfw列表问题
 """
 
 import os
@@ -355,7 +356,7 @@ def parse_trojan(url, remark=None):
         else:
             server_port_part = server_part
         
-        if ':' in server_part:
+        if ':' in server_port_part:
             server, port_str = server_port_part.split(':', 1)
             port = int(port_str)
         else:
@@ -876,7 +877,7 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
         # 策略组 - 极度简化版
         'proxy-groups': proxy_groups,
         
-        # 规则 - 简化路由
+        # 规则 - 简化路由，避免使用GeoSite.dat的gfw列表
         'rules': [
             # 国内域名直连
             'DOMAIN-SUFFIX,cn,DIRECT',
@@ -892,6 +893,34 @@ def generate_clash_config_with_groups(all_nodes, proxy_groups, filename, source_
             'DOMAIN-SUFFIX,tencent.com,DIRECT',
             'DOMAIN-SUFFIX,bilibili.com,DIRECT',
             'DOMAIN-SUFFIX,zhihu.com,DIRECT',
+            'DOMAIN-SUFFIX,weixin.com,DIRECT',
+            'DOMAIN-SUFFIX,dingtalk.com,DIRECT',
+            'DOMAIN-SUFFIX,douyin.com,DIRECT',
+            'DOMAIN-SUFFIX,toutiao.com,DIRECT',
+            'DOMAIN-SUFFIX,xiaomi.com,DIRECT',
+            'DOMAIN-SUFFIX,meituan.com,DIRECT',
+            'DOMAIN-SUFFIX,bytedance.com,DIRECT',
+            
+            # 常用国际域名代理
+            'DOMAIN-SUFFIX,google.com,节点选择',
+            'DOMAIN-SUFFIX,gstatic.com,节点选择',
+            'DOMAIN-SUFFIX,youtube.com,节点选择',
+            'DOMAIN-SUFFIX,ytimg.com,节点选择',
+            'DOMAIN-SUFFIX,twitter.com,节点选择',
+            'DOMAIN-SUFFIX,facebook.com,节点选择',
+            'DOMAIN-SUFFIX,instagram.com,节点选择',
+            'DOMAIN-SUFFIX,whatsapp.com,节点选择',
+            'DOMAIN-SUFFIX,telegram.org,节点选择',
+            'DOMAIN-SUFFIX,wikipedia.org,节点选择',
+            'DOMAIN-SUFFIX,github.com,节点选择',
+            'DOMAIN-SUFFIX,gitlab.com,节点选择',
+            'DOMAIN-SUFFIX,medium.com,节点选择',
+            'DOMAIN-SUFFIX,reddit.com,节点选择',
+            'DOMAIN-SUFFIX,discord.com,节点选择',
+            'DOMAIN-SUFFIX,netflix.com,节点选择',
+            'DOMAIN-SUFFIX,spotify.com,节点选择',
+            'DOMAIN-SUFFIX,openai.com,节点选择',
+            'DOMAIN-SUFFIX,anthropic.com,节点选择',
             
             # GEOIP中国直连
             'GEOIP,CN,DIRECT',
