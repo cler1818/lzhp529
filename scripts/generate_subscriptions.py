@@ -4,7 +4,6 @@
 支持从备注中提取分组信息，为每个订阅链接创建独立策略组
 统一使用混合端口7890，策略组极度简化
 支持解析Clash YAML格式节点
-优化了请求超时处理和重试机制
 """
 
 import os
@@ -17,7 +16,6 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, parse_qs, unquote
 import time
 import shutil
-import concurrent.futures
 
 def get_beijing_time():
 """获取东八区北京时间"""
@@ -357,8 +355,7 @@ query_params = parse_qs(query_str)
 else:
 server_port_part = server_part
 
-        if ':' in server_port_part:
-        if ':' in server_part:
+if ':' in server_part:
 server, port_str = server_port_part.split(':', 1)
 port = int(port_str)
 else:
@@ -499,19 +496,17 @@ return None
 # 添加备注前缀
 original_name = node_data.get('name', '')
 if remark and original_name:
-            node_data['name'] = f"{remark}-{original_name}"
-            name = f"{remark}-{original_name}"
+name = f"{remark}-{original_name}"
 elif remark:
 # 生成默认名称
 server = node_data.get('server', 'unknown')
 port = node_data.get('port', '')
 proxy_type = node_data.get('type', '').upper()
-            node_data['name'] = f"{remark}-{proxy_type}-{server}:{port}"
-            name = f"{remark}-{proxy_type}-{server}:{port}"
-        else:
-            name = original_name
-        
-        node_data['name'] = name
+name = f"{remark}-{proxy_type}-{server}:{port}"
+else:
+name = original_name
+
+node_data['name'] = name
 
 # 确保udp字段存在
 if 'udp' not in node_data:
@@ -558,150 +553,32 @@ print(f"  Clash配置解析失败: {e}")
 return proxies
 
 def fetch_subscription(url, timeout=30):
-    """获取订阅内容 - 带重试机制"""
-    """获取订阅内容"""
+"""获取订阅内容"""
 headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
 'Accept': 'text/plain, */*',
-        'Accept-Encoding': 'gzip, deflate',
-        'Connection': 'keep-alive',
-    }
-    
-    # 重试机制，最多重试3次
-    for attempt in range(3):
-        try:
-            if attempt > 0:
-                print(f"    第{attempt+1}次重试...")
-                time.sleep(2 ** attempt)  # 指数退避
-            
-            # 尝试请求
-            response = requests.get(
-                url, 
-                headers=headers, 
-                timeout=timeout,
-                verify=False  # 不验证SSL证书，避免证书问题导致的失败
-            )
-            
-            # 检查响应状态
-            if response.status_code == 200:
-                content = response.text.strip()
-                
-                # 尝试自动检测编码
-                try:
-                    response.encoding = response.apparent_encoding
-                    content = response.text.strip()
-                except:
-                    pass
-                
-                decoded = safe_decode_base64(content)
-                
-                if decoded:
-                    return decoded, True, None
-                
-                return content, True, None
-            else:
-                # 非200状态码，如果是500系列错误可以重试
-                if 500 <= response.status_code < 600 and attempt < 2:
-                    continue
-                return None, False, f"HTTP错误: {response.status_code}"
-                
-        except requests.exceptions.Timeout:
-            if attempt == 2:  # 最后一次尝试也超时
-                return None, False, "请求超时"
-            continue
-            
-        except requests.exceptions.ConnectionError:
-            if attempt == 2:
-                return None, False, "连接错误"
-            continue
-            
-        except requests.exceptions.SSLError:
-            # SSL错误，尝试不验证证书
-            try:
-                response = requests.get(url, headers=headers, timeout=timeout, verify=False)
-                if response.status_code == 200:
-                    content = response.text.strip()
-                    decoded = safe_decode_base64(content)
-                    
-                    if decoded:
-                        return decoded, True, None
-                    
-                    return content, True, None
-                else:
-                    return None, False, f"HTTP错误: {response.status_code}"
-            except Exception as e:
-                if attempt == 2:
-                    return None, False, f"SSL错误: {str(e)}"
-                continue
-                
-        except Exception as e:
-            if attempt == 2:
-                return None, False, f"错误: {str(e)}"
-            continue
-    
-    return None, False, "多次尝试后失败"
-
-def fetch_subscription_parallel(args):
-    """并行获取订阅内容 - 用于线程池"""
-    url, remark = args
-    content, success, error_msg = fetch_subscription(url)
-    
-    entry_info = {
-        'url': url,
-        'remark': remark,
-        'node_count': 0,
-        'error': ''
 }
 
-    if success and content:
-        proxies = process_subscription_content(content, remark)
-        if proxies:
-            entry_info['node_count'] = len(proxies)
-            return {
-                'success': True,
-                'proxies': proxies,
-                'remark': remark,
-                'entry_info': entry_info
-            }
-        else:
-            entry_info['error'] = "无有效节点"
-            return {
-                'success': False,
-                'proxies': [],
-                'remark': remark,
-                'error_msg': "无有效节点",
-                'entry_info': entry_info
-            }
-    else:
-        entry_info['error'] = error_msg
-        return {
-            'success': False,
-            'proxies': [],
-            'remark': remark,
-            'error_msg': error_msg,
-            'entry_info': entry_info
-        }
-    try:
-        response = requests.get(url, headers=headers, timeout=timeout)
-        response.raise_for_status()
-        
-        content = response.text.strip()
-        decoded = safe_decode_base64(content)
-        
-        if decoded:
-            return decoded, True, None
-        
-        return content, True, None
-        
-    except requests.exceptions.Timeout:
-        return None, False, "请求超时"
-    except requests.exceptions.ConnectionError:
-        return None, False, "连接错误"
-    except requests.exceptions.HTTPError as e:
-        return None, False, f"HTTP错误: {e.response.status_code}"
-    except Exception as e:
-        return None, False, f"未知错误: {str(e)}"
+try:
+response = requests.get(url, headers=headers, timeout=timeout)
+response.raise_for_status()
+
+content = response.text.strip()
+decoded = safe_decode_base64(content)
+
+if decoded:
+return decoded, True, None
+
+return content, True, None
+
+except requests.exceptions.Timeout:
+return None, False, "请求超时"
+except requests.exceptions.ConnectionError:
+return None, False, "连接错误"
+except requests.exceptions.HTTPError as e:
+return None, False, f"HTTP错误: {e.response.status_code}"
+except Exception as e:
+return None, False, f"未知错误: {str(e)}"
 
 def is_clash_yaml_content(content):
 """判断内容是否为Clash YAML格式"""
@@ -992,8 +869,10 @@ config = {
 ]
 },
 
-# 代理节点
-'proxies': all_nodes[:200],  # 最多200个节点
+        # 代理节点
+        'proxies': all_nodes[:200],  # 最多200个节点
+        # 代理节点 - 确保只包含真正的代理节点，不包含策略组
+        'proxies': all_nodes[:2000],  # 最多2000个节点
 
 # 策略组 - 极度简化版
 'proxy-groups': proxy_groups,
@@ -1042,16 +921,26 @@ sort_keys=False,
 width=float("inf"))
 
 print(f"  生成配置文件: {output_path}")
-print(f"  包含 {len(all_nodes[:200])} 个节点")
+    print(f"  包含 {len(all_nodes[:200])} 个节点")
+    print(f"  包含 {len(all_nodes[:2000])} 个节点")
 print(f"  包含 {len(proxy_groups)} 个策略组")
 print(f"  代理端口: 7890 (HTTP/SOCKS混合)")
 
-return len(all_nodes[:200])
+    return len(all_nodes[:200])
+    return len(all_nodes[:2000])
 
 def build_proxy_groups(all_nodes, remark_nodes_map):
 """构建策略组配置 - 极度简化版"""
-# 获取所有节点名称
-all_node_names = [node.get('name', f'节点{i+1}') for i, node in enumerate(all_nodes[:200])]
+    # 获取所有节点名称
+    all_node_names = [node.get('name', f'节点{i+1}') for i, node in enumerate(all_nodes[:200])]
+    # 获取所有节点名称（只获取有效的代理节点）
+    all_node_names = []
+    for i, node in enumerate(all_nodes[:2000]):  # 最多2000个节点
+        if isinstance(node, dict) and 'name' in node and 'server' in node and 'type' in node:
+            # 确保是真正的代理节点类型，不是策略组
+            node_type = node.get('type', '')
+            if node_type in ['ss', 'vmess', 'trojan', 'vless', 'hysteria2', 'socks5', 'http']:
+                all_node_names.append(node.get('name', f'节点{i+1}'))
 
 # 基础策略组 - 极度简化版
 proxy_groups = [
@@ -1066,7 +955,8 @@ proxy_groups = [
 'url': 'http://www.gstatic.com/generate_204',
 'interval': 300,
 'strategy': 'consistent-hashing',
-'proxies': all_node_names
+            'proxies': all_node_names
+            'proxies': all_node_names[:1000]  # 最多1000个节点
 },
 {
 'name': '自动选择',
@@ -1074,14 +964,20 @@ proxy_groups = [
 'url': 'http://www.gstatic.com/generate_204',
 'interval': 300,
 'tolerance': 50,
-'proxies': all_node_names
+            'proxies': all_node_names
+            'proxies': all_node_names[:1000]  # 最多1000个节点
 }
 ]
 
 # 为每个有备注的链接创建独立策略组
 for remark, nodes in remark_nodes_map.items():
 if remark and nodes:
-node_names = [node.get('name') for node in nodes if node.get('name')]
+            node_names = [node.get('name') for node in nodes if node.get('name')]
+            node_names = []
+            for node in nodes[:1000]:  # 每个分组最多1000个节点
+                if isinstance(node, dict) and 'name' in node:
+                    node_names.append(node['name'])
+            
 if node_names:
 proxy_groups.append({
 'name': remark,
@@ -1089,7 +985,8 @@ proxy_groups.append({
 'url': 'http://www.gstatic.com/generate_204',
 'interval': 300,
 'tolerance': 50,
-'proxies': node_names[:50]  # 最多50个节点
+                    'proxies': node_names[:50]  # 最多50个节点
+                    'proxies': node_names[:1000]  # 最多1000个节点
 })
 
 return proxy_groups
@@ -1253,194 +1150,71 @@ remark_nodes_map = {}  # 按备注分组的成功节点
 remark_stats = {}      # 成功分组统计
 remark_failed_stats = {}  # 失败分组统计
 
-        # 判断是否使用并行处理（链接数量多时使用）
-        use_parallel = total_count > 5
-        
-        if use_parallel:
-            print(f"  使用并行处理（共{total_count}个链接）")
-            # 准备参数
-            args_list = [(entry['url'], entry['remark']) for entry in url_entries]
-        # 处理每个链接
-        for i, entry in enumerate(url_entries):
-            url = entry['url']
-            remark = entry['remark']
+# 处理每个链接
+for i, entry in enumerate(url_entries):
+url = entry['url']
+remark = entry['remark']
 
-            # 使用线程池并行处理
-            with concurrent.futures.ThreadPoolExecutor(max_workers=min(10, total_count)) as executor:
-                futures = [executor.submit(fetch_subscription_parallel, args) for args in args_list]
-                
-                for i, future in enumerate(concurrent.futures.as_completed(futures)):
-                    try:
-                        result = future.result(timeout=60)  # 每个任务最多60秒
-                        
-                        if result['success']:
-                            all_proxies.extend(result['proxies'])
-                            success_count += 1
-                            
-                            # 按备注分组
-                            remark = result['remark']
-                            if remark and result['proxies']:
-                                if remark not in remark_nodes_map:
-                                    remark_nodes_map[remark] = []
-                                remark_nodes_map[remark].extend(result['proxies'])
-                                
-                                # 更新统计
-                                remark_stats[remark] = remark_stats.get(remark, 0) + len(result['proxies'])
-                            
-                            print(f"  [{i+1}/{total_count}] ✅ 成功获取，找到 {len(result['proxies'])} 个节点")
-                        else:
-                            remark = result['remark']
-                            error_msg = result['error_msg']
-                            entry_info = result['entry_info']
-                            
-                            # 添加到失败分组统计
-                            if remark:
-                                remark_failed_stats[remark] = error_msg
-                            
-                            failed_urls.append(f"# {remark if remark else '未命名'}: {entry_info['url']} - {error_msg}")
-                            failed_entries.append(entry_info)
-                            
-                            print(f"  [{i+1}/{total_count}] ❌ 失败: {error_msg}")
-                        
-                        # 保存URL处理结果
-                        url_entries[i].update(entry_info)
-                        
-                    except concurrent.futures.TimeoutError:
-                        print(f"  [{i+1}/{total_count}] ⏰ 处理超时")
-                        url = url_entries[i]['url']
-                        remark = url_entries[i]['remark']
-                        failed_urls.append(f"# {remark if remark else '未命名'}: {url} - 处理超时")
-                        
-                        entry_info = {
-                            'url': url,
-                            'remark': remark,
-                            'node_count': 0,
-                            'error': '处理超时'
-                        }
-                        failed_entries.append(entry_info)
-                        url_entries[i].update(entry_info)
-                        
-                        if remark:
-                            remark_failed_stats[remark] = "处理超时"
-                    except Exception as e:
-                        print(f"  [{i+1}/{total_count}] ⚠️ 处理错误: {str(e)}")
-        else:
-            # 串行处理
-            for i, entry in enumerate(url_entries):
-                url = entry['url']
-                remark = entry['remark']
-                
-                print(f"\n  [{i+1}/{total_count}] 处理链接")
-                print(f"    链接: {url[:80]}...")
-                if remark:
-                    print(f"    备注: {remark}")
-                
-                result = fetch_subscription(url, timeout=30)
-                content, success, error_msg = result
-                
-                entry_info = {
-                    'url': url,
-                    'remark': remark,
-                    'node_count': 0,
-                    'error': ''
-                }
-                
-                if success and content:
-                    proxies = process_subscription_content(content, remark)
-                    if proxies:
-                        all_proxies.extend(proxies)
-                        success_count += 1
-                        
-                        # 按备注分组
-                        if remark:
-                            if remark not in remark_nodes_map:
-                                remark_nodes_map[remark] = []
-                            remark_nodes_map[remark].extend(proxies)
-                            
-                            # 更新统计
-                            remark_stats[remark] = remark_stats.get(remark, 0) + len(proxies)
-                        
-                        entry_info['node_count'] = len(proxies)
-                        print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
-                    else:
-                        print(f"    ⚠️ 获取成功但未找到有效节点")
-                        entry_info['error'] = "无有效节点"
-                        
-                        # 添加到失败分组统计
-                        if remark:
-                            remark_failed_stats[remark] = "无有效节点"
-            print(f"\n  [{i+1}/{total_count}] 处理链接")
-            print(f"    链接: {url[:80]}...")
-            if remark:
-                print(f"    备注: {remark}")
-            
-            result = fetch_subscription(url, timeout=15)
-            content, success, error_msg = result
-            
-            entry_info = {
-                'url': url,
-                'remark': remark,
-                'node_count': 0,
-                'error': ''
-            }
-            
-            if success and content:
-                proxies = process_subscription_content(content, remark)
-                if proxies:
-                    all_proxies.extend(proxies)
-                    success_count += 1
-                    
-                    # 按备注分组
-                    if remark:
-                        if remark not in remark_nodes_map:
-                            remark_nodes_map[remark] = []
-                        remark_nodes_map[remark].extend(proxies)
+print(f"\n  [{i+1}/{total_count}] 处理链接")
+print(f"    链接: {url[:80]}...")
+if remark:
+print(f"    备注: {remark}")
 
-                        failed_urls.append(f"# {remark if remark else '未命名'}: {url}")
-                        failed_entries.append(entry_info)
-                        # 更新统计
-                        remark_stats[remark] = remark_stats.get(remark, 0) + len(proxies)
-                    
-                    entry_info['node_count'] = len(proxies)
-                    print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
+result = fetch_subscription(url, timeout=15)
+content, success, error_msg = result
+
+entry_info = {
+'url': url,
+'remark': remark,
+'node_count': 0,
+'error': ''
+}
+
+if success and content:
+proxies = process_subscription_content(content, remark)
+if proxies:
+all_proxies.extend(proxies)
+success_count += 1
+
+# 按备注分组
+if remark:
+if remark not in remark_nodes_map:
+remark_nodes_map[remark] = []
+remark_nodes_map[remark].extend(proxies)
+
+# 更新统计
+remark_stats[remark] = remark_stats.get(remark, 0) + len(proxies)
+
+entry_info['node_count'] = len(proxies)
+print(f"    ✅ 成功获取，找到 {len(proxies)} 个节点")
 else:
-                    error_info = error_msg if error_msg else "未知错误"
-                    print(f"    ❌ 失败: {error_info}")
-                    entry_info['error'] = error_info
-                    print(f"    ⚠️ 获取成功但未找到有效节点")
-                    entry_info['error'] = "无有效节点"
+print(f"    ⚠️ 获取成功但未找到有效节点")
+entry_info['error'] = "无有效节点"
 
 # 添加到失败分组统计
 if remark:
-                        remark_failed_stats[remark] = error_info
-                        remark_failed_stats[remark] = "无有效节点"
+remark_failed_stats[remark] = "无有效节点"
 
-                    failed_urls.append(f"# {remark if remark else '未命名'}: {url} - {error_info}")
-                    failed_urls.append(f"# {remark if remark else '未命名'}: {url}")
+failed_urls.append(f"# {remark if remark else '未命名'}: {url}")
 failed_entries.append(entry_info)
-            else:
-                error_info = error_msg if error_msg else "未知错误"
-                print(f"    ❌ 失败: {error_info}")
-                entry_info['error'] = error_info
+else:
+error_info = error_msg if error_msg else "未知错误"
+print(f"    ❌ 失败: {error_info}")
+entry_info['error'] = error_info
 
-                # 保存URL处理结果，用于生成源文件内容
-                url_entries[i].update(entry_info)
-                # 添加到失败分组统计
-                if remark:
-                    remark_failed_stats[remark] = error_info
+# 添加到失败分组统计
+if remark:
+remark_failed_stats[remark] = error_info
 
-                # 避免请求过快
-                if i < total_count - 1:
-                    time.sleep(1)
-                failed_urls.append(f"# {remark if remark else '未命名'}: {url} - {error_info}")
-                failed_entries.append(entry_info)
-            
-            # 保存URL处理结果，用于生成源文件内容
-            url_entries[i].update(entry_info)
-            
-            # 避免请求过快
-            if i < total_count - 1:
-                time.sleep(1)
+failed_urls.append(f"# {remark if remark else '未命名'}: {url} - {error_info}")
+failed_entries.append(entry_info)
+
+# 保存URL处理结果，用于生成源文件内容
+url_entries[i].update(entry_info)
+
+# 避免请求过快
+if i < total_count - 1:
+time.sleep(1)
 
 # 生成失败链接备注
 failed_comments = "\n".join(failed_urls) if failed_urls else "# 无失败链接"
@@ -1453,10 +1227,17 @@ for proxy in all_proxies:
 if not proxy:
 continue
 
-key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
-if key not in seen:
-seen.add(key)
-unique_proxies.append(proxy)
+            key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
+            if key not in seen:
+                seen.add(key)
+                unique_proxies.append(proxy)
+            # 确保是真正的代理节点，不是策略组
+            node_type = proxy.get('type', '')
+            if node_type in ['ss', 'vmess', 'trojan', 'vless', 'hysteria2', 'socks5', 'http']:
+                key = f"{proxy.get('server', '')}:{proxy.get('port', '')}:{proxy.get('type', '')}:{proxy.get('name', '')}"
+                if key not in seen:
+                    seen.add(key)
+                    unique_proxies.append(proxy)
 
 # 统计信息
 print(f"\n  {'='*30}")
@@ -1505,6 +1286,7 @@ print(f"    📊 代理节点: {node_count} 个")
 print(f"    🏷️  成功分组策略组: {len(remark_nodes_map)} 个")
 print(f"    ⚖️  默认策略: 负载均衡")
 print(f"    🔌 代理端口: 7890")
+            print(f"    📈 每个策略组最多包含: 1000 个节点")
 else:
 print("\n    ⚠️ 没有有效节点，生成空配置")
 # 生成一个空配置，但仍然包含备注
