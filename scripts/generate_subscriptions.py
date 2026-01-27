@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-自动订阅生成器 - 终极简化版（无 GeoSite / gfw 依赖）
-仅使用 DOMAIN-SUFFIX + GEOIP + MATCH
+自动订阅生成器 - 极简版
+仅保留提取节点、合并节点、创建策略组功能
 """
 
 import os
@@ -10,16 +10,7 @@ import base64
 import json
 import requests
 import yaml
-from datetime import datetime, timezone, timedelta
-from urllib.parse import parse_qs, unquote
-import time
-import shutil
-
-
-def get_beijing_time():
-    utc_now = datetime.utcnow()
-    beijing_tz = timezone(timedelta(hours=8))
-    return utc_now.replace(tzinfo=timezone.utc).astimezone(beijing_tz).strftime('%Y-%m-%d %H:%M:%S')
+from urllib.parse import unquote
 
 
 def safe_decode_base64(data):
@@ -34,14 +25,6 @@ def safe_decode_base64(data):
             return base64.urlsafe_b64decode(data).decode('utf-8', errors='ignore')
         except:
             return None
-
-
-def clean_config(obj):
-    if isinstance(obj, dict):
-        return {k: clean_config(v) for k, v in obj.items() if v not in [None, '', [], {}]}
-    if isinstance(obj, list):
-        return [clean_config(i) for i in obj if i not in [None, '', [], {}]]
-    return obj
 
 
 # =========================
@@ -80,7 +63,7 @@ def parse_vmess(url, remark=None):
     try:
         cfg = json.loads(safe_decode_base64(url[8:]))
         name = cfg.get('ps', 'VMess')
-        return clean_config({
+        return {
             'name': f'{remark}-{name}' if remark else name,
             'type': 'vmess',
             'server': cfg.get('add'),
@@ -90,7 +73,7 @@ def parse_vmess(url, remark=None):
             'cipher': 'auto',
             'udp': True,
             'tls': cfg.get('tls') == 'tls'
-        })
+        }
     except:
         return None
 
@@ -148,7 +131,7 @@ def build_proxy_groups(nodes):
         {
             'name': '节点选择',
             'type': 'select',
-            'proxies': ['负载均衡', '自动选择', 'DIRECT']
+            'proxies': ['负载均衡', '自动选择']
         },
         {
             'name': '负载均衡',
@@ -201,17 +184,7 @@ def main():
         'mode': 'rule',
         'log-level': 'info',
         'proxies': nodes,
-        'proxy-groups': groups,
-        'rules': [
-            'DOMAIN-SUFFIX,cn,DIRECT',
-            'DOMAIN-SUFFIX,baidu.com,DIRECT',
-            'DOMAIN-SUFFIX,qq.com,DIRECT',
-            'DOMAIN-SUFFIX,taobao.com,DIRECT',
-            'DOMAIN-SUFFIX,jd.com,DIRECT',
-            'DOMAIN-SUFFIX,bilibili.com,DIRECT',
-            'GEOIP,CN,DIRECT',
-            'MATCH,节点选择'
-        ]
+        'proxy-groups': groups
     }
 
     with open('订阅链接/output.yaml', 'w', encoding='utf-8') as f:
